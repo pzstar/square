@@ -79,10 +79,9 @@ h3.comments-title:after,
 	background:{$color};
 }
 
-a:hover, a:focus, a:active,
+a,
 .sq-featured-post .sq-featured-readmore:hover,
 .sq-tab li.sq-active .fa,
-.single-entry-content a,
 .widget-area a:hover,
 .woocommerce nav.woocommerce-pagination ul li a:focus, 
 .woocommerce nav.woocommerce-pagination ul li a:hover, 

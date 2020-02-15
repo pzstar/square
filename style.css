@@ -4,7 +4,7 @@ Theme URI: https://hashthemes.com/wordpress-theme/square/
 Author: HashThemes
 Author URI: https://hashthemes.com
 Description: Square is a flexible responsive multipurpose theme compatible with all browsers and devices, fully mobile friendly, loaded with lots of features. It is a minimal theme based on WordPress Customizer that allows you to customize with live preview. The theme can be used for business, corporate, digital agency, personal, portfolio, photography, parallax, blogs and magazines. Square is eCommerce (WooCommerce) Compatible, Polylang Compatible, WPML, RTL, Retina Ready, SEO Friendly and Support bbPress and BuddyPress. More over it is a complete theme. For demo https://demo.hashthemes.com/square
-Version: 1.6.0
+Version: 1.6.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: square
@@ -528,7 +528,7 @@ textarea {
 }
 
 input[type="search"] {
-    width: auto;
+    width: 100%;
 }
 
 /*--------------------------------------------------------------
@@ -556,17 +556,6 @@ a:focus {
 a:hover,
 a:active {
     outline: 0;
-}
-
-.single-entry-content a{
-    color: #5bc2ce;
-    transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -webkit-transition: all 0.3s ease;
-}
-
-.single-entry-content a:hover{
-    text-decoration: underline;
 }
 
 /*--------------------------------------------------------------
@@ -2166,7 +2155,7 @@ object {
     margin-bottom: 0
 }
 
-.woocommerce ul.products li.product .button.add_to_cart_button,
+.woocommerce ul.products li.product .button,
 .woocommerce a.added_to_cart{
     position: absolute;
     right: 10px;
@@ -2188,16 +2177,16 @@ object {
     line-height: 1;
 }
 
-.woocommerce ul.products li.product .button.add_to_cart_button.loading{
+.woocommerce ul.products li.product .button.loading{
     padding-right: 34px;
 }
 
-.woocommerce ul.products li.product:hover .button.add_to_cart_button{
+.woocommerce ul.products li.product:hover .button{
     opacity: 1;
     visibility: visible;
 }
 
-.woocommerce ul.products li.product:hover .button.add_to_cart_button.added{
+.woocommerce ul.products li.product:hover .button.added{
     opacity: 0;
     visibility: hidden;
 }

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Square 1.0.0\n"
 "Report-Msgid-Bugs-To: http://hashthemes.com/\n"
-"POT-Creation-Date: 2019-09-30 17:45+0000\n"
+"POT-Creation-Date: 2020-02-15 14:11+0000\n"
 "POT-Revision-Date: Thu Jul 14 2016 22:42:45 GMT+0545 (Nepal Standard Time)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hash Themes <hashthemes@gmail.com>\n"
@@ -28,55 +28,55 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:79
+#: functions.php:82
 msgid "Right Sidebar"
 msgstr ""
 
-#: functions.php:89
+#: functions.php:92
 msgid "Left Sidebar"
 msgstr ""
 
-#: functions.php:99
+#: functions.php:102
 msgid "Shop Sidebar"
 msgstr ""
 
-#: functions.php:109
+#: functions.php:112
 msgid "Footer 1"
 msgstr ""
 
-#: functions.php:119
+#: functions.php:122
 msgid "Footer 2"
 msgstr ""
 
-#: functions.php:129
+#: functions.php:132
 msgid "Footer 3"
 msgstr ""
 
-#: functions.php:139
+#: functions.php:142
 msgid "Footer 4"
 msgstr ""
 
-#: functions.php:149
+#: functions.php:152
 msgid "About Footer"
 msgstr ""
 
 #. Translators: If there are characters in your language that are not supported
 #. by Open Sans, translate this to 'off'. Do not translate into your own language.
-#: functions.php:177
+#: functions.php:182
 msgctxt "Open Sans font: on or off"
 msgid "on"
 msgstr ""
 
 #. Translators: If there are characters in your language that are not supported
 #. by Inconsolata, translate this to 'off'. Do not translate into your own language.
-#: functions.php:185
+#: functions.php:190
 msgctxt "Roboto Condensed font: on or off"
 msgid "on"
 msgstr ""
 
 #. Translators: To add an additional character subset specific to your language,
 #. translate this to 'greek', 'cyrillic', 'devanagari' or 'vietnamese'. Do not translate into your own language.
-#: functions.php:193
+#: functions.php:198
 msgctxt "Add new subset (greek, cyrillic, devanagari, vietnamese)"
 msgid "no-subset"
 msgstr ""
@@ -90,7 +90,7 @@ msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
 #. 1: comment count number
-#: comments.php:30
+#: comments.php:29
 #, php-format
 msgctxt "comments title"
 msgid "%1$s Comment"
@@ -98,45 +98,45 @@ msgid_plural "%1$s Comments"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:52
+#: comments.php:50
 msgid "Comments are closed."
 msgstr ""
 
-#: comments.php:63 inc/widgets/widget-personal-info.php:46
+#: comments.php:61 inc/widgets/widget-personal-info.php:45
 msgid "Name"
 msgstr ""
 
-#: comments.php:67 inc/widgets/widget-contact-info.php:40
+#: comments.php:64 inc/widgets/widget-contact-info.php:39
 msgid "Email"
 msgstr ""
 
-#: comments.php:71 inc/widgets/widget-contact-info.php:45
+#: comments.php:67 inc/widgets/widget-contact-info.php:44
 msgid "Website"
 msgstr ""
 
-#: comments.php:77
+#: comments.php:73
 msgid "Comment"
 msgstr ""
 
-#: search.php:14
+#: search.php:15
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
 
-#: footer.php:62
+#: footer.php:65
 msgid "WordPress Theme"
 msgstr ""
 
-#: footer.php:66
+#: footer.php:70
 #, php-format
 msgid "%1$s by %2$s"
 msgstr ""
 
-#: front-page.php:23 inc/customizer.php:299 templates/home-template.php:20
+#: front-page.php:23 inc/customizer.php:225 templates/home-template.php:20
 msgid "Free WordPress Themes"
 msgstr ""
 
-#: front-page.php:24 inc/customizer.php:317 templates/home-template.php:21
+#: front-page.php:24 inc/customizer.php:237 templates/home-template.php:21
 msgid "Create website in no time"
 msgstr ""
 
@@ -145,15 +145,15 @@ msgstr ""
 msgid "Slider"
 msgstr ""
 
-#: front-page.php:55 templates/home-template.php:52
+#: front-page.php:56 templates/home-template.php:53
 msgid "Banner Shadow"
 msgstr ""
 
-#: front-page.php:140 templates/home-template.php:137
+#: front-page.php:142 templates/home-template.php:139
 msgid "About Us Gallery"
 msgstr ""
 
-#: front-page.php:232 templates/home-template.php:229
+#: front-page.php:236 templates/home-template.php:233
 msgid "Logo"
 msgstr ""
 
@@ -283,268 +283,272 @@ msgstr ""
 msgid "Comparision - Free Vs Pro"
 msgstr ""
 
-#: inc/customizer.php:71 welcome/sections/free_vs_pro.php:21
+#: inc/customizer.php:67 welcome/sections/free_vs_pro.php:21
 #: welcome/sections/free_vs_pro.php:287
 msgid "Upgrade to Pro"
 msgstr ""
 
-#: inc/customizer.php:82 inc/customizer.php:921 welcome/sections/support.php:3
+#: inc/customizer.php:72 inc/customizer.php:618 welcome/sections/support.php:3
 msgid "Documentation"
 msgstr ""
 
-#: inc/customizer.php:84
+#: inc/customizer.php:74
 msgid "View"
 msgstr ""
 
-#: inc/customizer.php:97
+#: inc/customizer.php:85
 msgid "Template Color"
 msgstr ""
 
-#: inc/customizer.php:104
+#: inc/customizer.php:90
 msgid "General Settings"
 msgstr ""
 
-#: inc/customizer.php:111
+#: inc/customizer.php:96
 msgid "Static Front Page"
 msgstr ""
 
-#: inc/customizer.php:113
+#: inc/customizer.php:98
 msgid "Your theme supports a static front page."
 msgstr ""
 
-#: inc/customizer.php:118
+#: inc/customizer.php:103
 msgid "Site Title & Tagline"
 msgstr ""
 
-#: inc/customizer.php:124
+#: inc/customizer.php:109
 msgid "Header Logo"
 msgstr ""
 
-#: inc/customizer.php:132
+#: inc/customizer.php:115
 msgid "Header Settings"
 msgstr ""
 
-#: inc/customizer.php:150
+#: inc/customizer.php:127
 msgid "Disable Sticky Header"
 msgstr ""
 
-#: inc/customizer.php:172
+#: inc/customizer.php:141
 msgid "Header Background Color"
 msgstr ""
 
-#: inc/customizer.php:192
+#: inc/customizer.php:152
 msgid "Page Header Banner"
 msgstr ""
 
-#: inc/customizer.php:195
-msgid ""
-"This banner will show in the header of all the inner pages <br/>Recommended "
-"Image Size: 1800X400px"
+#: inc/customizer.php:155
+msgid "This banner will show in the header of all the inner pages"
 msgstr ""
 
-#: inc/customizer.php:204
+#: inc/customizer.php:155
+msgid "Recommended Image Size: 1800X400px"
+msgstr ""
+
+#: inc/customizer.php:160
 msgid "Blog Settings"
 msgstr ""
 
-#: inc/customizer.php:220
+#: inc/customizer.php:170
 msgid "Blog Content Format"
 msgstr ""
 
-#: inc/customizer.php:244
+#: inc/customizer.php:188
 msgid "Disable Share Buttons"
 msgstr ""
 
-#: inc/customizer.php:251
+#: inc/customizer.php:194
 msgid "Background Image"
 msgstr ""
 
-#: inc/customizer.php:259
+#: inc/customizer.php:200
 msgid "Home Page Sections"
 msgstr ""
 
-#: inc/customizer.php:268
+#: inc/customizer.php:206
 msgid "Slider Section"
 msgstr ""
 
-#: inc/customizer.php:291
+#: inc/customizer.php:221
 msgid "Slider "
 msgstr ""
 
-#: inc/customizer.php:310
+#: inc/customizer.php:233
 msgid "Caption Title"
 msgstr ""
 
-#: inc/customizer.php:328
+#: inc/customizer.php:245
 msgid "Caption SubTitle"
 msgstr ""
 
-#: inc/customizer.php:345
+#: inc/customizer.php:254
 msgid "Slider Image"
 msgstr ""
 
-#: inc/customizer.php:348
+#: inc/customizer.php:257
 msgid "Recommended Image Size: 1800X800px"
 msgstr ""
 
-#: inc/customizer.php:361
+#: inc/customizer.php:265
 msgid "Featured Section"
 msgstr ""
 
-#: inc/customizer.php:379
+#: inc/customizer.php:277
 msgid "Enable Read More link "
 msgstr ""
 
-#: inc/customizer.php:401
+#: inc/customizer.php:291
 msgid "Featured Page "
 msgstr ""
 
-#: inc/customizer.php:420 inc/customizer.php:508 inc/customizer.php:660
+#: inc/customizer.php:303 inc/customizer.php:358 inc/customizer.php:453
 msgid "Select a Page"
 msgstr ""
 
-#: inc/customizer.php:439 inc/customizer.php:640
+#: inc/customizer.php:314 inc/customizer.php:440
 msgid "FontAwesome Icon"
 msgstr ""
 
-#: inc/customizer.php:451
+#: inc/customizer.php:322
 msgid "About Us Section"
 msgstr ""
 
-#: inc/customizer.php:469
+#: inc/customizer.php:334
 msgid "Disable About Section "
 msgstr ""
 
-#: inc/customizer.php:489
+#: inc/customizer.php:346
 msgid "About Page "
 msgstr ""
 
-#: inc/customizer.php:527
+#: inc/customizer.php:369
 msgid "About Page Stack Images"
 msgstr ""
 
-#: inc/customizer.php:547
+#: inc/customizer.php:380
 msgid "About Us Stack Image"
 msgstr ""
 
-#: inc/customizer.php:548
-msgid ""
-"Recommended Image Size: 400X420px <br/> Leave the gallery empty for Full "
-"Width Text"
+#: inc/customizer.php:381
+msgid "Recommended Image Size: 400X420px"
 msgstr ""
 
-#: inc/customizer.php:558
+#: inc/customizer.php:381
+msgid "Leave the gallery empty for Full Width Text"
+msgstr ""
+
+#: inc/customizer.php:387
 msgid "Tab Section"
 msgstr ""
 
-#: inc/customizer.php:576
+#: inc/customizer.php:399
 msgid "Disable Tab Section "
 msgstr ""
 
-#: inc/customizer.php:599
+#: inc/customizer.php:414
 msgid "Tab "
 msgstr ""
 
-#: inc/customizer.php:619
+#: inc/customizer.php:427
 msgid "Tab Title"
 msgstr ""
 
-#: inc/customizer.php:671
+#: inc/customizer.php:460
 msgid "Clients Logo Section"
 msgstr ""
 
-#: inc/customizer.php:689
+#: inc/customizer.php:472
 msgid "Disable Client Logo Section "
 msgstr ""
 
-#: inc/customizer.php:709
+#: inc/customizer.php:484
 msgid "Section Title & Logo"
 msgstr ""
 
-#: inc/customizer.php:728 inc/widgets/widget-personal-info.php:30
-#: inc/widgets/widget-contact-info.php:30 inc/widgets/widget-latest-post.php:26
+#: inc/customizer.php:496 inc/widgets/widget-personal-info.php:29
+#: inc/widgets/widget-contact-info.php:29 inc/widgets/widget-latest-post.php:26
 msgid "Title"
 msgstr ""
 
-#: inc/customizer.php:748
+#: inc/customizer.php:508
 msgid "Upload Clients Logos"
 msgstr ""
 
-#: inc/customizer.php:749
+#: inc/customizer.php:509
 msgid "Recommended Image Size: 220X90px"
 msgstr ""
 
-#: inc/customizer.php:758
+#: inc/customizer.php:514
 msgid "Footer Social Icons"
 msgstr ""
 
-#: inc/customizer.php:776
+#: inc/customizer.php:526
 msgid "Facebook"
 msgstr ""
 
-#: inc/customizer.php:794
+#: inc/customizer.php:538
 msgid "Twitter"
 msgstr ""
 
-#: inc/customizer.php:812
+#: inc/customizer.php:550
 msgid "Pinterest"
 msgstr ""
 
-#: inc/customizer.php:830
+#: inc/customizer.php:562
 msgid "Youtube"
 msgstr ""
 
-#: inc/customizer.php:848
+#: inc/customizer.php:574
 msgid "Linkedin"
 msgstr ""
 
-#: inc/customizer.php:866
+#: inc/customizer.php:586
 msgid "Instagram"
 msgstr ""
 
-#: inc/customizer.php:874
+#: inc/customizer.php:591
 msgid "Pro Theme Features"
 msgstr ""
 
-#: inc/customizer.php:902
+#: inc/customizer.php:607
 msgid "Important Links"
 msgstr ""
 
-#: inc/customizer.php:921
+#: inc/customizer.php:618
 msgid "Live Demo"
 msgstr ""
 
-#: inc/customizer.php:921
+#: inc/customizer.php:618
 msgid "Support Forum"
 msgstr ""
 
-#: inc/customizer.php:921
+#: inc/customizer.php:618
 msgid "Like Us in Facebook"
 msgstr ""
 
 #. link
-#: inc/customizer.php:942
+#: inc/customizer.php:630
 #, php-format
 msgid "Please do rate our theme if you liked it %s"
 msgstr ""
 
-#: inc/customizer.php:1073
+#: inc/customizer.php:767
 msgid "Add/Edit Gallery"
 msgstr ""
 
-#: inc/customizer.php:1074
+#: inc/customizer.php:768
 msgid "Clear"
 msgstr ""
 
-#: inc/square-functions.php:84
+#: inc/square-functions.php:91
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: inc/square-functions.php:86
+#: inc/square-functions.php:93
 msgid "Edit"
 msgstr ""
 
 #. translators: 1: comment date, 2: comment time
-#: inc/square-functions.php:98
+#: inc/square-functions.php:105
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
@@ -553,25 +557,25 @@ msgstr ""
 msgid "Sidebar Layout"
 msgstr ""
 
-#: inc/template-tags.php:31
+#: inc/template-tags.php:28
 #, php-format
 msgctxt "post author"
 msgid "by %s"
 msgstr ""
 
-#: inc/template-tags.php:39
+#: inc/template-tags.php:35
 msgid "No Comments"
 msgstr ""
 
-#: inc/template-tags.php:41
+#: inc/template-tags.php:37
 msgid " Comments"
 msgstr ""
 
-#: inc/template-tags.php:43
+#: inc/template-tags.php:39
 msgid "1 Comment"
 msgstr ""
 
-#: inc/template-tags.php:47
+#: inc/template-tags.php:43
 msgid " Comment Closed"
 msgstr ""
 
@@ -610,12 +614,12 @@ msgid "Square Settings"
 msgstr ""
 
 #. 1-theme name, 2-theme version
-#: welcome/welcome.php:88
+#: welcome/welcome.php:89
 #, php-format
 msgid "Welcome to %1$s - Version %2$s"
 msgstr ""
 
-#: welcome/welcome.php:89
+#: welcome/welcome.php:91
 msgid ""
 "Square is a flexible responsive multipurpose theme compatible with all "
 "browsers and devices, fully mobile friendly, loaded with lots of features. "
@@ -627,40 +631,40 @@ msgid ""
 "More over it is a complete theme."
 msgstr ""
 
-#: welcome/welcome.php:93
+#: welcome/welcome.php:95
 msgid "Upgrade for $60"
 msgstr ""
 
-#: welcome/welcome.php:94 welcome/sections/getting_started.php:102
+#: welcome/welcome.php:96 welcome/sections/getting_started.php:102
 msgid "Upgrade Now"
 msgstr ""
 
-#: welcome/welcome.php:95
+#: welcome/welcome.php:97
 msgid "Unlock all the possibitlies with Square Plus."
 msgstr ""
 
-#: welcome/welcome.php:129
+#: welcome/welcome.php:131
 msgid "Installing Importer Plugin"
 msgstr ""
 
-#: welcome/welcome.php:130
+#: welcome/welcome.php:132
 msgid "Activating Importer Plugin"
 msgstr ""
 
-#: welcome/welcome.php:131 welcome/sections/getting_started.php:47
+#: welcome/welcome.php:133 welcome/sections/getting_started.php:47
 msgid "Go to Importer Page >>"
 msgstr ""
 
-#: welcome/welcome.php:133
+#: welcome/welcome.php:135
 msgid "Error! Reload the page and try again."
 msgstr ""
 
-#: template-parts/content-single.php:20 template-parts/content-page.php:16
-#: template-parts/content.php:40 template-parts/content-summary.php:44
+#: template-parts/content-single.php:19 template-parts/content-page.php:15
+#: template-parts/content.php:39 template-parts/content-summary.php:43
 msgid "Pages:"
 msgstr ""
 
-#: template-parts/content-none.php:12
+#: template-parts/content-none.php:11
 msgid "Nothing Found"
 msgstr ""
 
@@ -670,29 +674,29 @@ msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: template-parts/content-none.php:24
+#: template-parts/content-none.php:25
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: template-parts/content-none.php:29
+#: template-parts/content-none.php:30
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
 
 #. translators: %s: Name of current post
-#: template-parts/content-page.php:27
+#: template-parts/content-page.php:26
 #, php-format
 msgid "Edit %s"
 msgstr ""
 
-#: template-parts/content.php:35 template-parts/content-summary.php:41
+#: template-parts/content.php:34 template-parts/content-summary.php:40
 msgid "Continue reading &rarr;"
 msgstr ""
 
-#: template-parts/content-summary.php:39
+#: template-parts/content-summary.php:38
 msgid "Read More"
 msgstr ""
 
@@ -700,15 +704,15 @@ msgstr ""
 msgid "Home Page"
 msgstr ""
 
-#: inc/widgets/widget-personal-info.php:17
+#: inc/widgets/widget-personal-info.php:16
 msgid "A widget to display Personal Information"
 msgstr ""
 
-#: inc/widgets/widget-personal-info.php:35
+#: inc/widgets/widget-personal-info.php:34
 msgid "Image"
 msgstr ""
 
-#: inc/widgets/widget-personal-info.php:40
+#: inc/widgets/widget-personal-info.php:39
 msgid "Short Intro"
 msgstr ""
 
@@ -724,19 +728,19 @@ msgstr ""
 msgid "Select Image"
 msgstr ""
 
-#: inc/widgets/widget-contact-info.php:17
+#: inc/widgets/widget-contact-info.php:16
 msgid "A widget to display Contact Information"
 msgstr ""
 
-#: inc/widgets/widget-contact-info.php:35
+#: inc/widgets/widget-contact-info.php:34
 msgid "Phone"
 msgstr ""
 
-#: inc/widgets/widget-contact-info.php:50
+#: inc/widgets/widget-contact-info.php:49
 msgid "Contact Address"
 msgstr ""
 
-#: inc/widgets/widget-contact-info.php:56
+#: inc/widgets/widget-contact-info.php:55
 msgid "Contact Time"
 msgstr ""
 
@@ -761,22 +765,22 @@ msgid "No of Letter to Display in Excerpt"
 msgstr ""
 
 #. Theme Name
-#: welcome/sections/support.php:6
+#: welcome/sections/support.php:7
 #, php-format
 msgid ""
 "Read the detailed documentation of the theme. The documentation contain all "
 "the necessary information required to setup the theme %s."
 msgstr ""
 
-#: welcome/sections/support.php:7
+#: welcome/sections/support.php:9
 msgid "Read Full Documentation"
 msgstr ""
 
-#: welcome/sections/support.php:11 welcome/sections/support.php:13
+#: welcome/sections/support.php:13 welcome/sections/support.php:15
 msgid "Create Support Tickets"
 msgstr ""
 
-#: welcome/sections/support.php:12
+#: welcome/sections/support.php:14
 msgid ""
 "Still having problem after reading all the documentation? No Problem!! "
 "Please create a support ticket. Our dedicated support team will help you to "
@@ -789,15 +793,15 @@ msgid ""
 "encourage to install theme to use the theme to full extent"
 msgstr ""
 
-#: welcome/sections/recommended_plugins.php:28
+#: welcome/sections/recommended_plugins.php:27
 msgid "Activate"
 msgstr ""
 
-#: welcome/sections/recommended_plugins.php:31
+#: welcome/sections/recommended_plugins.php:30
 msgid "Installed"
 msgstr ""
 
-#: welcome/sections/recommended_plugins.php:35
+#: welcome/sections/recommended_plugins.php:34
 msgid "Install Now"
 msgstr ""
 

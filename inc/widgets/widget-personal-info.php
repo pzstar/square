@@ -66,9 +66,6 @@ class Square_Personal_Info extends WP_Widget {
         $intro = isset($instance['intro']) ? $instance['intro'] : '';
         $name = isset($instance['name']) ? $instance['name'] : '';
 
-        $image_id = squareGetImageIdByUrl($image);
-        $image_array = wp_get_attachment_image_src($image_id, 'thumbnail');
-
         echo $before_widget;  // WPCS: XSS OK.
         ?>
         <div class="sq-personal-info">
@@ -78,7 +75,14 @@ class Square_Personal_Info extends WP_Widget {
             endif;
 
             if (!empty($image)):
-                echo '<div class="sq-pi-image"><img src="' . esc_url($image_array[0]) . '"/></div>';
+                $image_id = squareGetImageIdByUrl($image);
+                if ($image_id) {
+                    $image_array = wp_get_attachment_image_src($image_id, 'thumbnail');
+                    $image_url = $image_array[0];
+                } else {
+                    $image_url = $image;
+                }
+                echo '<div class="sq-pi-image"><img src="' . esc_url($image_url[0]) . '"/></div>';
             endif;
 
             if (!empty($name)):

@@ -31,7 +31,7 @@
 
     <div class="theme-image">
         <h3><?php echo esc_html__('Demo Import', 'square'); ?></h3>
-        <img src="<?php echo esc_url(get_template_directory_uri() . '/screenshot.png'); ?>" alt="<?php echo esc_html__('Square Plus Demo', 'square'); ?>">
+        <img src="<?php echo esc_url(get_stylesheet_directory_uri() . '/screenshot.png'); ?>" alt="<?php echo esc_html__('Square Demo', 'square'); ?>">
 
         <div class="theme-import-demo">
             <?php
@@ -51,7 +51,7 @@
                 $square_import_button_text = esc_html__('Install Importer Plugin', 'square');
             endif;
             ?>
-            <p><?php echo sprintf(esc_html__('Or you can import the demo with just one click. It is recommended to import the demo on a fresh WordPress install. Or you can reset the website using %s plugin.', 'square'), '<a target="_blank" href="https://wordpress.org/plugins/wordpress-reset/">WordPress Reset</a>'); ?></p>
+            <p><?php echo sprintf(esc_html__('Or you can import the demo with just one click. It is recommended to import the demo on a fresh WordPress install. Or you can reset the website using %s plugin.', 'square'), '<a target="_blank" href="' . admin_url('/plugin-install.php?s=wordpress+reset&tab=search&type=term') . '">WordPress Reset</a>'); ?></p>
             <p><?php echo esc_html__('Click on the button below to install and activate demo importer plugin.', 'square'); ?></p>
             <a data-slug="<?php echo esc_attr($square_demo_importer_slug); ?>" data-filename="<?php echo esc_attr($square_demo_importer_filename); ?>" class="<?php echo esc_attr($square_import_class); ?>" href="<?php echo $square_import_url; ?>"><?php echo esc_html($square_import_button_text); ?></a>
         </div>

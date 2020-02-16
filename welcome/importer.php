@@ -11,8 +11,8 @@ function square_import_files() {
             'local_import_file' => trailingslashit(get_template_directory()) . 'welcome/demo-data/square-content.xml',
             'local_import_widget_file' => trailingslashit(get_template_directory()) . 'welcome/demo-data/square-widgets.wie',
             'local_import_customizer_file' => trailingslashit(get_template_directory()) . 'welcome/demo-data/square-customizer.dat',
-            'import_preview_image_url' => 'https://i0.wp.com/themes.svn.wordpress.org/square/1.3.1/screenshot.png',
-            'preview_url' => 'http://demo.hashthemes.com/square'
+            'import_preview_image_url' => 'https://i0.wp.com/themes.svn.wordpress.org/square/1.6.1./screenshot.png',
+            'preview_url' => 'https://demo.hashthemes.com/square'
         )
     );
 }
@@ -25,8 +25,7 @@ function square_after_import_setup() {
 
     set_theme_mod('nav_menu_locations', array(
         'primary' => $main_menu->term_id,
-            )
-    );
+    ));
 
     // Assign front page and posts page (blog page).
     $front_page_id = get_page_by_title('Home Page');

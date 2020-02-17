@@ -306,11 +306,6 @@ require get_template_directory() . '/inc/square-metabox.php';
 require get_template_directory() . '/welcome/welcome.php';
 
 /**
- * Demo Import.
- */
-require get_template_directory() . '/welcome/importer.php';
-
-/**
  * Dynamic Styles additions.
  */
 require get_template_directory() . '/inc/style.php';

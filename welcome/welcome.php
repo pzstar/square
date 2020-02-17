@@ -130,7 +130,7 @@ if (!class_exists('Square_Welcome')) :
                 $importer_params = array(
                     'installing_text' => esc_html__('Installing Importer Plugin', 'square'),
                     'activating_text' => esc_html__('Activating Importer Plugin', 'square'),
-                    'importer_page' => esc_html__('Go to Importer Page >>', 'square'),
+                    'importer_page' => esc_html__('Go to Importer Page', 'square'),
                     'importer_url' => admin_url('themes.php?page=pt-one-click-demo-import'),
                     'error' => esc_html__('Error! Reload the page and try again.', 'square'),
                 );

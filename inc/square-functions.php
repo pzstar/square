@@ -121,21 +121,6 @@ function square_comment($comment, $args, $depth) {
     <?php
 }
 
-if (!function_exists('squareGetImageIdByUrl')) {
-
-    function squareGetImageIdByUrl($url) {
-        global $wpdb;
-        $image = $wpdb->get_col($wpdb->prepare("SELECT ID FROM $wpdb->posts WHERE guid='%s';", $url));
-
-        if (!empty($image)) {
-            return $image[0];
-        }
-
-        return false;
-    }
-
-}
-
 function square_dynamic_style() {
     $square_page_header_bg = get_theme_mod('square_page_header_bg', get_template_directory_uri() . '/images/bg.jpg');
 

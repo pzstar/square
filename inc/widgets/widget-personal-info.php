@@ -75,14 +75,14 @@ class Square_Personal_Info extends WP_Widget {
             endif;
 
             if (!empty($image)):
-                $image_id = squareGetImageIdByUrl($image);
+                $image_id = attachment_url_to_postid($image);
                 if ($image_id) {
                     $image_array = wp_get_attachment_image_src($image_id, 'thumbnail');
                     $image_url = $image_array[0];
                 } else {
                     $image_url = $image;
                 }
-                echo '<div class="sq-pi-image"><img src="' . esc_url($image_url[0]) . '"/></div>';
+                echo '<div class="sq-pi-image"><img src="' . esc_url($image_url) . '"/></div>';
             endif;
 
             if (!empty($name)):

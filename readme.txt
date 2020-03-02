@@ -21,6 +21,9 @@ Square is a beautifully crafted WordPress theme with lots of exciting feature to
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+= 1.6.4 - March 02 2020 =
+* Demo Import Option added complying with the latest theme submission guideline.
+
 = 1.6.3 - Feb 25 2020 =
 * Image not displaying in Personal Info widget fixed.
 

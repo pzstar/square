@@ -30,29 +30,29 @@
     </div>
 
     <div class="theme-image">
-        <h3><?php echo esc_html__('Demo Import', 'square'); ?></h3>
+        <h3><?php echo esc_html__('Demo Importer', 'square'); ?><a href="https://demo.hashthemes.com/<?php echo get_option('stylesheet'); ?>" target="_blank" class="button button-primary"><?php esc_html_e('View Demo', 'square'); ?></a></h3>
         <img src="<?php echo esc_url(get_stylesheet_directory_uri() . '/screenshot.png'); ?>" alt="<?php echo esc_html__('Square Demo', 'square'); ?>">
 
         <div class="theme-import-demo">
             <?php
-            $square_demo_importer_slug = 'one-click-demo-import';
-            $square_demo_importer_filename = 'one-click-demo-import';
+            $square_demo_importer_slug = 'hashthemes-demo-importer';
+            $square_demo_importer_filename = 'hashthemes-demo-importer';
             $square_import_url = '#';
 
             if ($this->square_check_installed_plugin($square_demo_importer_slug, $square_demo_importer_filename) && !$this->square_check_plugin_active_state($square_demo_importer_slug, $square_demo_importer_filename)) :
                 $square_import_class = 'button button-primary square-activate-plugin';
-                $square_import_button_text = esc_html__('Activate Importer Plugin', 'square');
+                $square_import_button_text = esc_html__('Activate Demo Importer Plugin', 'square');
             elseif ($this->square_check_installed_plugin($square_demo_importer_slug, $square_demo_importer_filename)) :
                 $square_import_class = 'button button-primary';
-                $square_import_button_text = esc_html__('Go to Importer Page', 'square');
-                $square_import_url = admin_url('themes.php?page=pt-one-click-demo-import');
+                $square_import_button_text = esc_html__('Go to Demo Importer Page', 'square');
+                $square_import_url = admin_url('themes.php?page=hdi-demo-importer');
             else :
                 $square_import_class = 'button button-primary square-install-plugin';
-                $square_import_button_text = esc_html__('Install Importer Plugin', 'square');
+                $square_import_button_text = esc_html__('Install Demo Importer Plugin', 'square');
             endif;
             ?>
-            <p><?php echo sprintf(esc_html__('Or you can import the demo with just one click. It is recommended to import the demo on a fresh WordPress install. Or you can reset the website using %s plugin.', 'square'), '<a target="_blank" href="' . admin_url('/plugin-install.php?s=wordpress+reset&tab=search&type=term') . '">WordPress Reset</a>'); ?></p>
-            <p><?php echo sprintf(esc_html__('Click on the button below to install and activate demo importer plugin. Find detail documentation on importing demo %s', 'square'), '<a href="https://hashthemes.com/documentation/square-documentation/#ImportDemoContent" target="_blank">' . esc_html__('here', 'square') . '.</a>'); ?></p>
+            <p><?php esc_html_e('Or you can get started by importing the demo with just one click.', 'square'); ?></p>
+            <p><?php echo sprintf(esc_html__('Click on the button below to install and activate HashThemes Demo Importer plugin. For more detail documentation on how the demo importer works, click %s.', 'square'), '<a href="https://hashthemes.com/documentation/square-documentation/#ImportDemoContent" target="_blank">' . esc_html__('here', 'square') . '.</a>'); ?></p>
             <a data-slug="<?php echo esc_attr($square_demo_importer_slug); ?>" data-filename="<?php echo esc_attr($square_demo_importer_filename); ?>" class="<?php echo esc_attr($square_import_class); ?>" href="<?php echo $square_import_url; ?>"><?php echo esc_html($square_import_button_text); ?></a>
         </div>
     </div>

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Square 1.0.0\n"
 "Report-Msgid-Bugs-To: http://hashthemes.com/\n"
-"POT-Creation-Date: 2020-02-15 14:11+0000\n"
+"POT-Creation-Date: 2020-03-02 10:54+0000\n"
 "POT-Revision-Date: Thu Jul 14 2016 22:42:45 GMT+0545 (Nepal Standard Time)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hash Themes <hashthemes@gmail.com>\n"
@@ -132,11 +132,11 @@ msgstr ""
 msgid "%1$s by %2$s"
 msgstr ""
 
-#: front-page.php:23 inc/customizer.php:225 templates/home-template.php:20
+#: front-page.php:23 inc/customizer.php:232 templates/home-template.php:20
 msgid "Free WordPress Themes"
 msgstr ""
 
-#: front-page.php:24 inc/customizer.php:237 templates/home-template.php:21
+#: front-page.php:24 inc/customizer.php:244 templates/home-template.php:21
 msgid "Create website in no time"
 msgstr ""
 
@@ -288,7 +288,7 @@ msgstr ""
 msgid "Upgrade to Pro"
 msgstr ""
 
-#: inc/customizer.php:72 inc/customizer.php:618 welcome/sections/support.php:3
+#: inc/customizer.php:72 welcome/sections/support.php:3
 msgid "Documentation"
 msgstr ""
 
@@ -296,246 +296,232 @@ msgstr ""
 msgid "View"
 msgstr ""
 
-#: inc/customizer.php:85
+#: inc/customizer.php:79
+msgid "Import Demo Content"
+msgstr ""
+
+#: inc/customizer.php:81
+msgid "Import"
+msgstr ""
+
+#: inc/customizer.php:92
 msgid "Template Color"
 msgstr ""
 
-#: inc/customizer.php:90
+#: inc/customizer.php:97
 msgid "General Settings"
 msgstr ""
 
-#: inc/customizer.php:96
+#: inc/customizer.php:103
 msgid "Static Front Page"
 msgstr ""
 
-#: inc/customizer.php:98
+#: inc/customizer.php:105
 msgid "Your theme supports a static front page."
 msgstr ""
 
-#: inc/customizer.php:103
+#: inc/customizer.php:110
 msgid "Site Title & Tagline"
 msgstr ""
 
-#: inc/customizer.php:109
+#: inc/customizer.php:116
 msgid "Header Logo"
 msgstr ""
 
-#: inc/customizer.php:115
+#: inc/customizer.php:122
 msgid "Header Settings"
 msgstr ""
 
-#: inc/customizer.php:127
+#: inc/customizer.php:134
 msgid "Disable Sticky Header"
 msgstr ""
 
-#: inc/customizer.php:141
+#: inc/customizer.php:148
 msgid "Header Background Color"
 msgstr ""
 
-#: inc/customizer.php:152
+#: inc/customizer.php:159
 msgid "Page Header Banner"
 msgstr ""
 
-#: inc/customizer.php:155
+#: inc/customizer.php:162
 msgid "This banner will show in the header of all the inner pages"
 msgstr ""
 
-#: inc/customizer.php:155
+#: inc/customizer.php:162
 msgid "Recommended Image Size: 1800X400px"
 msgstr ""
 
-#: inc/customizer.php:160
+#: inc/customizer.php:167
 msgid "Blog Settings"
 msgstr ""
 
-#: inc/customizer.php:170
+#: inc/customizer.php:177
 msgid "Blog Content Format"
 msgstr ""
 
-#: inc/customizer.php:188
+#: inc/customizer.php:195
 msgid "Disable Share Buttons"
 msgstr ""
 
-#: inc/customizer.php:194
+#: inc/customizer.php:201
 msgid "Background Image"
 msgstr ""
 
-#: inc/customizer.php:200
+#: inc/customizer.php:207
 msgid "Home Page Sections"
 msgstr ""
 
-#: inc/customizer.php:206
+#: inc/customizer.php:213
 msgid "Slider Section"
 msgstr ""
 
-#: inc/customizer.php:221
+#: inc/customizer.php:228
 msgid "Slider "
 msgstr ""
 
-#: inc/customizer.php:233
+#: inc/customizer.php:240
 msgid "Caption Title"
 msgstr ""
 
-#: inc/customizer.php:245
+#: inc/customizer.php:252
 msgid "Caption SubTitle"
 msgstr ""
 
-#: inc/customizer.php:254
+#: inc/customizer.php:261
 msgid "Slider Image"
 msgstr ""
 
-#: inc/customizer.php:257
+#: inc/customizer.php:264
 msgid "Recommended Image Size: 1800X800px"
 msgstr ""
 
-#: inc/customizer.php:265
+#: inc/customizer.php:272
 msgid "Featured Section"
 msgstr ""
 
-#: inc/customizer.php:277
+#: inc/customizer.php:284
 msgid "Enable Read More link "
 msgstr ""
 
-#: inc/customizer.php:291
+#: inc/customizer.php:298
 msgid "Featured Page "
 msgstr ""
 
-#: inc/customizer.php:303 inc/customizer.php:358 inc/customizer.php:453
+#: inc/customizer.php:310 inc/customizer.php:365 inc/customizer.php:460
 msgid "Select a Page"
 msgstr ""
 
-#: inc/customizer.php:314 inc/customizer.php:440
+#: inc/customizer.php:321 inc/customizer.php:447
 msgid "FontAwesome Icon"
 msgstr ""
 
-#: inc/customizer.php:322
+#: inc/customizer.php:329
 msgid "About Us Section"
 msgstr ""
 
-#: inc/customizer.php:334
+#: inc/customizer.php:341
 msgid "Disable About Section "
 msgstr ""
 
-#: inc/customizer.php:346
+#: inc/customizer.php:353
 msgid "About Page "
 msgstr ""
 
-#: inc/customizer.php:369
+#: inc/customizer.php:376
 msgid "About Page Stack Images"
 msgstr ""
 
-#: inc/customizer.php:380
+#: inc/customizer.php:387
 msgid "About Us Stack Image"
 msgstr ""
 
-#: inc/customizer.php:381
+#: inc/customizer.php:388
 msgid "Recommended Image Size: 400X420px"
 msgstr ""
 
-#: inc/customizer.php:381
+#: inc/customizer.php:388
 msgid "Leave the gallery empty for Full Width Text"
 msgstr ""
 
-#: inc/customizer.php:387
+#: inc/customizer.php:394
 msgid "Tab Section"
 msgstr ""
 
-#: inc/customizer.php:399
+#: inc/customizer.php:406
 msgid "Disable Tab Section "
 msgstr ""
 
-#: inc/customizer.php:414
+#: inc/customizer.php:421
 msgid "Tab "
 msgstr ""
 
-#: inc/customizer.php:427
+#: inc/customizer.php:434
 msgid "Tab Title"
 msgstr ""
 
-#: inc/customizer.php:460
+#: inc/customizer.php:467
 msgid "Clients Logo Section"
 msgstr ""
 
-#: inc/customizer.php:472
+#: inc/customizer.php:479
 msgid "Disable Client Logo Section "
 msgstr ""
 
-#: inc/customizer.php:484
+#: inc/customizer.php:491
 msgid "Section Title & Logo"
 msgstr ""
 
-#: inc/customizer.php:496 inc/widgets/widget-personal-info.php:29
+#: inc/customizer.php:503 inc/widgets/widget-personal-info.php:29
 #: inc/widgets/widget-contact-info.php:29 inc/widgets/widget-latest-post.php:26
 msgid "Title"
 msgstr ""
 
-#: inc/customizer.php:508
+#: inc/customizer.php:515
 msgid "Upload Clients Logos"
 msgstr ""
 
-#: inc/customizer.php:509
+#: inc/customizer.php:516
 msgid "Recommended Image Size: 220X90px"
 msgstr ""
 
-#: inc/customizer.php:514
+#: inc/customizer.php:521
 msgid "Footer Social Icons"
 msgstr ""
 
-#: inc/customizer.php:526
+#: inc/customizer.php:533
 msgid "Facebook"
 msgstr ""
 
-#: inc/customizer.php:538
+#: inc/customizer.php:545
 msgid "Twitter"
 msgstr ""
 
-#: inc/customizer.php:550
+#: inc/customizer.php:557
 msgid "Pinterest"
 msgstr ""
 
-#: inc/customizer.php:562
+#: inc/customizer.php:569
 msgid "Youtube"
 msgstr ""
 
-#: inc/customizer.php:574
+#: inc/customizer.php:581
 msgid "Linkedin"
 msgstr ""
 
-#: inc/customizer.php:586
+#: inc/customizer.php:593
 msgid "Instagram"
 msgstr ""
 
-#: inc/customizer.php:591
+#: inc/customizer.php:598
 msgid "Pro Theme Features"
 msgstr ""
 
-#: inc/customizer.php:607
-msgid "Important Links"
-msgstr ""
-
-#: inc/customizer.php:618
-msgid "Live Demo"
-msgstr ""
-
-#: inc/customizer.php:618
-msgid "Support Forum"
-msgstr ""
-
-#: inc/customizer.php:618
-msgid "Like Us in Facebook"
-msgstr ""
-
-#. link
-#: inc/customizer.php:630
-#, php-format
-msgid "Please do rate our theme if you liked it %s"
-msgstr ""
-
-#: inc/customizer.php:767
+#: inc/customizer.php:745
 msgid "Add/Edit Gallery"
 msgstr ""
 
-#: inc/customizer.php:768
+#: inc/customizer.php:746
 msgid "Clear"
 msgstr ""
 
@@ -644,15 +630,15 @@ msgid "Unlock all the possibitlies with Square Plus."
 msgstr ""
 
 #: welcome/welcome.php:131
-msgid "Installing Importer Plugin"
+msgid "Installing Demo Importer Plugin"
 msgstr ""
 
 #: welcome/welcome.php:132
-msgid "Activating Importer Plugin"
+msgid "Activating Demo Importer Plugin"
 msgstr ""
 
 #: welcome/welcome.php:133 welcome/sections/getting_started.php:47
-msgid "Go to Importer Page >>"
+msgid "Go to Demo Importer Page"
 msgstr ""
 
 #: welcome/welcome.php:135
@@ -866,33 +852,39 @@ msgid "Go to Customizer Panels"
 msgstr ""
 
 #: welcome/sections/getting_started.php:33
-msgid "Demo Import"
+msgid "Demo Importer"
+msgstr ""
+
+#: welcome/sections/getting_started.php:33
+msgid "View Demo"
 msgstr ""
 
 #: welcome/sections/getting_started.php:34
-#: welcome/sections/getting_started.php:68
-#: welcome/sections/getting_started.php:81
-msgid "Square Plus Demo"
+msgid "Square Demo"
 msgstr ""
 
 #: welcome/sections/getting_started.php:44
-msgid "Activate Importer Plugin"
+msgid "Activate Demo Importer Plugin"
 msgstr ""
 
 #: welcome/sections/getting_started.php:51
-msgid "Install Importer Plugin"
+msgid "Install Demo Importer Plugin"
 msgstr ""
 
 #: welcome/sections/getting_started.php:54
-#, php-format
-msgid ""
-"Or you can import the demo with just one click. It is recommended to import "
-"the demo on a fresh WordPress install. Or you can reset the website using %s "
-"plugin."
+msgid "Or you can get started by importing the demo with just one click."
 msgstr ""
 
 #: welcome/sections/getting_started.php:55
-msgid "Click on the button below to install and activate demo importer plugin."
+#, php-format
+msgid ""
+"Click on the button below to install and activate HashThemes Demo Importer "
+"plugin. For more detail documentation on how the demo importer works, click "
+"%s."
+msgstr ""
+
+#: welcome/sections/getting_started.php:55
+msgid "here"
 msgstr ""
 
 #: welcome/sections/getting_started.php:62
@@ -906,6 +898,11 @@ msgid ""
 "Check out the websites that you can create with the premium version of the "
 "Square Theme. These demos can be imported with just one click in the premium "
 "version."
+msgstr ""
+
+#: welcome/sections/getting_started.php:68
+#: welcome/sections/getting_started.php:81
+msgid "Square Plus Demo"
 msgstr ""
 
 #: welcome/sections/getting_started.php:74

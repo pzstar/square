@@ -75,6 +75,13 @@ function square_customize_register($wp_customize) {
         'pro_url' => 'https://hashthemes.com/documentation/square-documentation/'
     )));
 
+    $wp_customize->add_section(new Square_Customize_Section_Pro($wp_customize, 'square-demo-import-section', array(
+        'title' => esc_html__('Import Demo Content', 'square'),
+        'priority' => 1001,
+        'pro_text' => esc_html__('Import', 'square'),
+        'pro_url' => admin_url('/themes.php?page=square-welcome')
+    )));
+
     $wp_customize->add_setting('square_template_color', array(
         'default' => '#5bc2ce',
         'sanitize_callback' => 'sanitize_hex_color',
@@ -600,35 +607,6 @@ function square_customize_register($wp_customize) {
         'settings' => 'square_pro_features',
         'section' => 'square_pro_feature_section',
         'description' => $square_pro_features
-    )));
-
-    /* ============IMPORTANT LINKS============ */
-    $wp_customize->add_section('square_implink_section', array(
-        'title' => esc_html__('Important Links', 'square'),
-        'priority' => 1000
-    ));
-
-    $wp_customize->add_setting('square_imp_links', array(
-        'sanitize_callback' => 'square_sanitize_text'
-    ));
-
-    $wp_customize->add_control(new Square_Info_Text($wp_customize, 'square_imp_links', array(
-        'settings' => 'square_imp_links',
-        'section' => 'square_implink_section',
-        'description' => '<a class="ht-implink" href="https://hashthemes.com/documentation/square-documentation/" target="_blank">' . esc_html__('Documentation', 'square') . '</a><a class="ht-implink" href="http://demo.hashthemes.com/square/" target="_blank">' . esc_html__('Live Demo', 'square') . '</a><a class="ht-implink" href="https://hashthemes.com/support/" target="_blank">' . esc_html__('Support Forum', 'square') . '</a><a class="ht-implink" href="https://www.facebook.com/hashtheme/" target="_blank">' . esc_html__('Like Us in Facebook', 'square') . '</a>',
-    )));
-
-    $wp_customize->add_setting('square_rate_us', array(
-        'sanitize_callback' => 'square_sanitize_text'
-    ));
-
-    $wp_customize->add_control(new Square_Info_Text($wp_customize, 'square_rate_us', array(
-        'settings' => 'square_rate_us',
-        'section' => 'square_implink_section',
-        'description' => sprintf(
-                /* translators: link */
-                esc_html__('Please do rate our theme if you liked it %s', 'square'), '<a class="ht-implink" href="https://wordpress.org/support/theme/square/reviews/?filter=5" target="_blank">Rate/Review</a>'
-        )
     )));
 }
 

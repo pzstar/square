@@ -206,10 +206,6 @@
     content: "\f116";
 }
 
-#accordion-panel-widgets .accordion-section-title:before{
-    content: "\f116";
-}
-
 #accordion-section-custom_css .accordion-section-title:before{
     content: "\f499";
 }
@@ -222,8 +218,12 @@
     content: "\f237";
 }
 
-#accordion-section-square_pro_feature_section .accordion-section-title:before{
+#accordion-section-square-doc-section .accordion-section-title:before{
     content: "\f105";
+}
+
+#accordion-section-square-demo-import-section .accordion-section-title:before{
+    content: "\f316";
 }
 
 #customize-control-square_pro_features .description ul{
@@ -253,7 +253,8 @@
     padding: 0px 25px 1px;
 }
 
-#accordion-section-square-doc-section .accordion-section-title .button {
+#accordion-section-square-doc-section .accordion-section-title .button,
+#accordion-section-square-demo-import-section .accordion-section-title .button{
     float: right;
     margin-top: -2px;
 }

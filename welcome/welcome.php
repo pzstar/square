@@ -128,10 +128,10 @@ if (!class_exists('Square_Welcome')) :
         public function square_welcome_styles_and_scripts($hook) {
             if ('appearance_page_square-welcome' == $hook) {
                 $importer_params = array(
-                    'installing_text' => esc_html__('Installing Importer Plugin', 'square'),
-                    'activating_text' => esc_html__('Activating Importer Plugin', 'square'),
-                    'importer_page' => esc_html__('Go to Importer Page', 'square'),
-                    'importer_url' => admin_url('themes.php?page=pt-one-click-demo-import'),
+                    'installing_text' => esc_html__('Installing Demo Importer Plugin', 'square'),
+                    'activating_text' => esc_html__('Activating Demo Importer Plugin', 'square'),
+                    'importer_page' => esc_html__('Go to Demo Importer Page', 'square'),
+                    'importer_url' => admin_url('themes.php?page=hdi-demo-importer'),
                     'error' => esc_html__('Error! Reload the page and try again.', 'square'),
                 );
                 wp_enqueue_style('square-welcome', get_template_directory_uri() . '/welcome/css/welcome.css');

@@ -265,3 +265,27 @@ if (!function_exists('square_font_awesome_icon_array')) {
     }
 
 }
+
+function square_premium_demo_config($demos) {
+    $premium_demos = array(
+        'main-demo' => array(
+            'type' => 'pro',
+            'name' => 'Square Plus - Main Demo',
+            'image' => 'https://hashthemes.com/import-files/square-plus/screen/main-demo.jpg',
+            'buy_url' => 'https://hashthemes.com/wordpress-theme/square-plus/',
+            'preview_url' => 'https://demo.hashthemes.com/square-plus/main-demo/',
+        ),
+        'original' => array(
+            'type' => 'pro',
+            'name' => 'Square Plus - Original',
+            'image' => 'https://hashthemes.com/import-files/square-plus/screen/original.jpg',
+            'buy_url' => 'https://hashthemes.com/wordpress-theme/square-plus/',
+            'preview_url' => 'https://demo.hashthemes.com/square-plus/original/',
+    ));
+
+    $demos = array_merge($demos, $premium_demos);
+
+    return $demos;
+}
+
+add_action('hdi_import_files', 'square_premium_demo_config');

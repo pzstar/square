@@ -21,6 +21,13 @@ Square is a beautifully crafted WordPress theme with lots of exciting feature to
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+= 1.6.6 - Apr 16 2020 =
+* Skip Content and Keyboard navigation fixed
+* Header Image option for logo removed and added WordPress default custom logo option
+
+= 1.6.5 - Apr 16 2020 =
+* Responsive CSS fixes
+
 = 1.6.4 - March 02 2020 =
 * Demo Import Option added complying with the latest theme submission guideline.
 

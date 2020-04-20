@@ -31,7 +31,7 @@
 
     <div class="theme-image">
         <h3><?php echo esc_html__('Demo Importer', 'square'); ?><a href="https://demo.hashthemes.com/<?php echo get_option('stylesheet'); ?>" target="_blank" class="button button-primary"><?php esc_html_e('View Demo', 'square'); ?></a></h3>
-        <img src="<?php echo esc_url(get_stylesheet_directory_uri() . '/screenshot.png'); ?>" alt="<?php echo esc_html__('Square Demo', 'square'); ?>">
+        <img src="<?php echo esc_url(get_stylesheet_directory_uri() . '/screenshot.png'); ?>" alt="<?php echo esc_html__('Demo', 'square'); ?>">
 
         <div class="theme-import-demo">
             <?php
@@ -52,7 +52,7 @@
             endif;
             ?>
             <p><?php esc_html_e('Or you can get started by importing the demo with just one click.', 'square'); ?></p>
-            <p><?php echo sprintf(esc_html__('Click on the button below to install and activate HashThemes Demo Importer plugin. For more detail documentation on how the demo importer works, click %s.', 'square'), '<a href="https://hashthemes.com/documentation/square-documentation/#ImportDemoContent" target="_blank">' . esc_html__('here', 'square') . '.</a>'); ?></p>
+            <p><?php echo sprintf(esc_html__('Click on the button below to install and activate HashThemes Demo Importer plugin. For more detail documentation on how the demo importer works, click %s.', 'square'), '<a href="https://hashthemes.com/documentation/square-documentation/#ImportDemoContent" target="_blank">' . esc_html__('here', 'square') . '</a>'); ?></p>
             <a data-slug="<?php echo esc_attr($square_demo_importer_slug); ?>" data-filename="<?php echo esc_attr($square_demo_importer_filename); ?>" class="<?php echo esc_attr($square_import_class); ?>" href="<?php echo $square_import_url; ?>"><?php echo esc_html($square_import_button_text); ?></a>
         </div>
     </div>
@@ -60,7 +60,7 @@
 
 <div class="getting-started-bottom-wrap">
     <h3><?php echo esc_html__('Square Plus Demos - Check the premium demos. You might be interested in purchasing premium version.', 'square'); ?></h3>
-    <p><?php echo esc_html__('Check out the websites that you can create with the premium version of the Square Theme. These demos can be imported with just one click in the premium version.', 'square'); ?></p>
+    <p><?php echo sprintf(esc_html__('Check out the websites that you can create with the premium version of the %s Theme. These demos can be imported with just one click in the premium version.', 'square'), $this->theme_name); ?></p>
 
     <div class="recomended-plugin-wrap clearfix">
         <div class="recom-plugin-wrap">
@@ -95,7 +95,7 @@
 <div class="upgrade-box">
     <div class="upgrade-box-text">
         <h3><?php echo esc_html__('Upgrade To Premium Version (7 Day Money Back Guarantee)', 'square'); ?></h3>
-        <p><?php echo esc_html__('With Square Theme you can create a beautiful website. But if you want to unlock more possibilites then upgrade to premium version.', 'square'); ?></p>
+        <p><?php echo sprintf(esc_html__('With %s Theme you can create a beautiful website. But if you want to unlock more possibilites then upgrade to premium version.', 'square'), $this->theme_name); ?></p>
         <p><?php echo esc_html__('Try the Premium version and check if it fits to your need or not. If not, we have 7 day money back guarantee.', 'square'); ?></p>
     </div>
 

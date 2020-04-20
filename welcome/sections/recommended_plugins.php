@@ -4,7 +4,7 @@ $free_plugins = $this->free_plugins;
 if (!empty($free_plugins)) {
     ?>
     <h4 class="recomplug-title"><?php echo esc_html__('Recommended Plugins', 'square'); ?></h4>
-    <p><?php echo esc_html__('Please Install all the plugins. Although these plugins are complementary, we encourage to install theme to use the theme to full extent', 'square'); ?></p>
+    <p><?php echo esc_html__('Please Install all the plugins. Although these plugins are complementary, we encourage to install these plugins to use the theme to full extent.', 'square'); ?></p>
     <div class="recomended-plugin-wrap">
         <?php
         foreach ($free_plugins as $plugin) {
@@ -14,7 +14,7 @@ if (!empty($free_plugins)) {
             ?>
             <div class="recom-plugin-wrap">
                 <div class="plugin-img-wrap">
-                    <img src="<?php echo esc_url('https://ps.w.org/' . esc_attr($slug) . '/assets/icon-256x256.png') ?>" />
+                    <img src="<?php echo $this->square_plugin_thumb($slug); ?>" />
                 </div>
 
                 <div class="plugin-title-install clearfix">

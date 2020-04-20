@@ -4,7 +4,7 @@ Theme URI: https://hashthemes.com/wordpress-theme/square/
 Author: HashThemes
 Author URI: https://hashthemes.com
 Description: Square is a flexible responsive multipurpose theme compatible with all browsers and devices, fully mobile friendly, loaded with lots of features. It is a minimal theme based on WordPress Customizer that allows you to customize with live preview. The theme can be used for business, corporate, digital agency, personal, portfolio, photography, parallax, blogs and magazines. Square is eCommerce (WooCommerce) Compatible, Polylang Compatible, WPML, RTL, Retina Ready, SEO Friendly and Support bbPress and BuddyPress. More over it is a complete theme. For demo https://demo.hashthemes.com/square
-Version: 1.6.4
+Version: 1.6.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: square
@@ -66,7 +66,6 @@ a {
 
 a:active,
 a:hover {
-    outline: 0;
 }
 
 abbr[title] {
@@ -438,7 +437,6 @@ button:active,
 input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
-    outline: 0;
 }
 
 input[type="text"],
@@ -472,7 +470,6 @@ select {
     height: 36px;
     background-color: transparent;
     line-height: 100%;
-    outline: 0;
     background-image: url("images/arrow.png");
     background-position: right center;
     background-repeat: no-repeat;
@@ -499,7 +496,6 @@ input[type="datetime-local"]:focus,
 input[type="color"]:focus,
 textarea:focus,
 select:focus {
-    outline: 0;
     border: 1px solid #CCC;
 }
 
@@ -550,12 +546,10 @@ a:active {
 }
 
 a:focus {
-    outline: 0;
 }
 
 a:hover,
 a:active {
-    outline: 0;
 }
 
 /*--------------------------------------------------------------
@@ -563,11 +557,17 @@ a:active {
 --------------------------------------------------------------*/
 /* Text meant only for screen readers. */
 .screen-reader-text {
+    border: 0;
     clip: rect(1px, 1px, 1px, 1px);
-    position: absolute !important;
+    clip-path: inset(50%);
     height: 1px;
-    width: 1px;
+    margin: -1px;
     overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    width: 1px;
+    word-wrap: normal !important;
+    /* Many screen reader and browser combinations announce broken words as they would appear visually. */
 }
 
 .screen-reader-text:focus {
@@ -575,19 +575,26 @@ a:active {
     border-radius: 3px;
     box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
     clip: auto !important;
+    clip-path: none;
     color: #21759b;
     display: block;
     font-size: 14px;
     font-size: 0.875rem;
     font-weight: bold;
     height: auto;
-    left: 5px;
+    right: 5px;
     line-height: normal;
     padding: 15px 23px 14px;
     text-decoration: none;
     top: 5px;
     width: auto;
-    z-index: 100000; /* Above WP toolbar. */
+    z-index: 100000;
+    /* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+    outline: 0;
 }
 
 /*--------------------------------------------------------------
@@ -865,6 +872,7 @@ a:active {
 .entry-meta a,
 .entry-footer a{
     text-decoration: none;
+    color: #555;
 }
 
 .single .entry-meta{
@@ -1332,6 +1340,7 @@ object {
 
 #sq-site-branding img{
     max-height: 62px;
+    width: auto;
 }
 
 .sq-main-header{
@@ -1701,7 +1710,8 @@ object {
     -moz-transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
 }
-.sq-featured-post:hover .sq-featured-readmore{
+.sq-featured-post:hover .sq-featured-readmore,
+.sq-featured-post .sq-featured-readmore:focus{
     opacity: 1;	
 }
 .sq-featured-post .sq-featured-readmore:hover{
@@ -2738,7 +2748,8 @@ html, body {
         border-bottom: 1px solid #5bc2ce;
     }
 
-    .sq-main-navigation a{
+    .sq-main-navigation a,
+    .sq-main-navigation a:hover{
         color: #444;
     }
 
@@ -2824,6 +2835,15 @@ html, body {
         position: static;
         width: 100%;
         box-shadow: none;
+    }
+    
+    .sq-main-navigation ul ul a{
+        padding: 10px 20px;
+    }
+    
+    .sq-main-navigation ul ul li:hover > a{
+        background: none !important;
+        color: #333 !important;
     }
 
     #sq-home-slider-section .bx-wrapper .bx-controls-direction a{

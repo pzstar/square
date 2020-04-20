@@ -13,7 +13,7 @@
 function square_customize_register($wp_customize) {
     $wp_customize->get_setting('blogname')->transport = 'postMessage';
     $wp_customize->get_setting('blogdescription')->transport = 'postMessage';
-    $wp_customize->get_setting('header_textcolor')->transport = 'postMessage';
+    $wp_customize->get_setting('custom_logo')->transport = 'refresh';
     $wp_customize->get_control('background_color')->section = 'background_image';
     $wp_customize->get_section('colors')->priority = 25;
 
@@ -61,6 +61,8 @@ function square_customize_register($wp_customize) {
 	<a class="ht-implink" href="https://hashthemes.com/wordpress-theme/square-plus/#theme-comparision-tab" target="_blank">' . esc_html__("Comparision - Free Vs Pro", "square") . '</a>';
 
     $wp_customize->register_section_type('Square_Customize_Section_Pro');
+    $wp_customize->register_section_type('Square_Customize_Upgrade_Section');
+
     // Register sections.
     $wp_customize->add_section(new Square_Customize_Section_Pro($wp_customize, 'square-pro-section', array(
         'priority' => 0,
@@ -92,6 +94,16 @@ function square_customize_register($wp_customize) {
         'label' => esc_html__('Template Color', 'square')
     )));
 
+    $wp_customize->add_setting('square_color_upgrade_text', array(
+        'sanitize_callback' => 'square_sanitize_text'
+    ));
+
+    $wp_customize->add_control(new Square_Upgrade_Text($wp_customize, 'square_color_upgrade_text', array(
+        'section' => 'colors',
+        'label' => esc_html__('For more color options,', 'square'),
+        'priority' => 100
+    )));
+
     /* ============GENERAL SETTINGS PANEL============ */
     $wp_customize->add_panel('square_general_settings_panel', array(
         'title' => esc_html__('General Settings', 'square'),
@@ -107,9 +119,11 @@ function square_customize_register($wp_customize) {
 
     //TITLE AND TAGLINE SETTINGS
     $wp_customize->add_section('title_tagline', array(
-        'title' => esc_html__('Site Title & Tagline', 'square'),
+        'title' => esc_html__('Site Logo, Title & Tagline', 'square'),
         'panel' => 'square_general_settings_panel',
     ));
+    
+    $wp_customize->get_control('header_text')->label = esc_html__('Display Site Title and Tagline(Only Displays If Logo Is Not Added)', 'square');
 
     //HEADER LOGO 
     $wp_customize->add_section('header_image', array(
@@ -162,6 +176,25 @@ function square_customize_register($wp_customize) {
         'description' => esc_html__('This banner will show in the header of all the inner pages', 'square') . '<br/>' . esc_html__('Recommended Image Size: 1800X400px', 'square')
     )));
 
+    $wp_customize->add_setting('square_header_upgrade_text', array(
+        'sanitize_callback' => 'square_sanitize_text'
+    ));
+
+    $wp_customize->add_control(new Square_Upgrade_Text($wp_customize, 'square_header_upgrade_text', array(
+        'section' => 'square_header_setting_sec',
+        'label' => esc_html__('For more header layouts and settings,', 'square'),
+        'choices' => array(
+            esc_html__('6 header styles', 'square'),
+            esc_html__('Increase/Decrease header height', 'square'),
+            esc_html__('Search option on header', 'square'),
+            esc_html__('10 menu hover styles', 'square'),
+            esc_html__('Mega Menu', 'square'),
+            esc_html__('Header color options', 'square'),
+            esc_html__('Option for different header banner on each post/page', 'square'),
+        ),
+        'priority' => 100
+    )));
+
     //BLOG SETTINGS
     $wp_customize->add_section('square_blog_sec', array(
         'title' => esc_html__('Blog Settings', 'square'),
@@ -195,6 +228,23 @@ function square_customize_register($wp_customize) {
         'label' => esc_html__('Disable Share Buttons', 'square'),
         'type' => 'checkbox',
     ));
+
+    $wp_customize->add_setting('square_blog_upgrade_text', array(
+        'sanitize_callback' => 'square_sanitize_text'
+    ));
+
+    $wp_customize->add_control(new Square_Upgrade_Text($wp_customize, 'square_blog_upgrade_text', array(
+        'section' => 'square_blog_sec',
+        'label' => esc_html__('For more blog layouts and settings,', 'square'),
+        'choices' => array(
+            esc_html__('4 blog layouts', 'square'),
+            esc_html__('Option to exclude category from blog', 'square'),
+            esc_html__('Option to control excerpt length', 'square'),
+            esc_html__('Selectively show/hide posted date, author, comment count, categories, tags', 'square'),
+            esc_html__('Reorder various section in single post', 'square'),
+        ),
+        'priority' => 100
+    )));
 
     //BACKGROUND IMAGE
     $wp_customize->add_section('background_image', array(
@@ -265,6 +315,24 @@ function square_customize_register($wp_customize) {
         )));
     }
 
+    $wp_customize->add_setting('square_slider_upgrade_text', array(
+        'sanitize_callback' => 'square_sanitize_text'
+    ));
+
+    $wp_customize->add_control(new Square_Upgrade_Text($wp_customize, 'square_slider_upgrade_text', array(
+        'section' => 'square_slider_sec',
+        'label' => esc_html__('To add unlimited sliders and for more slider settings,', 'square'),
+        'choices' => array(
+            esc_html__('Unlimited Slider', 'square'),
+            esc_html__('Revolution Slider option', 'square'),
+            esc_html__('Option to link slider to external links with button', 'square'),
+            esc_html__('Option to configure slider pause duration', 'square'),
+            esc_html__('Option to change caption background and text color', 'square'),
+            esc_html__('Other more settings', 'square')
+        ),
+        'priority' => 100
+    )));
+
     /* ============FEATURED SECTION============ */
 
     //FEATURED PAGES
@@ -322,6 +390,24 @@ function square_customize_register($wp_customize) {
             'type' => 'icon'
         )));
     }
+
+    $wp_customize->add_setting('square_featured_upgrade_text', array(
+        'sanitize_callback' => 'square_sanitize_text'
+    ));
+
+    $wp_customize->add_control(new Square_Upgrade_Text($wp_customize, 'square_featured_upgrade_text', array(
+        'section' => 'square_featured_page_sec',
+        'label' => esc_html__('To add unlimited featured block and for more settings,', 'square'),
+        'choices' => array(
+            esc_html__('Unlimited featured block', 'square'),
+            esc_html__('Display featured block with repeater instead of page', 'square'),
+            esc_html__('3 featured block layouts', 'square'),
+            esc_html__('5000+ icon to choose from(5 icon packs)', 'square'),
+            esc_html__('Configure no of column to display in a row', 'square'),
+            esc_html__('Multiple background option(image, gradient, video) for the section', 'square'),
+        ),
+        'priority' => 100
+    )));
 
     /* ============ABOUT SECTION============ */
 
@@ -386,6 +472,20 @@ function square_customize_register($wp_customize) {
         'section' => 'square_about_sec',
         'label' => esc_html__('About Us Stack Image', 'square'),
         'description' => esc_html__('Recommended Image Size: 400X420px', 'square') . '<br/>' . esc_html__('Leave the gallery empty for Full Width Text', 'square')
+    )));
+
+    $wp_customize->add_setting('square_about_upgrade_text', array(
+        'sanitize_callback' => 'square_sanitize_text'
+    ));
+
+    $wp_customize->add_control(new Square_Upgrade_Text($wp_customize, 'square_about_upgrade_text', array(
+        'section' => 'square_about_sec',
+        'label' => esc_html__('For more settings,', 'square'),
+        'choices' => array(
+            esc_html__('Option to disable stack image gallery or replace it with single image or widget', 'square'),
+            esc_html__('Configure the gallery width<br/>- Multiple background option(image, gradient, video) for the section', 'square')
+        ),
+        'priority' => 100
     )));
 
     /* ============ABOUT SECTION============ */
@@ -462,6 +562,22 @@ function square_customize_register($wp_customize) {
         ));
     }
 
+    $wp_customize->add_setting('square_tab_upgrade_text', array(
+        'sanitize_callback' => 'square_sanitize_text'
+    ));
+
+    $wp_customize->add_control(new Square_Upgrade_Text($wp_customize, 'square_tab_upgrade_text', array(
+        'section' => 'square_tab_sec',
+        'label' => esc_html__('To add unlimited tab block and for more settings,', 'square'),
+        'choices' => array(
+            esc_html__('Unlimited tab blocks', 'square'),
+            esc_html__('5 tab layouts', 'square'),
+            esc_html__('5000+ icon to choose from(5 icon packs)', 'square'),
+            esc_html__('Multiple background option(image, gradient, video) for the section', 'square'),
+        ),
+        'priority' => 100
+    )));
+
     /* ============CLIENTS LOGO SECTION============ */
     $wp_customize->add_section('square_logo_sec', array(
         'title' => esc_html__('Clients Logo Section', 'square'),
@@ -514,6 +630,41 @@ function square_customize_register($wp_customize) {
         'section' => 'square_logo_sec',
         'label' => esc_html__('Upload Clients Logos', 'square'),
         'description' => esc_html__('Recommended Image Size: 220X90px', 'square')
+    )));
+
+    $wp_customize->add_setting('square_logo_upgrade_text', array(
+        'sanitize_callback' => 'square_sanitize_text'
+    ));
+
+    $wp_customize->add_control(new Square_Upgrade_Text($wp_customize, 'square_logo_upgrade_text', array(
+        'section' => 'square_logo_sec',
+        'label' => esc_html__('For more settings,', 'square'),
+        'choices' => array(
+            esc_html__('4 logo layouts', 'square'),
+            esc_html__('Option to link the logos to external url', 'square'),
+            esc_html__('Multiple background option(image, gradient, video) for the section', 'square')
+        ),
+        'priority' => 100
+    )));
+
+    $wp_customize->add_section(new Square_Customize_Upgrade_Section($wp_customize, 'square-upgrade-section', array(
+        'title' => esc_html__('More Sections on Premium', 'square'),
+        'panel' => 'square_home_settings_panel',
+        'priority' => 1000,
+        'options' => array(
+            esc_html__('--Drag and Drop Reorder Sections--', 'square'),
+            esc_html__('- Highlight Section', 'square'),
+            esc_html__('- Service Section', 'square'),
+            esc_html__('- Portfolio Section', 'square'),
+            esc_html__('- Portfolio Slider Section', 'square'),
+            esc_html__('- Content Slider Section', 'square'),
+            esc_html__('- Team Section', 'square'),
+            esc_html__('- Testimonial Section', 'square'),
+            esc_html__('- Pricing Section', 'square'),
+            esc_html__('- Blog Section', 'square'),
+            esc_html__('- Counter Section', 'square'),
+            esc_html__('- Call To Action Section', 'square')
+        )
     )));
 
     /* ============SOCIAL ICONS SECTION============ */
@@ -632,7 +783,7 @@ function square_customizer_script() {
 add_action('customize_controls_enqueue_scripts', 'square_customizer_script');
 
 
-if (class_exists('WP_Customize_Control')):
+if (class_exists('WP_Customize_Control')) {
 
     class Square_Customize_Heading extends WP_Customize_Control {
 
@@ -742,8 +893,8 @@ if (class_exists('WP_Customize_Control')):
                     ?>
                 </div>
 
-                <input id="edit-gallery" class="button upload_gallery_button" type="button" value="<?php esc_html_e('Add/Edit Gallery', 'square') ?>" />
-                <input id="clear-gallery" class="button upload_gallery_button" type="button" value="<?php esc_html_e('Clear', 'square') ?>" />
+                <input class="button upload_gallery_button" type="button" value="<?php esc_html_e('Add/Edit Gallery', 'square') ?>" />
+                <input class="button upload_gallery_button clear_gallery" type="button" value="<?php esc_html_e('Clear', 'square') ?>" />
                 <input type="hidden" class="gallery_values" <?php echo esc_attr($this->link()) ?> value="<?php echo esc_attr($this->value()); ?>">
             </label>
             <?php
@@ -769,10 +920,48 @@ if (class_exists('WP_Customize_Control')):
 
     }
 
-    endif;
+    // Upgrade Text
+    class Square_Upgrade_Text extends WP_Customize_Control {
+
+        public $type = 'square-upgrade-text';
+
+        public function render_content() {
+            ?>
+            <label>
+                <span class="dashicons dashicons-info"></span>
+
+                <?php if ($this->label) { ?>
+                    <span>
+                        <?php echo wp_kses_post($this->label); ?>
+                    </span>
+                <?php } ?>
+
+                <a href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=link&utm_campaign=sales'); ?>" target="_blank"> <strong><?php echo esc_html__('Upgrade to PRO', 'square'); ?></strong></a>
+            </label>
+
+            <?php if ($this->description) { ?>
+                <span class="description customize-control-description">
+                    <?php echo wp_kses_post($this->description); ?>
+                </span>
+                <?php
+            }
+
+            $choices = $this->choices;
+            if ($choices) {
+                echo '<ul>';
+                foreach ($choices as $choice) {
+                    echo '<li>' . esc_html($choice) . '</li>';
+                }
+                echo '</ul>';
+            }
+        }
+
+    }
+
+}
 
 
-if (class_exists('WP_Customize_Section')):
+if (class_exists('WP_Customize_Section')) {
 
     /**
      * Pro customizer section.
@@ -852,7 +1041,75 @@ if (class_exists('WP_Customize_Section')):
 
     }
 
-    endif;
+    class Square_Customize_Upgrade_Section extends WP_Customize_Section {
+
+        /**
+         * The type of customize section being rendered.
+         *
+         * @since  1.0.0
+         * @access public
+         * @var    string
+         */
+        public $type = 'upgrade-section';
+
+        /**
+         * Custom button text to output.
+         *
+         * @since  1.0.0
+         * @access public
+         * @var    string
+         */
+        public $text = '';
+        public $options = array();
+
+        /**
+         * Add custom parameters to pass to the JS via JSON.
+         *
+         * @since  1.0.0
+         * @access public
+         * @return void
+         */
+        public function json() {
+            $json = parent::json();
+
+            $json['text'] = $this->text;
+            $json['options'] = $this->options;
+
+            return $json;
+        }
+
+        /**
+         * Outputs the Underscore.js template.
+         *
+         * @since  1.0.0
+         * @access public
+         * @return void
+         */
+        protected function render_template() {
+            ?>
+            <li id="accordion-section-{{ data.id }}" class="accordion-section control-section control-section-{{ data.type }} cannot-expand">
+                <label>
+                    <# if ( data.title ) { #>
+                    {{ data.title }}
+                    <# } #>
+                </label>
+
+                <# if ( data.text ) { #>
+                {{ data.text }}
+                <# } #>
+
+                <# _.each( data.options, function(key, value) { #>
+                {{ key }}<br/>
+                <# }) #>
+
+                <a href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=link&utm_campaign=sales'); ?>" class="button button-primary" target="_blank"><?php echo esc_html__('Upgrad to Pro', 'square'); ?></a>
+            </li>
+            <?php
+        }
+
+    }
+
+}
 
 //SANITIZATION FUNCTIONS
 function square_sanitize_text($input) {

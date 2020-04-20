@@ -53,6 +53,14 @@ if (!function_exists('square_setup')) :
             'default-image' => '',
         )));
 
+        add_theme_support('custom-logo', array(
+            'height' => 60,
+            'width' => 300,
+            'flex-height' => true,
+            'flex-width' => true,
+            'header-text' => array('.sq-site-title', '.sq-site-description'),
+        ));
+
         /*
          * This theme styles the visual editor to resemble the theme style,
          * specifically font, colors, icons, and column width.
@@ -75,6 +83,17 @@ function square_add_excerpt_support_for_pages() {
 }
 
 add_action('init', 'square_add_excerpt_support_for_pages');
+
+//If Custom Logo is uploaded, remove the backward compatibility for header image
+function square_remove_header_image() {
+    $custom_logo_enabled = get_theme_mod('square_custom_logo_enabled', false);
+    if (!$custom_logo_enabled && has_custom_logo()) {
+        set_theme_mod('square_custom_logo_enabled', true);
+        set_theme_mod('header_image', '');
+    }
+}
+
+add_action('init', 'square_remove_header_image');
 
 //Register widget area.
 function square_widgets_init() {
@@ -226,7 +245,7 @@ function square_scripts() {
     wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/modernizr.js', array(), '2.6.3', true);
     wp_enqueue_script('bxslider', get_template_directory_uri() . '/js/jquery.bxslider.js', array('jquery'), '4.1.2', true);
     wp_enqueue_script('owl-carousel', get_template_directory_uri() . '/js/owl.carousel.js', array('jquery'), '1.3.3', true);
-    wp_enqueue_script('jquery-superfish', get_template_directory_uri() . '/js/jquery.superfish.js', array('jquery'), '20160213', true);
+    wp_enqueue_script('jquery-superfish', get_template_directory_uri() . '/js/jquery.superfish.js', array('jquery'), '1.0', true);
 
     if (is_page_template('templates/home-template.php') || is_front_page()) {
         wp_enqueue_script('square-draggabilly', get_template_directory_uri() . '/js/draggabilly.pkgd.min.js', array('jquery'), '1.3.3', true);
@@ -257,7 +276,7 @@ add_action('wp_enqueue_scripts', 'square_scripts');
 function square_admin_scripts() {
     wp_enqueue_media();
     wp_enqueue_style('square-admin-style', get_template_directory_uri() . '/inc/css/admin-style.css', array(), '1.0');
-    wp_enqueue_script('square-admin-scripts', get_template_directory_uri() . '/inc/js/admin-scripts.js', array('jquery'), '20160915', true);
+    wp_enqueue_script('square-admin-scripts', get_template_directory_uri() . '/inc/js/admin-scripts.js', array('jquery'), '1.0', true);
 }
 
 add_action('admin_enqueue_scripts', 'square_admin_scripts');
@@ -269,11 +288,6 @@ if (!function_exists('wp_body_open')) {
     }
 
 }
-
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.

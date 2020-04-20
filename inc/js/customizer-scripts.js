@@ -35,7 +35,7 @@ jQuery(document).ready(function ($) {
     $('.upload_gallery_button').click(function (event) {
         var current_gallery = $(this).closest('label');
 
-        if (event.currentTarget.id === 'clear-gallery') {
+        if ($(this).hasClass('clear_gallery')) {
             //remove value from input
             current_gallery.find('.gallery_values').val('').trigger('change');
 
@@ -138,6 +138,17 @@ function scrollToSection(section_id) {
 (function (api) {
 
     api.sectionConstructor['pro-section'] = api.Section.extend({
+
+        // No events for this type of section.
+        attachEvents: function () {},
+
+        // Always make the section active.
+        isContextuallyActive: function () {
+            return true;
+        }
+    });
+    
+    api.sectionConstructor['upgrade-section'] = api.Section.extend({
 
         // No events for this type of section.
         attachEvents: function () {},

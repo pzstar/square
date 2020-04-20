@@ -65,7 +65,7 @@
     vertical-align: middle;
 }
 
-#clear-gallery{
+.clear_gallery{
     float: right;
 }
 
@@ -257,4 +257,54 @@
 #accordion-section-square-demo-import-section .accordion-section-title .button{
     float: right;
     margin-top: -2px;
+}
+
+.customize-control-square-upgrade-text{
+    background: #FFFFFF;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.customize-control-square-upgrade-text label{
+    padding: 0 0 0 26px;
+    display: block;
+}
+
+.customize-control-square-upgrade-text .dashicons{
+    float: left;
+    margin-left: -26px;
+}
+
+.customize-control-square-upgrade-text ul{
+    margin: 8px 0 0 16px;
+    font-style: italic;
+}
+
+.customize-control-square-upgrade-text ul li{
+    margin-bottom: 3px;
+    padding-left: 8px;
+    line-height: 1.3;
+}
+
+.customize-control-square-upgrade-text ul li:before{
+    content: '- ';
+    margin-left: -8px;
+}
+
+.control-section-upgrade-section{
+    background: #FFF;
+    padding: 20px;
+    margin: 15px;
+}
+
+.control-section-upgrade-section .button{
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.control-section-upgrade-section label{
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
 }

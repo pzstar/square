@@ -55,7 +55,43 @@ jQuery(function ($) {
 
     $('.sq-toggle-nav').click(function () {
         $('#sq-site-navigation').slideToggle();
+        squareKeyboardLoop($('.sq-main-navigation'));
+        return false;
     });
+    
+    var squareKeyboardLoop = function (elem) {
+
+        var tabbable = elem.find('select, input, textarea, button, a').filter(':visible');
+
+        var firstTabbable = tabbable.first();
+        var lastTabbable = tabbable.last();
+        /*set focus on first input*/
+        firstTabbable.focus();
+
+        /*redirect last tab to first input*/
+        lastTabbable.on('keydown', function (e) {
+            if ((e.which === 9 && !e.shiftKey)) {
+                e.preventDefault();
+                firstTabbable.focus();
+            }
+        });
+
+        /*redirect first shift+tab to last input*/
+        firstTabbable.on('keydown', function (e) {
+            if ((e.which === 9 && e.shiftKey)) {
+                e.preventDefault();
+                lastTabbable.focus();
+            }
+        });
+
+        /* allow escape key to close insiders div */
+        elem.on('keyup', function (e) {
+            if (e.keyCode === 27) {
+                elem.hide();
+            }
+            ;
+        });
+    };
 
 });
 

@@ -94,7 +94,9 @@ a,
 .woocommerce .product_meta a:hover,
 .woocommerce-error:before, 
 .woocommerce-info:before, 
-.woocommerce-message:before{
+.woocommerce-message:before,
+.entry-meta a:hover,
+.entry-footer a:hover{
 	color:{$color};
 }
 

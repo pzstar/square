@@ -19,6 +19,7 @@ if (!class_exists('Square_Welcome')) :
             $theme = wp_get_theme();
             $this->theme_name = $theme->Name;
             $this->theme_version = $theme->Version;
+            $this->theme_desc = $theme->Description;
 
             /** Define Tabs Sections * */
             $this->tab_sections = array(
@@ -30,6 +31,16 @@ if (!class_exists('Square_Welcome')) :
 
             /** List of Recommended Free Plugins * */
             $this->free_plugins = array(
+                'simple-floating-menu' => array(
+                    'name' => 'Simple Floating Menu',
+                    'slug' => 'simple-floating-menu',
+                    'filename' => 'simple-floating-menu'
+                ),
+                'hashthemes-demo-importer' => array(
+                    'name' => 'HashThemes Demo Importer',
+                    'slug' => 'hashthemes-demo-importer',
+                    'filename' => 'hashthemes-demo-importer'
+                ),
                 'wpforms-lite' => array(
                     'name' => 'Contact Form by WPForms',
                     'slug' => 'wpforms-lite',
@@ -55,6 +66,8 @@ if (!class_exists('Square_Welcome')) :
             add_action('admin_enqueue_scripts', array($this, 'square_welcome_styles_and_scripts'));
 
             add_action('wp_ajax_square_activate_plugin', array($this, 'square_activate_plugin'));
+
+            add_filter('admin_footer_text', array($this, 'square_admin_footer_text'));
         }
 
         /** Welcome Message Notification on Theme Activation * */
@@ -64,7 +77,7 @@ if (!class_exists('Square_Welcome')) :
             if (is_admin() && ('themes.php' == $pagenow) && (isset($_GET['activated']))) {
                 ?>
                 <div class="notice notice-success is-dismissible"> 
-                    <p><?php echo esc_html__('Welcome! Thank you for choosing Square. Please make sure you visit Settings Page to get started with Square theme.', 'square'); ?></p>
+                    <p><?php echo sprintf(esc_html__('Welcome! Thank you for choosing %1$s. Please make sure you visit Settings Page to get started with %1$s theme.', 'square'), $this->theme_name, $this->theme_name); ?></p>
                     <p><a class="button button-primary" href="<?php echo admin_url('/themes.php?page=square-welcome') ?>"><?php echo esc_html__('Let\'s Get Started', 'square'); ?></a></p>
                 </div>
                 <?php
@@ -73,7 +86,7 @@ if (!class_exists('Square_Welcome')) :
 
         /** Register Menu for Welcome Page * */
         public function square_welcome_register_menu() {
-            add_theme_page(esc_html__('Welcome', 'square'), esc_html__('Square Settings', 'square'), 'edit_theme_options', 'square-welcome', array($this, 'square_welcome_screen'));
+            add_theme_page(esc_html__('Welcome', 'square'), sprintf(esc_html__('%s Settings', 'square'), $this->theme_name), 'edit_theme_options', 'square-welcome', array($this, 'square_welcome_screen'));
         }
 
         /** Welcome Page * */
@@ -88,7 +101,7 @@ if (!class_exists('Square_Welcome')) :
                                     /* translators: 1-theme name, 2-theme version */
                                     esc_html__('Welcome to %1$s - Version %2$s', 'square'), $this->theme_name, $this->theme_version);
                             ?></h1>
-                        <div class="about-text"><?php echo esc_html__('Square is a flexible responsive multipurpose theme compatible with all browsers and devices, fully mobile friendly, loaded with lots of features. It is a minimal theme based on WordPress Customizer that allows you to customize with live preview. The theme can be used for business, corporate, digital agency, personal, portfolio, photography, parallax, blogs and magazines. Square is eCommerce (WooCommerce) Compatible, Polylang Compatible, WPML, RTL, Retina Ready, SEO Friendly and Support bbPress and BuddyPress. More over it is a complete theme.', 'square'); ?></div>
+                        <div class="about-text"><?php echo $this->theme_desc; ?></div>
                     </div>
 
                     <div class="promo-banner-wrap">
@@ -203,6 +216,30 @@ if (!class_exists('Square_Welcome')) :
             }
             echo wp_json_encode(array('success' => $success));
             die();
+        }
+
+        public function square_admin_footer_text($text) {
+            $screen = get_current_screen();
+
+            if ('appearance_page_square-welcome' == $screen->id) {
+                $text = sprintf(esc_html__('Please leave us a %s rating if you like our theme . A huge thank you from HashThemes in advance!', 'square'), '<a href="https://wordpress.org/support/theme/square/reviews/?filter=5#new-post" target="_blank">&#9733;&#9733;&#9733;&#9733;&#9733;</a>');
+            }
+
+            return $text;
+        }
+
+        public function square_plugin_thumb($plugin_slug = '') {
+            if (!empty($plugin_slug)) {
+                $image_url = "";
+                $image_types = array('icon-256x256.png', 'icon-256x256.jpg', 'icon-128x128.png', 'icon-128x128.jpg');
+
+                foreach ($image_types as $image_type) {
+                    $image_url = 'https://ps.w.org/' . $plugin_slug . '/assets/' . $image_type;
+                    if (@getimagesize($image_url)) {
+                        return $image_url;
+                    }
+                }
+            }
         }
 
     }

@@ -106,8 +106,8 @@ if (!class_exists('Square_Welcome')) :
 
                     <div class="promo-banner-wrap">
                         <p><?php esc_html_e('Upgrade for $60', 'square'); ?></p>
-                        <a href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/square-plus/'); ?>" target="_blank" class="button button-primary upgrade-btn"><?php echo esc_html__('Upgrade Now', 'square'); ?></a>
-                        <a class="promo-offer-text" href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/square-plus/'); ?>" target="_blank"><?php echo esc_html__('Unlock all the possibitlies with Square Plus.', 'square'); ?></a>
+                        <a href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-welcome&utm_campaign=square-upgrade'); ?>" target="_blank" class="button button-primary upgrade-btn"><?php echo esc_html__('Upgrade Now', 'square'); ?></a>
+                        <a class="promo-offer-text" href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-welcome&utm_campaign=square-upgrade'); ?>" target="_blank"><?php echo esc_html__('Unlock all the possibitlies with Square Plus.', 'square'); ?></a>
                     </div>
                 </div>
 

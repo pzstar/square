@@ -67,7 +67,7 @@ function square_customize_register($wp_customize) {
     $wp_customize->add_section(new Square_Customize_Section_Pro($wp_customize, 'square-pro-section', array(
         'priority' => 0,
         'pro_text' => esc_html__('Upgrade to Pro', 'square'),
-        'pro_url' => 'https://hashthemes.com/wordpress-theme/square-plus/'
+        'pro_url' => 'https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-button&utm_campaign=square-upgrade'
     )));
 
     $wp_customize->add_section(new Square_Customize_Section_Pro($wp_customize, 'square-doc-section', array(
@@ -936,7 +936,7 @@ if (class_exists('WP_Customize_Control')) {
                     </span>
                 <?php } ?>
 
-                <a href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=link&utm_campaign=sales'); ?>" target="_blank"> <strong><?php echo esc_html__('Upgrade to PRO', 'square'); ?></strong></a>
+                <a href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-link&utm_campaign=square-upgrade'); ?>" target="_blank"> <strong><?php echo esc_html__('Upgrade to PRO', 'square'); ?></strong></a>
             </label>
 
             <?php if ($this->description) { ?>
@@ -1102,7 +1102,7 @@ if (class_exists('WP_Customize_Section')) {
                 {{ key }}<br/>
                 <# }) #>
 
-                <a href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=link&utm_campaign=sales'); ?>" class="button button-primary" target="_blank"><?php echo esc_html__('Upgrad to Pro', 'square'); ?></a>
+                <a href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-link&utm_campaign=square-upgrade'); ?>" class="button button-primary" target="_blank"><?php echo esc_html__('Upgrad to Pro', 'square'); ?></a>
             </li>
             <?php
         }

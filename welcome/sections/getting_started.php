@@ -99,5 +99,5 @@
         <p><?php echo esc_html__('Try the Premium version and check if it fits to your need or not. If not, we have 7 day money back guarantee.', 'square'); ?></p>
     </div>
 
-    <a class="upgrade-button" href="https://hashthemes.com/wordpress-theme/square-plus/" target="_blank"><?php esc_html_e('Upgrade Now', 'square'); ?></a>
+    <a class="upgrade-button" href="https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-getting-started&utm_campaign=square-upgrade" target="_blank"><?php esc_html_e('Upgrade Now', 'square'); ?></a>
 </div>

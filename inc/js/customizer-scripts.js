@@ -137,7 +137,7 @@ function scrollToSection(section_id) {
 // Extends our custom section.
 (function (api) {
 
-    api.sectionConstructor['pro-section'] = api.Section.extend({
+    api.sectionConstructor['square-pro-section'] = api.Section.extend({
 
         // No events for this type of section.
         attachEvents: function () {},
@@ -148,7 +148,7 @@ function scrollToSection(section_id) {
         }
     });
     
-    api.sectionConstructor['upgrade-section'] = api.Section.extend({
+    api.sectionConstructor['square-upgrade-section'] = api.Section.extend({
 
         // No events for this type of section.
         attachEvents: function () {},

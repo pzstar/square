@@ -4,7 +4,7 @@ $free_plugins = $this->free_plugins;
 if (!empty($free_plugins)) {
     ?>
     <h4 class="recomplug-title"><?php echo esc_html__('Recommended Plugins', 'square'); ?></h4>
-    <p><?php echo esc_html__('Please Install all the plugins. Although these plugins are complementary, we encourage to install these plugins to use the theme to full extent.', 'square'); ?></p>
+    <p><?php echo esc_html__('Please install these plugins. These plugins are complementary and add more feature to theme.', 'square'); ?></p>
     <div class="recomended-plugin-wrap">
         <?php
         foreach ($free_plugins as $plugin) {

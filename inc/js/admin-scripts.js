@@ -1,5 +1,4 @@
-var selector;
-function upload_media_image(selector) {
+function square_upload_media_image(selector) {
 // ADD IMAGE LINK
     jQuery('body').on('click', selector, function (event) {
         event.preventDefault();
@@ -35,7 +34,7 @@ function upload_media_image(selector) {
     });
 }
 
-function delete_media_image(selector) {
+function square_delete_media_image(selector) {
     // DELETE IMAGE LINK
     jQuery('body').on('click', selector, function (event) {
 
@@ -55,6 +54,6 @@ function delete_media_image(selector) {
 }
 
 jQuery(document).ready(function (jQuery) {
-    upload_media_image('.square-upload-button');
-    delete_media_image('.square-delete-button');
+    square_upload_media_image('.square-upload-button');
+    square_delete_media_image('.square-delete-button');
 });

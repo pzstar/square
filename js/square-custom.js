@@ -8,22 +8,38 @@
 
 jQuery(function ($) {
 
-    $('#sq-bx-slider').bxSlider({
-        'pager': false,
-        'auto': true,
-        'mode': 'fade',
-        'pause': 5000,
-        'prevText': '<i class="fa fa-angle-left"></i>',
-        'nextText': '<i class="fa fa-angle-right"></i>',
-        'adaptiveHeight': true
+    $('#sq-bx-slider').owlCarousel({
+        autoplay: true,
+        items: 1,
+        loop: true,
+        nav: true,
+        dots: false,
+        autoplayTimeout: 7000,
+        animateOut: 'fadeOut',
+        navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>']
     });
 
     $(".sq_client_logo_slider").owlCarousel({
-        autoPlay: 4000,
+        autoplay: true,
         items: 5,
-        itemsTablet: [768, 3],
-        itemsMobile: [479, 2],
-        pagination: false
+        loop: true,
+        nav: false,
+        dots: false,
+        autoplayTimeout: 7000,
+        responsive: {
+            0: {
+                items: 2,
+            },
+            768: {
+                items: 3,
+            },
+            979: {
+                items: 4,
+            },
+            1200: {
+                items: 5,
+            }
+        }
     });
 
     $(".sq-tab-pane:first").show();
@@ -58,7 +74,7 @@ jQuery(function ($) {
         squareKeyboardLoop($('.sq-main-navigation'));
         return false;
     });
-    
+
     var squareKeyboardLoop = function (elem) {
 
         var tabbable = elem.find('select, input, textarea, button, a').filter(':visible');

@@ -4,7 +4,7 @@ Theme URI: https://hashthemes.com/wordpress-theme/square/
 Author: HashThemes
 Author URI: https://hashthemes.com
 Description: Square is a flexible responsive multipurpose theme compatible with all browsers and devices, fully mobile friendly, loaded with lots of features. It is a minimal theme based on WordPress Customizer that allows you to customize with live preview. The theme can be used for business, corporate, digital agency, personal, portfolio, photography, parallax, blogs and magazines. Square is eCommerce (WooCommerce) Compatible, Polylang Compatible, WPML, RTL, Retina Ready, SEO Friendly and Support bbPress and BuddyPress. More over it is a complete theme. For demo https://demo.hashthemes.com/square
-Version: 1.6.7
+Version: 1.6.8
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: square
@@ -467,12 +467,10 @@ textarea{
 select {
     border: 1px solid #DDD;
     padding: 8px 40px 8px 8px;
+    border-radius: 0;
     height: 36px;
-    background-color: transparent;
     line-height: 100%;
-    background-image: url("images/arrow.png");
-    background-position: right center;
-    background-repeat: no-repeat;
+    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' id='Capa_1' x='0px' y='0px' width='10px' height='10' fill='%23666666' viewBox='0 0 284.929 284.929' style='enable-background:new 0 0 284.929 284.929;' xml:space='preserve'%3E%3Cg%3E%3Cpath d='M282.082,76.511l-14.274-14.273c-1.902-1.906-4.093-2.856-6.57-2.856c-2.471,0-4.661,0.95-6.563,2.856L142.466,174.441 L30.262,62.241c-1.903-1.906-4.093-2.856-6.567-2.856c-2.475,0-4.665,0.95-6.567,2.856L2.856,76.515C0.95,78.417,0,80.607,0,83.082 c0,2.473,0.953,4.663,2.856,6.565l133.043,133.046c1.902,1.903,4.093,2.854,6.567,2.854s4.661-0.951,6.562-2.854L282.082,89.647 c1.902-1.903,2.847-4.093,2.847-6.565C284.929,80.607,283.984,78.417,282.082,76.511z'/%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3C/svg%3E") no-repeat right 10px top 55%;
     position: relative;
     cursor: pointer;
     -webkit-appearance: none;
@@ -684,6 +682,10 @@ a:active {
 /* Search widget. */
 .widget_search .search-submit {
     display: none;
+}
+
+.widget-area select{
+    width: 100%;
 }
 
 /* Contact Info Widget */
@@ -1272,10 +1274,6 @@ object {
     margin: 0 auto;
 }
 
-#sq-page{
-
-}
-
 .sq-site-content{
     position: relative;
     z-index: 99;
@@ -1612,21 +1610,22 @@ object {
     padding: 0 5%;
 }
 
-#sq-home-slider-section .bx-wrapper .bx-controls-direction a{
-    margin-top: 0;
+#sq-home-slider-section .owl-carousel .owl-nav button.owl-prev, 
+#sq-home-slider-section .owl-carousel .owl-nav button.owl-next{
+    position: absolute;
     background: #5bc2ce;
-    top: auto;
     bottom: 25px;
     height: 40px;
     width: 40px;
     text-indent: 0;
 }
 
-#sq-home-slider-section .bx-wrapper .bx-controls-direction a:hover{
+#sq-home-slider-section .owl-carousel .owl-nav button.owl-prev:hober, 
+#sq-home-slider-section .owl-carousel .owl-nav button.owl-next:hover{
     background: #4EA3AD
 }
 
-#sq-home-slider-section .bx-wrapper .bx-controls-direction a .fa{
+#sq-home-slider-section .owl-carousel .owl-nav button .fa{
     font-size: 24px;
     line-height: 40px;
     width: 40px;
@@ -1634,12 +1633,12 @@ object {
     color: #FFF;
 }
 
-#sq-home-slider-section .bx-wrapper .bx-prev{
+#sq-home-slider-section .owl-carousel .owl-nav button.owl-prev{
     left: 50%;
     margin-left: -42px;
 }
 
-#sq-home-slider-section .bx-wrapper .bx-next{
+#sq-home-slider-section .owl-carousel .owl-nav button.owl-next{
     right: 50%;
     margin-right: -42px;
 }
@@ -1651,10 +1650,28 @@ object {
     right:0;
 }
 
-#sq-home-slider-section img{
+#sq-home-slider-section .sq-banner-shadow img{
     margin: 0 auto;
     display: block;
     width: 100%;
+}
+
+#sq-home-slider-section .owl-item.active .sq-slide-cap-title,
+#sq-home-slider-section .owl-item.active .sq-slide-cap-desc{
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+#sq-home-slider-section .owl-item.active .sq-slide-cap-title{
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+}
+
+#sq-home-slider-section .owl-item.active .sq-slide-cap-desc {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
 }
 
 /*--------------------------------------------------------------
@@ -2685,7 +2702,7 @@ object {
 
 /*--------------------------------------------------------------
 ## Sticky Footer CSS
---------------------------------------------------------------*/
+--------------------------------------------------------------
 html, body {
     height: 100%;
 }
@@ -2704,7 +2721,7 @@ html, body {
 #sq-content{
     height: auto;
 }
-
+*/
 /*--------------------------------------------------------------
 ## Responsive CSS
 --------------------------------------------------------------*/
@@ -2783,7 +2800,7 @@ html, body {
         float: none;
     }
 
-    #sq-home-slider-section img{
+    #sq-home-slider-section .sq-slide img{
         height: 500px;
         object-fit: cover;
         object-position: center;
@@ -2836,21 +2853,21 @@ html, body {
         width: 100%;
         box-shadow: none;
     }
-    
+
     .sq-main-navigation ul ul a{
         padding: 10px 20px;
     }
-    
+
     .sq-main-navigation ul ul li:hover > a{
         background: none !important;
         color: #333 !important;
     }
 
-    #sq-home-slider-section .bx-wrapper .bx-controls-direction a{
+    #sq-home-slider-section .owl-carousel .owl-nav button{
         display: none;
     }
 
-    #sq-home-slider-section img{
+    #sq-home-slider-section .sq-slide  img{
         height: 450px;
     }
 
@@ -2958,7 +2975,7 @@ html, body {
 }
 
 @media screen and (max-width: 580px){
-    #sq-home-slider-section img{
+    #sq-home-slider-section .sq-slide img{
         height: 400px;
     }
 

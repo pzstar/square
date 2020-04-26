@@ -5,6 +5,11 @@
  *
  * @package Square
  */
+if (!defined('SQUARE_VERSION')) {
+    define('SQUARE_VERSION', '1.6.8');
+}
+
+
 if (!function_exists('square_setup')) :
 
 //Sets up theme defaults and registers support for various WordPress features.
@@ -242,25 +247,22 @@ endif;
  * Enqueue scripts and styles.
  */
 function square_scripts() {
-    wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/modernizr.js', array(), '2.6.3', true);
-    wp_enqueue_script('bxslider', get_template_directory_uri() . '/js/jquery.bxslider.js', array('jquery'), '4.1.2', true);
-    wp_enqueue_script('owl-carousel', get_template_directory_uri() . '/js/owl.carousel.js', array('jquery'), '1.3.3', true);
-    wp_enqueue_script('jquery-superfish', get_template_directory_uri() . '/js/jquery.superfish.js', array('jquery'), '1.0', true);
+    wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/modernizr.js', array(), SQUARE_VERSION, true);
+    wp_enqueue_script('owl-carousel', get_template_directory_uri() . '/js/owl.carousel.js', array('jquery'), SQUARE_VERSION, true);
+    wp_enqueue_script('jquery-superfish', get_template_directory_uri() . '/js/jquery.superfish.js', array('jquery'), SQUARE_VERSION, true);
 
     if (is_page_template('templates/home-template.php') || is_front_page()) {
-        wp_enqueue_script('square-draggabilly', get_template_directory_uri() . '/js/draggabilly.pkgd.min.js', array('jquery'), '1.3.3', true);
-        wp_enqueue_script('square-elastiStack', get_template_directory_uri() . '/js/elastiStack.js', array('jquery'), '1.0.0', true);
+        wp_enqueue_script('square-draggabilly', get_template_directory_uri() . '/js/draggabilly.pkgd.min.js', array('jquery'), SQUARE_VERSION, true);
+        wp_enqueue_script('square-elastiStack', get_template_directory_uri() . '/js/elastiStack.js', array('jquery'), SQUARE_VERSION, true);
     }
 
-    wp_enqueue_script('square-custom', get_template_directory_uri() . '/js/square-custom.js', array('jquery'), '20150903', true);
+    wp_enqueue_script('square-custom', get_template_directory_uri() . '/js/square-custom.js', array('jquery'), SQUARE_VERSION, true);
 
-    wp_enqueue_style('square-fonts', square_fonts_url(), array(), null);
-    wp_enqueue_style('bxslider', get_template_directory_uri() . '/css/jquery.bxslider.css', array(), '4.1.2');
-    wp_enqueue_style('animate', get_template_directory_uri() . '/css/animate.css', array(), '1.0');
-    wp_enqueue_style('font-awesome', get_template_directory_uri() . '/css/font-awesome.css', array(), '4.6.3');
-    wp_enqueue_style('owl-carousel', get_template_directory_uri() . '/css/owl.carousel.css', array(), '1.3.3');
-    wp_enqueue_style('owl-theme', get_template_directory_uri() . '/css/owl.theme.css', array(), '1.3.3');
-    wp_enqueue_style('square-style', get_stylesheet_uri());
+    wp_enqueue_style('square-fonts', square_fonts_url(), array(), NULL);
+    wp_enqueue_style('animate', get_template_directory_uri() . '/css/animate.css', array(), SQUARE_VERSION);
+    wp_enqueue_style('font-awesome', get_template_directory_uri() . '/css/font-awesome.css', array(), SQUARE_VERSION);
+    wp_enqueue_style('owl-carousel', get_template_directory_uri() . '/css/owl.carousel.css', array(), SQUARE_VERSION);
+    wp_enqueue_style('square-style', get_stylesheet_uri(), array(), SQUARE_VERSION);
     wp_add_inline_style('square-style', square_dymanic_styles());
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {
@@ -275,8 +277,8 @@ add_action('wp_enqueue_scripts', 'square_scripts');
  */
 function square_admin_scripts() {
     wp_enqueue_media();
-    wp_enqueue_style('square-admin-style', get_template_directory_uri() . '/inc/css/admin-style.css', array(), '1.0');
-    wp_enqueue_script('square-admin-scripts', get_template_directory_uri() . '/inc/js/admin-scripts.js', array('jquery'), '1.0', true);
+    wp_enqueue_style('square-admin-style', get_template_directory_uri() . '/inc/css/admin-style.css', array(), SQUARE_VERSION);
+    wp_enqueue_script('square-admin-scripts', get_template_directory_uri() . '/inc/js/admin-scripts.js', array('jquery'), SQUARE_VERSION, true);
 }
 
 add_action('admin_enqueue_scripts', 'square_admin_scripts');

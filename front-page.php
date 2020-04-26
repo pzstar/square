@@ -16,7 +16,7 @@ if ('page' == get_option('show_on_front')) {
     get_header();
     ?>
     <section id="sq-home-slider-section">
-        <div id="sq-bx-slider">
+        <div id="sq-bx-slider" class="owl-carousel">
             <?php
             for ($i = 1; $i < 4; $i++) {
                 if ($i == 1) {
@@ -37,11 +37,11 @@ if ('page' == get_option('show_on_front')) {
                         <?php if ($square_slider_title || $square_slider_subtitle) { ?>
                             <div class="sq-container">
                                 <div class="sq-slide-caption">
-                                    <div class="sq-slide-cap-title animated fadeInDown">
+                                    <div class="sq-slide-cap-title">
                                         <?php echo esc_html($square_slider_title); ?>
                                     </div>
 
-                                    <div class="sq-slide-cap-desc animated fadeInUp">
+                                    <div class="sq-slide-cap-desc">
                                         <?php echo esc_html($square_slider_subtitle); ?>
                                     </div>
                                 </div>

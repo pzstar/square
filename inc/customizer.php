@@ -45,7 +45,7 @@ function square_customize_register($wp_customize) {
 	<li>' . esc_html__("Advanced Typography options", "square") . '</li>
 	<li>' . esc_html__("Advanced color options", "square") . '</li>
 	<li>' . esc_html__("Top header bar", "square") . '</li>
-	<li>' . esc_html__("PreLoader option", "square") . '</li>
+	<li>' . esc_html__("Preloader option", "square") . '</li>
 	<li>' . esc_html__("Sidebar layout options", "square") . '</li>
 	<li>' . esc_html__("Website layout (Fullwidth or Boxed)", "square") . '</li>
 	<li>' . esc_html__("Advanced blog settings", "square") . '</li>
@@ -63,11 +63,10 @@ function square_customize_register($wp_customize) {
     $wp_customize->register_section_type('Square_Customize_Section_Pro');
     $wp_customize->register_section_type('Square_Customize_Upgrade_Section');
 
-    // Register sections.
     $wp_customize->add_section(new Square_Customize_Section_Pro($wp_customize, 'square-pro-section', array(
         'priority' => 0,
         'pro_text' => esc_html__('Upgrade to Pro', 'square'),
-        'pro_url' => 'https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-button&utm_campaign=square-upgrade'
+        'pro_url' => 'https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-customizer-button&utm_campaign=square-upgrade'
     )));
 
     $wp_customize->add_section(new Square_Customize_Section_Pro($wp_customize, 'square-doc-section', array(
@@ -122,8 +121,8 @@ function square_customize_register($wp_customize) {
         'title' => esc_html__('Site Logo, Title & Tagline', 'square'),
         'panel' => 'square_general_settings_panel',
     ));
-    
-    $wp_customize->get_control('header_text')->label = esc_html__('Display Site Title and Tagline(Only Displays If Logo Is Not Added)', 'square');
+
+    $wp_customize->get_control('header_text')->label = esc_html__('Display Site Title and Tagline(Only Displays if Logo is Removed)', 'square');
 
     //HEADER LOGO 
     $wp_customize->add_section('header_image', array(
@@ -483,7 +482,8 @@ function square_customize_register($wp_customize) {
         'label' => esc_html__('For more settings,', 'square'),
         'choices' => array(
             esc_html__('Option to disable stack image gallery or replace it with single image or widget', 'square'),
-            esc_html__('Configure the gallery width<br/>- Multiple background option(image, gradient, video) for the section', 'square')
+            esc_html__('Configure the gallery width', 'square'),
+            esc_html__('Multiple background option(image, gradient, video) for the section', 'square')
         ),
         'priority' => 100
     )));
@@ -640,7 +640,7 @@ function square_customize_register($wp_customize) {
         'section' => 'square_logo_sec',
         'label' => esc_html__('For more settings,', 'square'),
         'choices' => array(
-            esc_html__('4 logo layouts', 'square'),
+            esc_html__('4 clients logo layouts', 'square'),
             esc_html__('Option to link the logos to external url', 'square'),
             esc_html__('Multiple background option(image, gradient, video) for the section', 'square')
         ),
@@ -767,17 +767,17 @@ add_action('customize_register', 'square_customize_register');
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function square_customize_preview_js() {
-    wp_enqueue_script('square_customizer', get_template_directory_uri() . '/js/customizer.js', array('customize-preview'), '20130508', true);
+    wp_enqueue_script('square_customizer', get_template_directory_uri() . '/js/customizer.js', array('customize-preview'), SQUARE_VERSION, true);
 }
 
 add_action('customize_preview_init', 'square_customize_preview_js');
 
 function square_customizer_script() {
-    wp_enqueue_script('square-customizer-script', get_template_directory_uri() . '/inc/js/customizer-scripts.js', array('jquery'), '09092016', true);
-    wp_enqueue_script('square-customizer-chosen-script', get_template_directory_uri() . '/inc/js/chosen.jquery.js', array('jquery'), '1.4.1', true);
-    wp_enqueue_style('square-customizer-chosen-style', get_template_directory_uri() . '/inc/css/chosen.css');
-    wp_enqueue_style('square-customizer-font-awesome', get_template_directory_uri() . '/css/font-awesome.css');
-    wp_enqueue_style('square-customizer-style', get_template_directory_uri() . '/inc/css/customizer-style.css');
+    wp_enqueue_script('square-customizer-script', get_template_directory_uri() . '/inc/js/customizer-scripts.js', array('jquery'), SQUARE_VERSION, true);
+    wp_enqueue_script('square-customizer-chosen-script', get_template_directory_uri() . '/inc/js/chosen.jquery.js', array('jquery'), SQUARE_VERSION, true);
+    wp_enqueue_style('square-customizer-chosen-style', get_template_directory_uri() . '/inc/css/chosen.css', array(), SQUARE_VERSION);
+    wp_enqueue_style('square-customizer-font-awesome', get_template_directory_uri() . '/css/font-awesome.css', array(), SQUARE_VERSION);
+    wp_enqueue_style('square-customizer-style', get_template_directory_uri() . '/inc/css/customizer-style.css', array(), SQUARE_VERSION);
 }
 
 add_action('customize_controls_enqueue_scripts', 'square_customizer_script');
@@ -978,7 +978,7 @@ if (class_exists('WP_Customize_Section')) {
          * @access public
          * @var    string
          */
-        public $type = 'pro-section';
+        public $type = 'square-pro-section';
 
         /**
          * Custom button text to output.
@@ -1009,7 +1009,7 @@ if (class_exists('WP_Customize_Section')) {
             $json = parent::json();
 
             $json['pro_text'] = $this->pro_text;
-            $json['pro_url'] = esc_url($this->pro_url);
+            $json['pro_url'] = $this->pro_url;
 
             return $json;
         }
@@ -1050,7 +1050,7 @@ if (class_exists('WP_Customize_Section')) {
          * @access public
          * @var    string
          */
-        public $type = 'upgrade-section';
+        public $type = 'square-upgrade-section';
 
         /**
          * Custom button text to output.

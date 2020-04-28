@@ -21,6 +21,9 @@ Square is a beautifully crafted WordPress theme with lots of exciting feature to
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+= 1.6.9 - Apr 28 2020 =
+* Client logo slider issue fixed
+
 = 1.6.8 - Apr 26 2020 =
 * Owl carousel js update to latest version and slider javascript changed from bxslider to owl carousel
 

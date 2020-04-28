@@ -228,7 +228,7 @@ if ('page' == get_option('show_on_front')) {
                 $square_client_logo_image = explode(',', $square_client_logo_image);
                 ?>
 
-                <div class="sq_client_logo_slider">
+                <div class="sq_client_logo_slider owl-carousel">
                     <?php
                     foreach ($square_client_logo_image as $square_client_logo_image_single) {
                         $image = wp_get_attachment_image_src($square_client_logo_image_single, 'full');

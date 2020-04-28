@@ -231,15 +231,23 @@ if (!class_exists('Square_Welcome')) :
         public function square_plugin_thumb($plugin_slug = '') {
             if (!empty($plugin_slug)) {
                 $image_url = "";
-                $image_types = array('icon-256x256.png', 'icon-256x256.jpg', 'icon-128x128.png', 'icon-128x128.jpg');
+                $image_types = array('icon.svg', 'icon-256x256.png', 'icon-256x256.jpg', 'icon-128x128.png', 'icon-128x128.jpg');
 
                 foreach ($image_types as $image_type) {
                     $image_url = 'https://ps.w.org/' . $plugin_slug . '/assets/' . $image_type;
-                    if (@getimagesize($image_url)) {
+                    if ($this->square_img_exist($image_url)) {
                         return $image_url;
                     }
                 }
             }
+        }
+
+        public function square_img_exist($url = NULL) {
+            if (!$url)
+                return FALSE;
+
+            $headers = get_headers($url);
+            return stripos($headers[0], "200 OK") ? TRUE : FALSE;
         }
 
     }

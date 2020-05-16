@@ -266,6 +266,19 @@ if (!function_exists('square_font_awesome_icon_array')) {
 
 }
 
+//for backward compatibilty
+function square_enable_frontpage_default() {
+    if (!($frontpage_active = get_theme_mod('square_frontpage_active'))) {
+        if (count(get_theme_mods()) > 3 && 'posts' == get_option('show_on_front')) {
+            set_theme_mod('square_frontpage_active', 'yes');
+        } else {
+            set_theme_mod('square_frontpage_active', 'no');
+        }
+    }
+
+    return $frontpage_active == 'yes' ? true : false;
+}
+
 function square_premium_demo_config($demos) {
     $premium_demos = array(
         'main-demo' => array(

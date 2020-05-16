@@ -7,7 +7,6 @@ if (!class_exists('Square_Welcome')) :
         public $theme_name = ''; // For storing Theme Name
         public $theme_version = ''; // For Storing Theme Current Version Information
         public $free_plugins = array(); // For Storing the list of the Recommended Free Plugins
-        public $pro_plugins = array(); // For Storing the list of the Recommended Pro Plugins
 
         /**
          * Constructor for the Welcome Screen
@@ -15,21 +14,20 @@ if (!class_exists('Square_Welcome')) :
 
         public function __construct() {
 
-            /** Useful Variables * */
+            /** Useful Variables */
             $theme = wp_get_theme();
             $this->theme_name = $theme->Name;
             $this->theme_version = $theme->Version;
-            $this->theme_desc = $theme->Description;
 
-            /** Define Tabs Sections * */
+            /** Define Tabs Sections */
             $this->tab_sections = array(
                 'getting_started' => esc_html__('Getting Started', 'square'),
                 'recommended_plugins' => esc_html__('Recommended Plugins', 'square'),
                 'support' => esc_html__('Support', 'square'),
-                'free_vs_pro' => esc_html__('Free Vs Pro', 'square'),
+                'free_vs_pro' => esc_html__('Free Vs Pro', 'square')
             );
 
-            /** List of Recommended Free Plugins * */
+            /** List of Recommended Free Plugins */
             $this->free_plugins = array(
                 'simple-floating-menu' => array(
                     'name' => 'Simple Floating Menu',
@@ -41,11 +39,6 @@ if (!class_exists('Square_Welcome')) :
                     'slug' => 'hashthemes-demo-importer',
                     'filename' => 'hashthemes-demo-importer'
                 ),
-                'wpforms-lite' => array(
-                    'name' => 'Contact Form by WPForms',
-                    'slug' => 'wpforms-lite',
-                    'filename' => 'wpforms'
-                ),
                 'elementor' => array(
                     'name' => 'Elementor Page Builder',
                     'slug' => 'elementor',
@@ -53,93 +46,123 @@ if (!class_exists('Square_Welcome')) :
                 )
             );
 
-            /** List of Recommended Pro Plugins * */
-            $this->pro_plugins = array();
-
-            /* Theme Activation Notice */
-            add_action('admin_notices', array($this, 'square_activation_admin_notice'));
-
             /* Create a Welcome Page */
-            add_action('admin_menu', array($this, 'square_welcome_register_menu'));
+            add_action('admin_menu', array($this, 'welcome_register_menu'));
 
             /* Enqueue Styles & Scripts for Welcome Page */
-            add_action('admin_enqueue_scripts', array($this, 'square_welcome_styles_and_scripts'));
+            add_action('admin_enqueue_scripts', array($this, 'welcome_styles_and_scripts'));
 
-            add_action('wp_ajax_square_activate_plugin', array($this, 'square_activate_plugin'));
+            /* Adds Footer Rating Text */
+            add_filter('admin_footer_text', array($this, 'admin_footer_text'));
 
-            add_filter('admin_footer_text', array($this, 'square_admin_footer_text'));
+            /* Hide Notice */
+            add_filter('wp_loaded', array($this, 'hide_admin_notice'), 10);
+
+            /* Create a Welcome Page */
+            add_action('wp_loaded', array($this, 'admin_notice'), 20);
+
+            add_action('after_switch_theme', array($this, 'erase_hide_notice'));
+
+            add_action('wp_ajax_square_activate_plugin', array($this, 'activate_plugin'));
         }
 
-        /** Welcome Message Notification on Theme Activation * */
-        public function square_activation_admin_notice() {
-            global $pagenow;
-
-            if (is_admin() && ('themes.php' == $pagenow) && (isset($_GET['activated']))) {
-                ?>
-                <div class="notice notice-success is-dismissible"> 
-                    <p><?php echo sprintf(esc_html__('Welcome! Thank you for choosing %1$s. Please make sure you visit Settings Page to get started with %1$s theme.', 'square'), $this->theme_name, $this->theme_name); ?></p>
-                    <p><a class="button button-primary" href="<?php echo admin_url('/themes.php?page=square-welcome') ?>"><?php echo esc_html__('Let\'s Get Started', 'square'); ?></a></p>
-                </div>
-                <?php
+        /** Trigger Welcome Message Notification */
+        public function admin_notice($hook) {
+            $hide_notice = get_option('square_hide_notice');
+            if (!$hide_notice) {
+                add_action('admin_notices', array($this, 'admin_notice_content'));
             }
         }
 
-        /** Register Menu for Welcome Page * */
-        public function square_welcome_register_menu() {
-            add_theme_page(esc_html__('Welcome', 'square'), sprintf(esc_html__('%s Settings', 'square'), $this->theme_name), 'edit_theme_options', 'square-welcome', array($this, 'square_welcome_screen'));
-        }
+        /** Welcome Message Notification */
+        public function admin_notice_content() {
+            $screen = get_current_screen();
 
-        /** Welcome Page * */
-        public function square_welcome_screen() {
-            $tabs = $this->tab_sections;
+            if ('appearance_page_square-welcome' === $screen->id || (isset($screen->parent_file) && 'plugins.php' === $screen->parent_file && 'update' === $screen->id) || 'theme-install' === $screen->id) {
+                return;
+            }
+
+            $slug = $filename = 'hashthemes-demo-importer';
             ?>
-            <div class="wrap about-wrap access-wrap">
-                <div class="abt-promo-wrap clearfix">
-                    <div class="abt-theme-wrap">
-                        <h1><?php
-                            printf(// WPCS: XSS OK.
-                                    /* translators: 1-theme name, 2-theme version */
-                                    esc_html__('Welcome to %1$s - Version %2$s', 'square'), $this->theme_name, $this->theme_version);
-                            ?></h1>
-                        <div class="about-text"><?php echo $this->theme_desc; ?></div>
-                    </div>
+            <div class="updated notice square-welcome-notice">
+                <div class="square-welcome-notice-wrap">
+                    <h2><?php esc_html_e('Congratulations!', 'square'); ?></h2>
+                    <p><?php printf(esc_html__('%1$s is now installed and ready to use. You can start either by importing the ready made demo or get started by customizing it your self.', 'square'), $this->theme_name); ?></p>
 
-                    <div class="promo-banner-wrap">
-                        <p><?php esc_html_e('Upgrade for $60', 'square'); ?></p>
-                        <a href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-welcome&utm_campaign=square-upgrade'); ?>" target="_blank" class="button button-primary upgrade-btn"><?php echo esc_html__('Upgrade Now', 'square'); ?></a>
-                        <a class="promo-offer-text" href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-welcome&utm_campaign=square-upgrade'); ?>" target="_blank"><?php echo esc_html__('Unlock all the possibitlies with Square Plus.', 'square'); ?></a>
-                    </div>
-                </div>
+                    <div class="square-welcome-info">
+                        <div class="square-welcome-thumb">
+                            <img src="<?php echo esc_url(get_stylesheet_directory_uri() . '/screenshot.png'); ?>" alt="<?php echo esc_html__('Square Demo', 'square'); ?>">
+                        </div>
 
-                <div class="nav-tab-wrapper clearfix">
-                    <?php foreach ($tabs as $id => $label) : ?>
                         <?php
-                        $section = isset($_GET['section']) ? $_GET['section'] : 'getting_started'; // Input var okay.
-                        $nav_class = 'nav-tab';
-                        if ($id == $section) {
-                            $nav_class .= ' nav-tab-active';
+                        if ('appearance_page_hdi-demo-importer' !== $screen->id) {
+                            ?>
+                            <div class="square-welcome-import">
+                                <h3><?php esc_html_e('Import Demo', 'square'); ?></h3>
+                                <p><?php esc_html_e('Click below to install and active HashThemes Demo Importer Plugin.', 'square'); ?></p>
+                                <p><?php echo $this->generate_hdi_install_button(); ?></p>
+                            </div>
+                            <?php
                         }
                         ?>
-                        <a href="<?php echo esc_url(admin_url('themes.php?page=square-welcome&section=' . $id)); ?>" class="<?php echo esc_attr($nav_class); ?>" >
-                            <?php echo esc_html($label); ?>
-                        </a>
-                    <?php endforeach; ?>
+
+                        <div class="square-welcome-getting-started">
+                            <h3><?php esc_html_e('Get Started', 'square'); ?></h3>
+                            <p><?php printf(esc_html__('Here you will find all the necessary links and information on how to use %s.', 'square'), $this->theme_name); ?></p>
+                            <p><a href="<?php echo esc_url(admin_url('/themes.php?page=square-welcome')); ?>" class="button button-primary"><?php esc_html_e('Go to Setting Page', 'square'); ?></a></p>
+                        </div>
+                    </div>
+
+                    <a href="<?php echo wp_nonce_url(add_query_arg('square_hide_notice', 1), 'square_hide_notice_nonce', '_square_notice_nonce'); ?>" class="notice-close"><?php esc_html_e('Dismiss', 'square'); ?></a>
                 </div>
 
-                <div class="welcome-section-wrapper">
-                    <?php $section = isset($_GET['section']) ? $_GET['section'] : 'getting_started'; // Input var okay.  ?>
+            </div>
+            <?php
+        }
 
-                    <div class="welcome-section <?php echo esc_attr($section); ?> clearfix">
-                        <?php require_once get_template_directory() . '/welcome/sections/' . $section . '.php'; ?>
+        /** Hide Admin Notice */
+        public function hide_admin_notice() {
+            if (isset($_GET['square_hide_notice']) && isset($_GET['_square_notice_nonce']) && current_user_can('manage_options')) {
+                if (!wp_verify_nonce(wp_unslash($_GET['_square_notice_nonce']), 'square_hide_notice_nonce')) {
+                    wp_die(esc_html__('Action Failed. Something is Wrong.', 'square'));
+                }
+
+                update_option('square_hide_notice', true);
+            }
+        }
+
+        /** Register Menu for Welcome Page */
+        public function welcome_register_menu() {
+            add_theme_page(esc_html__('Welcome', 'square'), sprintf(esc_html__('%s Settings', 'square'), $this->theme_name), 'edit_theme_options', 'square-welcome', array($this, 'welcome_screen'));
+        }
+
+        /** Welcome Page */
+        public function welcome_screen() {
+            $tabs = $this->tab_sections;
+            ?>
+            <div class="welcome-wrap">
+                <div class="welcome-main-content">
+                    <?php require_once get_template_directory() . '/welcome/sections/header.php'; ?>
+
+                    <div class="welcome-section-wrapper">
+                        <?php $section = isset($_GET['section']) && array_key_exists($_GET['section'], $tabs) ? $_GET['section'] : 'getting_started'; ?>
+
+                        <div class="welcome-section <?php echo esc_attr($section); ?> clearfix">
+                            <?php require_once get_template_directory() . '/welcome/sections/' . $section . '.php'; ?>
+                        </div>
                     </div>
+                </div>
+
+                <div class="welcome-footer-content">
+                    <?php require_once get_template_directory() . '/welcome/sections/footer.php'; ?>
                 </div>
             </div>
             <?php
         }
 
-        /** Enqueue Necessary Styles and Scripts for the Welcome Page * */
-        public function square_welcome_styles_and_scripts($hook) {
-            if ('appearance_page_square-welcome' == $hook) {
+        /** Enqueue Necessary Styles and Scripts for the Welcome Page */
+        public function welcome_styles_and_scripts($hook) {
+            if ('theme-install.php' !== $hook) {
                 $importer_params = array(
                     'installing_text' => esc_html__('Installing Demo Importer Plugin', 'square'),
                     'activating_text' => esc_html__('Activating Demo Importer Plugin', 'square'),
@@ -148,36 +171,31 @@ if (!class_exists('Square_Welcome')) :
                     'error' => esc_html__('Error! Reload the page and try again.', 'square'),
                 );
                 wp_enqueue_style('square-welcome', get_template_directory_uri() . '/welcome/css/welcome.css', array(), SQUARE_VERSION);
-                wp_enqueue_style('plugin-install');
-                wp_enqueue_script('plugin-install');
-                wp_enqueue_script('updates');
-                wp_enqueue_script('square-welcome', get_template_directory_uri() . '/welcome/js/welcome.js', array(), SQUARE_VERSION);
+                wp_enqueue_script('square-welcome', get_template_directory_uri() . '/welcome/js/welcome.js', array('plugin-install', 'updates'), SQUARE_VERSION);
                 wp_localize_script('square-welcome', 'importer_params', $importer_params);
             }
         }
 
-        // Check if plugin is installed
-        public function square_check_installed_plugin($slug, $filename) {
+        /* Check if plugin is installed */
+
+        public function check_plugin_installed_state($slug, $filename) {
             return file_exists(ABSPATH . 'wp-content/plugins/' . $slug . '/' . $filename . '.php') ? true : false;
         }
 
-        // Check if plugin is activated
-        public function square_check_plugin_active_state($slug, $filename) {
+        /* Check if plugin is activated */
+
+        public function check_plugin_active_state($slug, $filename) {
             return is_plugin_active($slug . '/' . $filename . '.php') ? true : false;
         }
 
-        /** Generate Url for the Plugin Button * */
-        public function square_plugin_generate_url($status, $slug, $file_name) {
+        /** Generate Url for the Plugin Button */
+        public function plugin_generate_url($status, $slug, $file_name) {
             switch ($status) {
                 case 'install':
-                    return wp_nonce_url(
-                            add_query_arg(
-                                    array(
+                    return wp_nonce_url(add_query_arg(array(
                         'action' => 'install-plugin',
                         'plugin' => esc_attr($slug)
-                                    ), network_admin_url('update.php')
-                            ), 'install-plugin_' . esc_attr($slug)
-                    );
+                                    ), network_admin_url('update.php')), 'install-plugin_' . esc_attr($slug));
                     break;
 
                 case 'inactive':
@@ -202,14 +220,15 @@ if (!class_exists('Square_Welcome')) :
             }
         }
 
-        public function square_activate_plugin() {
+        /** Ajax Plugin Activation */
+        public function activate_plugin() {
             $slug = isset($_POST['slug']) ? $_POST['slug'] : '';
             $file = isset($_POST['file']) ? $_POST['file'] : '';
             $success = false;
 
             if (!empty($slug) && !empty($file)) {
                 $result = activate_plugin($slug . '/' . $file . '.php');
-
+                update_option('square_hide_notice', true);
                 if (!is_wp_error($result)) {
                     $success = true;
                 }
@@ -218,7 +237,8 @@ if (!class_exists('Square_Welcome')) :
             die();
         }
 
-        public function square_admin_footer_text($text) {
+        /** Adds Footer Notes */
+        public function admin_footer_text($text) {
             $screen = get_current_screen();
 
             if ('appearance_page_square-welcome' == $screen->id) {
@@ -228,26 +248,60 @@ if (!class_exists('Square_Welcome')) :
             return $text;
         }
 
-        public function square_plugin_thumb($plugin_slug = '') {
-            if (!empty($plugin_slug)) {
-                $image_url = "";
-                $image_types = array('icon.svg', 'icon-256x256.png', 'icon-256x256.jpg', 'icon-128x128.png', 'icon-128x128.jpg');
+        /** Generate HashThemes Demo Importer Install Button Link */
+        public function generate_hdi_install_button() {
+            $slug = $filename = 'hashthemes-demo-importer';
+            $import_url = '#';
+
+            if ($this->check_plugin_installed_state($slug, $filename) && !$this->check_plugin_active_state($slug, $filename)) {
+                $import_class = 'button button-primary square-activate-plugin';
+                $import_button_text = esc_html__('Activate Demo Importer Plugin', 'square');
+            } elseif ($this->check_plugin_installed_state($slug, $filename)) {
+                $import_class = 'button button-primary';
+                $import_button_text = esc_html__('Go to Demo Importer Page', 'square');
+                $import_url = admin_url('themes.php?page=hdi-demo-importer');
+            } else {
+                $import_class = 'button button-primary square-install-plugin';
+                $import_button_text = esc_html__('Install Demo Importer Plugin', 'square');
+            }
+            return '<a data-slug="' . esc_attr($slug) . '" data-filename="' . esc_attr($filename) . '" class="' . esc_attr($import_class) . '" href="' . $import_url . '">' . esc_html($import_button_text) . '</a>';
+        }
+
+        /** Generate Plugin Thumb */
+        public function plugin_thumb($plugin_slug) {
+            if (empty($plugin_slug)) {
+                return;
+            }
+            /** Generate a key that would hold the plugin image url */
+            $key = 'square-' . $plugin_slug;
+
+            /** Check transient. If it's there - use that, if not re fetch the theme */
+            if (false === ( $image_url = get_transient($key) )) {
+                $image_types = array('icon-256x256.png', 'icon-256x256.jpg', 'icon-128x128.png', 'icon-128x128.jpg');
 
                 foreach ($image_types as $image_type) {
                     $image_url = 'https://ps.w.org/' . $plugin_slug . '/assets/' . $image_type;
-                    if ($this->square_img_exist($image_url)) {
-                        return $image_url;
+                    if ($this->image_exist($image_url)) {
+                        set_transient($key, $image_url, 60 * 60 * 24 * 30);
+                        break;
                     }
                 }
             }
+
+            return $image_url;
         }
 
-        public function square_img_exist($url = NULL) {
+        /** Check for Available Image */
+        public function image_exist($url = NULL) {
             if (!$url)
                 return FALSE;
 
             $headers = get_headers($url);
             return stripos($headers[0], "200 OK") ? TRUE : FALSE;
+        }
+
+        public function erase_hide_notice() {
+            delete_option('square_hide_notice');
         }
 
     }

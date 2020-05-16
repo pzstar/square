@@ -16,6 +16,7 @@ function square_customize_register($wp_customize) {
     $wp_customize->get_setting('custom_logo')->transport = 'refresh';
     $wp_customize->get_control('background_color')->section = 'background_image';
     $wp_customize->get_section('colors')->priority = 25;
+    $wp_customize->get_section('static_front_page')->priority = 2;
 
     $square_page = '';
     $square_page_array = get_pages();
@@ -102,18 +103,23 @@ function square_customize_register($wp_customize) {
         'label' => esc_html__('For more color options,', 'square'),
         'priority' => 100
     )));
+    
+    /* ============HOMEPAGE SETTINGS PANEL============ */
+    $wp_customize->add_setting('square_enable_frontpage', array(
+        'sanitize_callback' => 'square_sanitize_checkbox',
+        'default' => square_enable_frontpage_default()
+    ));
+
+    $wp_customize->add_control(new Square_Toggle_Control($wp_customize, 'square_enable_frontpage', array(
+        'section' => 'static_front_page',
+        'label' => esc_html__('Enable FrontPage', 'square'),
+        'description' => esc_html__('Overwrites the homepage displays setting and shows the frontpage', 'square')
+    )));
 
     /* ============GENERAL SETTINGS PANEL============ */
     $wp_customize->add_panel('square_general_settings_panel', array(
         'title' => esc_html__('General Settings', 'square'),
         'priority' => 20
-    ));
-
-    //STATIC FRONT PAGE
-    $wp_customize->add_section('static_front_page', array(
-        'title' => esc_html__('Static Front Page', 'square'),
-        'panel' => 'square_general_settings_panel',
-        'description' => esc_html__('Your theme supports a static front page.', 'square'),
     ));
 
     //TITLE AND TAGLINE SETTINGS
@@ -751,7 +757,7 @@ function square_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('square_pro_features', array(
-        'sanitize_callback' => 'total_sanitize_text'
+        'sanitize_callback' => 'square_sanitize_text'
     ));
 
     $wp_customize->add_control(new Square_Info_Text($wp_customize, 'square_pro_features', array(
@@ -916,6 +922,38 @@ if (class_exists('WP_Customize_Control')) {
                 </span>
                 <?php
             }
+        }
+
+    }
+    
+    class Square_Toggle_Control extends WP_Customize_Control {
+
+        /**
+         * Control type
+         *
+         * @var string
+         */
+        public $type = 'square-toggle';
+
+        /**
+         * Control method
+         *
+         */
+        public function render_content() {
+            ?>
+            <div class="square-checkbox-toggle">
+                <div class="square-toggle-switch">
+                    <input type="checkbox" id="<?php echo esc_attr($this->id); ?>" name="<?php echo esc_attr($this->id); ?>" class="square-toggle-checkbox" value="<?php echo esc_attr($this->value()); ?>" <?php $this->link(); ?> <?php checked($this->value()); ?>>
+                    <label class="square-toggle-label" for="<?php echo esc_attr($this->id); ?>"><span></span></label>
+                </div>
+                <span class="customize-control-title square-toggle-title"><?php echo esc_html($this->label); ?></span>
+                <?php if (!empty($this->description)) { ?>
+                    <span class="description customize-control-description">
+                        <?php echo wp_kses_post($this->description); ?>
+                    </span>
+                <?php } ?>
+            </div>
+            <?php
         }
 
     }

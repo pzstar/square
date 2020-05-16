@@ -1,17 +1,17 @@
-<div class="three-col">
-    <div class="col">
+<div class="free-vs-pro-info-wrap">
+    <div class="free-vs-pro-info">
         <h4><?php esc_html_e('ONE TIME PAYMENT', 'square'); ?></h4>
         <p><?php esc_html_e('No renewal needed', 'square'); ?></p>
     </div>
 
-    <div class="col">
+    <div class="free-vs-pro-info">
         <h4><?php esc_html_e('UNLIMITED DOMAIN LICENCE', 'square'); ?></h4>
-        <p><?php esc_html_e('Use in as many website as you need', 'square'); ?></p>
+        <p><?php esc_html_e('Use in as many websites as you need', 'square'); ?></p>
     </div>
 
-    <div class="col">
-        <h4><?php esc_html_e('FREE UPDATES FOR LIFE TIME', 'square'); ?></h4>
-        <p><?php esc_html_e('Keep upto date', 'square'); ?></p>
+    <div class="free-vs-pro-info">
+        <h4><?php esc_html_e('FREE UPDATES FOR LIFETIME', 'square'); ?></h4>
+        <p><?php esc_html_e('Keep up to date', 'square'); ?></p>
     </div>
 </div>
 

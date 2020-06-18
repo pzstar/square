@@ -35,7 +35,7 @@
             <span><?php esc_html_e('One Click Demo Import', 'square'); ?></span>
             <p><?php esc_html_e('With one click demo-import, you can install the demo content with just one click.', 'square'); ?></td>
         <td><?php esc_html_e('1 Demo Only', 'square'); ?></td>
-        <td><?php esc_html_e('2 Demos + More comming', 'square'); ?></td>
+        <td><?php esc_html_e('3 Demos + More comming', 'square'); ?></td>
     </tr>
     <tr>
         <td>

@@ -2,7 +2,7 @@
     <div class="welcome-manual-setup">
         <h3><?php echo esc_html__('Manual Setup from Customizer Panel', 'square'); ?></h3>
         <div class="welcome-theme-thumb">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/set-front-page.gif'); ?>" alt="<?php echo esc_html__('Square Demo', 'square'); ?>">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/set-front-page.gif'); ?>" alt="<?php echo esc_attr__('Square Demo', 'square'); ?>">
         </div>
 
         <ol>

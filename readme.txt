@@ -21,6 +21,13 @@ Square is a beautifully crafted WordPress theme with lots of exciting feature to
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+= 1.7.3 - June 17 2020 =
+* New demo added in pro version
+* Theme Check plugin error fixed
+
+= 1.7.2 - June 4 2020 =
+* New demo added in pro version
+
 = 1.7.1 - May 16 2020 =
 * Minor Error in welcome page fixed
 
@@ -268,7 +275,3 @@ License: MIT (http://opensource.org/licenses/MIT)
 
 * Superfish Menu - Copyright (c) 2013 Joel Birch - https://github.com/joeldbirch/superfish
 License: MIT (http://opensource.org/licenses/MIT)
-
-== Image Credit ==
-https://pixabay.com/en/headphones-earphones-laptop-405886/
-- Screenshot and header banner

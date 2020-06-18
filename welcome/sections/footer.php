@@ -7,7 +7,7 @@
     <div class="recomended-plugin-wrap">
         <div class="recommended-plugins">
             <div class="plugin-image">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/main-demo.jpg'); ?>" alt="<?php echo esc_html__('Square Plus Demo', 'square'); ?>">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/main-demo.jpg'); ?>" alt="<?php echo esc_attr__('Square Plus Demo', 'square'); ?>">
             </div>
 
             <div class="plugin-title-wrap">
@@ -20,13 +20,39 @@
 
         <div class="recommended-plugins">
             <div class="plugin-image">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/original.jpg'); ?>" alt="<?php echo esc_html__('Square Plus Demo', 'square'); ?>">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/original.jpg'); ?>" alt="<?php echo esc_attr__('Square Plus Demo', 'square'); ?>">
             </div>
 
             <div class="plugin-title-wrap">
                 <div class="plugin-title">Original</div>
                 <div class="plugin-btn-wrapper">
                     <a target="_blank" href="https://demo.hashthemes.com/square-plus/original/" class="button button-primary"><?php echo esc_html__('Preview', 'square'); ?></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="recommended-plugins">
+            <div class="plugin-image">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/business.jpg'); ?>" alt="<?php echo esc_attr__('Square Plus Demo', 'square'); ?>">
+            </div>
+
+            <div class="plugin-title-wrap">
+                <div class="plugin-title">Business</div>
+                <div class="plugin-btn-wrapper">
+                    <a target="_blank" href="https://demo.hashthemes.com/square-plus/business/" class="button button-primary"><?php echo esc_html__('Preview', 'square'); ?></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="recommended-plugins">
+            <div class="plugin-image">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/fitness.jpg'); ?>" alt="<?php echo esc_attr__('Square Plus Demo', 'square'); ?>">
+            </div>
+
+            <div class="plugin-title-wrap">
+                <div class="plugin-title">Fitness</div>
+                <div class="plugin-btn-wrapper">
+                    <a target="_blank" href="https://demo.hashthemes.com/square-plus/gym/" class="button button-primary"><?php echo esc_html__('Preview', 'square'); ?></a>
                 </div>
             </div>
         </div>

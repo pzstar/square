@@ -294,7 +294,22 @@ function square_premium_demo_config($demos) {
             'image' => 'https://hashthemes.com/import-files/square-plus/screen/original.jpg',
             'buy_url' => 'https://hashthemes.com/wordpress-theme/square-plus/',
             'preview_url' => 'https://demo.hashthemes.com/square-plus/original/',
-    ));
+        ),
+        'business' => array(
+            'type' => 'pro',
+            'name' => 'Square Plus - Business',
+            'image' => 'https://hashthemes.com/import-files/square-plus/screen/business.jpg',
+            'buy_url' => 'https://hashthemes.com/wordpress-theme/square-plus/',
+            'preview_url' => 'https://demo.hashthemes.com/square-plus/business/',
+        ),
+        'fitness' => array(
+            'type' => 'pro',
+            'name' => 'Square Plus - Fitness',
+            'image' => 'https://hashthemes.com/import-files/square-plus/screen/fitness.jpg',
+            'buy_url' => 'https://hashthemes.com/wordpress-theme/square-plus/',
+            'preview_url' => 'https://demo.hashthemes.com/square-plus/gym/',
+        )
+    );
 
     $demos = array_merge($demos, $premium_demos);
 

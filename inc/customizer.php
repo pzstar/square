@@ -30,7 +30,7 @@ function square_customize_register($wp_customize) {
     );
 
     $square_pro_features = '<ul class="upsell-features">
-	<li>' . esc_html__("One click demo import", "square") . '</li>
+	<li>' . esc_html__("One click demo import with 3 demos", "square") . '</li>
 	<li>' . esc_html__("18 Front page sections with lots of variations", "square") . '</li>
 	<li>' . esc_html__("Section reorder", "square") . '</li>
 	<li>' . esc_html__("Video background, Image Motion background, Parallax background, Gradient background option for each section", "square") . '</li>
@@ -899,8 +899,8 @@ if (class_exists('WP_Customize_Control')) {
                     ?>
                 </div>
 
-                <input class="button upload_gallery_button" type="button" value="<?php esc_html_e('Add/Edit Gallery', 'square') ?>" />
-                <input class="button upload_gallery_button clear_gallery" type="button" value="<?php esc_html_e('Clear', 'square') ?>" />
+                <input class="button upload_gallery_button" type="button" value="<?php esc_attr_e('Add/Edit Gallery', 'square') ?>" />
+                <input class="button upload_gallery_button clear_gallery" type="button" value="<?php esc_attr_e('Clear', 'square') ?>" />
                 <input type="hidden" class="gallery_values" <?php echo esc_attr($this->link()) ?> value="<?php echo esc_attr($this->value()); ?>">
             </label>
             <?php

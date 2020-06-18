@@ -44,7 +44,7 @@ if (is_array($square_page_array)) {
         }
         ?>
     </div>
-    <div class="sq-banner-shadow"><img src="<?php echo get_template_directory_uri() ?>/images/banner-shadow.png" alt="<?php esc_attr_e('Banner Shadow', 'square'); ?>"></div>
+    <div class="sq-banner-shadow"><img src="<?php echo esc_url(get_template_directory_uri() . '/images/banner-shadow.png'); ?>" alt="<?php esc_attr_e('Banner Shadow', 'square'); ?>"></div>
 </section>
 
 <section id="sq-featured-post-section" class="sq-section">

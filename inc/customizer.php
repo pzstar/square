@@ -30,34 +30,33 @@ function square_customize_register($wp_customize) {
     );
 
     $square_pro_features = '<ul class="upsell-features">
-	<li>' . esc_html__("One click demo import with 3 demos", "square") . '</li>
-	<li>' . esc_html__("18 Front page sections with lots of variations", "square") . '</li>
+	<li>' . esc_html__("4 more demos that can be imported with one click", "square") . '</li>
+        <li>' . esc_html__("Elementor compatible - Built your Home Page with Customizer or Elementor whichever you like", "square") . '</li>
+	<li>' . esc_html__("19 Front Page sections with multiple styles (Highlight, Service, Portfolio, Tab, Team, Testimonial, Pricing, Blog, Counter, Call To Action, Logo Carousel, Contact section with google map)", "square") . '</li>
 	<li>' . esc_html__("Section reorder", "square") . '</li>
 	<li>' . esc_html__("Video background, Image Motion background, Parallax background, Gradient background option for each section", "square") . '</li>
-	<li>' . esc_html__("4 icon pack for icon picker (5000+ Icons)", "square") . '</li>
+	<li>' . esc_html__("4 icon pack for icon picker (5000+ icons)", "square") . '</li>
 	<li>' . esc_html__("Unlimited slider with linkable button", "square") . '</li>
 	<li>' . esc_html__("Add unlimited blocks(like slider, team, testimonial) for each Section", "square") . '</li>
-	<li>' . esc_html__("Fully customizable options for Front Page blocks", "square") . '</li>
 	<li>' . esc_html__("15+ Shape divider to choose from for each section", "square") . '</li>
-	<li>' . esc_html__("Remove footer credit Text", "square") . '</li>
-	<li>' . esc_html__("6 header layouts and advanced header settings", "square") . '</li>
+	<li>' . esc_html__("6 header layouts with advanced header settings to change color, height and other options", "square") . '</li>
 	<li>' . esc_html__("4 blog layouts", "square") . '</li>
 	<li>' . esc_html__("In-built MegaMenu", "square") . '</li>
-	<li>' . esc_html__("Advanced Typography options", "square") . '</li>
+	<li>' . esc_html__("Advanced typography options", "square") . '</li>
 	<li>' . esc_html__("Advanced color options", "square") . '</li>
 	<li>' . esc_html__("Top header bar", "square") . '</li>
 	<li>' . esc_html__("Preloader option", "square") . '</li>
 	<li>' . esc_html__("Sidebar layout options", "square") . '</li>
-	<li>' . esc_html__("Website layout (Fullwidth or Boxed)", "square") . '</li>
+	<li>' . esc_html__("Website layout (fullwidth or boxed)", "square") . '</li>
 	<li>' . esc_html__("Advanced blog settings", "square") . '</li>
 	<li>' . esc_html__("Advanced footer setting", "square") . '</li>
-	<li>' . esc_html__("Front page sections with full window height", "square") . '</li>
-	<li>' . esc_html__("26 custom widgets", "square") . '</li>
+	<li>' . esc_html__("15 custom widgets", "square") . '</li>
 	<li>' . esc_html__("Blog single page - Author Box, Social Share and Related Post", "square") . '</li>
 	<li>' . esc_html__("Google map option", "square") . '</li>
-	<li>' . esc_html__("WooCommerce Compatible", "square") . '</li>
-	<li>' . esc_html__("Fully Multilingual and Translation ready", "square") . '</li>
-	<li>' . esc_html__("Fully RTL(Right to left) languages compatible", "square") . '</li>
+	<li>' . esc_html__("WooCommerce compatible", "square") . '</li>
+	<li>' . esc_html__("Fully multilingual and translation ready", "square") . '</li>
+	<li>' . esc_html__("Fully RTL(right to left) languages compatible", "square") . '</li>
+        <li>' . esc_html__("Remove footer credit text", "square") . '</li>
 	</ul>
 	<a class="ht-implink" href="https://hashthemes.com/wordpress-theme/square-plus/#theme-comparision-tab" target="_blank">' . esc_html__("Comparision - Free Vs Pro", "square") . '</a>';
 
@@ -103,7 +102,7 @@ function square_customize_register($wp_customize) {
         'label' => esc_html__('For more color options,', 'square'),
         'priority' => 100
     )));
-    
+
     /* ============HOMEPAGE SETTINGS PANEL============ */
     $wp_customize->add_setting('square_enable_frontpage', array(
         'sanitize_callback' => 'square_sanitize_checkbox',
@@ -669,7 +668,9 @@ function square_customize_register($wp_customize) {
             esc_html__('- Pricing Section', 'square'),
             esc_html__('- Blog Section', 'square'),
             esc_html__('- Counter Section', 'square'),
-            esc_html__('- Call To Action Section', 'square')
+            esc_html__('- Call To Action Section', 'square'),
+            esc_html__('------------------------', 'square'),
+            esc_html__('- Elementor Pagebuilder Compatible. All the above sections can be created with Elementor Page Builder or Customizer whichever you like.', 'square'),
         )
     )));
 
@@ -925,7 +926,7 @@ if (class_exists('WP_Customize_Control')) {
         }
 
     }
-    
+
     class Square_Toggle_Control extends WP_Customize_Control {
 
         /**
@@ -1140,7 +1141,7 @@ if (class_exists('WP_Customize_Section')) {
                 {{ key }}<br/>
                 <# }) #>
 
-                <a href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-link&utm_campaign=square-upgrade'); ?>" class="button button-primary" target="_blank"><?php echo esc_html__('Upgrad to Pro', 'square'); ?></a>
+                <a href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-link&utm_campaign=square-upgrade'); ?>" class="button button-primary" target="_blank"><?php echo esc_html__('Upgrade to Pro', 'square'); ?></a>
             </li>
             <?php
         }

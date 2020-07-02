@@ -35,7 +35,7 @@
             <span><?php esc_html_e('One Click Demo Import', 'square'); ?></span>
             <p><?php esc_html_e('With one click demo-import, you can install the demo content with just one click.', 'square'); ?></td>
         <td><?php esc_html_e('1 Demo Only', 'square'); ?></td>
-        <td><?php esc_html_e('3 Demos + More comming', 'square'); ?></td>
+        <td><?php esc_html_e('4 Demos + More comming', 'square'); ?></td>
     </tr>
     <tr>
         <td>
@@ -46,17 +46,17 @@
     </tr>
     <tr>
         <td>
+            <span><?php esc_html_e('Elementor Compatible', 'square'); ?></span>
+            <p><?php esc_html_e('Fan of Pagebuilder? No problem, with premium version you can create your website with Elementor. Elementor provides you with unlimited possibilities to create the website of your imagination.', 'square'); ?></td>
+        <td>0</td>
+        <td>45+ Widgets</td>
+    </tr>
+    <tr>
+        <td>
             <span><?php esc_html_e('Multiple Header Layouts and Settings', 'square'); ?></span>
             <p><?php esc_html_e('The premium version gives the option to choose from 6 header layout. Additionally, it allows changing the header background color, text color, header height and more.', 'square'); ?></p></td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="No"></td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/yes.png'); ?>" alt="Yes"></td>
-    </tr>
-    <tr>
-        <td>
-            <span><?php esc_html_e('Elementor Widgets', 'square'); ?></span>
-            <p><?php esc_html_e('Elementor provides you with unlimited possibilities to create the website of your imagination.', 'square'); ?></td>
-        <td>0</td>
-        <td>20+ Widgets</td>
     </tr>
     <tr>
         <td>

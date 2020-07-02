@@ -6,7 +6,7 @@
  * @package Square
  */
 if (!defined('SQUARE_VERSION')) {
-    define('SQUARE_VERSION', '1.7.3');
+    define('SQUARE_VERSION', '1.7.4');
 }
 
 

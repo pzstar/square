@@ -52,3 +52,15 @@
 .widget-content .actions{
     margin-top: 8px;
 }
+
+.widget-content .hidden {
+    display: none;
+}
+
+.widget-content .alignright {
+    float: right;
+}
+
+.widget-content .alignleft {
+    float: left;
+}

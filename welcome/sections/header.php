@@ -20,8 +20,8 @@
     </div>
 
     <div class="welcome-promo-banner">
-        <a class="welcome-promo-offer" href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-welcome&utm_campaign=square-upgrade'); ?>" target="_blank"><?php echo esc_html__('Unlock all the possibitlies with Square Plus.', 'square'); ?></a>
-        <a href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-welcome&utm_campaign=square-upgrade'); ?>" target="_blank" class="button button-primary upgrade-btn"><?php echo esc_html__('Upgrade for $60', 'square'); ?></a>
+        <a class="welcome-promo-offer" href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-welcome&utm_campaign=square-upgrade'); ?>" target="_blank"><?php echo esc_html__('Unlock all the possibilities with Square Plus.', 'square'); ?></a>
+        <a href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-welcome&utm_campaign=square-upgrade'); ?>" target="_blank" class="button button-primary upgrade-btn"><?php echo esc_html__('Upgrade for $55', 'square'); ?></a>
     </div>
 </div>
 

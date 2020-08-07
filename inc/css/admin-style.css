@@ -15,10 +15,11 @@
 #sq_sidebar_layout label img{
     vertical-align: middle;
     border: 2px solid transparent;
+    width: 90px;
 }
 
 #sq_sidebar_layout label input:checked + img{
-    border: 2px solid #BBB;
+    border: 2px solid #007CBD;
 }
 
 .clearfix:after,

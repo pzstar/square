@@ -13,7 +13,7 @@ function sq_sidebar_layout_meta_box() {
     $screens = array('post', 'page');
 
     add_meta_box(
-            'sq_sidebar_layout', esc_html__('Sidebar Layout', 'square'), 'sq_sidebar_layout_meta_box_callback', $screens, 'normal', 'high'
+            'sq_sidebar_layout', esc_html__('Sidebar Layout', 'square'), 'sq_sidebar_layout_meta_box_callback', $screens, 'side', 'high'
     );
 }
 

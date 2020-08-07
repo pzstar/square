@@ -22,7 +22,7 @@
             <p><?php esc_html_e('Upgrade to pro version for additional features and better supports.', 'square'); ?></p>
         </td>
         <td colspan="2">
-            <a target="__blank" class="buy-pro-btn" href="https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-freevspro&utm_campaign=square-upgrade"><?php esc_html_e('Buy Now ($60 only)', 'square'); ?></a>
+            <a target="__blank" class="buy-pro-btn" href="https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-freevspro&utm_campaign=square-upgrade"><?php esc_html_e('Buy Now ($55 only)', 'square'); ?></a>
         </td>
     </tr>
     <tr>
@@ -288,7 +288,7 @@
             <p><?php esc_html_e('Upgrade to pro version for additional features and better supports.', 'square'); ?></p>
         </td>
         <td colspan="2">
-            <a target="__blank" class="buy-pro-btn" href="https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-freevspro&utm_campaign=square-upgrade"><?php esc_html_e('Buy Now ($60 only)', 'square'); ?></a>
+            <a target="__blank" class="buy-pro-btn" href="https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-freevspro&utm_campaign=square-upgrade"><?php esc_html_e('Buy Now ($55 only)', 'square'); ?></a>
         </td>
     </tr>
 </table>

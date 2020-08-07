@@ -1123,7 +1123,7 @@ msgid "Unlock all the possibitlies with Square Plus."
 msgstr ""
 
 #: welcome/sections/header.php:24
-msgid "Upgrade for $60"
+msgid "Upgrade for $55"
 msgstr ""
 
 #: welcome/sections/footer.php:3
@@ -1199,7 +1199,7 @@ msgid "Upgrade to pro version for additional features and better supports."
 msgstr ""
 
 #: welcome/sections/free_vs_pro.php:25 welcome/sections/free_vs_pro.php:291
-msgid "Buy Now ($60 only)"
+msgid "Buy Now ($55 only)"
 msgstr ""
 
 #: welcome/sections/free_vs_pro.php:29

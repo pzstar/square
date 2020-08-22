@@ -80,7 +80,7 @@ function square_customize_register($wp_customize) {
         'title' => esc_html__('Import Demo Content', 'square'),
         'priority' => 1001,
         'pro_text' => esc_html__('Import', 'square'),
-        'pro_url' => admin_url('/themes.php?page=square-welcome')
+        'pro_url' => admin_url('admin.php?page=square-welcome')
     )));
 
     $wp_customize->add_setting('square_template_color', array(

@@ -48,7 +48,7 @@
         <td>
             <span><?php esc_html_e('Elementor Compatible', 'square'); ?></span>
             <p><?php esc_html_e('Fan of Pagebuilder? No problem, with premium version you can create your website with Elementor. Elementor provides you with unlimited possibilities to create the website of your imagination.', 'square'); ?></td>
-        <td>0</td>
+        <td>5 Widgets</td>
         <td>45+ Widgets</td>
     </tr>
     <tr>

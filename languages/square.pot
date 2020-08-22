@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Square 1.0.0\n"
 "Report-Msgid-Bugs-To: http://hashthemes.com/\n"
-"POT-Creation-Date: 2020-07-02 18:29+0000\n"
+"POT-Creation-Date: 2020-08-22 08:47+0000\n"
 "POT-Revision-Date: Thu Jul 14 2016 22:42:45 GMT+0545 (Nepal Standard Time)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hash Themes <hashthemes@gmail.com>\n"
@@ -792,88 +792,88 @@ msgstr ""
 msgid "Free Vs Pro"
 msgstr ""
 
-#: welcome/welcome.php:89
+#: welcome/welcome.php:98
 msgid "Congratulations!"
 msgstr ""
 
-#: welcome/welcome.php:90
+#: welcome/welcome.php:99
 #, php-format
 msgid ""
 "%1$s is now installed and ready to use. You can start either by importing "
 "the ready made demo or get started by customizing it your self."
 msgstr ""
 
-#: welcome/welcome.php:94 welcome/sections/getting_started.php:5
+#: welcome/welcome.php:103
 msgid "Square Demo"
 msgstr ""
 
-#: welcome/welcome.php:101
+#: welcome/welcome.php:110
 msgid "Import Demo"
 msgstr ""
 
-#: welcome/welcome.php:102
+#: welcome/welcome.php:111
 msgid "Click below to install and active HashThemes Demo Importer Plugin."
 msgstr ""
 
-#: welcome/welcome.php:110
+#: welcome/welcome.php:119
 msgid "Get Started"
 msgstr ""
 
-#: welcome/welcome.php:111
+#: welcome/welcome.php:120
 #, php-format
 msgid ""
 "Here you will find all the necessary links and information on how to use %s."
 msgstr ""
 
-#: welcome/welcome.php:112
+#: welcome/welcome.php:121
 msgid "Go to Setting Page"
 msgstr ""
 
-#: welcome/welcome.php:116
+#: welcome/welcome.php:125
 msgid "Dismiss"
 msgstr ""
 
-#: welcome/welcome.php:127
+#: welcome/welcome.php:136
 msgid "Action Failed. Something is Wrong."
 msgstr ""
 
-#: welcome/welcome.php:136
+#: welcome/welcome.php:145
 msgid "Welcome"
 msgstr ""
 
-#: welcome/welcome.php:136
+#: welcome/welcome.php:145
 #, php-format
 msgid "%s Settings"
 msgstr ""
 
-#: welcome/welcome.php:167
+#: welcome/welcome.php:176
 msgid "Installing Demo Importer Plugin"
 msgstr ""
 
-#: welcome/welcome.php:168
+#: welcome/welcome.php:177
 msgid "Activating Demo Importer Plugin"
 msgstr ""
 
-#: welcome/welcome.php:169 welcome/welcome.php:261
+#: welcome/welcome.php:178 welcome/welcome.php:270
 msgid "Go to Demo Importer Page"
 msgstr ""
 
-#: welcome/welcome.php:171
+#: welcome/welcome.php:180
 msgid "Error! Reload the page and try again."
 msgstr ""
 
-#: welcome/welcome.php:245
+#: welcome/welcome.php:254
 #, php-format
 msgid ""
 "Please leave us a %s rating if you like our theme . A huge thank you from "
 "HashThemes in advance!"
 msgstr ""
 
-#: welcome/welcome.php:258
+#: welcome/welcome.php:267
 msgid "Activate Demo Importer Plugin"
 msgstr ""
 
-#: welcome/welcome.php:265
+#: welcome/welcome.php:274
 msgid "Install Demo Importer Plugin"
 msgstr ""
 
@@ -934,6 +934,10 @@ msgstr ""
 
 #: template-parts/content-summary.php:38
 msgid "Read More"
+msgstr ""
+
+#. Name of the template
+msgid "Blank Template(For Page Builders)"
 msgstr ""
 
 #. Name of the template
@@ -1029,60 +1033,110 @@ msgid ""
 "more features to the theme."
 msgstr ""
 
-#: welcome/sections/recommended_plugins.php:27
+#: welcome/sections/recommended_plugins.php:28
 msgid "Activate"
 msgstr ""
 
-#: welcome/sections/recommended_plugins.php:30
+#: welcome/sections/recommended_plugins.php:31
 msgid "Installed"
 msgstr ""
 
-#: welcome/sections/recommended_plugins.php:34
+#: welcome/sections/recommended_plugins.php:35
 msgid "Install Now"
 msgstr ""
 
 #: welcome/sections/getting_started.php:3
-msgid "Manual Setup from Customizer Panel"
+msgid "Manual Setup"
+msgstr ""
+
+#: welcome/sections/getting_started.php:6
+msgid "Viral Demo"
+msgstr ""
+
+#: welcome/sections/getting_started.php:8
+msgid ""
+"You can setup the home page sections either from Customizer Panel or from "
+"Elementor Pagebuilder"
 msgstr ""
 
 #: welcome/sections/getting_started.php:9
-msgid "Go to Appearance > Customize"
-msgstr ""
-
-#: welcome/sections/getting_started.php:10
-msgid ""
-"Click on \"Homepage Settings\" and turn on the option for \"Enable "
-"FrontPage\" Setting"
+msgid "FROM CUSTOMIZER"
 msgstr ""
 
 #: welcome/sections/getting_started.php:11
+msgid "Go to Appearance > Customize"
+msgstr ""
+
+#: welcome/sections/getting_started.php:12
+#, php-format
+msgid "Click on \"%s\" and turn on the option for \"Enable FrontPage\" Setting"
+msgstr ""
+
+#: welcome/sections/getting_started.php:12
+msgid "Homepage Settings"
+msgstr ""
+
+#: welcome/sections/getting_started.php:13
 msgid ""
 "Now go back and click on \"Front Page Sections\" and set up the FrontPage "
 "Section"
 msgstr ""
 
-#: welcome/sections/getting_started.php:13
-msgid "Go to Customizer Panels"
+#: welcome/sections/getting_started.php:15
+msgid "FROM ELEMENTOR"
 msgstr ""
 
 #: welcome/sections/getting_started.php:17
-msgid "Demo Importer"
+#, php-format
+msgid ""
+"Firstly install and activate \"Elementor\" and \"Hash Elements\" plugin from "
+"%s."
 msgstr ""
 
 #: welcome/sections/getting_started.php:17
-msgid "View Demo"
+msgid "Recommended Plugin page"
+msgstr ""
+
+#: welcome/sections/getting_started.php:18
+msgid ""
+"Create a new page and edit with Elementor. Drag and drop the news elements "
+"in the Elementor to create your own design."
 msgstr ""
 
 #: welcome/sections/getting_started.php:19
+msgid ""
+"Now go to Appearance > Customize > Homepage Settings and choose \"A static "
+"page\" for \"Your latest posts\" and select the created page for \"Home "
+"Page\" option."
+msgstr ""
+
+#: welcome/sections/getting_started.php:21
+#, php-format
+msgid "For detailed documentation, please visit %s."
+msgstr ""
+
+#: welcome/sections/getting_started.php:21
+msgid "Documentation Page"
+msgstr ""
+
+#: welcome/sections/getting_started.php:25
+msgid "Demo Importer"
+msgstr ""
+
+#: welcome/sections/getting_started.php:25
+msgid "View Demo"
+msgstr ""
+
+#: welcome/sections/getting_started.php:27
 #, php-format
 msgid "%s Demo"
 msgstr ""
 
-#: welcome/sections/getting_started.php:23
+#: welcome/sections/getting_started.php:31
 msgid "Or you can get started by importing the demo with just one click."
 msgstr ""
 
-#: welcome/sections/getting_started.php:24
+#: welcome/sections/getting_started.php:32
 #, php-format
 msgid ""
 "Click on the button below to install and activate the HashThemes Demo "
@@ -1090,7 +1144,7 @@ msgid ""
 "works, click %s."
 msgstr ""
 
-#: welcome/sections/getting_started.php:24
+#: welcome/sections/getting_started.php:32
 msgid "here"
 msgstr ""
 
@@ -1119,7 +1173,7 @@ msgid "Premium Demos"
 msgstr ""
 
 #: welcome/sections/header.php:23
-msgid "Unlock all the possibitlies with Square Plus."
+msgid "Unlock all the possibilities with Square Plus."
 msgstr ""
 
 #: welcome/sections/header.php:24

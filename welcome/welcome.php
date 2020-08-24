@@ -142,7 +142,7 @@ if (!class_exists('Square_Welcome')) :
 
         /** Register Menu for Welcome Page */
         public function welcome_register_menu() {
-            add_menu_page(esc_html__('Welcome', 'square'), sprintf(esc_html__('%s Settings', 'square'), esc_html(str_replace(' ', '', $this->theme_name))), 'manage_options', 'square-welcome', array($this, 'welcome_screen'), '', 2);
+            add_menu_page(esc_html__('Welcome', 'square'), sprintf(esc_html__('%s Settings', 'square'), esc_html(str_replace(' ', '', $this->theme_name))), 'manage_options', 'square-welcome', array($this, 'welcome_screen'), '', 60);
         }
 
         /** Welcome Page */
@@ -274,15 +274,6 @@ if (!class_exists('Square_Welcome')) :
                 $import_button_text = esc_html__('Install Demo Importer Plugin', 'square');
             }
             return '<a data-slug="' . esc_attr($slug) . '" data-filename="' . esc_attr($filename) . '" class="' . esc_attr($import_class) . '" href="' . $import_url . '">' . esc_html($import_button_text) . '</a>';
-        }
-
-        /** Check for Available Image */
-        public function image_exist($url = NULL) {
-            if (!$url)
-                return FALSE;
-
-            $headers = get_headers($url);
-            return stripos($headers[0], "200 OK") ? TRUE : FALSE;
         }
 
         public function erase_hide_notice() {

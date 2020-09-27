@@ -180,7 +180,7 @@ if (!class_exists('Square_Welcome')) :
                     'error' => esc_html__('Error! Reload the page and try again.', 'square'),
                 );
                 wp_enqueue_style('square-welcome', get_template_directory_uri() . '/welcome/css/welcome.css', array(), SQUARE_VERSION);
-                wp_enqueue_script('square-welcome', get_template_directory_uri() . '/welcome/js/welcome.js', array('plugin-install', 'updates'), SQUARE_VERSION);
+                wp_enqueue_script('square-welcome', get_template_directory_uri() . '/welcome/js/welcome.js', array('plugin-install', 'updates'), SQUARE_VERSION, true);
                 wp_localize_script('square-welcome', 'importer_params', $importer_params);
             }
         }

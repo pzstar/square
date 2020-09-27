@@ -21,6 +21,9 @@ Square is a beautifully crafted WordPress theme with lots of exciting feature to
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+= 1.7.8 - Sep 16, 2020 =
+* Select All not working issue fixed
+
 = 1.7.7 - Aug 24, 2020 =
 * Priority issue in add_menu_page for welcome page fixed
 

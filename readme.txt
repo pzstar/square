@@ -21,6 +21,9 @@ Square is a beautifully crafted WordPress theme with lots of exciting feature to
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+= 1.7.9 - Oct 11, 2020 =
+* Slider not working on RTL fixed
+
 = 1.7.8 - Sep 16, 2020 =
 * Select All not working issue fixed
 

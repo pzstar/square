@@ -1,6 +1,6 @@
 <?php
 /**
- * @package Total
+ * @package Square
  */
 add_action('widgets_init', 'square_register_latest_posts');
 

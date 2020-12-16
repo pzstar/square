@@ -21,6 +21,15 @@ Square is a beautifully crafted WordPress theme with lots of exciting feature to
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+= 1.8.2 - Dec 16, 2020 =
+* New Year banner added
+
+= 1.8.1 - Nov 27, 2020 =
+* Black Friday banner added
+
+= 1.8.0 - Nov 25, 2020 =
+* Black Friday deal added
+
 = 1.7.9 - Oct 11, 2020 =
 * Slider not working on RTL fixed
 

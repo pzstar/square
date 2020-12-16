@@ -6,7 +6,9 @@
  * @package Square
  */
 if (!defined('SQUARE_VERSION')) {
-    define('SQUARE_VERSION', '1.7.9');
+    $square_get_theme = wp_get_theme();
+    $square_version = $square_get_theme->Version;
+    define('SQUARE_VERSION', $square_version);
 }
 
 

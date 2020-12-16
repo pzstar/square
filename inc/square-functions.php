@@ -134,18 +134,18 @@ add_action('wp_head', 'square_dynamic_style');
 /**
  * Remove hentry from post_class
  */
-add_filter('post_class', 'total_remove_hentry_class');
+add_filter('post_class', 'square_remove_hentry_class');
 
-function total_remove_hentry_class($classes) {
+function square_remove_hentry_class($classes) {
     if (is_singular(array('post', 'page'))) {
         $classes = array_diff($classes, array('hentry'));
     }
     return $classes;
 }
 
-add_filter('get_custom_logo', 'total_remove_itemprop');
+add_filter('get_custom_logo', 'square_remove_itemprop');
 
-function total_remove_itemprop() {
+function square_remove_itemprop() {
     $custom_logo_id = get_theme_mod('custom_logo');
     $html = sprintf('<a href="%1$s" class="custom-logo-link" rel="home">%2$s</a>', esc_url(home_url('/')), wp_get_attachment_image($custom_logo_id, 'full', false, array(
         'class' => 'custom-logo',

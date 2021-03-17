@@ -485,7 +485,7 @@ a.buy-pro-btn:hover{
 }
 
 /** Footer Review **/
-body.appearance_page_square-welcome #wpfooter{
+body.toplevel_page_square-welcome #wpfooter{
     position: fixed;
     background: #23282e;
     color: #FFF;
@@ -494,7 +494,7 @@ body.appearance_page_square-welcome #wpfooter{
     margin-right: 40px;
 }
 
-body.appearance_page_square-welcome #wpfooter a{
+body.toplevel_page_square-welcome #wpfooter a{
     color: #FFF;
 }
 

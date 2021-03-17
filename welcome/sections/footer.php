@@ -2,6 +2,7 @@
     <div class="welcome-upgrade-header">
         <h3><?php printf(esc_html__('Square Plus Demos - Premium Version of %s', 'square'), $this->theme_name); ?></h3>
         <p><?php echo sprintf(esc_html__('Check out the websites that you can create with the premium version of the %s Theme. These demos can be imported with just one click in the premium version.', 'square'), $this->theme_name); ?></p>
+        <p><?php echo esc_html__('These demos are available in both Customizer and Elementor version.', 'square'); ?></p>
     </div>
 
     <div class="recomended-plugin-wrap">

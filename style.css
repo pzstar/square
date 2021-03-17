@@ -4,12 +4,12 @@ Theme URI: https://hashthemes.com/wordpress-theme/square/
 Author: HashThemes
 Author URI: https://hashthemes.com
 Description: Square is a flexible responsive multipurpose theme compatible with all browsers and devices, fully mobile friendly, loaded with lots of features. It is a minimal theme based on WordPress Customizer that allows you to customize with live preview. The theme can be used for business, corporate, digital agency, personal, portfolio, photography, parallax, blogs and magazines. Square is eCommerce (WooCommerce) Compatible, Polylang Compatible, WPML, RTL, Retina Ready, SEO Friendly and Support bbPress and BuddyPress. More over it is a complete theme. For demo https://demo.hashthemes.com/square
-Version: 1.8.2
+Version: 1.8.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: square
 Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, e-commerce, photography, portfolio, rtl-language-support
-Tested up to: 5.5
+Tested up to: 5.6.2
 Requires PHP: 5.6
 This theme, like WordPress, is licensed under the GPL.
 */
@@ -2613,4 +2613,90 @@ html, body {
     #sq-site-navigation{
         display: block !important;
     }
+}
+
+/*--------------------------------------------------------------
+## Gutenberg CSS
+--------------------------------------------------------------*/
+
+@media screen and (min-width: 768px) {
+    .alignfull,
+    .alignwide {
+        width: auto;
+        max-width: 1000%;
+    }
+    body.sq_no_sidebar .alignfull,
+    body.sq_no_sidebar_condensed .alignfull {
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+    }
+    body.sq_no_sidebar .alignwide,
+    body.sq_no_sidebar_condensed .alignwide {
+        margin-left: calc(25% - 25vw);
+        margin-right: calc(25% - 25vw);
+    }
+    body.sq_right_sidebar .alignfull {
+        margin-left: calc(50% / .70 - 50vw);
+    }
+    body.sq_right_sidebar .alignwide {
+        margin-left: calc(25% / .70 - 25vw);
+    }
+    body.sq_right_sidebar .align-wrap {
+        width: auto;
+        margin-left: calc(50% / .7 - 50vw);
+    }
+    body.sq_left_sidebar .alignfull {
+        margin-right: calc(50% / .70 - 50vw);
+    }
+    body.sq_left_sidebar .alignwide {
+        margin-right: calc(25% / .70 - 25vw);
+    }
+    body.sq_left_sidebar .align-wrap {
+        width: auto;
+        margin-right: calc(50% / .7 - 50vw);
+    }
+}
+
+.wp-block-latest-posts.is-grid {
+    margin-left: 0;
+}
+
+.wp-block-quote {
+    margin: 30px 0;
+}
+
+.wp-block-quote.is-large,
+.wp-block-quote.is-style-large {
+    margin: 30px 0;
+}
+
+.wp-block-categories,
+.wp-block-archives {
+    list-style: none;
+}
+
+.wp-block-pullquote {
+    margin-bottom: 30px;
+    padding: 40px 0;
+}
+
+.wp-block-pullquote blockquote {
+    background: none;
+    padding: 0;
+    border: none;
+    margin-bottom: 0;
+}
+
+.wp-block-pullquote cite {
+    color: inherit;
+}
+
+.wp-block-gallery {
+    margin-left: 0;
+}
+
+.wp-block-gallery .blocks-gallery-image figcaption,
+.wp-block-gallery .blocks-gallery-item figcaption,
+.wp-block-image figcaption {
+    font-size: 0.9em;
 }

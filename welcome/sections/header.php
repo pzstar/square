@@ -1,5 +1,3 @@
-<a href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-welcome&utm_campaign=square-bf-banner'); ?>" style="display: block; margin-bottom: 40px;"><img style="width:100%" src="<?php echo esc_url(get_template_directory_uri().'/welcome/css/new-year-deal.jpg'); ?>"/></a>
-
 <div class="welcome-header clearfix">
     <div class="welcome-intro">
         <h2><?php
@@ -22,8 +20,8 @@
     </div>
 
     <div class="welcome-promo-banner">
-        <a class="welcome-promo-offer" href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-welcome&utm_campaign=square-upgrade'); ?>" target="_blank"><?php echo esc_html__('Christmas & New Year Discount', 'square'); ?><span><?php echo esc_html__('40% OFF', 'square'); ?></span></a>
-        <a href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-welcome&utm_campaign=square-upgrade'); ?>" target="_blank" class="button button-primary upgrade-btn"><?php echo esc_html__('Upgrade to Pro', 'square'); ?></a>
+        <a class="welcome-promo-offer" href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-welcome&utm_campaign=square-upgrade'); ?>" target="_blank"><?php echo esc_html__('Unlock all the possibilities with Square Plus.', 'square'); ?></a>
+        <a href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-welcome&utm_campaign=square-upgrade'); ?>" target="_blank" class="button button-primary upgrade-btn"><?php echo esc_html__('Upgrade for $55', 'square'); ?></a>
     </div>
 </div>
 

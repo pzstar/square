@@ -85,19 +85,19 @@
     // Featured Post Icons
     wp.customize('square_featured_page_icon1', function (value) {
         value.bind(function (to) {
-            $('.sq-featured-post1 i').removeClass().addClass('fa ' + to);
+            $('.sq-featured-post1 i').removeClass().addClass(to);
         });
     });
 
     wp.customize('square_featured_page_icon2', function (value) {
         value.bind(function (to) {
-            $('.sq-featured-post2 i').removeClass().addClass('fa ' + to);
+            $('.sq-featured-post2 i').removeClass().addClass(to);
         });
     });
 
     wp.customize('square_featured_page_icon3', function (value) {
         value.bind(function (to) {
-            $('.sq-featured-post3 i').removeClass().addClass('fa ' + to);
+            $('.sq-featured-post3 i').removeClass().addClass(to);
         });
     });
 
@@ -133,31 +133,31 @@
 
     wp.customize('square_tab_icon1', function (value) {
         value.bind(function (to) {
-            $('.sq-tab-list1 i').removeClass().addClass('fa ' + to);
+            $('.sq-tab-list1 i').removeClass().addClass(to);
         });
     });
 
     wp.customize('square_tab_icon2', function (value) {
         value.bind(function (to) {
-            $('.sq-tab-list2 i').removeClass().addClass('fa ' + to);
+            $('.sq-tab-list2 i').removeClass().addClass(to);
         });
     });
 
     wp.customize('square_tab_icon3', function (value) {
         value.bind(function (to) {
-            $('.sq-tab-list3 i').removeClass().addClass('fa ' + to);
+            $('.sq-tab-list3 i').removeClass().addClass(to);
         });
     });
 
     wp.customize('square_tab_icon4', function (value) {
         value.bind(function (to) {
-            $('.sq-tab-list4 i').removeClass().addClass('fa ' + to);
+            $('.sq-tab-list4 i').removeClass().addClass(to);
         });
     });
 
     wp.customize('square_tab_icon5', function (value) {
         value.bind(function (to) {
-            $('.sq-tab-list5 i').removeClass().addClass('fa ' + to);
+            $('.sq-tab-list5 i').removeClass().addClass(to);
         });
     });
 

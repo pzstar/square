@@ -16,7 +16,7 @@ jQuery(function ($) {
         dots: false,
         autoplayTimeout: 7000,
         animateOut: 'fadeOut',
-        navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>']
+        navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>']
     });
 
     $(".sq_client_logo_slider").owlCarousel({

@@ -21,6 +21,9 @@ Square is a beautifully crafted WordPress theme with lots of exciting feature to
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+= 1.8.6 - May 14, 2021 =
+* Fontawesome updated
+
 = 1.8.5 - Mar 17, 2021 =
 * Minor design bug fixed
 

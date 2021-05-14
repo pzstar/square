@@ -383,7 +383,7 @@ function square_customize_register($wp_customize) {
         ));
 
         $wp_customize->add_setting('square_featured_page_icon' . $i, array(
-            'default' => 'fa fa-bell',
+            'default' => 'far fa-bell',
             'sanitize_callback' => 'square_sanitize_text'
         ));
 
@@ -541,7 +541,7 @@ function square_customize_register($wp_customize) {
         ));
 
         $wp_customize->add_setting('square_tab_icon' . $i, array(
-            'default' => 'fa fa-bell',
+            'default' => 'far fa-bell',
             'sanitize_callback' => 'square_sanitize_text'
         ));
 
@@ -852,8 +852,8 @@ if (class_exists('WP_Customize_Control')) {
                 <?php } ?>
 
                 <div class="square-selected-icon">
-                    <i class="fa <?php echo esc_attr($this->value()); ?>"></i>
-                    <span><i class="fa fa-angle-down"></i></span>
+                    <i class="<?php echo esc_attr($this->value()); ?>"></i>
+                    <span><i class="fas fa-chevron-down"></i></span>
                 </div>
 
                 <ul class="square-icon-list clearfix">

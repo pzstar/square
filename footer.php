@@ -82,22 +82,22 @@
                 $instagram = get_theme_mod('square_social_instagram');
 
                 if ($facebook)
-                    echo '<a class="sq-facebook" href="' . esc_url($facebook) . '" target="_blank"><i class="fa fa-facebook"></i></a>';
+                    echo '<a class="sq-facebook" href="' . esc_url($facebook) . '" target="_blank"><i class="fab fa-facebook-f"></i></a>';
 
                 if ($twitter)
-                    echo '<a class="sq-twitter" href="' . esc_url($twitter) . '" target="_blank"><i class="fa fa-twitter"></i></a>';
+                    echo '<a class="sq-twitter" href="' . esc_url($twitter) . '" target="_blank"><i class="fab fa-twitter"></i></a>';
 
                 if ($pinterest)
-                    echo '<a class="sq-pinterest" href="' . esc_url($pinterest) . '" target="_blank"><i class="fa fa-pinterest"></i></a>';
+                    echo '<a class="sq-pinterest" href="' . esc_url($pinterest) . '" target="_blank"><i class="fab fa-pinterest"></i></a>';
 
                 if ($youtube)
-                    echo '<a class="sq-youtube" href="' . esc_url($youtube) . '" target="_blank"><i class="fa fa-youtube"></i></a>';
+                    echo '<a class="sq-youtube" href="' . esc_url($youtube) . '" target="_blank"><i class="fab fa-youtube"></i></a>';
 
                 if ($linkedin)
-                    echo '<a class="sq-linkedin" href="' . esc_url($linkedin) . '" target="_blank"><i class="fa fa-linkedin"></i></a>';
+                    echo '<a class="sq-linkedin" href="' . esc_url($linkedin) . '" target="_blank"><i class="fab fa-linkedin"></i></a>';
 
                 if ($instagram)
-                    echo '<a class="sq-instagram" href="' . esc_url($instagram) . '" target="_blank"><i class="fa fa-instagram"></i></a>';
+                    echo '<a class="sq-instagram" href="' . esc_url($instagram) . '" target="_blank"><i class="fab fa-instagram"></i></a>';
                 ?>
             </div>
         </div>

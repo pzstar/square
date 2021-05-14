@@ -4,7 +4,7 @@ Theme URI: https://hashthemes.com/wordpress-theme/square/
 Author: HashThemes
 Author URI: https://hashthemes.com
 Description: Square is a flexible responsive multipurpose theme compatible with all browsers and devices, fully mobile friendly, loaded with lots of features. It is a minimal theme based on WordPress Customizer that allows you to customize with live preview. The theme can be used for business, corporate, digital agency, personal, portfolio, photography, parallax, blogs and magazines. Square is eCommerce (WooCommerce) Compatible, Polylang Compatible, WPML, RTL, Retina Ready, SEO Friendly and Support bbPress and BuddyPress. More over it is a complete theme. For demo https://demo.hashthemes.com/square
-Version: 1.8.5
+Version: 1.8.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: square
@@ -194,7 +194,7 @@ select,
 textarea {
     color: #404040;
     font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.8;
 }
 h1,
@@ -600,7 +600,7 @@ a:active {
     margin: 0;
     border: none;
 }
-.sq-contact-info ul li .fa{
+.sq-contact-info ul li i{
     margin-left: -30px;
     float: left;
     margin-top: 6px;
@@ -743,8 +743,8 @@ body:not(.page-template-page-builder-template) .single-entry-content{
 .entry-footer span{
     margin-right: 10px;
 }
-.entry-meta span .fa,
-.entry-footer span .fa{
+.entry-meta span > i,
+.entry-footer span > i{
     margin-right: 5px;
 }
 .entry-meta a,
@@ -759,8 +759,9 @@ body:not(.page-template-page-builder-template) .single-entry-content{
     margin-top: 25px;
     text-align: right;
 }
-.entry-readmore a .fa{
+.entry-readmore a i{
     margin-left: 10px;
+    font-size: 13px;
 }
 .square-share-buttons{
     text-align: center;
@@ -779,7 +780,7 @@ body:not(.page-template-page-builder-template) .single-entry-content{
     font-family: Arial;
     color: #666;
 }
-.square-share-buttons a:hover{
+.entry-footer .square-share-buttons a:hover{
     background: #5bc2ce;
     color: #FFF;
     border: 1px solid #5bc2ce;
@@ -1379,16 +1380,16 @@ object {
     height: 40px;
     width: 40px;
     text-indent: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 #sq-home-slider-section .owl-carousel .owl-nav button.owl-prev:hober, 
 #sq-home-slider-section .owl-carousel .owl-nav button.owl-next:hover{
     background: #4EA3AD
 }
-#sq-home-slider-section .owl-carousel .owl-nav button .fa{
-    font-size: 24px;
-    line-height: 40px;
-    width: 40px;
-    text-align: center;
+#sq-home-slider-section .owl-carousel .owl-nav button i{
+    font-size: 14px;
     color: #FFF;
 }
 #sq-home-slider-section .owl-carousel .owl-nav button.owl-prev{
@@ -1592,12 +1593,12 @@ object {
     display: block;
     padding: 15px 0;
 }
-.sq-tab li .fa{
+.sq-tab li i{
     float: left;
     margin-left: -40px;
     line-height: 1.2;
 }
-.sq-tab li.sq-active .fa{
+.sq-tab li.sq-active i{
     color: #5bc2ce;
 }
 .sq-tab-content{
@@ -2474,7 +2475,7 @@ html, body {
         padding-left: 50px;
         border-bottom: 2px solid transparent;
     }
-    .sq-tab li .fa{
+    .sq-tab li i{
         margin-left: -30px;
     }
     .sq-tab li.sq-active:after{

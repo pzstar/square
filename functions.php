@@ -276,7 +276,7 @@ function square_scripts() {
     wp_enqueue_style('square-fonts', square_fonts_url(), array(), NULL);
     wp_enqueue_style('animate', get_template_directory_uri() . '/css/animate.css', array(), SQUARE_VERSION);
     wp_enqueue_style('font-awesome-4.7.0', get_template_directory_uri() . '/css/font-awesome-4.7.0.css', array(), SQUARE_VERSION);
-    wp_enqueue_style('font-awesome-5.2.0', get_template_directory_uri() . '/css/font-awesome.css', array(), SQUARE_VERSION);
+    wp_enqueue_style('font-awesome-5.2.0', get_template_directory_uri() . '/css/font-awesome-5.2.0.css', array(), SQUARE_VERSION);
     wp_enqueue_style('owl-carousel', get_template_directory_uri() . '/css/owl.carousel.css', array(), SQUARE_VERSION);
     wp_enqueue_style('square-style', get_stylesheet_uri(), array(), SQUARE_VERSION);
     wp_add_inline_style('square-style', square_dymanic_styles());

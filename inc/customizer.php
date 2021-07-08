@@ -851,21 +851,26 @@ if (class_exists('WP_Customize_Control')) {
                         <?php echo wp_kses_post($this->description); ?>
                     </span>
                 <?php } ?>
-
                 <div class="square-selected-icon">
                     <i class="<?php echo esc_attr($this->value()); ?>"></i>
                     <span><i class="fas fa-chevron-down"></i></span>
                 </div>
 
-                <ul class="square-icon-list clearfix">
-                    <?php
-                    $square_font_awesome_icon_array = square_font_awesome_icon_array();
-                    foreach ($square_font_awesome_icon_array as $square_font_awesome_icon) {
-                        $icon_class = $this->value() == $square_font_awesome_icon ? 'icon-active' : '';
-                        echo '<li class=' . esc_attr($icon_class) . '><i class="' . esc_attr($square_font_awesome_icon) . '"></i></li>';
-                    }
-                    ?>
-                </ul>
+                <div class="square-icon-box">
+                    <div class="square-icon-search">
+                        <input type="text" class="square-icon-search-input" placeholder="<?php echo esc_attr__('Type to filter', 'square') ?>" />
+                    </div>
+
+                    <ul class="square-icon-list clearfix">
+                        <?php
+                        $square_font_awesome_icon_array = square_font_awesome_icon_array();
+                        foreach ($square_font_awesome_icon_array as $square_font_awesome_icon) {
+                            $icon_class = $this->value() == $square_font_awesome_icon ? 'icon-active' : '';
+                            echo '<li class=' . esc_attr($icon_class) . '><i class="' . esc_attr($square_font_awesome_icon) . '"></i></li>';
+                        }
+                        ?>
+                    </ul>
+                </div>
                 <input type="hidden" value="<?php $this->value(); ?>" <?php $this->link(); ?> />
             </label>
             <?php

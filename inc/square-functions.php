@@ -279,6 +279,27 @@ function square_enable_frontpage_default() {
     return $frontpage_active == 'yes' ? true : false;
 }
 
+function square_create_elementor_kit() {
+    if (!did_action('elementor/loaded')) {
+        return;
+    }
+
+    $kit = Elementor\Plugin::$instance->kits_manager->get_active_kit();
+
+    if (!$kit->get_id()) {
+        $created_default_kit = Elementor\Plugin::$instance->kits_manager->create_default();
+        update_option('elementor_active_kit', $created_default_kit);
+    }
+}
+
+function square_enable_wpform_export($args) {
+    $args['can_export'] = true;
+    return $args;
+}
+
+add_action('init', 'square_create_elementor_kit');
+add_filter('wpforms_post_type_args', array($this, 'square_enable_wpform_export'));
+
 function square_premium_demo_config($demos) {
     $premium_demos = array(
         'main-demo' => array(

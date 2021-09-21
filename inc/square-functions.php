@@ -298,7 +298,7 @@ function square_enable_wpform_export($args) {
 }
 
 add_action('init', 'square_create_elementor_kit');
-add_filter('wpforms_post_type_args', array($this, 'square_enable_wpform_export'));
+add_filter('wpforms_post_type_args', 'square_enable_wpform_export');
 
 function square_premium_demo_config($demos) {
     $premium_demos = array(

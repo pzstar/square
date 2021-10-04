@@ -100,7 +100,7 @@ if (!class_exists('Square_Welcome')) :
 
                     <div class="square-welcome-info">
                         <div class="square-welcome-thumb">
-                            <img src="<?php echo esc_url(get_stylesheet_directory_uri() . '/screenshot.png'); ?>" alt="<?php echo esc_attr__('Square Demo', 'square'); ?>">
+                            <img src="<?php echo esc_url(get_stylesheet_directory_uri() . '/screenshot.jpg'); ?>" alt="<?php echo esc_attr__('Square Demo', 'square'); ?>">
                         </div>
 
                         <?php

@@ -4,13 +4,13 @@ Theme URI: https://hashthemes.com/wordpress-theme/square/
 Author: HashThemes
 Author URI: https://hashthemes.com
 Description: Square is a flexible responsive multipurpose theme compatible with all browsers and devices, fully mobile friendly, loaded with lots of features. It is a minimal theme based on WordPress Customizer that allows you to customize with live preview. The theme can be used for business, corporate, digital agency, personal, portfolio, photography, parallax, blogs and magazines. Square is eCommerce (WooCommerce) Compatible, Polylang Compatible, WPML, RTL, Retina Ready, SEO Friendly and Support bbPress and BuddyPress. More over it is a complete theme. For demo https://demo.hashthemes.com/square
-Version: 1.8.8
+Version: 1.9.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: square
 Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, e-commerce, photography, portfolio, rtl-language-support
-Tested up to: 5.7.2
-Requires PHP: 5.6
+Tested up to: 5.8
+Requires PHP: 5.0
 This theme, like WordPress, is licensed under the GPL.
 */
 /*--------------------------------------------------------------
@@ -1713,7 +1713,7 @@ object {
     display: none;
     position: absolute;
     top: 20px;
-    right: 20px;
+    right: 30px;
     height: 40px;
     width: 40px;
     cursor: pointer;
@@ -2300,31 +2300,14 @@ object {
     outline: 0;
 }
 /*--------------------------------------------------------------
-## Sticky Footer CSS
---------------------------------------------------------------
-html, body {
-    height: 100%;
-}
-#sq-page{
-    display: table; 
-    width: 100%; 
-    height: 100%;
-}
-#sq-colophon{
-    display: table-row;
-    height: 1px;
-}
-#sq-content{
-    height: auto;
-}
-*/
-/*--------------------------------------------------------------
 ## Responsive CSS
 --------------------------------------------------------------*/
 @media screen and (max-width: 1120px){
-    .sq-container{
+    .sq-container,
+    .elementor-section.elementor-section-boxed.elementor-section-stretched>.elementor-container,
+    .elementor-template-full-width .elementor-section.elementor-section-boxed>.elementor-container{
         width: 100%;
-        padding: 0 10px;
+        padding: 0 30px;
     }
     #sq-page{
         display: block;

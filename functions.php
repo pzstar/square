@@ -14,8 +14,7 @@ if (!defined('SQUARE_VERSION')) {
 
 if (!function_exists('square_setup')) :
 
-//Sets up theme defaults and registers support for various WordPress features.
-
+    //Sets up theme defaults and registers support for various WordPress features.
     function square_setup() {
         // Make theme available for translation.
         load_theme_textdomain('square', get_template_directory() . '/languages');
@@ -47,11 +46,13 @@ if (!function_exists('square_setup')) :
          * to output valid HTML5.
          */
         add_theme_support('html5', array(
-            'search-form',
             'comment-form',
             'comment-list',
             'gallery',
             'caption',
+            'style',
+            'script',
+            'navigation-widgets'
         ));
 
         // Set up the WordPress core custom background feature.
@@ -79,6 +80,12 @@ if (!function_exists('square_setup')) :
 
         // Add support for responsive embedded content.
         add_theme_support('responsive-embeds');
+        
+        add_theme_support('custom-line-height');
+
+        add_theme_support('custom-spacing');
+
+        add_theme_support('custom-units');
 
         /*
          * This theme styles the visual editor to resemble the theme style,

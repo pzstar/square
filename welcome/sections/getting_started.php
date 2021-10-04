@@ -24,7 +24,7 @@
     <div class="welcome-demo-import">
         <h3><?php echo esc_html__('Demo Importer', 'square'); ?><a href="https://demo.hashthemes.com/<?php echo get_option('stylesheet'); ?>" target="_blank" class="button button-primary"><?php esc_html_e('View Demo', 'square'); ?></a></h3>
         <div class="welcome-theme-thumb">
-            <img src="<?php echo esc_url(get_stylesheet_directory_uri() . '/screenshot.png'); ?>" alt="<?php printf(esc_attr__('%s Demo', 'square'), $this->theme_name); ?>">
+            <img src="<?php echo esc_url(get_stylesheet_directory_uri() . '/screenshot.jpg'); ?>" alt="<?php printf(esc_attr__('%s Demo', 'square'), $this->theme_name); ?>">
         </div>
 
         <div class="welcome-demo-import-text">

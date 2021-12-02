@@ -7,7 +7,7 @@ Tags: translation-ready, custom-background, theme-options, custom-menu, post-for
 
 Requires at least: 5.0
 Tested up to: 5.8
-Stable tag: 1.9.2
+Stable tag: 1.9.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,6 +21,9 @@ Square is a beautifully crafted WordPress theme with lots of exciting feature to
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+= 1.9.3 - Nov 25, 2021 =
+* Black Friday discount added
+
 = 1.9.1 - Oct 11, 2021 =
 * Files Optimized
 

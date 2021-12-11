@@ -65,7 +65,7 @@ function square_customize_register($wp_customize) {
 
     $wp_customize->add_section(new Square_Customize_Section_Pro($wp_customize, 'square-pro-section', array(
         'priority' => 0,
-        'pro_text' => esc_html__('Upgrade to Pro (Black Friday Offer - 40% OFF', 'square'),
+        'pro_text' => esc_html__('Upgrade to Pro', 'square'),
         'pro_url' => 'https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-customizer-button&utm_campaign=square-upgrade'
     )));
 

@@ -1,13 +1,13 @@
 === Square ===
-Square WordPress Theme, Copyright HashThemes 2021
+Square WordPress Theme, Copyright HashThemes 2022
 Square is distributed under the terms of the GNU GPL (http://www.gnu.org/licenses/gpl-2.0.html)
 
 Contributors: HashThemes
 Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments
 
-Requires at least: 5.0
+Requires at least: 5.6
 Tested up to: 5.8
-Stable tag: 1.9.4
+Stable tag: 1.9.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,6 +21,12 @@ Square is a beautifully crafted WordPress theme with lots of exciting feature to
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+= 1.9.6 - Jan 07, 2021 =
+* New Year & Christmas discount removed
+
+= 1.9.5 - Dec 21, 2021 =
+* New Year & Christmas discount added
+
 = 1.9.4 - Dec 12, 2021 =
 * Black Friday discount removed
 

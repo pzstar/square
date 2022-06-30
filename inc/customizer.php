@@ -66,7 +66,8 @@ function square_customize_register($wp_customize) {
     $wp_customize->add_section(new Square_Customize_Section_Pro($wp_customize, 'square-pro-section', array(
         'priority' => 0,
         'pro_text' => esc_html__('Upgrade to Pro', 'square'),
-        'pro_url' => 'https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-customizer-button&utm_campaign=square-upgrade'
+        'pro_url' => 'https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-customizer-button&utm_campaign=square-upgrade',
+        'active_callback' => 'square_is_upgrade_notice_active'
     )));
 
     $wp_customize->add_section(new Square_Customize_Section_Pro($wp_customize, 'square-doc-section', array(
@@ -94,13 +95,14 @@ function square_customize_register($wp_customize) {
     )));
 
     $wp_customize->add_setting('square_color_upgrade_text', array(
-        'sanitize_callback' => 'square_sanitize_text'
+        'sanitize_callback' => 'square_sanitize_text',
     ));
 
     $wp_customize->add_control(new Square_Upgrade_Text($wp_customize, 'square_color_upgrade_text', array(
         'section' => 'colors',
         'label' => esc_html__('For more color options,', 'square'),
-        'priority' => 100
+        'priority' => 100,
+        'active_callback' => 'square_is_upgrade_notice_active'
     )));
 
     /* ============HOMEPAGE SETTINGS PANEL============ */
@@ -181,7 +183,7 @@ function square_customize_register($wp_customize) {
     )));
 
     $wp_customize->add_setting('square_header_upgrade_text', array(
-        'sanitize_callback' => 'square_sanitize_text'
+        'sanitize_callback' => 'square_sanitize_text',
     ));
 
     $wp_customize->add_control(new Square_Upgrade_Text($wp_customize, 'square_header_upgrade_text', array(
@@ -196,7 +198,8 @@ function square_customize_register($wp_customize) {
             esc_html__('Header color options', 'square'),
             esc_html__('Option for different header banner on each post/page', 'square'),
         ),
-        'priority' => 100
+        'priority' => 100,
+        'active_callback' => 'square_is_upgrade_notice_active'
     )));
 
     //BLOG SETTINGS
@@ -234,7 +237,7 @@ function square_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('square_blog_upgrade_text', array(
-        'sanitize_callback' => 'square_sanitize_text'
+        'sanitize_callback' => 'square_sanitize_text',
     ));
 
     $wp_customize->add_control(new Square_Upgrade_Text($wp_customize, 'square_blog_upgrade_text', array(
@@ -247,7 +250,8 @@ function square_customize_register($wp_customize) {
             esc_html__('Selectively show/hide posted date, author, comment count, categories, tags', 'square'),
             esc_html__('Reorder various section in single post', 'square'),
         ),
-        'priority' => 100
+        'priority' => 100,
+        'active_callback' => 'square_is_upgrade_notice_active'
     )));
 
     //BACKGROUND IMAGE
@@ -320,7 +324,7 @@ function square_customize_register($wp_customize) {
     }
 
     $wp_customize->add_setting('square_slider_upgrade_text', array(
-        'sanitize_callback' => 'square_sanitize_text'
+        'sanitize_callback' => 'square_sanitize_text',
     ));
 
     $wp_customize->add_control(new Square_Upgrade_Text($wp_customize, 'square_slider_upgrade_text', array(
@@ -334,7 +338,8 @@ function square_customize_register($wp_customize) {
             esc_html__('Option to change caption background and text color', 'square'),
             esc_html__('Other more settings', 'square')
         ),
-        'priority' => 100
+        'priority' => 100,
+        'active_callback' => 'square_is_upgrade_notice_active'
     )));
 
     /* ============FEATURED SECTION============ */
@@ -410,7 +415,8 @@ function square_customize_register($wp_customize) {
             esc_html__('Configure no of column to display in a row', 'square'),
             esc_html__('Multiple background option(image, gradient, video) for the section', 'square'),
         ),
-        'priority' => 100
+        'priority' => 100,
+        'active_callback' => 'square_is_upgrade_notice_active'
     )));
 
     /* ============ABOUT SECTION============ */
@@ -490,7 +496,8 @@ function square_customize_register($wp_customize) {
             esc_html__('Configure the gallery width', 'square'),
             esc_html__('Multiple background option(image, gradient, video) for the section', 'square')
         ),
-        'priority' => 100
+        'priority' => 100,
+        'active_callback' => 'square_is_upgrade_notice_active'
     )));
 
     /* ============ABOUT SECTION============ */
@@ -580,7 +587,8 @@ function square_customize_register($wp_customize) {
             esc_html__('5000+ icon to choose from(5 icon packs)', 'square'),
             esc_html__('Multiple background option(image, gradient, video) for the section', 'square'),
         ),
-        'priority' => 100
+        'priority' => 100,
+        'active_callback' => 'square_is_upgrade_notice_active'
     )));
 
     /* ============CLIENTS LOGO SECTION============ */
@@ -638,7 +646,7 @@ function square_customize_register($wp_customize) {
     )));
 
     $wp_customize->add_setting('square_logo_upgrade_text', array(
-        'sanitize_callback' => 'square_sanitize_text'
+        'sanitize_callback' => 'square_sanitize_text',
     ));
 
     $wp_customize->add_control(new Square_Upgrade_Text($wp_customize, 'square_logo_upgrade_text', array(
@@ -649,7 +657,8 @@ function square_customize_register($wp_customize) {
             esc_html__('Option to link the logos to external url', 'square'),
             esc_html__('Multiple background option(image, gradient, video) for the section', 'square')
         ),
-        'priority' => 100
+        'priority' => 100,
+        'active_callback' => 'square_is_upgrade_notice_active'
     )));
 
     $wp_customize->add_section(new Square_Customize_Upgrade_Section($wp_customize, 'square-upgrade-section', array(
@@ -671,7 +680,8 @@ function square_customize_register($wp_customize) {
             esc_html__('- Call To Action Section', 'square'),
             esc_html__('------------------------', 'square'),
             esc_html__('- Elementor Pagebuilder Compatible. All the above sections can be created with Elementor Page Builder or Customizer whichever you like.', 'square'),
-        )
+        ),
+        'active_callback' => 'square_is_upgrade_notice_active'
     )));
 
     /* ============SOCIAL ICONS SECTION============ */
@@ -757,14 +767,26 @@ function square_customize_register($wp_customize) {
         'priority' => 1
     ));
 
+    $wp_customize->add_setting('square_hide_upgrade_notice', array(
+        'sanitize_callback' => 'square_sanitize_checkbox',
+        'default' => false,
+    ));
+
+    $wp_customize->add_control(new Square_Toggle_Control($wp_customize, 'square_hide_upgrade_notice', array(
+        'section' => 'square_pro_feature_section',
+        'label' => esc_html__('Hide all Upgrade Notices from Customizer', 'square'),
+        'description' => esc_html__('If you don\'t want to upgrade to premium version then you can turn off all the upgrade notices. However you can turn it on anytime if you make mind to upgrade to premium version.', 'square')
+    )));
+
     $wp_customize->add_setting('square_pro_features', array(
-        'sanitize_callback' => 'square_sanitize_text'
+        'sanitize_callback' => 'square_sanitize_text',
     ));
 
     $wp_customize->add_control(new Square_Info_Text($wp_customize, 'square_pro_features', array(
         'settings' => 'square_pro_features',
         'section' => 'square_pro_feature_section',
-        'description' => $square_pro_features
+        'description' => $square_pro_features,
+        'active_callback' => 'square_is_upgrade_notice_active'
     )));
 }
 
@@ -1186,4 +1208,9 @@ function square_sanitize_choices($input, $setting) {
     } else {
         return $setting->default;
     }
+}
+
+function square_is_upgrade_notice_active() {
+    $show_upgrade_notice = get_theme_mod('square_hide_upgrade_notice', false);
+    return !$show_upgrade_notice;
 }

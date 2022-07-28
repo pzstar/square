@@ -256,8 +256,8 @@ if (!function_exists('square_fonts_url')) :
             $fonts_url = add_query_arg(array(
                 'family' => urlencode(implode('|', $fonts)),
                 'subset' => urlencode($subsets),
-                'display' => 'swap'
-                    ), '//fonts.googleapis.com/css');
+                'display' => 'swap',
+                    ), 'https://fonts.googleapis.com/css');
         }
 
         return $fonts_url;
@@ -280,13 +280,24 @@ function square_scripts() {
 
     wp_enqueue_script('square-custom', get_template_directory_uri() . '/js/square-custom.js', array('jquery'), SQUARE_VERSION, true);
 
-    wp_enqueue_style('square-fonts', square_fonts_url(), array(), NULL);
     wp_enqueue_style('animate', get_template_directory_uri() . '/css/animate.css', array(), SQUARE_VERSION);
     wp_enqueue_style('font-awesome-4.7.0', get_template_directory_uri() . '/css/font-awesome-4.7.0.css', array(), SQUARE_VERSION);
     wp_enqueue_style('font-awesome-5.2.0', get_template_directory_uri() . '/css/font-awesome-5.2.0.css', array(), SQUARE_VERSION);
     wp_enqueue_style('owl-carousel', get_template_directory_uri() . '/css/owl.carousel.css', array(), SQUARE_VERSION);
     wp_enqueue_style('square-style', get_stylesheet_uri(), array(), SQUARE_VERSION);
     wp_add_inline_style('square-style', square_dymanic_styles());
+
+    $fonts_url = square_fonts_url();
+    $load_font_locally = get_theme_mod('square_load_google_font_locally', false);
+    if ($fonts_url && $load_font_locally) {
+        require_once get_theme_file_path('inc/wptt-webfont-loader.php');
+        $fonts_url = wptt_get_webfont_url($fonts_url);
+    }
+
+    // Load Fonts if necessary.
+    if ($fonts_url) {
+        wp_enqueue_style('square-fonts', $fonts_url, array(), NULL);
+    }
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');

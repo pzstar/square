@@ -288,7 +288,7 @@ if (!class_exists('Square_Welcome')) :
             };
 
             if (get_option('square_hide_notice') && !$this->is_dismissed('welcome')) {
-                delete_option('square_dismissed_notices');
+                delete_option('square_hide_notice');
                 self::dismiss('welcome');
             }
 

@@ -64,15 +64,14 @@ if (!class_exists('Square_Welcome')) :
             /* Adds Footer Rating Text */
             add_filter('admin_footer_text', array($this, 'admin_footer_text'));
 
-            /* Hide Notice */
-            add_filter('wp_loaded', array($this, 'hide_admin_notice'), 10);
-
             /* Create a Welcome Page */
             add_action('wp_loaded', array($this, 'admin_notice'), 20);
 
             add_action('after_switch_theme', array($this, 'erase_hide_notice'));
 
             add_action('wp_ajax_square_activate_plugin', array($this, 'activate_plugin'));
+
+            add_action('admin_init', array($this, 'welcome_init'));
         }
 
         /** Trigger Welcome Message Notification */
@@ -85,6 +84,16 @@ if (!class_exists('Square_Welcome')) :
 
         /** Welcome Message Notification */
         public function admin_notice_content() {
+            if (!$this->is_dismissed('welcome')) {
+                $this->welcome_notice();
+            }
+
+            if (!$this->is_dismissed('review') && !empty(get_option('square_first_activation')) && time() > get_option('square_first_activation') + 15 * DAY_IN_SECONDS) {
+                $this->review_notice();
+            }
+        }
+
+        public function welcome_notice() {
             $screen = get_current_screen();
 
             if ('appearance_page_square-welcome' === $screen->id || (isset($screen->parent_file) && 'plugins.php' === $screen->parent_file && 'update' === $screen->id) || 'theme-install' === $screen->id) {
@@ -93,7 +102,8 @@ if (!class_exists('Square_Welcome')) :
 
             $slug = $filename = 'hashthemes-demo-importer';
             ?>
-            <div class="updated notice square-welcome-notice">
+            <div class="updated notice square-welcome-notice square-notice">
+                <?php $this->dismiss_button('review'); ?>
                 <div class="square-welcome-notice-wrap">
                     <h2><?php esc_html_e('Congratulations!', 'square'); ?></h2>
                     <p><?php printf(esc_html__('%1$s is now installed and ready to use. You can start either by importing the ready made demo or get started by customizing it your self.', 'square'), $this->theme_name); ?></p>
@@ -121,23 +131,10 @@ if (!class_exists('Square_Welcome')) :
                             <p><a href="<?php echo esc_url(admin_url('admin.php?page=square-welcome')); ?>" class="button button-primary"><?php esc_html_e('Go to Setting Page', 'square'); ?></a></p>
                         </div>
                     </div>
-
-                    <a href="<?php echo wp_nonce_url(add_query_arg('square_hide_notice', 1), 'square_hide_notice_nonce', '_square_notice_nonce'); ?>" class="notice-close"><?php esc_html_e('Dismiss', 'square'); ?></a>
                 </div>
 
             </div>
             <?php
-        }
-
-        /** Hide Admin Notice */
-        public function hide_admin_notice() {
-            if (isset($_GET['square_hide_notice']) && isset($_GET['_square_notice_nonce']) && current_user_can('manage_options')) {
-                if (!wp_verify_nonce(wp_unslash($_GET['_square_notice_nonce']), 'square_hide_notice_nonce')) {
-                    wp_die(esc_html__('Action Failed. Something is Wrong.', 'square'));
-                }
-
-                update_option('square_hide_notice', true);
-            }
         }
 
         /** Register Menu for Welcome Page */
@@ -278,6 +275,104 @@ if (!class_exists('Square_Welcome')) :
 
         public function erase_hide_notice() {
             delete_option('square_hide_notice');
+        }
+
+        /**
+         * Handle a click on the dismiss button
+         *
+         * @return void
+         */
+        public function welcome_init() {
+            if(!get_option('square_first_activation')) {
+                update_option('square_first_activation', time());
+            };
+
+            if (get_option('square_hide_notice') && !$this->is_dismissed('welcome')) {
+                delete_option('square_dismissed_notices');
+                self::dismiss('welcome');
+            }
+
+            if (isset($_GET['viral-hide-notice'], $_GET['square_notice_nonce'])) {
+                $notice = sanitize_key($_GET['viral-hide-notice']);
+                check_admin_referer($notice, 'square_notice_nonce');
+                self::dismiss($notice);
+                wp_safe_redirect(remove_query_arg(array('viral-hide-notice', 'square_notice_nonce' ), wp_get_referer()));
+                exit;
+            }
+        }
+
+        /**
+         * Displays a notice asking for a review
+         *
+         * @return void
+         */
+        private function review_notice() {
+            ?>
+            <div class="square-notice notice notice-info">
+            <?php $this->dismiss_button('review'); ?>
+                <p>
+                    <?php
+                    printf(
+                        /* translators: %1$s is link start tag, %2$s is link end tag. */
+                        esc_html__('We have noticed that you have been using Square for some time. We hope you love it, and we would really appreciate it if you would %1$sgive us a 5 stars rating%2$s.', 'square'),
+                        '<a href="https://wordpress.org/support/theme/square/reviews/?rate=5#new-post">',
+                        '</a>'
+                    );
+                    ?>
+                </p>
+            </div>
+            <?php
+        }
+
+        /**
+         * Has a notice been dismissed?
+         *
+         * @param string $notice Notice name
+         * @return bool
+         */
+        public static function is_dismissed($notice) {
+            $dismissed = get_option('square_dismissed_notices', array());
+
+            // Handle legacy user meta
+            $dismissed_meta = get_user_meta(get_current_user_id(), 'square_dismissed_notices', true);
+            if (is_array($dismissed_meta)) {
+                if (array_diff($dismissed_meta, $dismissed)) {
+                    $dismissed = array_merge($dismissed, $dismissed_meta);
+                    update_option('square_dismissed_notices', $dismissed);
+                }
+                if (!is_multisite()) {
+                    // Don't delete on multisite to avoid the notices to appear in other sites.
+                    delete_user_meta(get_current_user_id(), 'square_dismissed_notices');
+                }
+            }
+
+            return in_array($notice, $dismissed);
+        }
+
+        /**
+         * Displays a dismiss button
+         *
+         * @param string $name Notice name
+         * @return void
+         */
+        public function dismiss_button($name) {
+            printf('<a class="notice-dismiss" href="%s"><span class="screen-reader-text">%s</span></a>', esc_url(wp_nonce_url(add_query_arg('viral-hide-notice', $name), $name, 'square_notice_nonce')), esc_html__( 'Dismiss this notice.', 'square' )
+            );
+        }
+
+        /**
+         * Stores a dismissed notice in database
+         *
+         * @param string $notice
+         * @return void
+         */
+        public static function dismiss( $notice ) {
+            $dismissed = get_option('square_dismissed_notices', array());
+
+            if (!in_array($notice, $dismissed)) {
+                $dismissed[] = $notice;
+                update_option('square_dismissed_notices', array_unique($dismissed));
+            }
         }
 
     }

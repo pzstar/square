@@ -250,7 +250,7 @@ function square_css_strip_whitespace($css) {
         ";}" => "}", // Strip optional semicolons.
         ",\n" => ",", // Don't wrap multiple selectors.
         "\n}" => "}", // Don't wrap closing braces.
-        "} " => "}\n", // Put each rule on it's own line.
+        //"} " => "}\n", // Put each rule on it's own line.
     );
     $search = array_keys($replace);
     $css = str_replace($search, $replace, $css);

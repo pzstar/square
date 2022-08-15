@@ -76,10 +76,7 @@ if (!class_exists('Square_Welcome')) :
 
         /** Trigger Welcome Message Notification */
         public function admin_notice($hook) {
-            $hide_notice = get_option('square_hide_notice');
-            if (!$hide_notice) {
-                add_action('admin_notices', array($this, 'admin_notice_content'));
-            }
+            add_action('admin_notices', array($this, 'admin_notice_content'));
         }
 
         /** Welcome Message Notification */
@@ -103,7 +100,7 @@ if (!class_exists('Square_Welcome')) :
             $slug = $filename = 'hashthemes-demo-importer';
             ?>
             <div class="updated notice square-welcome-notice square-notice">
-                <?php $this->dismiss_button('review'); ?>
+                <?php $this->dismiss_button('welcome'); ?>
                 <div class="square-welcome-notice-wrap">
                     <h2><?php esc_html_e('Congratulations!', 'square'); ?></h2>
                     <p><?php printf(esc_html__('%1$s is now installed and ready to use. You can start either by importing the ready made demo or get started by customizing it your self.', 'square'), $this->theme_name); ?></p>
@@ -132,7 +129,6 @@ if (!class_exists('Square_Welcome')) :
                         </div>
                     </div>
                 </div>
-
             </div>
             <?php
         }
@@ -275,6 +271,7 @@ if (!class_exists('Square_Welcome')) :
 
         public function erase_hide_notice() {
             delete_option('square_hide_notice');
+            delete_option('square_first_activation');
         }
 
         /**
@@ -283,7 +280,7 @@ if (!class_exists('Square_Welcome')) :
          * @return void
          */
         public function welcome_init() {
-            if(!get_option('square_first_activation')) {
+            if (!get_option('square_first_activation')) {
                 update_option('square_first_activation', time());
             };
 
@@ -292,11 +289,11 @@ if (!class_exists('Square_Welcome')) :
                 self::dismiss('welcome');
             }
 
-            if (isset($_GET['viral-hide-notice'], $_GET['square_notice_nonce'])) {
-                $notice = sanitize_key($_GET['viral-hide-notice']);
+            if (isset($_GET['square-hide-notice'], $_GET['square_notice_nonce'])) {
+                $notice = sanitize_key($_GET['square-hide-notice']);
                 check_admin_referer($notice, 'square_notice_nonce');
                 self::dismiss($notice);
-                wp_safe_redirect(remove_query_arg(array('viral-hide-notice', 'square_notice_nonce' ), wp_get_referer()));
+                wp_safe_redirect(remove_query_arg(array('square-hide-notice', 'square_notice_nonce'), wp_get_referer()));
                 exit;
             }
         }
@@ -309,17 +306,17 @@ if (!class_exists('Square_Welcome')) :
         private function review_notice() {
             ?>
             <div class="square-notice notice notice-info">
-            <?php $this->dismiss_button('review'); ?>
+                <?php $this->dismiss_button('review'); ?>
                 <p>
                     <?php
                     printf(
-                        /* translators: %1$s is link start tag, %2$s is link end tag. */
-                        esc_html__('We have noticed that you have been using Square for some time. We hope you love it, and we would really appreciate it if you would %1$sgive us a 5 stars rating%2$s.', 'square'),
-                        '<a href="https://wordpress.org/support/theme/square/reviews/?rate=5#new-post">',
-                        '</a>'
+                            /* translators: %1$s is link start tag, %2$s is link end tag. */
+                            esc_html__('We have noticed that you have been using Square WordPress theme for some time. We hope you love it, and we would really appreciate it if you would %1$sgive us a 5 stars rating%2$s.', 'square'), '<a target="_blank" href="https://wordpress.org/support/theme/square/reviews/?filter=5#new-post">', '</a>'
                     );
                     ?>
                 </p>
+                <a target="_blank" class="button action" href="https://wordpress.org/support/theme/square/reviews/?filter=5#new-post"><?php echo esc_html__('Yes, of course', 'square') ?></a> &nbsp;
+                <a class="button action" href="<?php echo esc_url(wp_nonce_url(add_query_arg('square-hide-notice', 'review'), 'review', 'square_notice_nonce')); ?>"><?php echo esc_html__('I have already rated', 'square') ?></a>
             </div>
             <?php
         }
@@ -356,7 +353,7 @@ if (!class_exists('Square_Welcome')) :
          * @return void
          */
         public function dismiss_button($name) {
-            printf('<a class="notice-dismiss" href="%s"><span class="screen-reader-text">%s</span></a>', esc_url(wp_nonce_url(add_query_arg('viral-hide-notice', $name), $name, 'square_notice_nonce')), esc_html__( 'Dismiss this notice.', 'square' )
+            printf('<a class="notice-dismiss" href="%s"><span class="screen-reader-text">%s</span></a>', esc_url(wp_nonce_url(add_query_arg('square-hide-notice', $name), $name, 'square_notice_nonce')), esc_html__('Dismiss this notice.', 'square')
             );
         }
 
@@ -366,7 +363,7 @@ if (!class_exists('Square_Welcome')) :
          * @param string $notice
          * @return void
          */
-        public static function dismiss( $notice ) {
+        public static function dismiss($notice) {
             $dismissed = get_option('square_dismissed_notices', array());
 
             if (!in_array($notice, $dismissed)) {

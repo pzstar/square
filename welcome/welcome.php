@@ -171,6 +171,7 @@ if (!class_exists('Square_Welcome')) :
                     'importer_page' => esc_html__('Go to Demo Importer Page', 'square'),
                     'importer_url' => admin_url('themes.php?page=hdi-demo-importer'),
                     'error' => esc_html__('Error! Reload the page and try again.', 'square'),
+                    'ajax_nonce' => wp_create_nonce('square_activate_hdi_plugin')
                 );
                 wp_enqueue_style('square-welcome', get_template_directory_uri() . '/welcome/css/welcome.css', array(), SQUARE_VERSION);
                 wp_enqueue_script('square-welcome', get_template_directory_uri() . '/welcome/js/welcome.js', array('plugin-install', 'updates'), SQUARE_VERSION, true);
@@ -224,6 +225,12 @@ if (!class_exists('Square_Welcome')) :
 
         /** Ajax Plugin Activation */
         public function activate_plugin() {
+            if (!current_user_can('manage_options')) {
+                return;
+            }
+            
+            check_ajax_referer('square_activate_hdi_plugin', 'security');
+            
             $slug = isset($_POST['slug']) ? $_POST['slug'] : '';
             $file = isset($_POST['file']) ? $_POST['file'] : '';
             $success = false;

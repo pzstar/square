@@ -339,7 +339,7 @@ require get_template_directory() . '/inc/square-functions.php';
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer.php';
+require get_template_directory() . '/inc/customizer/customizer.php';
 
 /**
  * Load Woocommerce additions

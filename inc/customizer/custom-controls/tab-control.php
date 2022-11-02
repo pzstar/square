@@ -1,7 +1,7 @@
 <?php
 
 /** Control Tab */
-class Hash_Themes_Tab_Control extends WP_Customize_Control {
+class Square_Tab_Control extends WP_Customize_Control {
 
     public $type = 'ht--tab';
     public $buttons = '';

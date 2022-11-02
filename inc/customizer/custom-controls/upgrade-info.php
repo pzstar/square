@@ -1,7 +1,7 @@
 <?php
 
 // Upgrade Text
-class Hash_Themes_Upgrade_Info_Control extends WP_Customize_Control {
+class Square_Upgrade_Info_Control extends WP_Customize_Control {
 
     public $type = 'ht--upgrade-info';
 
@@ -16,7 +16,7 @@ class Hash_Themes_Upgrade_Info_Control extends WP_Customize_Control {
                 </span>
             <?php } ?>
 
-            <a href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=hash-themes-link&utm_campaign=hash-themes-upgrade'); ?>" target="_blank"> <strong><?php echo esc_html__('Upgrade to PRO', 'hash-themes'); ?></strong></a>
+            <a href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=hash-themes-link&utm_campaign=hash-themes-upgrade'); ?>" target="_blank"> <strong><?php echo esc_html__('Upgrade to PRO', 'square'); ?></strong></a>
         </label>
 
         <?php if ($this->description) { ?>

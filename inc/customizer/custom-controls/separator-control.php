@@ -1,7 +1,7 @@
 <?php
 
 /** Separator Control */
-class Hash_Themes_Separator_Control extends WP_Customize_Control {
+class Square_Separator_Control extends WP_Customize_Control {
 
     /**
      * Control type

@@ -7,7 +7,7 @@
  *
  * @package Square
  */
-if (!function_exists('square_posted_on')) :
+if (!function_exists('square_posted_on')) {
 
     /**
      * Prints HTML with meta information for the current post-date/time and author.
@@ -46,9 +46,9 @@ if (!function_exists('square_posted_on')) :
         echo '<span class="posted-on"><i class="far fa-clock"></i>' . $posted_on . '</span><span class="byline"> ' . $byline . '</span><span class="comment-count"><i class="far fa-comments"></i>' . $comment_link . "</span>"; // WPCS: XSS OK.
     }
 
-endif;
+}
 
-if (!function_exists('square_entry_footer')) :
+if (!function_exists('square_entry_footer')) {
 
     /**
      * Prints HTML with meta information for the categories, tags and comments.
@@ -70,7 +70,7 @@ if (!function_exists('square_entry_footer')) :
         }
     }
 
-endif;
+}
 
 /**
  * Returns true if a blog has more than 1 category.
@@ -116,7 +116,7 @@ function square_category_transient_flusher() {
 add_action('edit_category', 'square_category_transient_flusher');
 add_action('save_post', 'square_category_transient_flusher');
 
-if (!function_exists('square_social_share')) :
+if (!function_exists('square_social_share')) {
 
     /**
      * Prints HTML with social share
@@ -148,28 +148,4 @@ if (!function_exists('square_social_share')) :
         echo $content;  // WPCS: XSS OK.
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-endif;
-
+}

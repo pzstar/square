@@ -6,7 +6,7 @@
  * @since  1.0.0
  * @access public
  */
-class Hash_Themes_Typography_Control extends WP_Customize_Control {
+class Square_Typography_Control extends WP_Customize_Control {
 
     /**
      * The type of customize control being rendered.
@@ -42,14 +42,14 @@ class Hash_Themes_Typography_Control extends WP_Customize_Control {
         // Make sure we have labels.
         $this->l10n = wp_parse_args(
                 $this->l10n, array(
-            'family' => esc_html__('Font Family', 'hash-themes'),
-            'style' => esc_html__('Font Weight/Style', 'hash-themes'),
-            'text_transform' => esc_html__('Text Transform', 'hash-themes'),
-            'text_decoration' => esc_html__('Text Decoration', 'hash-themes'),
-            'size' => esc_html__('Font Size', 'hash-themes'),
-            'line_height' => esc_html__('Line Height', 'hash-themes'),
-            'letter_spacing' => esc_html__('Letter Spacing', 'hash-themes'),
-            'color' => esc_html__('Font Color', 'hash-themes')
+            'family' => esc_html__('Font Family', 'square'),
+            'style' => esc_html__('Font Weight/Style', 'square'),
+            'text_transform' => esc_html__('Text Transform', 'square'),
+            'text_decoration' => esc_html__('Text Decoration', 'square'),
+            'size' => esc_html__('Font Size', 'square'),
+            'line_height' => esc_html__('Line Height', 'square'),
+            'letter_spacing' => esc_html__('Letter Spacing', 'square'),
+            'color' => esc_html__('Font Color', 'square')
                 )
         );
     }
@@ -62,8 +62,8 @@ class Hash_Themes_Typography_Control extends WP_Customize_Control {
      * @return void
      */
     public function enqueue() {
-        wp_enqueue_script('ht--customize-typograhpy-controls', HASH_THEMES_CUSTOMIZER_URL . 'custom-controls/typography/js/customize-controls.js', array('jquery'), HASH_THEMES_VERSION, true);
-        wp_enqueue_style('ht--customize-typograhpy-controls', HASH_THEMES_CUSTOMIZER_URL . 'custom-controls/typography/css/customize-controls.css', array(), HASH_THEMES_VERSION);
+        wp_enqueue_script('ht--customize-typograhpy-controls', SQUARE_CUSTOMIZER_URL . 'custom-controls/typography/js/customize-controls.js', array('jquery'), SQUARE_VERSION, true);
+        wp_enqueue_style('ht--customize-typograhpy-controls', SQUARE_CUSTOMIZER_URL . 'custom-controls/typography/css/customize-controls.css', array(), SQUARE_VERSION);
     }
 
     /**
@@ -249,7 +249,7 @@ class Hash_Themes_Typography_Control extends WP_Customize_Control {
                 <# } #>
 
                 <div class="customize-control-content">
-                    <input class="ht--color-picker-hex" type="text" maxlength="7" placeholder="<?php esc_attr_e('Hex Value', 'hash-themes'); ?>" {{{ data.color.link }}} value="{{ data.color.value }}"  />
+                    <input class="ht--color-picker-hex" type="text" maxlength="7" placeholder="<?php esc_attr_e('Hex Value', 'square'); ?>" {{{ data.color.link }}} value="{{ data.color.value }}"  />
                 </div>
             </li>
             <# } #>
@@ -269,7 +269,7 @@ class Hash_Themes_Typography_Control extends WP_Customize_Control {
      */
     function get_default_font_families() {
 
-        $default_font = hash_themes_default_font_array();
+        $default_font = square_default_font_array();
 
         foreach ($default_font as $key => $value) {
             $font_family[$value['family']] = $value['family'];
@@ -288,7 +288,7 @@ class Hash_Themes_Typography_Control extends WP_Customize_Control {
      */
     function get_google_font_families() {
 
-        $google_font = hash_themes_google_font_array();
+        $google_font = square_google_font_array();
 
         foreach ($google_font as $key => $value) {
             $font_family[$value['family']] = $value['family'];
@@ -307,7 +307,7 @@ class Hash_Themes_Typography_Control extends WP_Customize_Control {
      */
     function get_standard_font_families() {
 
-        $standard_font = hash_themes_standard_font_array();
+        $standard_font = square_standard_font_array();
 
         foreach ($standard_font as $key => $value) {
             $font_family[$value['family']] = $value['family'];
@@ -324,9 +324,9 @@ class Hash_Themes_Typography_Control extends WP_Customize_Control {
      */
     public function get_font_weight_choices() {
         if ($this->settings['family']->id) {
-            $default_font = hash_themes_default_font_array();
-            $standard_font = hash_themes_standard_font_array();
-            $google_font = hash_themes_google_font_array();
+            $default_font = square_default_font_array();
+            $standard_font = square_standard_font_array();
+            $google_font = square_google_font_array();
 
             $font = array_merge($default_font, $standard_font, $google_font);
 
@@ -334,16 +334,16 @@ class Hash_Themes_Typography_Control extends WP_Customize_Control {
             $default_font_family = $this->settings['family']->default;
             $get_font_family = get_theme_mod($font_family_id, $default_font_family);
 
-            $font_array = hash_themes_search_key($font, 'family', $get_font_family);
+            $font_array = square_search_key($font, 'family', $get_font_family);
 
             $variants_array = $font_array['0']['variants'];
             return $variants_array;
         } else {
             return array(
-                '400' => esc_html__('Normal', 'hash-themes'),
-                '400italic' => esc_html__('Normal Italic', 'hash-themes'),
-                '700' => esc_html__('Bold', 'hash-themes'),
-                '700italic' => esc_html__('Bold Italic', 'hash-themes')
+                '400' => esc_html__('Normal', 'square'),
+                '400italic' => esc_html__('Normal Italic', 'square'),
+                '700' => esc_html__('Bold', 'square'),
+                '700italic' => esc_html__('Bold Italic', 'square')
             );
         }
     }
@@ -357,10 +357,10 @@ class Hash_Themes_Typography_Control extends WP_Customize_Control {
      */
     public function get_text_decoration_choices() {
         return array(
-            'none' => esc_html__('None', 'hash-themes'),
-            'underline' => esc_html__('Underline', 'hash-themes'),
-            'line-through' => esc_html__('Line-through', 'hash-themes'),
-            'overline' => esc_html__('Overline', 'hash-themes')
+            'none' => esc_html__('None', 'square'),
+            'underline' => esc_html__('Underline', 'square'),
+            'line-through' => esc_html__('Line-through', 'square'),
+            'overline' => esc_html__('Overline', 'square')
         );
     }
 
@@ -373,10 +373,10 @@ class Hash_Themes_Typography_Control extends WP_Customize_Control {
      */
     public function get_text_transform_choices() {
         return array(
-            'none' => esc_html__('None', 'hash-themes'),
-            'uppercase' => esc_html__('Uppercase', 'hash-themes'),
-            'lowercase' => esc_html__('Lowercase', 'hash-themes'),
-            'capitalize' => esc_html__('Capitalize', 'hash-themes')
+            'none' => esc_html__('None', 'square'),
+            'uppercase' => esc_html__('Uppercase', 'square'),
+            'lowercase' => esc_html__('Lowercase', 'square'),
+            'capitalize' => esc_html__('Capitalize', 'square')
         );
     }
 

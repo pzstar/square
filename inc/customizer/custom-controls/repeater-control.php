@@ -1,7 +1,7 @@
 <?php
 
 /** Repeater Control */
-class Hash_Themes_Repeater_Control extends WP_Customize_Control {
+class Square_Repeater_Control extends WP_Customize_Control {
 
     /**
      * The control type.
@@ -103,7 +103,7 @@ class Hash_Themes_Repeater_Control extends WP_Customize_Control {
                                         echo '<div class="ht--fields-wrap">';
                                         echo '<div class="attachment-media-view">';
                                         echo '<div class="placeholder' . esc_attr($image_class) . '">';
-                                        esc_html_e('No image selected', 'hash-themes');
+                                        esc_html_e('No image selected', 'square');
                                         echo '</div>';
                                         echo '<div class="thumbnail thumbnail-image">';
                                         if ($new_value) {
@@ -111,8 +111,8 @@ class Hash_Themes_Repeater_Control extends WP_Customize_Control {
                                         }
                                         echo '</div>';
                                         echo '<div class="actions ht--clearfix">';
-                                        echo '<button type="button" class="button ht--delete-button align-left">' . esc_html__('Remove', 'hash-themes') . '</button>';
-                                        echo '<button type="button" class="button ht--upload-button alignright">' . esc_html__('Select Image', 'hash-themes') . '</button>';
+                                        echo '<button type="button" class="button ht--delete-button align-left">' . esc_html__('Remove', 'square') . '</button>';
+                                        echo '<button type="button" class="button ht--upload-button alignright">' . esc_html__('Select Image', 'square') . '</button>';
                                         echo '<input data-default="' . esc_attr($default) . '" class="upload-id" data-name="' . esc_attr($key) . '" type="hidden" value="' . esc_attr($new_value) . '"/>';
                                         echo '</div>';
                                         echo '</div>';
@@ -121,7 +121,7 @@ class Hash_Themes_Repeater_Control extends WP_Customize_Control {
 
                                     case 'category':
                                         echo '<select data-default="' . esc_attr($default) . '"  data-name="' . esc_attr($key) . '">';
-                                        echo '<option value="-1" ' . selected($new_value, '-1', false) . '>' . esc_html__('Latest Posts', 'hash-themes') . '</option>';
+                                        echo '<option value="-1" ' . selected($new_value, '-1', false) . '>' . esc_html__('Latest Posts', 'square') . '</option>';
                                         foreach ($this->cats as $cat) {
                                             printf('<option value="%1$s" %2$s>%3$s</option>', esc_attr($cat->term_id), selected($new_value, $cat->term_id, false), esc_html($cat->name));
                                         }
@@ -262,8 +262,8 @@ class Hash_Themes_Repeater_Control extends WP_Customize_Control {
 
                         <div class="ht--clearfix ht--repeater-footer">
                             <div class="alignright">
-                                <a class="ht--repeater-field-remove" href="#remove"><?php esc_html_e('Delete', 'hash-themes') ?></a> |
-                                <a class="ht--repeater-field-close" href="#close"><?php esc_html_e('Close', 'hash-themes') ?></a>
+                                <a class="ht--repeater-field-remove" href="#remove"><?php esc_html_e('Delete', 'square') ?></a> |
+                                <a class="ht--repeater-field-close" href="#close"><?php esc_html_e('Close', 'square') ?></a>
                             </div>
                         </div>
                     </div>

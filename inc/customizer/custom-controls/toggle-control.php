@@ -1,7 +1,7 @@
 <?php
 
 /** Checkbox Control */
-class Hash_Themes_Toggle_Control extends WP_Customize_Control {
+class Square_Toggle_Control extends WP_Customize_Control {
 
     /**
      * Control type

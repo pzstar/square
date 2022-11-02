@@ -1,7 +1,7 @@
 <?php
 
 /** Dropdown Multiple Chooser Control */
-class Hash_Themes_Multiple_Select_Control extends WP_Customize_Control {
+class Square_Multiple_Select_Control extends WP_Customize_Control {
 
     public $type = 'ht--multiple-select';
     public $placeholder;

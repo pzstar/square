@@ -1,7 +1,7 @@
 <?php
 
 /** Range Slider Control */
-class Hash_Themes_Responsive_Range_Slider_Control extends WP_Customize_Control {
+class Square_Responsive_Range_Slider_Control extends WP_Customize_Control {
 
     /**
      * The control type.

@@ -1,7 +1,7 @@
 <?php
 
 /** Image Select Control */
-class Hash_Themes_Image_Selector_Control extends WP_Customize_Control {
+class Square_Image_Selector_Control extends WP_Customize_Control {
 
     public $type = 'select';
 

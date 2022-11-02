@@ -1,7 +1,7 @@
 <?php
 
 /** Date Control */
-class Hash_Themes_Date_Control extends WP_Customize_Control {
+class Square_Date_Control extends WP_Customize_Control {
 
     public $type = 'ht--date-picker';
 

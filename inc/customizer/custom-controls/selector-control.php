@@ -1,7 +1,7 @@
 <?php
 
 /** Selector Control */
-class Hash_Themes_Selector_Control extends WP_Customize_Control {
+class Square_Selector_Control extends WP_Customize_Control {
 
     public $type = 'ht--selector';
     public $options = array();

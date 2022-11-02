@@ -50,20 +50,20 @@ $square_pro_features = '<ul class="upsell-features">
 	<a class="ht-implink" href="https://hashthemes.com/wordpress-theme/square-plus/#theme-comparision-tab" target="_blank">' . esc_html__("Comparision - Free Vs Pro", "square") . '</a>';
 
 
-$wp_customize->add_section(new Hash_Themes_Upgrade_Section($wp_customize, 'square-pro-section', array(
+$wp_customize->add_section(new Square_Upgrade_Section($wp_customize, 'square-pro-section', array(
     'priority' => 0,
     'pro_text' => esc_html__('Upgrade to Pro', 'square'),
     'pro_url' => 'https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-customizer-button&utm_campaign=square-upgrade',
 )));
 
-$wp_customize->add_section(new Hash_Themes_Upgrade_Section($wp_customize, 'square-doc-section', array(
+$wp_customize->add_section(new Square_Upgrade_Section($wp_customize, 'square-doc-section', array(
     'title' => esc_html__('Documentation', 'square'),
     'priority' => 1000,
     'pro_text' => esc_html__('View', 'square'),
     'pro_url' => 'https://hashthemes.com/documentation/square-documentation/'
 )));
 
-$wp_customize->add_section(new Hash_Themes_Upgrade_Section($wp_customize, 'square-demo-import-section', array(
+$wp_customize->add_section(new Square_Upgrade_Section($wp_customize, 'square-demo-import-section', array(
     'title' => esc_html__('Import Demo Content', 'square'),
     'priority' => 999,
     'pro_text' => esc_html__('Import', 'square'),
@@ -73,6 +73,7 @@ $wp_customize->add_section(new Hash_Themes_Upgrade_Section($wp_customize, 'squar
 $wp_customize->add_setting('square_template_color', array(
     'default' => '#5bc2ce',
     'sanitize_callback' => 'sanitize_hex_color',
+    'transport' => 'postMessage'
 ));
 
 $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'square_template_color', array(
@@ -84,7 +85,7 @@ $wp_customize->add_setting('square_color_upgrade_text', array(
     'sanitize_callback' => 'square_sanitize_text',
 ));
 
-$wp_customize->add_control(new Hash_Themes_Upgrade_Info_Control($wp_customize, 'square_color_upgrade_text', array(
+$wp_customize->add_control(new Square_Upgrade_Info_Control($wp_customize, 'square_color_upgrade_text', array(
     'section' => 'colors',
     'label' => esc_html__('For more color options,', 'square'),
     'priority' => 100,
@@ -97,7 +98,7 @@ $wp_customize->add_setting('square_enable_frontpage', array(
     'default' => square_enable_frontpage_default()
 ));
 
-$wp_customize->add_control(new Hash_Themes_Toggle_Control($wp_customize, 'square_enable_frontpage', array(
+$wp_customize->add_control(new Square_Toggle_Control($wp_customize, 'square_enable_frontpage', array(
     'section' => 'static_front_page',
     'label' => esc_html__('Enable FrontPage', 'square'),
     'description' => sprintf(esc_html__('Overwrites the homepage displays setting and shows the frontpage for Customizer %s', 'square'), '<a href="javascript:wp.customize.panel(\'square_home_settings_panel\').focus()">' . esc_html__('Front Page Sections', 'square') . '</a>') . '<br/><br/>' . esc_html__('Do not enable this option if you want to use Elementor in home page.', 'square')
@@ -147,13 +148,13 @@ $wp_customize->add_setting('square_header_bg', array(
     'sanitize_callback' => 'square_sanitize_choices'
 ));
 
-$wp_customize->add_control(new Hash_Themes_Chosen_Select_Control($wp_customize, 'square_header_bg', array(
+$wp_customize->add_control('square_header_bg', array(
+    'type' => 'select',
     'settings' => 'square_header_bg',
     'section' => 'square_header_setting_sec',
     'label' => esc_html__('Header Background Color', 'square'),
     'choices' => $header_bg_choices
-)));
-
+));
 
 $wp_customize->add_setting('square_page_header_bg', array(
     'default' => get_template_directory_uri() . '/images/bg.jpg',
@@ -171,7 +172,7 @@ $wp_customize->add_setting('square_header_upgrade_text', array(
     'sanitize_callback' => 'square_sanitize_text',
 ));
 
-$wp_customize->add_control(new Hash_Themes_Upgrade_Info_Control($wp_customize, 'square_header_upgrade_text', array(
+$wp_customize->add_control(new Square_Upgrade_Info_Control($wp_customize, 'square_header_upgrade_text', array(
     'section' => 'square_header_setting_sec',
     'label' => esc_html__('For more header layouts and settings,', 'square'),
     'choices' => array(
@@ -225,7 +226,7 @@ $wp_customize->add_setting('square_blog_upgrade_text', array(
     'sanitize_callback' => 'square_sanitize_text',
 ));
 
-$wp_customize->add_control(new Hash_Themes_Upgrade_Info_Control($wp_customize, 'square_blog_upgrade_text', array(
+$wp_customize->add_control(new Square_Upgrade_Info_Control($wp_customize, 'square_blog_upgrade_text', array(
     'section' => 'square_blog_sec',
     'label' => esc_html__('For more blog layouts and settings,', 'square'),
     'choices' => array(
@@ -257,10 +258,197 @@ $wp_customize->add_setting('square_load_google_font_locally', array(
     'default' => false
 ));
 
-$wp_customize->add_control(new Hash_Themes_Toggle_Control($wp_customize, 'square_load_google_font_locally', array(
+$wp_customize->add_control(new Square_Toggle_Control($wp_customize, 'square_load_google_font_locally', array(
     'section' => 'square_google_font_section',
     'label' => esc_html__('Load Google Fonts Locally', 'square'),
     'description' => esc_html__('It is required to load the Google Fonts locally in order to comply with GDPR. However, if your website is not required to comply with Google Fonts then you can check this field off. Loading the Fonts locally with lots of different Google fonts can decrease the speed of the website slightly.', 'square'),
+)));
+
+// Add the typography panel.
+$wp_customize->add_panel('square_typography_panel', array(
+    'priority' => 20,
+    'title' => esc_html__('Typography Settings', 'square')
+));
+
+// Add the body typography section.
+$wp_customize->add_section('square_body_typography_section', array(
+    'panel' => 'square_typography_panel',
+    'title' => esc_html__('Body', 'square')
+));
+
+$wp_customize->add_setting('square_body_family', array(
+    'default' => 'Open Sans',
+    'sanitize_callback' => 'sanitize_text_field',
+));
+
+$wp_customize->add_setting('square_body_style', array(
+    'default' => '400',
+    'sanitize_callback' => 'sanitize_text_field',
+));
+
+$wp_customize->add_setting('square_body_text_decoration', array(
+    'default' => 'none',
+    'sanitize_callback' => 'sanitize_text_field',
+));
+
+$wp_customize->add_setting('square_body_text_transform', array(
+    'default' => 'none',
+    'sanitize_callback' => 'sanitize_text_field',
+));
+
+$wp_customize->add_setting('square_body_size', array(
+    'default' => '16',
+    'sanitize_callback' => 'absint',
+));
+
+$wp_customize->add_setting('square_body_line_height', array(
+    'default' => '1.8',
+    'sanitize_callback' => 'sanitize_text_field',
+));
+
+$wp_customize->add_setting('square_body_letter_spacing', array(
+    'default' => '0',
+    'sanitize_callback' => 'sanitize_text_field',
+));
+
+$wp_customize->add_setting('square_body_color', array(
+    'default' => '#444444',
+    'sanitize_callback' => 'sanitize_hex_color',
+));
+
+$wp_customize->add_control(new Square_Typography_Control($wp_customize, 'square_body_typography', array(
+    'label' => esc_html__('Body Typography', 'square'),
+    'description' => __('Select how you want your body to appear.', 'square'),
+    'section' => 'square_body_typography_section',
+    'settings' => array(
+        'family' => 'square_body_family',
+        'style' => 'square_body_style',
+        'text_decoration' => 'square_body_text_decoration',
+        'text_transform' => 'square_body_text_transform',
+        'size' => 'square_body_size',
+        'line_height' => 'square_body_line_height',
+        'letter_spacing' => 'square_body_letter_spacing',
+        'color' => 'square_body_color'
+    ),
+    'input_attrs' => array(
+        'min' => 10,
+        'max' => 40,
+        'step' => 1
+    )
+)));
+
+
+// Add Header typography section.
+$wp_customize->add_section('square_header_typography_section', array(
+    'panel' => 'square_typography_panel',
+    'title' => esc_html__('Header', 'square')
+));
+
+// Add H typography section.
+$wp_customize->add_setting('square_h_family', array(
+    'default' => 'Roboto Condensed',
+    'sanitize_callback' => 'sanitize_text_field',
+));
+
+$wp_customize->add_setting('square_h_style', array(
+    'default' => '400',
+    'sanitize_callback' => 'sanitize_text_field',
+));
+
+$wp_customize->add_setting('square_h_text_decoration', array(
+    'default' => 'none',
+    'sanitize_callback' => 'sanitize_text_field',
+));
+
+$wp_customize->add_setting('square_h_text_transform', array(
+    'default' => 'none',
+    'sanitize_callback' => 'sanitize_text_field',
+));
+
+$wp_customize->add_setting('square_h_line_height', array(
+    'default' => '1.2',
+    'sanitize_callback' => 'sanitize_text_field',
+));
+
+$wp_customize->add_setting('square_h_letter_spacing', array(
+    'default' => '0',
+    'sanitize_callback' => 'sanitize_text_field',
+));
+
+$wp_customize->add_control(new Square_Typography_Control($wp_customize, 'square_h_typography', array(
+    'label' => esc_html__('Header Typography', 'square'),
+    'description' => __('Select how you want your Header to appear.', 'square'),
+    'section' => 'square_header_typography_section',
+    'settings' => array(
+        'family' => 'square_h_family',
+        'style' => 'square_h_style',
+        'text_decoration' => 'square_h_text_decoration',
+        'text_transform' => 'square_h_text_transform',
+        'line_height' => 'square_h_line_height',
+        'letter_spacing' => 'square_h_letter_spacing'
+    ),
+    'input_attrs' => array(
+        'min' => 10,
+        'max' => 100,
+        'step' => 1
+    )
+)));
+
+
+// Add Menu typography section.
+$wp_customize->add_section('square_menu_typography_section', array(
+    'panel' => 'square_typography_panel',
+    'title' => esc_html__('Menu', 'square')
+));
+
+// Add Menu typography section.
+$wp_customize->add_setting('square_menu_family', array(
+    'default' => 'Roboto Condensed',
+    'sanitize_callback' => 'sanitize_text_field',
+));
+
+$wp_customize->add_setting('square_menu_style', array(
+    'default' => '600',
+    'sanitize_callback' => 'sanitize_text_field',
+));
+
+$wp_customize->add_setting('square_menu_text_decoration', array(
+    'default' => 'none',
+    'sanitize_callback' => 'sanitize_text_field',
+));
+
+$wp_customize->add_setting('square_menu_text_transform', array(
+    'default' => 'uppercase',
+    'sanitize_callback' => 'sanitize_text_field',
+));
+
+$wp_customize->add_setting('square_menu_size', array(
+    'default' => '15',
+    'sanitize_callback' => 'absint',
+));
+
+$wp_customize->add_setting('square_menu_letter_spacing', array(
+    'default' => '0',
+    'sanitize_callback' => 'sanitize_text_field',
+));
+
+$wp_customize->add_control(new Square_Typography_Control($wp_customize, 'square_menu_typography', array(
+    'label' => esc_html__('Menu Typography', 'square'),
+    'description' => __('Select how you want your menu to appear.', 'square'),
+    'section' => 'square_menu_typography_section',
+    'settings' => array(
+        'family' => 'square_menu_family',
+        'style' => 'square_menu_style',
+        'text_decoration' => 'square_menu_text_decoration',
+        'text_transform' => 'square_menu_text_transform',
+        'size' => 'square_menu_size',
+        'letter_spacing' => 'square_menu_letter_spacing'
+    ),
+    'input_attrs' => array(
+        'min' => 10,
+        'max' => 100,
+        'step' => 1
+    )
 )));
 
 /* ============HOME SETTINGS PANEL============ */
@@ -283,7 +471,7 @@ for ($i = 1; $i < 4; $i++) {
         'sanitize_callback' => 'square_sanitize_text'
     ));
 
-    $wp_customize->add_control(new Hash_Themes_Heading_Control($wp_customize, 'square_slider_heading' . $i, array(
+    $wp_customize->add_control(new Square_Heading_Control($wp_customize, 'square_slider_heading' . $i, array(
         'settings' => 'square_slider_heading' . $i,
         'section' => 'square_slider_sec',
         'label' => esc_html__('Slider ', 'square') . $i,
@@ -330,7 +518,7 @@ $wp_customize->add_setting('square_slider_upgrade_text', array(
     'sanitize_callback' => 'square_sanitize_text',
 ));
 
-$wp_customize->add_control(new Hash_Themes_Upgrade_Info_Control($wp_customize, 'square_slider_upgrade_text', array(
+$wp_customize->add_control(new Square_Upgrade_Info_Control($wp_customize, 'square_slider_upgrade_text', array(
     'section' => 'square_slider_sec',
     'label' => esc_html__('To add unlimited sliders and for more slider settings,', 'square'),
     'choices' => array(
@@ -372,7 +560,7 @@ for ($i = 1; $i < 4; $i++) {
         'sanitize_callback' => 'square_sanitize_text'
     ));
 
-    $wp_customize->add_control(new Hash_Themes_Heading_Control($wp_customize, 'square_featured_header' . $i, array(
+    $wp_customize->add_control(new Square_Heading_Control($wp_customize, 'square_featured_header' . $i, array(
         'settings' => 'square_featured_header' . $i,
         'section' => 'square_featured_page_sec',
         'label' => esc_html__('Featured Page ', 'square') . $i
@@ -395,7 +583,7 @@ for ($i = 1; $i < 4; $i++) {
         'sanitize_callback' => 'square_sanitize_text'
     ));
 
-    $wp_customize->add_control(new Hash_Themes_Icon_Selector_Control($wp_customize, 'square_featured_page_icon' . $i, array(
+    $wp_customize->add_control(new Square_Icon_Selector_Control($wp_customize, 'square_featured_page_icon' . $i, array(
         'settings' => 'square_featured_page_icon' . $i,
         'section' => 'square_featured_page_sec',
         'label' => esc_html__('FontAwesome Icon', 'square'),
@@ -406,7 +594,7 @@ $wp_customize->add_setting('square_featured_upgrade_text', array(
     'sanitize_callback' => 'square_sanitize_text'
 ));
 
-$wp_customize->add_control(new Hash_Themes_Upgrade_Info_Control($wp_customize, 'square_featured_upgrade_text', array(
+$wp_customize->add_control(new Square_Upgrade_Info_Control($wp_customize, 'square_featured_upgrade_text', array(
     'section' => 'square_featured_page_sec',
     'label' => esc_html__('To add unlimited featured block and for more settings,', 'square'),
     'choices' => array(
@@ -445,7 +633,7 @@ $wp_customize->add_setting('square_about_header', array(
     'sanitize_callback' => 'square_sanitize_text'
 ));
 
-$wp_customize->add_control(new Hash_Themes_Heading_Control($wp_customize, 'square_about_header', array(
+$wp_customize->add_control(new Square_Heading_Control($wp_customize, 'square_about_header', array(
     'settings' => 'square_about_header',
     'section' => 'square_about_sec',
     'label' => esc_html__('About Page ', 'square')
@@ -468,7 +656,7 @@ $wp_customize->add_setting('square_about_image_header', array(
     'sanitize_callback' => 'square_sanitize_text'
 ));
 
-$wp_customize->add_control(new Hash_Themes_Heading_Control($wp_customize, 'square_about_image_header', array(
+$wp_customize->add_control(new Square_Heading_Control($wp_customize, 'square_about_image_header', array(
     'settings' => 'square_about_image_header',
     'section' => 'square_about_sec',
     'label' => esc_html__('About Page Stack Images', 'square')
@@ -479,7 +667,7 @@ $wp_customize->add_setting('square_about_image_stack', array(
     'sanitize_callback' => 'square_sanitize_text'
 ));
 
-$wp_customize->add_control(new Hash_Themes_Gallery_Control($wp_customize, 'square_about_image_stack', array(
+$wp_customize->add_control(new Square_Gallery_Control($wp_customize, 'square_about_image_stack', array(
     'settings' => 'square_about_image_stack',
     'section' => 'square_about_sec',
     'label' => esc_html__('About Us Stack Image', 'square'),
@@ -490,7 +678,7 @@ $wp_customize->add_setting('square_about_upgrade_text', array(
     'sanitize_callback' => 'square_sanitize_text'
 ));
 
-$wp_customize->add_control(new Hash_Themes_Upgrade_Info_Control($wp_customize, 'square_about_upgrade_text', array(
+$wp_customize->add_control(new Square_Upgrade_Info_Control($wp_customize, 'square_about_upgrade_text', array(
     'section' => 'square_about_sec',
     'label' => esc_html__('For more settings,', 'square'),
     'choices' => array(
@@ -529,7 +717,7 @@ for ($i = 1; $i < 6; $i++) {
         'sanitize_callback' => 'square_sanitize_text'
     ));
 
-    $wp_customize->add_control(new Hash_Themes_Heading_Control($wp_customize, 'square_tab_header' . $i, array(
+    $wp_customize->add_control(new Square_Heading_Control($wp_customize, 'square_tab_header' . $i, array(
         'settings' => 'square_tab_header' . $i,
         'section' => 'square_tab_sec',
         'label' => esc_html__('Tab ', 'square') . $i,
@@ -554,7 +742,7 @@ for ($i = 1; $i < 6; $i++) {
         'sanitize_callback' => 'square_sanitize_text'
     ));
 
-    $wp_customize->add_control(new Hash_Themes_Icon_Selector_Control($wp_customize, 'square_tab_icon' . $i, array(
+    $wp_customize->add_control(new Square_Icon_Selector_Control($wp_customize, 'square_tab_icon' . $i, array(
         'settings' => 'square_tab_icon' . $i,
         'section' => 'square_tab_sec',
         'label' => esc_html__('FontAwesome Icon', 'square'),
@@ -579,7 +767,7 @@ $wp_customize->add_setting('square_tab_upgrade_text', array(
     'sanitize_callback' => 'square_sanitize_text'
 ));
 
-$wp_customize->add_control(new Hash_Themes_Upgrade_Info_Control($wp_customize, 'square_tab_upgrade_text', array(
+$wp_customize->add_control(new Square_Upgrade_Info_Control($wp_customize, 'square_tab_upgrade_text', array(
     'section' => 'square_tab_sec',
     'label' => esc_html__('To add unlimited tab block and for more settings,', 'square'),
     'choices' => array(
@@ -615,7 +803,7 @@ $wp_customize->add_setting('square_logo_header', array(
     'sanitize_callback' => 'square_sanitize_text'
 ));
 
-$wp_customize->add_control(new Hash_Themes_Heading_Control($wp_customize, 'square_logo_header', array(
+$wp_customize->add_control(new Square_Heading_Control($wp_customize, 'square_logo_header', array(
     'settings' => 'square_logo_header',
     'section' => 'square_logo_sec',
     'label' => esc_html__('Section Title & Logo', 'square')
@@ -639,7 +827,7 @@ $wp_customize->add_setting('square_client_logo_image', array(
     'sanitize_callback' => 'square_sanitize_text'
 ));
 
-$wp_customize->add_control(new Hash_Themes_Gallery_Control($wp_customize, 'square_client_logo_image', array(
+$wp_customize->add_control(new Square_Gallery_Control($wp_customize, 'square_client_logo_image', array(
     'settings' => 'square_client_logo_image',
     'section' => 'square_logo_sec',
     'label' => esc_html__('Upload Clients Logos', 'square'),
@@ -650,7 +838,7 @@ $wp_customize->add_setting('square_logo_upgrade_text', array(
     'sanitize_callback' => 'square_sanitize_text',
 ));
 
-$wp_customize->add_control(new Hash_Themes_Upgrade_Info_Control($wp_customize, 'square_logo_upgrade_text', array(
+$wp_customize->add_control(new Square_Upgrade_Info_Control($wp_customize, 'square_logo_upgrade_text', array(
     'section' => 'square_logo_sec',
     'label' => esc_html__('For more settings,', 'square'),
     'choices' => array(
@@ -662,7 +850,7 @@ $wp_customize->add_control(new Hash_Themes_Upgrade_Info_Control($wp_customize, '
     'active_callback' => 'square_is_upgrade_notice_active'
 )));
 
-$wp_customize->add_section(new Hash_Themes_Upgrade_Section($wp_customize, 'square-upgrade-section', array(
+$wp_customize->add_section(new Square_Upgrade_Section($wp_customize, 'square-upgrade-section', array(
     'title' => esc_html__('More Sections on Premium', 'square'),
     'panel' => 'square_home_settings_panel',
     'priority' => 1000,
@@ -773,7 +961,7 @@ $wp_customize->add_setting('square_hide_upgrade_notice', array(
     'default' => false,
 ));
 
-$wp_customize->add_control(new Hash_Themes_Toggle_Control($wp_customize, 'square_hide_upgrade_notice', array(
+$wp_customize->add_control(new Square_Toggle_Control($wp_customize, 'square_hide_upgrade_notice', array(
     'section' => 'square_pro_feature_section',
     'label' => esc_html__('Hide all Upgrade Notices from Customizer', 'square'),
     'description' => esc_html__('If you don\'t want to upgrade to premium version then you can turn off all the upgrade notices. However you can turn it on anytime if you make mind to upgrade to premium version.', 'square')
@@ -783,7 +971,7 @@ $wp_customize->add_setting('square_pro_features', array(
     'sanitize_callback' => 'square_sanitize_text',
 ));
 
-$wp_customize->add_control(new Hash_Themes_Upgrade_Info_Control($wp_customize, 'square_pro_features', array(
+$wp_customize->add_control(new Square_Upgrade_Info_Control($wp_customize, 'square_pro_features', array(
     'settings' => 'square_pro_features',
     'section' => 'square_pro_feature_section',
     'description' => $square_pro_features,

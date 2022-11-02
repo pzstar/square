@@ -1,7 +1,7 @@
 <?php
 
 /** Icon Chooser */
-class Hash_Themes_Icon_Selector_Control extends WP_Customize_Control {
+class Square_Icon_Selector_Control extends WP_Customize_Control {
 
     public $type = 'ht--icon-selector';
     //See customizer-fonts-icon.php file
@@ -16,7 +16,7 @@ class Hash_Themes_Icon_Selector_Control extends WP_Customize_Control {
 
     public function to_json() {
         parent::to_json();
-        $this->json['filter_text'] = esc_attr__('Type to filter', 'hash-themes');
+        $this->json['filter_text'] = esc_attr__('Type to filter', 'square');
         $this->json['value'] = $this->value();
         $this->json['link'] = $this->get_link();
         $this->json['icon_array'] = $this->icon_array;

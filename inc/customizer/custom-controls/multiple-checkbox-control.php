@@ -1,7 +1,7 @@
 <?php
 
 /** Multiple Checkbox Control */
-class Hash_Themes_Multiple_Checkbox_Control extends WP_Customize_Control {
+class Square_Multiple_Checkbox_Control extends WP_Customize_Control {
 
     public $type = 'ht--checkbox-multiple';
 

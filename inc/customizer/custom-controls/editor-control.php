@@ -1,7 +1,7 @@
 <?php
 
 /** Editor Control */
-class Hash_Themes_Editor_Control extends WP_Customize_Control {
+class Square_Editor_Control extends WP_Customize_Control {
 
     /**
      * Flag to do action admin_print_footer_scripts.
@@ -12,7 +12,7 @@ class Hash_Themes_Editor_Control extends WP_Customize_Control {
     private $include_admin_print_footer = false;
 
     /**
-     * Hash_Themes_Page_Editor constructor.
+     * Square_Page_Editor constructor.
      *
      * @param WP_Customize_Manager $manager Manager.
      * @param string               $id Id.

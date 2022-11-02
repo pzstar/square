@@ -80,7 +80,7 @@ if (!function_exists('square_setup')) :
 
         // Add support for responsive embedded content.
         add_theme_support('responsive-embeds');
-        
+
         add_theme_support('custom-line-height');
 
         add_theme_support('custom-spacing');
@@ -217,23 +217,41 @@ if (!function_exists('square_fonts_url')) :
      */
     function square_fonts_url() {
         $fonts_url = '';
-        $fonts = array();
         $subsets = 'latin,latin-ext';
+        $fonts = $standard_font_family = $default_font_list = $font_family_array = $variants_array = $font_array = $google_fonts = array();
 
-        /*
-         * Translators: If there are characters in your language that are not supported
-         * by Open Sans, translate this to 'off'. Do not translate into your own language.
-         */
-        if ('off' !== _x('on', 'Open Sans font: on or off', 'square')) {
-            $fonts[] = 'Open Sans:400,300,600,700';
+        $customizer_fonts = apply_filters('square_customizer_fonts', array(
+            'square_body_family' => 'Open Sans',
+            'square_menu_family' => 'Roboto Condensed',
+            'square_h_family' => 'Roboto Condensed'
+        ));
+
+        $standard_font = square_standard_font_array();
+        $google_font_list = square_google_font_array();
+        $default_font_list = square_default_font_array();
+
+        foreach ($standard_font as $key => $value) {
+            $standard_font_family[] = $value['family'];
         }
 
-        /*
-         * Translators: If there are characters in your language that are not supported
-         * by Inconsolata, translate this to 'off'. Do not translate into your own language.
-         */
-        if ('off' !== _x('on', 'Roboto Condensed font: on or off', 'square')) {
-            $fonts[] = 'Roboto Condensed:300italic,400italic,700italic,400,300,700';
+        foreach ($default_font_list as $key => $value) {
+            $default_font_family[] = $value['family'];
+        }
+
+        foreach ($customizer_fonts as $key => $value) {
+            $font_family_array[] = get_theme_mod($key, $value);
+        }
+
+        $font_family_array = array_unique($font_family_array);
+        $font_family_array = array_diff($font_family_array, array_merge($standard_font_family, $default_font_family));
+
+        foreach ($font_family_array as $font_family) {
+            $font_array = square_search_key($google_font_list, 'family', $font_family);
+            $variants_array = $font_array['0']['variants'];
+            $variants_keys = array_keys($variants_array);
+            $variants = implode(',', $variants_keys);
+
+            $fonts[] = $font_family . ':' . str_replace('italic', 'i', $variants);
         }
 
         /*

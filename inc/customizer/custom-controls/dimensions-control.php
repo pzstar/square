@@ -1,7 +1,7 @@
 <?php
 
 /** Dimensions Control */
-class Hash_Themes_Dimensions_Control extends WP_Customize_Control {
+class Square_Dimensions_Control extends WP_Customize_Control {
 
     /**
      * The control type.
@@ -44,7 +44,7 @@ class Hash_Themes_Dimensions_Control extends WP_Customize_Control {
 
         $this->json['id'] = $this->id;
         $this->json['l10n'] = $this->l10n();
-        $this->json['title'] = esc_html__('Link values together', 'hash-themes');
+        $this->json['title'] = esc_html__('Link values together', 'square');
         $this->json['responsive'] = $this->responsive;
 
         $this->json['inputAttrs'] = '';
@@ -174,18 +174,18 @@ class Hash_Themes_Dimensions_Control extends WP_Customize_Control {
      */
     protected function l10n($id = false) {
         $translation_strings = array(
-            'desktop_top' => esc_attr__('Top', 'hash-themes'),
-            'desktop_right' => esc_attr__('Right', 'hash-themes'),
-            'desktop_bottom' => esc_attr__('Bottom', 'hash-themes'),
-            'desktop_left' => esc_attr__('Left', 'hash-themes'),
-            'tablet_top' => esc_attr__('Top', 'hash-themes'),
-            'tablet_right' => esc_attr__('Right', 'hash-themes'),
-            'tablet_bottom' => esc_attr__('Bottom', 'hash-themes'),
-            'tablet_left' => esc_attr__('Left', 'hash-themes'),
-            'mobile_top' => esc_attr__('Top', 'hash-themes'),
-            'mobile_right' => esc_attr__('Right', 'hash-themes'),
-            'mobile_bottom' => esc_attr__('Bottom', 'hash-themes'),
-            'mobile_left' => esc_attr__('Left', 'hash-themes'),
+            'desktop_top' => esc_attr__('Top', 'square'),
+            'desktop_right' => esc_attr__('Right', 'square'),
+            'desktop_bottom' => esc_attr__('Bottom', 'square'),
+            'desktop_left' => esc_attr__('Left', 'square'),
+            'tablet_top' => esc_attr__('Top', 'square'),
+            'tablet_right' => esc_attr__('Right', 'square'),
+            'tablet_bottom' => esc_attr__('Bottom', 'square'),
+            'tablet_left' => esc_attr__('Left', 'square'),
+            'mobile_top' => esc_attr__('Top', 'square'),
+            'mobile_right' => esc_attr__('Right', 'square'),
+            'mobile_bottom' => esc_attr__('Bottom', 'square'),
+            'mobile_left' => esc_attr__('Left', 'square'),
         );
         if (false === $id) {
             return $translation_strings;

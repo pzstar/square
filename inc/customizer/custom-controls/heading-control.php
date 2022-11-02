@@ -1,7 +1,7 @@
 <?php
 
 /** Heading Control */
-class Hash_Themes_Heading_Control extends WP_Customize_Control {
+class Square_Heading_Control extends WP_Customize_Control {
 
     /** Control Type */
     public $type = 'ht--heading';

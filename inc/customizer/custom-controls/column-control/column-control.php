@@ -1,6 +1,6 @@
 <?php
 
-class Hash_Themes_Column_Control extends WP_Customize_Control {
+class Square_Column_Control extends WP_Customize_Control {
 
     public $type = 'ht--column';
 
@@ -9,11 +9,11 @@ class Hash_Themes_Column_Control extends WP_Customize_Control {
     }
 
     public function enqueue() {
-        wp_enqueue_script('nouislider', HASH_THEMES_CUSTOMIZER_URL . 'custom-controls/column-control/assets/nouislider.js', array('jquery'), HASH_THEMES_VERSION, true);
-        wp_enqueue_script('wNumb', HASH_THEMES_CUSTOMIZER_URL . 'custom-controls/column-control/assets/wNumb.js', array('jquery'), HASH_THEMES_VERSION, true);
-        wp_enqueue_script('ht--column-control', HASH_THEMES_CUSTOMIZER_URL . 'custom-controls/column-control/assets/column-control.js', array('jquery'), HASH_THEMES_VERSION, true);
+        wp_enqueue_script('nouislider', SQUARE_CUSTOMIZER_URL . 'custom-controls/column-control/assets/nouislider.js', array('jquery'), SQUARE_VERSION, true);
+        wp_enqueue_script('wNumb', SQUARE_CUSTOMIZER_URL . 'custom-controls/column-control/assets/wNumb.js', array('jquery'), SQUARE_VERSION, true);
+        wp_enqueue_script('ht--column-control', SQUARE_CUSTOMIZER_URL . 'custom-controls/column-control/assets/column-control.js', array('jquery'), SQUARE_VERSION, true);
 
-        wp_enqueue_style('nouislider', HASH_THEMES_CUSTOMIZER_URL . 'custom-controls/column-control/assets/nouislider.css', array(), HASH_THEMES_VERSION);
+        wp_enqueue_style('nouislider', SQUARE_CUSTOMIZER_URL . 'custom-controls/column-control/assets/nouislider.css', array(), SQUARE_VERSION);
     }
 
     public function render_content() {
@@ -33,9 +33,9 @@ class Hash_Themes_Column_Control extends WP_Customize_Control {
         echo '<div class="ht--column-selector"></div>';
 
         echo '<div class="ht--column-selector-buttons">';
-        echo '<button class="ht--remove-col"><i class="mdi mdi-minus"></i><span>' . esc_html('Remove Column', 'hash-themes') . '</span></button>';
-        echo '<button class="ht--add-col"><i class="mdi mdi-plus"></i><span>' . esc_html('Add Column', 'hash-themes') . '</span></button>';
-        echo '<button class="ht--reset-col"><i class="mdi mdi-cached"></i><span>' . esc_html('Reset Column', 'hash-themes') . '</span></button>';
+        echo '<button class="ht--remove-col"><i class="mdi mdi-minus"></i><span>' . esc_html('Remove Column', 'square') . '</span></button>';
+        echo '<button class="ht--add-col"><i class="mdi mdi-plus"></i><span>' . esc_html('Add Column', 'square') . '</span></button>';
+        echo '<button class="ht--reset-col"><i class="mdi mdi-cached"></i><span>' . esc_html('Reset Column', 'square') . '</span></button>';
         echo '</div>';
         ?>
         <input type="hidden" value="<?php echo esc_attr($this->value()) ?>" <?php $this->link(); ?> />

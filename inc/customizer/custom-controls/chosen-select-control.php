@@ -1,7 +1,7 @@
 <?php
 
 /** Select2 Chooser */
-class Hash_Themes_Chosen_Select_Control extends WP_Customize_Control {
+class Square_Chosen_Select_Control extends WP_Customize_Control {
 
     public $type = 'ht--chosen-select';
 

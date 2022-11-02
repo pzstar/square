@@ -1,11 +1,11 @@
 <?php
 
-if (!function_exists('hash_themes_widget_list')) {
+if (!function_exists('square_widget_list')) {
 
-    function hash_themes_widget_list() {
+    function square_widget_list() {
         global $wp_registered_sidebars;
         $menu_choice = array();
-        $widget_list['none'] = esc_html__('-- Choose Widget --', 'hash-themes');
+        $widget_list['none'] = esc_html__('-- Choose Widget --', 'square');
         if ($wp_registered_sidebars) {
             foreach ($wp_registered_sidebars as $wp_registered_sidebar) {
                 $widget_list[$wp_registered_sidebar['id']] = $wp_registered_sidebar['name'];
@@ -16,9 +16,9 @@ if (!function_exists('hash_themes_widget_list')) {
 
 }
 
-if (!function_exists('hash_themes_cat')) {
+if (!function_exists('square_cat')) {
 
-    function hash_themes_cat() {
+    function square_cat() {
         $cat = array();
         $categories = get_categories(array('hide_empty' => 0));
         if ($categories) {
@@ -31,9 +31,9 @@ if (!function_exists('hash_themes_cat')) {
 
 }
 
-if (!function_exists('hash_themes_page_choice')) {
+if (!function_exists('square_page_choice')) {
 
-    function hash_themes_page_choice() {
+    function square_page_choice() {
         $page_choice = array();
         $pages = get_pages(array('hide_empty' => 0));
         if ($pages) {
@@ -46,10 +46,10 @@ if (!function_exists('hash_themes_page_choice')) {
 
 }
 
-if (!function_exists('hash_themes_menu_choice')) {
+if (!function_exists('square_menu_choice')) {
 
-    function hash_themes_menu_choice() {
-        $menu_choice = array('none' => esc_html('Select Menu', 'hash-themes'));
+    function square_menu_choice() {
+        $menu_choice = array('none' => esc_html('Select Menu', 'square'));
         $menus = get_terms('nav_menu', array('hide_empty' => false));
         if ($menus) {
             foreach ($menus as $menus_single) {
@@ -61,15 +61,15 @@ if (!function_exists('hash_themes_menu_choice')) {
 
 }
 
-if (!function_exists('hash_themes_icon_choices')) {
+if (!function_exists('square_icon_choices')) {
 
-    function hash_themes_icon_choices() {
+    function square_icon_choices() {
         echo '<div id="ht--icon-box" class="ht--icon-box">';
         echo '<div class="ht--icon-search">';
         echo '<select>';
 
         //See customizer-icon-manager.php file
-        $icons = apply_filters('hash_themes_register_icon', array());
+        $icons = apply_filters('square_register_icon', array());
 
         if ($icons && is_array($icons)) {
             foreach ($icons as $icon) {
@@ -80,7 +80,7 @@ if (!function_exists('hash_themes_icon_choices')) {
         }
 
         echo '</select>';
-        echo '<input type="text" class="ht--icon-search-input" placeholder="' . esc_html__('Type to filter', 'hash-themes') . '" />';
+        echo '<input type="text" class="ht--icon-search-input" placeholder="' . esc_html__('Type to filter', 'square') . '" />';
         echo '</div>';
 
         if ($icons && is_array($icons)) {
@@ -107,9 +107,9 @@ if (!function_exists('hash_themes_icon_choices')) {
 
 }
 
+add_action('customize_controls_print_footer_scripts', 'square_icon_choices');
+
 function square_is_upgrade_notice_active() {
     $show_upgrade_notice = get_theme_mod('square_hide_upgrade_notice', false);
     return !$show_upgrade_notice;
 }
-
-add_action('customize_controls_print_footer_scripts', 'hash_themes_icon_choices');

@@ -1,7 +1,7 @@
 <?php
 
 /** Range Control */
-class Hash_Themes_Range_Slider_Control extends WP_Customize_Control {
+class Square_Range_Slider_Control extends WP_Customize_Control {
 
     /**
      * The type of control being rendered

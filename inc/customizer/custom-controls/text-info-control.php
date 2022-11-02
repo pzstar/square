@@ -1,7 +1,7 @@
 <?php
 
 /** Info Text Control */
-class Hash_Themes_Text_Info_Control extends WP_Customize_Control {
+class Square_Text_Info_Control extends WP_Customize_Control {
 
     public function render_content() {
         ?>

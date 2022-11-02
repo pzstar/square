@@ -1,7 +1,7 @@
 <?php
 
 /** Sortable Control */
-class Hash_Themes_Sortable_Control extends WP_Customize_Control {
+class Square_Sortable_Control extends WP_Customize_Control {
 
     /**
      * The control type.

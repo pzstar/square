@@ -75,6 +75,10 @@
     content: "\f319";
 }
 
+#accordion-panel-square_typography_panel .accordion-section-title:before {
+    content: "\f464";
+}
+
 .ht-implink{
     background: #0073aa;
     padding: 5px 10px;

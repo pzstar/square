@@ -1,6 +1,6 @@
 <?php
 
-class Hash_Themes_Icon_Manager {
+class Square_Icon_Manager {
 
     private static $instance = null;
 
@@ -16,14 +16,14 @@ class Hash_Themes_Icon_Manager {
     }
 
     public function init() {
-        add_filter('hash_themes_register_icon', array($this, 'icons'));
+        add_filter('square_register_icon', array($this, 'icons'));
     }
 
     public function icons() {
         $icons_args = array(
             'hash-themes-icofont-icon' => array(
                 'name' => 'hash-themes-fontawesome-icon',
-                'label' => esc_html__('FontAwesome', 'hash-themes'),
+                'label' => esc_html__('FontAwesome', 'square'),
                 'prefix' => '',
                 'displayPrefix' => '',
                 'url' => '',
@@ -40,4 +40,4 @@ class Hash_Themes_Icon_Manager {
 
 }
 
-Hash_Themes_Icon_Manager::instance();
+Square_Icon_Manager::instance();

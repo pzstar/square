@@ -1,7 +1,7 @@
 <?php
 
 /** Switch Control */
-class Hash_Themes_Switch_Control extends WP_Customize_Control {
+class Square_Switch_Control extends WP_Customize_Control {
 
     public $type = 'ht--switch';
     public $on_off_label = array();

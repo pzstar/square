@@ -1,7 +1,7 @@
 <?php
 
 /** Background Control */
-class Hash_Themes_Background_Image_Control extends WP_Customize_Control {
+class Square_Background_Image_Control extends WP_Customize_Control {
 
     /**
      * The type of customize control being rendered.
@@ -46,15 +46,15 @@ class Hash_Themes_Background_Image_Control extends WP_Customize_Control {
 
         // Set button labels for image uploader
         $button_labels = $this->get_button_labels();
-        $this->button_labels = apply_filters('hash_themes_customizer_background_button_labels', $button_labels, $id);
+        $this->button_labels = apply_filters('square_customizer_background_button_labels', $button_labels, $id);
 
         // Set field labels
         $field_labels = $this->get_field_labels();
-        $this->field_labels = apply_filters('hash_themes_customizer_background_field_labels', $field_labels, $id);
+        $this->field_labels = apply_filters('square_customizer_background_field_labels', $field_labels, $id);
 
         // Set background choices
         $background_choices = $this->get_background_choices();
-        $this->background_choices = apply_filters('hash_themes_customizer_background_choices', $background_choices, $id);
+        $this->background_choices = apply_filters('square_customizer_background_choices', $background_choices, $id);
     }
 
     /**
@@ -217,8 +217,8 @@ class Hash_Themes_Background_Image_Control extends WP_Customize_Control {
     public static function get_button_labels() {
 
         $button_labels = array(
-            'select' => esc_html__('Select Image', 'hash-themes'),
-            'remove' => esc_html__('Remove', 'hash-themes'),
+            'select' => esc_html__('Select Image', 'square'),
+            'remove' => esc_html__('Remove', 'square'),
         );
 
         return $button_labels;
@@ -232,12 +232,12 @@ class Hash_Themes_Background_Image_Control extends WP_Customize_Control {
     public static function get_field_labels() {
 
         $field_labels = array(
-            'repeat' => esc_html__('Repeat', 'hash-themes'),
-            'size' => esc_html__('Size', 'hash-themes'),
-            'position' => esc_html__('Position', 'hash-themes'),
-            'attachment' => esc_html__('Attachment', 'hash-themes'),
-            'color' => esc_html__('Background Color', 'hash-themes'),
-            'overlay' => esc_html__('Overlay Color', 'hash-themes')
+            'repeat' => esc_html__('Repeat', 'square'),
+            'size' => esc_html__('Size', 'square'),
+            'position' => esc_html__('Position', 'square'),
+            'attachment' => esc_html__('Attachment', 'square'),
+            'color' => esc_html__('Background Color', 'square'),
+            'overlay' => esc_html__('Overlay Color', 'square')
         );
 
         return $field_labels;
@@ -253,30 +253,30 @@ class Hash_Themes_Background_Image_Control extends WP_Customize_Control {
 
         $choices = array(
             'repeat' => array(
-                'no-repeat' => esc_html__('No Repeat', 'hash-themes'),
-                'repeat' => esc_html__('Tile', 'hash-themes'),
-                'repeat-x' => esc_html__('Tile Horizontally', 'hash-themes'),
-                'repeat-y' => esc_html__('Tile Vertically', 'hash-themes')
+                'no-repeat' => esc_html__('No Repeat', 'square'),
+                'repeat' => esc_html__('Tile', 'square'),
+                'repeat-x' => esc_html__('Tile Horizontally', 'square'),
+                'repeat-y' => esc_html__('Tile Vertically', 'square')
             ),
             'size' => array(
-                'auto' => esc_html__('Default', 'hash-themes'),
-                'cover' => esc_html__('Cover', 'hash-themes'),
-                'contain' => esc_html__('Contain', 'hash-themes')
+                'auto' => esc_html__('Default', 'square'),
+                'cover' => esc_html__('Cover', 'square'),
+                'contain' => esc_html__('Contain', 'square')
             ),
             'position' => array(
-                'left-top' => esc_html__('Left Top', 'hash-themes'),
-                'left-center' => esc_html__('Left Center', 'hash-themes'),
-                'left-bottom' => esc_html__('Left Bottom', 'hash-themes'),
-                'right-top' => esc_html__('Right Top', 'hash-themes'),
-                'right-center' => esc_html__('Right Center', 'hash-themes'),
-                'right-bottom' => esc_html__('Right Bottom', 'hash-themes'),
-                'center-top' => esc_html__('Center Top', 'hash-themes'),
-                'center-center' => esc_html__('Center Center', 'hash-themes'),
-                'center-bottom' => esc_html__('Center Bottom', 'hash-themes')
+                'left-top' => esc_html__('Left Top', 'square'),
+                'left-center' => esc_html__('Left Center', 'square'),
+                'left-bottom' => esc_html__('Left Bottom', 'square'),
+                'right-top' => esc_html__('Right Top', 'square'),
+                'right-center' => esc_html__('Right Center', 'square'),
+                'right-bottom' => esc_html__('Right Bottom', 'square'),
+                'center-top' => esc_html__('Center Top', 'square'),
+                'center-center' => esc_html__('Center Center', 'square'),
+                'center-bottom' => esc_html__('Center Bottom', 'square')
             ),
             'attachment' => array(
-                'fixed' => esc_html__('Fixed', 'hash-themes'),
-                'scroll' => esc_html__('Scroll', 'hash-themes')
+                'fixed' => esc_html__('Fixed', 'square'),
+                'scroll' => esc_html__('Scroll', 'square')
             )
         );
 

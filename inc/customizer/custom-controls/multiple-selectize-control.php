@@ -1,6 +1,6 @@
 <?php
 
-class Hash_Themes_Multiple_Selectize_Control extends WP_Customize_Control {
+class Square_Multiple_Selectize_Control extends WP_Customize_Control {
 
     public $type = 'ht--multiple-selectize';
     public $placeholder;

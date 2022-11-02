@@ -1,6 +1,6 @@
 <?php
 
-class Hash_Themes_Gallery_Control extends WP_Customize_Control {
+class Square_Gallery_Control extends WP_Customize_Control {
 
     public $type = 'ht--gallery';
 
@@ -31,7 +31,7 @@ class Hash_Themes_Gallery_Control extends WP_Customize_Control {
 
             <input type="hidden" <?php echo esc_attr($this->link()) ?> value="<?php echo esc_attr($this->value()); ?>" />
 
-            <a href="#" class="button ht--gallery-button"><?php esc_html_e('Add Images', 'hash-themes') ?></a>
+            <a href="#" class="button ht--gallery-button"><?php esc_html_e('Add Images', 'square') ?></a>
         </label>
         <?php
     }

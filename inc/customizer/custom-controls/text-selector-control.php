@@ -1,7 +1,7 @@
 <?php
 
 /** Text Selector Control */
-class Hash_Themes_Text_Selector_Control extends WP_Customize_Control {
+class Square_Text_Selector_Control extends WP_Customize_Control {
 
     public $type = 'ht--text-selector';
     public $class = '';

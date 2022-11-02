@@ -1,7 +1,7 @@
 <?php
 
 /** Control Tab */
-class Hash_Themes_Group_Control extends WP_Customize_Control {
+class Square_Group_Control extends WP_Customize_Control {
 
     public $type = 'ht--group';
     public $params = '';

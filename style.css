@@ -4,7 +4,7 @@ Theme URI: https://hashthemes.com/wordpress-theme/square/
 Author: HashThemes
 Author URI: https://hashthemes.com
 Description: Square is a flexible responsive multipurpose theme compatible with all browsers and devices, fully mobile friendly, loaded with lots of features. It is a minimal theme based on WordPress Customizer that allows you to customize with live preview. The theme can be used for business, corporate, digital agency, personal, portfolio, photography, parallax, blogs and magazines. Square is eCommerce (WooCommerce) Compatible, Polylang Compatible, WPML, RTL, Retina Ready, SEO Friendly and Support bbPress and BuddyPress. More over it is a complete theme. For demo https://demo.hashthemes.com/square
-Version: 2.0.1
+Version: 2.0.11
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: square
@@ -192,10 +192,15 @@ button,
 input,
 select,
 textarea {
-    color: #404040;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
-    line-height: 1.8;
+    color: var(--square-body-color, #404040);
+    font-size: var(--square-body-size, 16px);
+    letter-spacing: var(--square-body-letter-spacing, 0);
+    line-height: var(--square-body-line-height, 1.8);
+    font-family: var(--square-body-family, 'Open Sans', sans-serif);
+    font-weight: var(--square-body-weight, 400);
+    font-style: var(--square-body-style, normal);
+    text-decoration: var(--square-body-text-decoration, none);
+    text-transform: var(--square-body-text-transform, none);
 }
 h1,
 h2,
@@ -203,9 +208,13 @@ h3,
 h4,
 h5,
 h6 {
-    font-weight: 400;
-    line-height: 1.2;
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: var(--square-h-family, 'Roboto Condensed', sans-serif);
+    letter-spacing: var(--square-h-letter-spacing, 0);
+    line-height: var(--square-h-line-height, 1.2);
+    font-weight: var(--square-h-weight, 400);
+    font-style: var(--square-h-style, normal);
+    text-decoration: var(--square-h-text-decoration, none);
+    text-transform: var(--square-h-text-transform, none);
     margin: 0;
 }
 h1{
@@ -347,12 +356,11 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-    background: #5bc2ce;
-    padding: 0 30px;
+    background: var(--square-template-color, #5bc2ce);
+    padding: 10px 30px;
     color: #FFF;
     border: 0;
-    line-height: 46px;
-    height: 46px;
+    height: auto;
 }
 button:hover,
 input[type="button"]:hover,
@@ -384,12 +392,10 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea{
-    color: #404040;
+    color: var(--square-body-color, #404040);
     border: 1px solid #DDD;
     transition:all 0.3s ease-in-out;
-    -moz-transition:all 0.3s ease-in-out;
-    -webkit-transition:all 0.3s ease-in-out;
-    height: 46px;
+    height: auto;
     width: 100%;
 }
 select {
@@ -452,7 +458,7 @@ input[type="search"] {
 ## Links
 --------------------------------------------------------------*/
 a {
-    color: #222;
+    color: var(--square-body-color, #222);
     text-decoration: none;
 }
 a:visited {
@@ -460,7 +466,7 @@ a:visited {
 a:hover,
 a:focus,
 a:active {
-    color: #5bc2ce;
+    color: var(--square-template-color, #5bc2ce);
 }
 a:focus {
 }
@@ -573,7 +579,6 @@ a:active {
 }
 .widget a{
     text-decoration: none;
-    color: #444;
 }
 #sq-colophon .widget:last-child{
     margin: 0;
@@ -733,8 +738,8 @@ body:not(.page-template-page-builder-template) .single-entry-content{
 .entry-meta,
 .entry-footer{
     font-size: 13px;
-    color: #666;
     font-style: italic;
+    opacity: 0.8;
 }
 .entry-footer{
     margin-top: 25px;
@@ -754,7 +759,6 @@ body:not(.page-template-page-builder-template) .single-entry-content{
 .entry-meta a,
 .entry-footer a{
     text-decoration: none;
-    color: #555;
 }
 .single .entry-meta{
     margin-bottom: 20px;
@@ -785,9 +789,9 @@ body:not(.page-template-page-builder-template) .single-entry-content{
     color: #666;
 }
 .entry-footer .square-share-buttons a:hover{
-    background: #5bc2ce;
+    background: var(--square-template-color, #5bc2ce);
     color: #FFF;
-    border: 1px solid #5bc2ce;
+    border: 1px solid var(--square-template-color, #5bc2ce);
 }
 /*--------------------------------------------------------------
 ## Asides
@@ -808,7 +812,7 @@ body:not(.page-template-page-builder-template) .single-entry-content{
     margin-top: 8px;
     height: 1px;
     width: 40px;
-    background: #5bc2ce;
+    background: var(--square-template-color, #5bc2ce);
 }
 .widget-area .widget-title:after{
     content: "";
@@ -818,7 +822,7 @@ body:not(.page-template-page-builder-template) .single-entry-content{
     margin-top: 12px;
     height: 1px;
     width: 20px;
-    background: #5bc2ce;
+    background: var(--square-template-color, #5bc2ce);
 }
 .widget-area ul{
     list-style: none;
@@ -833,19 +837,16 @@ body:not(.page-template-page-builder-template) .single-entry-content{
     padding-left: 10px;
 }
 .widget-area ul ul li:last-child{
-    border-bottom: 0;
     padding-bottom: 0;
 }
 .widget-area li{
     padding: 6px 0;
-    border-bottom: 1px solid #F6F6F6;
 }
 .widget-area a{
     text-decoration: none;
-    color: #404040;
 }
 .widget-area a:hover{
-    color: #5bc2ce;
+    color: var(--square-template-color, #5bc2ce);
 }
 .widget-area .widget{
     margin-bottom: 50px;
@@ -896,7 +897,7 @@ h3.comments-title:after{
     left: 0;
     top: 100%;
     width: 30px;
-    background: #5bc2ce;
+    background: var(--square-template-color, #5bc2ce);
     height: 2px;
 }
 .logged-in-as,
@@ -924,11 +925,8 @@ article.comment-body {
     position: relative;
     border: 1px solid #EEE;
 }
-.comment-list a{
-    color: #404040;
-}
 .comment-list a:hover{
-    color: #5bc2ce !important;
+    color: var(--square-template-color, #5bc2ce) !important;
 }
 .comment-list .comment-respond{
     margin-top: 20px;
@@ -942,7 +940,6 @@ article.comment-body {
 .comment-list .vcard .fn{
     font-weight: normal;
     font-size: 16px;
-    font-family: 'Roboto Condensed', sans-serif;
 }
 .comment-list .edit-link{
     position: absolute;
@@ -961,7 +958,6 @@ article.comment-body {
     border-top: 1px solid #EEE;
     padding-top: 10px;
     font-size: 13px;
-    font-family: 'Roboto Condensed', sans-serif;
 }
 .comment-list .comment-metadata a {
     float: left;
@@ -974,7 +970,7 @@ article.comment-body {
 }
 .comment-navigation .nav-previous a,
 .comment-navigation .nav-next a{
-    background: #5bc2ce;
+    background: var(--square-template-color, #5bc2ce);
     color: #FFF;
     display: inline-block;
     padding: 0 10px;
@@ -988,7 +984,7 @@ article.comment-body {
 .comment-navigation .nav-next a:after{
     content: "";
     position: absolute;
-    border-left: 11px solid #5bc2ce;
+    border-left: 11px solid var(--square-template-color, #5bc2ce);
     border-top: 11px solid transparent;
     border-bottom: 11px solid transparent;
     top: 0;
@@ -1000,7 +996,7 @@ article.comment-body {
 .comment-navigation .nav-previous a:after{
     content: "";
     position: absolute;
-    border-right: 11px solid #5bc2ce;
+    border-right: 11px solid var(--square-template-color, #5bc2ce);
     border-top: 11px solid transparent;
     border-bottom: 11px solid transparent;
     top: 0;
@@ -1102,7 +1098,7 @@ object {
     position: absolute;
     height: 2px;
     width: 25px;
-    background: #5bc2ce;
+    background: var(--square-template-color, #5bc2ce);
     top: 100%;
     left: 0;
     margin-top:10px;
@@ -1116,7 +1112,6 @@ object {
     left: 0;
     right: 0;
     z-index: 999;
-    font-family: "Roboto Condensed", sans-serif;
     height: 82px;
     transition: all 0.6s ease-in-out;
     -moz-transition: all 0.6s ease;
@@ -1154,7 +1149,6 @@ object {
 }
 .sq-main-title{
     margin: 0;
-    font-family: 'Roboto Condensed', sans-serif;
     letter-spacing: 1px;
     font-weight: 600;
     text-transform: uppercase;
@@ -1182,7 +1176,7 @@ object {
     background: #FFF;
 }
 .sq-site-title{
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: var(--square-h-family, 'Roboto Condensed', sans-serif);
     font-weight: bold;
     margin: 8px 0 5px;
     letter-spacing: 1px;
@@ -1201,7 +1195,6 @@ object {
     color: #EEE;
     margin: 0;
     font-size: 13px;
-    font-style: italic;
     line-height: 1;
 }
 .sq-white .sq-site-description{
@@ -1223,6 +1216,7 @@ object {
 }
 .sq-main-navigation .sq-menu{
     float: right;
+    font-family: var(--square-menu-family, 'Roboto Condensed', sans-serif);
 }
 .sq-main-navigation ul {
     list-style: none;
@@ -1236,13 +1230,15 @@ object {
 }
 .sq-main-navigation a {
     display: block;
-    text-decoration: none;
     color: #FFF;
     padding: 0 15px;
-    text-transform: uppercase;
-    font-size: 15px;
-    font-weight: 600;
     position: relative;
+    letter-spacing: var(--square-menu-letter-spacing, 0);
+    font-size: var(--square-menu-size, 15px);
+    font-weight: var(--square-menu-weight, 600);
+    font-style: var(--square-menu-style, normal);
+    text-decoration: var(--square-menu-text-decoration, none);
+    text-transform: var(--square-menu-text-transform, uppercase);
 }
 .sq-main-navigation a:hover{
     color: #FFF;
@@ -1308,7 +1304,7 @@ object {
     background: #444;
 }
 .sq-main-navigation ul ul li:hover > a{
-    background: #5bc2ce;
+    background: var(--square-template-color, #5bc2ce);
     color: #FFF !important;
 }
 .site-main .comment-navigation,
@@ -1352,8 +1348,8 @@ object {
     width: 650px;
     background: rgba(0,0,0,0.2);
     padding: 40px;
-    border-left: 3px solid #5BC2CE;
-    border-right: 3px solid #5BC2CE;
+    border-left: 3px solid var(--square-template-color, #5bc2ce);
+    border-right: 3px solid var(--square-template-color, #5bc2ce);
     margin: 0 auto;
 }
 .sq-slide-cap-title{
@@ -1363,7 +1359,7 @@ object {
     font-weight: 700;
     margin-bottom: 10px;
     line-height: 1.2;
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: var(--square-h-family, 'Roboto Condensed', sans-serif);
     letter-spacing: 1px;
     text-transform: uppercase;
 }
@@ -1371,15 +1367,12 @@ object {
     text-align: center;
     font-size: 22px;
     color: #F6F6F6;
-    font-weight: 500;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-weight: 300;
     padding: 0 5%;
 }
 #sq-home-slider-section .owl-carousel .owl-nav button.owl-prev, 
 #sq-home-slider-section .owl-carousel .owl-nav button.owl-next{
     position: absolute;
-    background: #5bc2ce;
+    background: var(--square-template-color, #5bc2ce);
     bottom: 25px;
     height: 40px;
     width: 40px;
@@ -1388,9 +1381,9 @@ object {
     align-items: center;
     justify-content: center;
 }
-#sq-home-slider-section .owl-carousel .owl-nav button.owl-prev:hober, 
+#sq-home-slider-section .owl-carousel .owl-nav button.owl-prev:hover, 
 #sq-home-slider-section .owl-carousel .owl-nav button.owl-next:hover{
-    background: #4EA3AD
+    background: var(--square-template-dark-color, #4EA3AD)
 }
 #sq-home-slider-section .owl-carousel .owl-nav button i{
     font-size: 14px;
@@ -1406,7 +1399,7 @@ object {
 }
 .sq-banner-shadow{
     position: absolute;
-    top:100%;
+    top: 100%;
     left: 0;
     right:0;
 }
@@ -1462,7 +1455,7 @@ object {
     position: absolute;
     height: 2px;
     width: 25px;
-    background: #5bc2ce;
+    background: var(--square-template-color, #5bc2ce);
     top: 100%;
     left: 0;
     margin-top:10px;
@@ -1487,7 +1480,7 @@ object {
     opacity: 1;	
 }
 .sq-featured-post .sq-featured-readmore:hover{
-    color: #5bc2ce;
+    color: var(--square-template-color, #5bc2ce);
 }
 /*--------------------------------------------------------------
 ## About Us
@@ -1575,7 +1568,7 @@ object {
 }
 .sq-tab li{
     font-size: 20px;
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: var(--square-h-family, 'Roboto Condensed', sans-serif);
     text-transform: uppercase;
     padding-left: 40px;
     line-height: 1.2;
@@ -1587,13 +1580,12 @@ object {
     right:0;
     height: 100%;
     width: 5px;
-    background: #5bc2ce;
+    background: var(--square-template-color, #5bc2ce);
     top: 0;
     margin-right: -33px;
 }
 .sq-tab li a{
     text-decoration: none;
-    color: #444;
     display: block;
     padding: 15px 0;
 }
@@ -1603,7 +1595,7 @@ object {
     line-height: 1.2;
 }
 .sq-tab li.sq-active i{
-    color: #5bc2ce;
+    color: var(--square-template-color, #5bc2ce);
 }
 .sq-tab-content{
     width: 75%;
@@ -1618,7 +1610,6 @@ object {
 ## Footer
 --------------------------------------------------------------*/
 #sq-colophon{
-    font-family: "Roboto Condensed", sans-serif;
     font-size: 14px;
     color: #7e8b93;
     background: #2e3336;
@@ -1651,7 +1642,7 @@ object {
     position: absolute;
     height: 2px;
     width: 25px;
-    background: #5bc2ce;
+    background: var(--square-template-color, #5bc2ce);
     top: 100%;
     left: 0;
     margin-top: 10px;
@@ -1787,7 +1778,6 @@ object {
 .pagination{
     text-align: center;
     margin-bottom: 50px;
-    font-family: 'Roboto Condensed', sans-serif;
     text-transform: uppercase;
 }
 .pagination span,
@@ -1801,8 +1791,8 @@ object {
 }
 .pagination a:hover,
 .pagination span{
-    color: #5bc2ce;
-    border-bottom: 2px solid #5bc2ce;
+    color: var(--square-template-color, #5bc2ce);
+    border-bottom: 2px solid var(--square-template-color, #5bc2ce);
 }
 /*--------------------------------------------------------------
 ## Woocommerce CSS
@@ -1823,12 +1813,11 @@ object {
     padding-bottom: 15px;
 }
 .woocommerce .woocommerce-breadcrumb a:hover{
-    color: #5bc2ce;
+    color: var(--square-template-color, #5bc2ce);
 }
 .woocommerce nav.woocommerce-pagination{
     text-align: center;
     margin-bottom: 30px;
-    font-family: 'Roboto Condensed', sans-serif;
 }
 .woocommerce nav.woocommerce-pagination ul{
     border: 0;
@@ -1852,8 +1841,8 @@ object {
 .woocommerce nav.woocommerce-pagination ul li a:focus, 
 .woocommerce nav.woocommerce-pagination ul li a:hover, 
 .woocommerce nav.woocommerce-pagination ul li span.current{
-    color: #5bc2ce;
-    border-bottom: 2px solid #5bc2ce;
+    color: var(--square-template-color, #5bc2ce);
+    border-bottom: 2px solid var(--square-template-color, #5bc2ce);
     background: none;
 }
 .woocommerce nav.woocommerce-pagination ul li a.prev,
@@ -1874,7 +1863,7 @@ object {
     position: absolute;
     right: 10px;
     bottom: 10px;
-    background: #5bc2ce;
+    background: var(--square-template-color, #5bc2ce);
     color: #FFF;
     border-radius: 0;
     margin: 0;
@@ -1907,8 +1896,8 @@ object {
 }
 .sq-woo-title-price{
     padding: 15px;
-    border-bottom: 2px solid #5bc2ce;
-    border-top: 2px solid #5bc2ce;
+    border-bottom: 2px solid var(--square-template-color, #5bc2ce);
+    border-top: 2px solid var(--square-template-color, #5bc2ce);
 }
 .woocommerce ul.products li.product .woocommerce-loop-category__title, 
 .woocommerce ul.products li.product .woocommerce-loop-product__title, 
@@ -1928,7 +1917,7 @@ object {
 .woocommerce ul.products li.product .woocommerce-loop-category__title a:hover, 
 .woocommerce ul.products li.product .woocommerce-loop-product__title a:hover, 
 .woocommerce ul.products li.product h3 a:hover{
-    color: #5bc2ce;
+    color: var(--square-template-color, #5bc2ce);
 }
 .woocommerce div.product div.images .flex-control-thumbs{
     margin: 5px -5px 0;
@@ -1937,7 +1926,7 @@ object {
     padding: 5px;
 }
 .woocommerce ul.products li.product .price{
-    color: #5bc2ce;
+    color: var(--square-template-color, #5bc2ce);
     font-size: 15px;
     float: left;
     margin: 0;
@@ -1978,9 +1967,8 @@ object {
 }
 .woocommerce div.product p.price, 
 .woocommerce div.product span.price{
-    color: #5bc2ce;
+    color: var(--square-template-color, #5bc2ce);
     font-size: 28px;
-    font-family: 'Roboto Condensed', sans-serif;
 }
 .woocommerce div.product p.price ins, 
 .woocommerce div.product span.price ins{
@@ -1999,7 +1987,7 @@ object {
 .woocommerce a.button.alt, 
 .woocommerce button.button.alt, 
 .woocommerce input.button.alt{
-    background: #5bc2ce;
+    background: var(--square-template-color, #5bc2ce);
     padding: 8px 20px;
     border-radius: 0;
     font-weight: 400;
@@ -2010,7 +1998,7 @@ object {
 .woocommerce a.button.alt:hover, 
 .woocommerce button.button.alt:hover, 
 .woocommerce input.button.alt:hover{
-    background: #4EA3AD;
+    background: var(--square-template-dark-color, #4EA3AD);
 }
 .woocommerce div.product form.cart .variations label{
     font-weight: 400;
@@ -2044,13 +2032,13 @@ object {
 .woocommerce input.button.alt:disabled:hover, 
 .woocommerce input.button.alt:disabled[disabled], 
 .woocommerce input.button.alt:disabled[disabled]:hover{
-    background: #5bc2ce
+    background: var(--square-template-color, #5bc2ce)
 }
 .woocommerce #respond input#submit, 
 .woocommerce a.button, 
 .woocommerce button.button, 
 .woocommerce input.button{
-    background: #5bc2ce;
+    background: var(--square-template-color, #5bc2ce);
     border-radius: 0;
     font-weight: 400;
     text-transform: uppercase;
@@ -2061,7 +2049,7 @@ object {
 .woocommerce #respond input#submit:hover, 
 .woocommerce a.button:hover, .woocommerce button.button:hover, 
 .woocommerce input.button:hover{
-    background: #4EA3AD;
+    background: var(--square-template-dark-color, #4EA3AD);
     color: #FFF;
 }
 .woocommerce .woocommerce-error .button, 
@@ -2075,13 +2063,13 @@ object {
     border-top-color: transparent;
 }
 .woocommerce .woocommerce-message:before {
-    color: #5bc2ce
+    color: var(--square-template-color, #5bc2ce)
 }
 .woocommerce .woocommerce-info {
     border-top-color: transparent;
 }
 .woocommerce .woocommerce-info:before {
-    color: #5bc2ce
+    color: var(--square-template-color, #5bc2ce)
 }
 .woocommerce .woocommerce-error {
     border: 1px solid #DD1F26;
@@ -2114,7 +2102,7 @@ object {
     content: "";
     height: 4px;
     width: 100%;
-    background: #5bc2ce;
+    background: var(--square-template-color, #5bc2ce);
     top: 100%;
     left: 0;
     right: 0;
@@ -2176,7 +2164,7 @@ object {
     border-radius: 0;
 }
 .woocommerce table.shop_table thead{
-    background: #5bc2ce;
+    background: var(--square-template-color, #5bc2ce);
     color: #FFF;
 }
 .woocommerce table.shop_table td{
@@ -2242,11 +2230,11 @@ object {
     color: #999;
 }
 .woocommerce .widget_price_filter .price_slider_wrapper .ui-widget-content{
-    background: #4EA3AD;
+    background: var(--square-template-dark-color, #4EA3AD);
 }
 .woocommerce .widget_price_filter .ui-slider .ui-slider-range,
 .woocommerce .widget_price_filter .ui-slider .ui-slider-handle{
-    background: #5bc2ce;
+    background: var(--square-template-color, #5bc2ce);
     border-radius: 2px;
 }
 .select2-container .select2-choice{
@@ -2274,7 +2262,7 @@ object {
     margin-bottom: 6px;
 }
 .woocommerce-MyAccount-navigation ul li a{
-    background: #5bc2ce;
+    background: var(--square-template-color, #5bc2ce);
     color: #FFF;
     padding: 10px 15px;
     display: block;
@@ -2282,6 +2270,13 @@ object {
 .woocommerce-MyAccount-navigation ul li a:hover{
     background: #333;
     text-decoration: none;
+}
+.woocommerce ul.products li.product .onsale:after{
+    border-color: transparent transparent var(--square-template-dark-color, #4EA3AD) var(--square-template-dark-color, #4EA3AD)};
+}
+
+.woocommerce span.onsale:after{
+    border-color: transparent var(--square-template-dark-color, #4EA3AD) var(--square-template-dark-color, #4EA3AD) transparent;
 }
 .select2-container--default .select2-selection--single,
 .select2-container--default .select2-search--dropdown .select2-search__field{
@@ -2364,8 +2359,8 @@ object {
         right: 0;
         float: none;
         width: auto;
-        border-top: 2px solid #5bc2ce;
-        border-bottom: 1px solid #5bc2ce;
+        border-top: 2px solid var(--square-template-color, #5bc2ce);
+        border-bottom: 1px solid var(--square-template-color, #5bc2ce);
     }
     .sq-main-navigation a,
     .sq-main-navigation a:hover{
@@ -2458,7 +2453,7 @@ object {
     }
     .sq-featured-post{
         background: #f7f8f9;
-        border-bottom: 2px solid #5bc2ce;
+        border-bottom: 2px solid var(--square-template-color, #5bc2ce);
         margin-bottom: 20px;
     }
     .sq-featured-post:last-child{
@@ -2496,7 +2491,7 @@ object {
         display: none;
     }
     .sq-tab li.sq-active{
-        border-bottom: 2px solid #5bc2ce;
+        border-bottom: 2px solid var(--square-template-color, #5bc2ce);
     }
     .sq-tab-content{
         padding: 0;

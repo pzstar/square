@@ -1,7 +1,7 @@
 <?php
 if (class_exists('WP_Customize_Section')) {
 
-    class Hash_Themes_Upgrade_Section extends WP_Customize_Section {
+    class Square_Upgrade_Section extends WP_Customize_Section {
 
         /**
          * The type of customize section being rendered.
@@ -82,7 +82,7 @@ if (class_exists('WP_Customize_Section')) {
                 {{ key }}<br/>
                 <# }) #>
 
-                <a href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=hash-themes-link&utm_campaign=hash-themes-upgrade'); ?>" class="button button-primary" target="_blank"><?php echo esc_html__('Upgrade to Pro', 'hash-themes'); ?></a>
+                <a href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=hash-themes-link&utm_campaign=hash-themes-upgrade'); ?>" class="button button-primary" target="_blank"><?php echo esc_html__('Upgrade to Pro', 'square'); ?></a>
                 <# } #>
             </li>
             <?php

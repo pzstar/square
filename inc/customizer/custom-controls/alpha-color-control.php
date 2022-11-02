@@ -1,7 +1,7 @@
 <?php
 
 /** Alpha Color Control */
-class Hash_Themes_Alpha_Color_Control extends WP_Customize_Control {
+class Square_Alpha_Color_Control extends WP_Customize_Control {
 
     /**
      * Official control name.

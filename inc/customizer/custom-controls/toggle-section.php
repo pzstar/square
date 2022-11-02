@@ -2,11 +2,11 @@
 if (class_exists('WP_Customize_Section')) {
 
     /**
-     * Class Hash_Themes_Toggle_Section
+     * Class Square_Toggle_Section
      *
      * @access public
      */
-    class Hash_Themes_Toggle_Section extends WP_Customize_Section {
+    class Square_Toggle_Section extends WP_Customize_Section {
 
         /**
          * The type of customize section being rendered.
@@ -33,7 +33,7 @@ if (class_exists('WP_Customize_Section')) {
         public $hiding_control;
 
         /**
-         * Hash_Themes_Toggle_Section constructor.
+         * Square_Toggle_Section constructor.
          *
          * @param WP_Customize_Manager $manager Customizer Manager.
          * @param string               $id Control id.
@@ -69,7 +69,7 @@ if (class_exists('WP_Customize_Section')) {
          * @return void
          */
         public function enqueue() {
-            wp_enqueue_script('ht--toggle-section', HASH_THEMES_CUSTOMIZER_URL . 'custom-controls/assets/js/toggle-section.js', array('jquery'), HASH_THEMES_VERSION, true);
+            wp_enqueue_script('ht--toggle-section', SQUARE_CUSTOMIZER_URL . 'custom-controls/assets/js/toggle-section.js', array('jquery'), SQUARE_VERSION, true);
         }
 
         /**

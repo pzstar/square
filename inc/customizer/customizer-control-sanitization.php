@@ -1,11 +1,11 @@
 <?php
 
 //SANITIZATION FUNCTIONS
-function hash_themes_sanitize_text($input) {
+function square_sanitize_text($input) {
     return wp_kses_post($input);
 }
 
-function hash_themes_sanitize_checkbox($input) {
+function square_sanitize_checkbox($input) {
     if ($input == 1) {
         return 1;
     } else {
@@ -13,13 +13,13 @@ function hash_themes_sanitize_checkbox($input) {
     }
 }
 
-function hash_themes_sanitize_integer($input) {
+function square_sanitize_integer($input) {
     if (is_numeric($input)) {
         return intval($input);
     }
 }
 
-function hash_themes_sanitize_choices($input, $setting) {
+function square_sanitize_choices($input, $setting) {
     global $wp_customize;
 
     $control = $wp_customize->get_control($setting->id);
@@ -31,7 +31,7 @@ function hash_themes_sanitize_choices($input, $setting) {
     }
 }
 
-function hash_themes_sanitize_choices_array($input, $setting) {
+function square_sanitize_choices_array($input, $setting) {
     global $wp_customize;
 
     if (!empty($input)) {
@@ -41,7 +41,7 @@ function hash_themes_sanitize_choices_array($input, $setting) {
     return $input;
 }
 
-function hash_themes_sanitize_color_alpha($color) {
+function square_sanitize_color_alpha($color) {
     $color = str_replace('#', '', $color);
     if ('' === $color) {
         return '';
@@ -67,7 +67,7 @@ function hash_themes_sanitize_color_alpha($color) {
     return strpos(trim($color), 'rgb') !== false ? $color : false;
 }
 
-function hash_themes_sanitize_color($color) {
+function square_sanitize_color($color) {
     // Is this an rgba color or a hex?
     $mode = ( false === strpos($color, 'rgba') ) ? 'hex' : 'rgba';
     if ('rgba' === $mode) {
@@ -82,7 +82,7 @@ function hash_themes_sanitize_color($color) {
 /**
  * Sanitize GPS Latitude and Longitude
  */
-function hash_themes_sanitize_lat_long($coords) {
+function square_sanitize_lat_long($coords) {
     if (preg_match('/^[-]?(([0-8]?[0-9])\.(\d+))|(90(\.0+)?),[-]?((((1[0-7][0-9])|([0-9]?[0-9]))\.(\d+))|180(\.0+)?)$/', $coords)) {
         return $coords;
     } else {
@@ -90,7 +90,7 @@ function hash_themes_sanitize_lat_long($coords) {
     }
 }
 
-function hash_themes_sanitize_image($image, $setting) {
+function square_sanitize_image($image, $setting) {
     /*
      * Array of valid image file types.
      *
@@ -110,7 +110,7 @@ function hash_themes_sanitize_image($image, $setting) {
     return ( $file['ext'] ? $image : $setting->default );
 }
 
-function hash_themes_sanitize_number_range($number, $setting) {
+function square_sanitize_number_range($number, $setting) {
     // Ensure input is an absolute integer.
     $number = absint($number);
 
@@ -130,7 +130,7 @@ function hash_themes_sanitize_number_range($number, $setting) {
     return ( $min <= $number && $number <= $max && is_int($number / $step) ? $number : $setting->default );
 }
 
-function hash_themes_sanitize_dropdown_pages($page_id, $setting) {
+function square_sanitize_dropdown_pages($page_id, $setting) {
     // Ensure $input is an absolute integer.
     $page_id = absint($page_id);
 
@@ -138,7 +138,7 @@ function hash_themes_sanitize_dropdown_pages($page_id, $setting) {
     return ( 'publish' == get_post_status($page_id) ? $page_id : $setting->default );
 }
 
-function hash_themes_sanitize_hex_color($hex_color, $setting) {
+function square_sanitize_hex_color($hex_color, $setting) {
     // Sanitize $input as a hex value without the hash prefix.
     $hex_color = sanitize_hex_color($hex_color);
 
@@ -146,11 +146,11 @@ function hash_themes_sanitize_hex_color($hex_color, $setting) {
     return (!is_null($hex_color) ? $hex_color : $setting->default );
 }
 
-function hash_themes_sanitize_html($html) {
+function square_sanitize_html($html) {
     return wp_filter_post_kses($html);
 }
 
-function hash_themes_sanitize_number_absint($number, $setting) {
+function square_sanitize_number_absint($number, $setting) {
     // Ensure $number is an absolute integer (whole number, zero or greater).
     $number = absint($number);
 
@@ -158,7 +158,7 @@ function hash_themes_sanitize_number_absint($number, $setting) {
     return ( $number ? $number : $setting->default );
 }
 
-function hash_themes_sanitize_select($input, $setting) {
+function square_sanitize_select($input, $setting) {
 
     // Ensure input is a slug.
     $input = sanitize_key($input);
@@ -170,11 +170,11 @@ function hash_themes_sanitize_select($input, $setting) {
     return ( array_key_exists($input, $choices) ? $input : $setting->default );
 }
 
-function hash_themes_sanitize_url($url) {
+function square_sanitize_url($url) {
     return esc_url_raw($url);
 }
 
-function hash_themes_sanitize_repeater($input) {
+function square_sanitize_repeater($input) {
 
     $input_decoded = json_decode($input, true);
 
@@ -195,11 +195,11 @@ function hash_themes_sanitize_repeater($input) {
  * Number with blank value sanitization callback
  *
  */
-function hash_themes_sanitize_number_blank($val) {
+function square_sanitize_number_blank($val) {
     return is_numeric($val) ? $val : '';
 }
 
-function hash_themes_sanitize_multi_choices($input, $setting) {
+function square_sanitize_multi_choices($input, $setting) {
     // Get list of choices from the control associated with the setting.
     $choices = $setting->manager->get_control($setting->id)->choices;
     $input_keys = $input;
@@ -216,6 +216,6 @@ function hash_themes_sanitize_multi_choices($input, $setting) {
 }
 
 /** Sanitize Boolean */
-function hash_themes_sanitize_boolean($input) {
+function square_sanitize_boolean($input) {
     return ( ( isset($input) && true == $input ) ? true : false );
 }

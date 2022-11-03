@@ -25,7 +25,6 @@ function squareLightenDarkenColor(hex, lum) {
     return rgb;
 }
 
-
 jQuery(document).ready(function ($) {
     'use strict';
     // Site title and description.

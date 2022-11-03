@@ -79,6 +79,10 @@
     content: "\f464";
 }
 
+#accordion-section-square_pro_feature_section .accordion-section-title:before {
+    content: "\f174";
+}
+
 .ht-implink{
     background: #0073aa;
     padding: 5px 10px;
@@ -99,6 +103,7 @@
 #customize-control-square_enable_frontpage .ht--toggle-container{
     border: 1px solid #CCC;
     padding: 10px;
+    background: #FFF;
 }
 
 #accordion-section-square-upgrade-section{

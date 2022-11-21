@@ -52,7 +52,8 @@ $square_pro_features = '<ul class="upsell-features">
 
 $wp_customize->add_section(new Square_Upgrade_Section($wp_customize, 'square-pro-section', array(
     'priority' => 0,
-    'pro_text' => esc_html__('Upgrade to Pro (30% OFF)', 'square'),
+    'title' => esc_html__('Black Friday Deal. Use Coupon Code BF2022', 'square'),
+    'pro_text' => esc_html__('Upgrade to Pro (40% OFF)', 'square'),
     'pro_url' => 'https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-customizer-button&utm_campaign=square-upgrade',
 )));
 

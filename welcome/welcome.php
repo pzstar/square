@@ -277,7 +277,7 @@ if (!class_exists('Square_Welcome')) :
         }
 
         public function erase_hide_notice() {
-            delete_option('square_hide_notice');
+            delete_option('square_dismissed_notices');
             delete_option('square_first_activation');
         }
 

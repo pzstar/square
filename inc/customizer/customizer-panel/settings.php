@@ -267,7 +267,7 @@ $wp_customize->add_control(new Square_Toggle_Control($wp_customize, 'square_load
 
 // Add the typography panel.
 $wp_customize->add_panel('square_typography_panel', array(
-    'priority' => 20,
+    'priority' => 25,
     'title' => esc_html__('Typography Settings', 'square')
 ));
 
@@ -409,7 +409,7 @@ $wp_customize->add_setting('square_menu_family', array(
 ));
 
 $wp_customize->add_setting('square_menu_style', array(
-    'default' => '600',
+    'default' => '700',
     'sanitize_callback' => 'sanitize_text_field',
 ));
 

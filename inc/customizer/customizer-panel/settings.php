@@ -119,6 +119,22 @@ $wp_customize->add_section('title_tagline', array(
 
 $wp_customize->get_control('header_text')->label = esc_html__('Display Site Title and Tagline(Only Displays if Logo is Removed)', 'square');
 
+$wp_customize->add_setting('square_title_tagline_upgrade_text', array(
+    'sanitize_callback' => 'square_sanitize_text',
+));
+
+$wp_customize->add_control(new Square_Upgrade_Info_Control($wp_customize, 'square_title_tagline_upgrade_text', array(
+    'section' => 'title_tagline',
+    'label' => esc_html__('For more Options,', 'square'),
+    'choices' => array(
+        esc_html__('Show/Hide title & tagline individually with or without logo', 'square'),
+        esc_html__('Choose title & tagline colors', 'square'),
+        esc_html__('Configure logo height and width', 'square')
+    ),
+    'priority' => 100,
+    'active_callback' => 'square_is_upgrade_notice_active'
+)));
+
 //HEADER LOGO 
 $wp_customize->add_section('header_image', array(
     'title' => esc_html__('Header Logo', 'square'),
@@ -395,6 +411,21 @@ $wp_customize->add_control(new Square_Typography_Control($wp_customize, 'square_
     )
 )));
 
+$wp_customize->add_setting('square_h_typography_upgrade_text', array(
+    'sanitize_callback' => 'square_sanitize_text',
+));
+
+$wp_customize->add_control(new Square_Upgrade_Info_Control($wp_customize, 'square_h_typography_upgrade_text', array(
+    'section' => 'square_header_typography_section',
+    'label' => esc_html__('For more Options,', 'square'),
+    'choices' => array(
+        esc_html__('Configure H1, H2, H3, H4, H5, H6 individually or all at once', 'square'),
+        esc_html__('Set font size of H1, H2, H3, H4, H5, H6 individually', 'square'),
+        esc_html__('Seperate header font typography for home page sections header, inner page title bar heading, widget header', 'square')
+    ),
+    'priority' => 100,
+    'active_callback' => 'square_is_upgrade_notice_active'
+)));
 
 // Add Menu typography section.
 $wp_customize->add_section('square_menu_typography_section', array(

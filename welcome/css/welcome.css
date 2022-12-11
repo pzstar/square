@@ -454,6 +454,10 @@ a.buy-pro-btn:hover{
     font-size: 18px;
 }
 
+#adminmenu .toplevel_page_square-welcome div.wp-menu-image.svg{
+    background-size: 18px auto;
+}
+
 /** Footer Review **/
 body.toplevel_page_square-welcome #wpfooter{
     position: fixed;
@@ -470,12 +474,27 @@ body.toplevel_page_square-welcome #wpfooter a{
 
 /** Admin Notice **/
 .square-notice.notice {
+    display: flex;
+    gap: 20px;
+    align-items: center;
     padding: 20px 40px 20px 20px !important;
     position: relative;
 }
 
+.square-notice.notice .square-notice-logo{
+    width: 84px;
+    flex: 84px 0 0;
+}
+
+.square-notice.notice .square-notice-logo svg{
+    fill: #72aee6;
+    display: block;
+}
+
 .square-notice.notice p{
-    margin: 0 0 10px;
+    padding: 0;
+    margin: 0 0 15px;
+    font-size: 16px;
 }
 
 .square-notice a.notice-dismiss {
@@ -519,11 +538,11 @@ body.toplevel_page_square-welcome #wpfooter a{
         width: 46%;
         margin-top: 30px;
     }
-    
+
     .plugin-title-wrap{
         padding: 16px 15px;
     }
-    
+
     .plugin-btn-wrapper{
         height: 58px;
     }
@@ -531,7 +550,7 @@ body.toplevel_page_square-welcome #wpfooter a{
     .welcome-upgrade-box{
         padding: 40px;
     }
-    
+
     .square-welcome-info .square-welcome-thumb{
         display: none;
     }
@@ -587,17 +606,17 @@ body.toplevel_page_square-welcome #wpfooter a{
         width: 100% !important;
         text-align: left !important;
     }
-    
+
     .square-welcome-info{
         display: block;
     }
-    
+
     .square-welcome-info > .square-welcome-import, 
     .square-welcome-info > .square-welcome-getting-started{
         width: auto;
         margin: 0 0 30px;
     }
-    
+
     .square-welcome-info > .square-welcome-getting-started{
         margin-bottom: 0;
     }

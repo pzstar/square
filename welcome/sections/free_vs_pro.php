@@ -22,7 +22,7 @@
             <p><?php esc_html_e('Upgrade to pro version for additional features and better supports.', 'square'); ?></p>
         </td>
         <td colspan="2">
-            <a target="__blank" class="buy-pro-btn" href="https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-freevspro&utm_campaign=square-upgrade"><?php esc_html_e('Buy Now ($55 only)', 'square'); ?></a>
+            <a target="__blank" class="buy-pro-btn" href="https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-freevspro&utm_campaign=square-upgrade"><?php esc_html_e('Buy Now ($65 only)', 'square'); ?></a>
         </td>
     </tr>
     <tr>
@@ -35,7 +35,7 @@
             <span><?php esc_html_e('One Click Demo Import', 'square'); ?></span>
             <p><?php esc_html_e('With one click demo-import, you can install the demo content with just one click.', 'square'); ?></td>
         <td><?php esc_html_e('1 Demo Only', 'square'); ?></td>
-        <td><?php esc_html_e('4 Demos + More comming', 'square'); ?></td>
+        <td><?php esc_html_e('4 Demos + More coming', 'square'); ?></td>
     </tr>
     <tr>
         <td>
@@ -288,7 +288,7 @@
             <p><?php esc_html_e('Upgrade to pro version for additional features and better supports.', 'square'); ?></p>
         </td>
         <td colspan="2">
-            <a target="__blank" class="buy-pro-btn" href="https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-freevspro&utm_campaign=square-upgrade"><?php esc_html_e('Buy Now ($55 only)', 'square'); ?></a>
+            <a target="__blank" class="buy-pro-btn" href="https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-freevspro&utm_campaign=square-upgrade"><?php esc_html_e('Buy Now ($65 only)', 'square'); ?></a>
         </td>
     </tr>
 </table>

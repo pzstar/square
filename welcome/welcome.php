@@ -135,7 +135,7 @@ if (!class_exists('Square_Welcome')) :
 
         /** Register Menu for Welcome Page */
         public function welcome_register_menu() {
-            add_menu_page(esc_html__('Welcome', 'square'), sprintf(esc_html__('%s Settings', 'square'), esc_html(str_replace(' ', '', $this->theme_name))), 'manage_options', 'square-welcome', array($this, 'welcome_screen'), '', 60);
+            add_menu_page(esc_html__('Welcome', 'square'), sprintf(esc_html__('%s Settings', 'square'), esc_html(str_replace(' ', '', $this->theme_name))), 'manage_options', 'square-welcome', array($this, 'welcome_screen'), 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4Ny4xNiA4Ny4xNiIgZmlsbD0iI0ZGRkZGRiI+PGc+PGc+PHBhdGggZD0iTTE5LjEzLDI3LjY0YTguNTQsOC41NCwwLDAsMSw4LjUxLTguNTFINjMuNzhWNC4yNUE0LjI3LDQuMjcsMCwwLDAsNTkuNTIsMEg0LjI1QTQuMjYsNC4yNiwwLDAsMCwwLDQuMjVWNTkuNTJhNC4yNyw0LjI3LDAsMCwwLDQuMjUsNC4yNkgxOS4xM1pNNjgsMjMuMzhIODIuOTFhNC4yNyw0LjI3LDAsMCwxLDQuMjUsNC4yNlY4Mi45MWE0LjI2LDQuMjYsMCwwLDEtNC4yNSw0LjI1SDI3LjY0YTQuMjcsNC4yNywwLDAsMS00LjI2LTQuMjVWNjhINTkuNTJBOC41NCw4LjU0LDAsMCwwLDY4LDU5LjUyWk0yMy4zOCw2My43OFYyNy42NGE0LjI4LDQuMjgsMCwwLDEsNC4yNi00LjI2SDYzLjc4VjU5LjUyYTQuMjgsNC4yOCwwLDAsMS00LjI2LDQuMjZaIi8+PC9nPjwvZz48L3N2Zz4=', 60);
         }
 
         /** Welcome Page */
@@ -228,9 +228,9 @@ if (!class_exists('Square_Welcome')) :
             if (!current_user_can('manage_options')) {
                 return;
             }
-            
+
             check_ajax_referer('square_activate_hdi_plugin', 'security');
-            
+
             $slug = isset($_POST['slug']) ? $_POST['slug'] : '';
             $file = isset($_POST['file']) ? $_POST['file'] : '';
             $success = false;
@@ -314,16 +314,23 @@ if (!class_exists('Square_Welcome')) :
             ?>
             <div class="square-notice notice notice-info">
                 <?php $this->dismiss_button('review'); ?>
-                <p>
-                    <?php
-                    printf(
-                            /* translators: %1$s is link start tag, %2$s is link end tag. */
-                            esc_html__('We have noticed that you have been using Square WordPress theme for some time. We hope you love it, and we would really appreciate it if you would %1$sgive us a 5 stars rating%2$s.', 'square'), '<a target="_blank" href="https://wordpress.org/support/theme/square/reviews/?filter=5#new-post">', '</a>'
-                    );
-                    ?>
-                </p>
-                <a target="_blank" class="button action" href="https://wordpress.org/support/theme/square/reviews/?filter=5#new-post"><?php echo esc_html__('Yes, of course', 'square') ?></a> &nbsp;
-                <a class="button action" href="<?php echo esc_url(wp_nonce_url(add_query_arg('square-hide-notice', 'review'), 'review', 'square_notice_nonce')); ?>"><?php echo esc_html__('I have already rated', 'square') ?></a>
+
+                <div class="square-notice-logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 87.16 87.16" fill="#FFFFFF"><g><g><path d="M19.13,27.64a8.54,8.54,0,0,1,8.51-8.51H63.78V4.25A4.27,4.27,0,0,0,59.52,0H4.25A4.26,4.26,0,0,0,0,4.25V59.52a4.27,4.27,0,0,0,4.25,4.26H19.13ZM68,23.38H82.91a4.27,4.27,0,0,1,4.25,4.26V82.91a4.26,4.26,0,0,1-4.25,4.25H27.64a4.27,4.27,0,0,1-4.26-4.25V68H59.52A8.54,8.54,0,0,0,68,59.52ZM23.38,63.78V27.64a4.28,4.28,0,0,1,4.26-4.26H63.78V59.52a4.28,4.28,0,0,1-4.26,4.26Z"/></g></g></svg>
+                </div>
+
+                <div class="square-notice-content">
+                    <p>
+                        <?php
+                        printf(
+                                /* translators: %1$s is link start tag, %2$s is link end tag. */
+                                esc_html__('Great to see that you have been using Square WordPress theme for some time. We hope you love it, and we would really appreciate it if you would %1$sgive us a 5 stars rating%2$s.', 'square'), '<a target="_blank" href="https://wordpress.org/support/theme/square/reviews/?filter=5#new-post">', '</a>'
+                        );
+                        ?>
+                    </p>
+                    <a target="_blank" class="button button-primary button-large" href="https://wordpress.org/support/theme/square/reviews/?filter=5#new-post"><?php echo esc_html__('Yes, of course', 'square') ?></a> &nbsp;
+                    <a class="button button-large" href="<?php echo esc_url(wp_nonce_url(add_query_arg('square-hide-notice', 'review'), 'review', 'square_notice_nonce')); ?>"><?php echo esc_html__('I have already rated', 'square') ?></a>
+                </div>
             </div>
             <?php
         }

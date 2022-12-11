@@ -1112,10 +1112,7 @@ object {
     left: 0;
     right: 0;
     z-index: 999;
-    height: 82px;
     transition: all 0.6s ease-in-out;
-    -moz-transition: all 0.6s ease;
-    -webkit-transition: all 0.6s ease;
     box-shadow: 0 0px 8px rgba(0,0,0,0.2);
 }
 #sq-masthead.disable-sticky{
@@ -1130,13 +1127,17 @@ object {
 #sq-masthead.sq-white.sq-scrolled{
     background: rgba(255, 255, 255, 1);  
 }
+#sq-masthead .sq-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 82px;
+}
 #sq-site-branding{
-    float: left;
-    width: 30%;
     padding: 10px 0;
 }
 #sq-site-branding img{
-    max-height: 62px;
+    max-height: 48px;
     width: auto;
 }
 .sq-main-header{
@@ -1211,8 +1212,6 @@ object {
 ## Menus
 --------------------------------------------------------------*/
 #sq-site-navigation{
-    float: right;
-    width: 70%;
 }
 .sq-main-navigation .sq-menu{
     float: right;
@@ -1706,9 +1705,6 @@ object {
 }
 .sq-toggle-nav{
     display: none;
-    position: absolute;
-    top: 20px;
-    right: 30px;
     height: 40px;
     width: 40px;
     cursor: pointer;
@@ -2384,11 +2380,6 @@ object {
     }
     .sf-arrows .sf-with-ul:after{
         border-top-color: #333;
-    }
-    #sq-site-branding{
-        width: 80%;
-        width: calc(100% - 60px);
-        float: none;
     }
     #sq-home-slider-section .sq-slide img{
         height: 500px;

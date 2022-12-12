@@ -25,15 +25,15 @@ function square_default_font_array() {
         'Default' => array(
             'family' => 'Default',
             'variants' => array(
-                'Default' => esc_html__('Default', 'square'),
-                '100' => esc_html__('Thin', 'square'),
-                '300' => esc_html__('Light', 'square'),
-                '400' => esc_html__('Normal', 'square'),
-                '400italic' => esc_html__('Normal Italic', 'square'),
-                '500' => esc_html__('Medium', 'square'),
-                '600' => esc_html__('Semi Bold', 'square'),
-                '700' => esc_html__('Bold', 'square'),
-                '700italic' => esc_html__('Bold Italic', 'square')
+                'Default' => 'Default',
+                '100' => 'Thin',
+                '300' => 'Light',
+                '400' => 'Normal',
+                '400italic' => 'Normal Italic',
+                '500' => 'Medium',
+                '600' => 'Semi Bold',
+                '700' => 'Bold',
+                '700italic' => 'Bold Italic'
             ),
             'subsets' => array(
                 'latin' => 'Latin'

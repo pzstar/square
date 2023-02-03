@@ -217,8 +217,10 @@ if (!function_exists('square_fonts_url')) :
      */
     function square_fonts_url() {
         $fonts_url = '';
+        $fonts = $customizer_font_family = array();
         $subsets = 'latin,latin-ext';
-        $fonts = $standard_font_family = $default_font_list = $font_family_array = $variants_array = $font_array = $google_fonts = array();
+        $all_fonts = square_all_fonts();
+        $google_fonts = square_google_fonts();
 
         $customizer_fonts = apply_filters('square_customizer_fonts', array(
             'square_body_family' => 'Open Sans',
@@ -226,61 +228,35 @@ if (!function_exists('square_fonts_url')) :
             'square_h_family' => 'Roboto Condensed'
         ));
 
-        $standard_font = square_standard_font_array();
-        $google_font = square_google_font_array();
-        $default_font = square_default_font_array();
-        $all_font = square_font_array();
-
-        foreach ($standard_font as $key => $value) {
-            $standard_font_family[] = $value['family'];
-        }
-
-        foreach ($default_font as $key => $value) {
-            $default_font_family[] = $value['family'];
-        }
-
         foreach ($customizer_fonts as $key => $value) {
-            $customizer_font_family[] = get_theme_mod($key, $value);
-        }
-
-        $customizer_font_family = array_unique($customizer_font_family);
-        $customizer_font_family = array_diff($customizer_font_family, array_merge($standard_font_family, $default_font_family));
-
-        foreach ($customizer_font_family as $font_family) {
-            if (isset($all_font[$font_family]['variants'])) {
-                $variants_array = $all_font[$font_family]['variants'];
-                $variants_keys = array_keys($variants_array);
-                $variants = implode(',', $variants_keys);
-
-                $fonts[] = $font_family . ':' . str_replace('italic', 'i', $variants);
+            $font = get_theme_mod($key, $value);
+            if (array_key_exists($font, $google_fonts)) {
+                $customizer_font_family[] = $font;
             }
         }
 
-        /*
-         * Translators: To add an additional character subset specific to your language,
-         * translate this to 'greek', 'cyrillic', 'devanagari' or 'vietnamese'. Do not translate into your own language.
-         */
-        $subset = _x('no-subset', 'Add new subset (greek, cyrillic, devanagari, vietnamese)', 'square');
+        if ($customizer_font_family) {
+            $customizer_font_family = array_unique($customizer_font_family);
+            foreach ($customizer_font_family as $font_family) {
+                if (isset($all_fonts[$font_family]['variants'])) {
+                    $variants_array = $all_fonts[$font_family]['variants'];
+                    $variants_keys = array_keys($variants_array);
+                    $variants = implode(',', $variants_keys);
 
-        if ('cyrillic' == $subset) {
-            $subsets .= ',cyrillic,cyrillic-ext';
-        } elseif ('greek' == $subset) {
-            $subsets .= ',greek,greek-ext';
-        } elseif ('devanagari' == $subset) {
-            $subsets .= ',devanagari';
-        } elseif ('vietnamese' == $subset) {
-            $subsets .= ',vietnamese';
+                    $fonts[] = $font_family . ':' . str_replace('italic', 'i', $variants);
+                }
+            }
+
+            if ($fonts) {
+                $fonts_url = add_query_arg(array(
+                    'family' => urlencode(implode('|', $fonts)),
+                    'subset' => urlencode($subsets),
+                    'display' => 'swap',
+                        ), 'https://fonts.googleapis.com/css');
+            }
+
+            return $fonts_url;
         }
-
-        if ($fonts) {
-            $fonts_url = add_query_arg(array(
-                'family' => urlencode(implode('|', $fonts)),
-                'subset' => urlencode($subsets),
-                'display' => 'swap',
-                    ), 'https://fonts.googleapis.com/css');
-        }
-
-        return $fonts_url;
     }
 
 endif;

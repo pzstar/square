@@ -324,12 +324,12 @@ if (!class_exists('Square_Welcome')) :
                         <?php
                         printf(
                                 /* translators: %1$s is link start tag, %2$s is link end tag. */
-                                esc_html__('Great to see that you have been using Square WordPress theme for some time. We hope you love it, and we would really appreciate it if you would %1$sgive us a 5 stars rating%2$s.', 'square'), '<a target="_blank" href="https://wordpress.org/support/theme/square/reviews/?filter=5#new-post">', '</a>'
+                                esc_html__('Great to see that you have been using Square WordPress theme for some time. We hope you love it, and we would really appreciate it if you would %1$sgive us a 5 stars rating%2$s and spread your words to the world.', 'square'), '<a target="_blank" href="https://wordpress.org/support/theme/square/reviews/?filter=5#new-post">', '</a>'
                         );
                         ?>
                     </p>
-                    <a target="_blank" class="button button-primary button-large" href="https://wordpress.org/support/theme/square/reviews/?filter=5#new-post"><?php echo esc_html__('Yes, of course', 'square') ?></a> &nbsp;
-                    <a class="button button-large" href="<?php echo esc_url(wp_nonce_url(add_query_arg('square-hide-notice', 'review'), 'review', 'square_notice_nonce')); ?>"><?php echo esc_html__('I have already rated', 'square') ?></a>
+                    <a target="_blank" class="button button-primary button-large" href="https://wordpress.org/support/theme/square/reviews/?filter=5#new-post"><span class="dashicons dashicons-thumbs-up"></span><?php echo esc_html__('Yes, of course', 'square') ?></a> &nbsp;
+                    <a class="button button-large" href="<?php echo esc_url(wp_nonce_url(add_query_arg('square-hide-notice', 'review'), 'review', 'square_notice_nonce')); ?>"><span class="dashicons dashicons-yes"></span><?php echo esc_html__('I have already rated', 'square') ?></a>
                 </div>
             </div>
             <?php

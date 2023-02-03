@@ -53,22 +53,22 @@ $square_pro_features = '<ul class="upsell-features">
 $wp_customize->add_section(new Square_Upgrade_Section($wp_customize, 'square-pro-section', array(
     'priority' => 0,
     //'title' => esc_html__('New Year Deal. Use Coupon Code : HOLIDAY', 'square'),
-    'pro_text' => esc_html__('Upgrade to Pro', 'square'),
-    'pro_url' => 'https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-customizer-button&utm_campaign=square-upgrade',
+    'upgrade_text' => esc_html__('Upgrade to Pro', 'square'),
+    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-customizer-button&utm_campaign=square-upgrade',
 )));
 
 $wp_customize->add_section(new Square_Upgrade_Section($wp_customize, 'square-doc-section', array(
     'title' => esc_html__('Documentation', 'square'),
     'priority' => 1000,
-    'pro_text' => esc_html__('View', 'square'),
-    'pro_url' => 'https://hashthemes.com/documentation/square-documentation/'
+    'upgrade_text' => esc_html__('View', 'square'),
+    'upgrade_url' => 'https://hashthemes.com/documentation/square-documentation/'
 )));
 
 $wp_customize->add_section(new Square_Upgrade_Section($wp_customize, 'square-demo-import-section', array(
     'title' => esc_html__('Import Demo Content', 'square'),
     'priority' => 999,
-    'pro_text' => esc_html__('Import', 'square'),
-    'pro_url' => admin_url('admin.php?page=square-welcome')
+    'upgrade_text' => esc_html__('Import', 'square'),
+    'upgrade_url' => admin_url('admin.php?page=square-welcome')
 )));
 
 $wp_customize->add_setting('square_template_color', array(
@@ -90,7 +90,9 @@ $wp_customize->add_control(new Square_Upgrade_Info_Control($wp_customize, 'squar
     'section' => 'colors',
     'label' => esc_html__('For more color options,', 'square'),
     'priority' => 100,
-    'active_callback' => 'square_is_upgrade_notice_active'
+    'active_callback' => 'square_is_upgrade_notice_active',
+    'upgrade_text' => esc_html__('Upgrade to PRO', 'square'),
+    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-link&utm_campaign=square-upgrade'
 )));
 
 /* ============HOMEPAGE SETTINGS PANEL============ */
@@ -132,6 +134,8 @@ $wp_customize->add_control(new Square_Upgrade_Info_Control($wp_customize, 'squar
         esc_html__('Configure logo height and width', 'square')
     ),
     'priority' => 100,
+    'upgrade_text' => esc_html__('Upgrade to PRO', 'square'),
+    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-link&utm_campaign=square-upgrade',
     'active_callback' => 'square_is_upgrade_notice_active'
 )));
 
@@ -202,6 +206,8 @@ $wp_customize->add_control(new Square_Upgrade_Info_Control($wp_customize, 'squar
         esc_html__('Option for different header banner on each post/page', 'square'),
     ),
     'priority' => 100,
+    'upgrade_text' => esc_html__('Upgrade to PRO', 'square'),
+    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-link&utm_campaign=square-upgrade',
     'active_callback' => 'square_is_upgrade_notice_active'
 )));
 
@@ -254,6 +260,8 @@ $wp_customize->add_control(new Square_Upgrade_Info_Control($wp_customize, 'squar
         esc_html__('Reorder various section in single post', 'square'),
     ),
     'priority' => 100,
+    'upgrade_text' => esc_html__('Upgrade to PRO', 'square'),
+    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-link&utm_campaign=square-upgrade',
     'active_callback' => 'square_is_upgrade_notice_active'
 )));
 
@@ -411,6 +419,18 @@ $wp_customize->add_control(new Square_Typography_Control($wp_customize, 'square_
     )
 )));
 
+$wp_customize->add_section(new Square_Upgrade_Section($wp_customize, 'square-hcfu-section', array(
+    'title' => esc_html__('Want To Use Custom Fonts?', 'square'),
+    'panel' => 'square_typography_panel',
+    'priority' => 1000,
+    'class' => 'ht--boxed',
+    'options' => array(
+        esc_html__('Upload custom fonts. The uploaded font will display in the typography font family list.', 'square'),
+    ),
+    'upgrade_text' => esc_html__('Purchase Custom Font Uploader', 'square'),
+    'upgrade_url' => 'https://hashthemes.com/checkout?edd_action=add_to_cart&download_id=48193',
+)));
+
 $wp_customize->add_setting('square_h_typography_upgrade_text', array(
     'sanitize_callback' => 'square_sanitize_text',
 ));
@@ -424,6 +444,8 @@ $wp_customize->add_control(new Square_Upgrade_Info_Control($wp_customize, 'squar
         esc_html__('Seperate header font typography for home page sections header, inner page title bar heading, widget header', 'square')
     ),
     'priority' => 100,
+    'upgrade_text' => esc_html__('Upgrade to PRO', 'square'),
+    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-link&utm_campaign=square-upgrade',
     'active_callback' => 'square_is_upgrade_notice_active'
 )));
 
@@ -562,6 +584,8 @@ $wp_customize->add_control(new Square_Upgrade_Info_Control($wp_customize, 'squar
         esc_html__('Other more settings', 'square')
     ),
     'priority' => 100,
+    'upgrade_text' => esc_html__('Upgrade to PRO', 'square'),
+    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-link&utm_campaign=square-upgrade',
     'active_callback' => 'square_is_upgrade_notice_active'
 )));
 
@@ -638,6 +662,8 @@ $wp_customize->add_control(new Square_Upgrade_Info_Control($wp_customize, 'squar
         esc_html__('Multiple background option(image, gradient, video) for the section', 'square'),
     ),
     'priority' => 100,
+    'upgrade_text' => esc_html__('Upgrade to PRO', 'square'),
+    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-link&utm_campaign=square-upgrade',
     'active_callback' => 'square_is_upgrade_notice_active'
 )));
 
@@ -719,6 +745,8 @@ $wp_customize->add_control(new Square_Upgrade_Info_Control($wp_customize, 'squar
         esc_html__('Multiple background option(image, gradient, video) for the section', 'square')
     ),
     'priority' => 100,
+    'upgrade_text' => esc_html__('Upgrade to PRO', 'square'),
+    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-link&utm_campaign=square-upgrade',
     'active_callback' => 'square_is_upgrade_notice_active'
 )));
 
@@ -809,6 +837,8 @@ $wp_customize->add_control(new Square_Upgrade_Info_Control($wp_customize, 'squar
         esc_html__('Multiple background option(image, gradient, video) for the section', 'square'),
     ),
     'priority' => 100,
+    'upgrade_text' => esc_html__('Upgrade to PRO', 'square'),
+    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-link&utm_campaign=square-upgrade',
     'active_callback' => 'square_is_upgrade_notice_active'
 )));
 
@@ -879,6 +909,8 @@ $wp_customize->add_control(new Square_Upgrade_Info_Control($wp_customize, 'squar
         esc_html__('Multiple background option(image, gradient, video) for the section', 'square')
     ),
     'priority' => 100,
+    'upgrade_text' => esc_html__('Upgrade to PRO', 'square'),
+    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-link&utm_campaign=square-upgrade',
     'active_callback' => 'square_is_upgrade_notice_active'
 )));
 
@@ -902,6 +934,8 @@ $wp_customize->add_section(new Square_Upgrade_Section($wp_customize, 'square-upg
         esc_html__('------------------------', 'square'),
         esc_html__('- Elementor Pagebuilder Compatible. All the above sections can be created with Elementor Page Builder or Customizer whichever you like.', 'square'),
     ),
+    'upgrade_text' => esc_html__('Upgrade to PRO', 'square'),
+    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-link&utm_campaign=square-upgrade',
     'active_callback' => 'square_is_upgrade_notice_active'
 )));
 

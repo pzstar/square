@@ -258,7 +258,6 @@ function square_css_strip_whitespace($css) {
     return trim($css);
 }
 
-
 function square_typography_vars($keys) {
     if (!$keys && !is_array($keys)) {
         return;
@@ -370,3 +369,18 @@ function square_premium_demo_config($demos) {
 }
 
 add_action('hdi_import_files', 'square_premium_demo_config');
+
+function square_add_custom_fonts($fonts) {
+    if (class_exists('Hash_Custom_Font_Uploader_Public')) {
+        if (!empty(Hash_Custom_Font_Uploader_Public::get_all_fonts_list())) {
+            $new_fonts = array(
+                'label' => esc_html__('Custom Fonts', 'totalplus'),
+                'fonts' => Hash_Custom_Font_Uploader_Public::get_all_fonts_list()
+            );
+            array_unshift($fonts, $new_fonts);
+        }
+    }
+    return $fonts;
+}
+
+add_filter('square_regsiter_fonts', 'square_add_custom_fonts');

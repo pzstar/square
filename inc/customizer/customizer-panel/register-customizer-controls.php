@@ -26,7 +26,6 @@ if (!class_exists('Square_Register_Customizer_Controls')) {
         }
 
         public function enqueue_customize_preview_js() {
-            wp_enqueue_script('webfont', SQUARE_CUSTOMIZER_URL . 'custom-controls/typography/js/webfont.js', array('jquery'), SQUARE_VERSION, false);
             wp_enqueue_script('square-customizer-preview', SQUARE_CUSTOMIZER_URL . 'customizer-panel/assets/customizer-preview.js', array('customize-preview'), SQUARE_VERSION, true);
         }
 

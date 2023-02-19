@@ -1016,6 +1016,20 @@ $wp_customize->add_control('square_social_instagram', array(
     'label' => esc_html__('Instagram', 'square')
 ));
 
+$wp_customize->add_setting('squarepress_social_upgrade_text', array(
+    'sanitize_callback' => 'square_sanitize_text'
+));
+
+$wp_customize->add_control(new Square_Upgrade_Info_Control($wp_customize, 'squarepress_social_upgrade_text', array(
+    'section' => 'square_social_sec',
+    'label' => esc_html__('To add unlimited and any social media,', 'squarepress'),
+    'priority' => 100,
+    'active_callback' => 'square_is_upgrade_notice_active',
+    'upgrade_text' => esc_html__('Upgrade to PRO', 'square'),
+    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-link&utm_campaign=square-upgrade'
+)));
+
+
 /* ============PRO FEATURES============ */
 $wp_customize->add_section('square_pro_feature_section', array(
     'title' => esc_html__('Pro Theme Features', 'square'),

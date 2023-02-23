@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Square 1.0.0\n"
 "Report-Msgid-Bugs-To: http://hashthemes.com/\n"
-"POT-Creation-Date: 2023-02-23 11:54+0000\n"
+"POT-Creation-Date: 2023-02-23 11:58+0000\n"
 "POT-Revision-Date: Thu Jul 14 2016 22:42:45 GMT+0545 (Nepal Standard Time)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hash Themes <hashthemes@gmail.com>\n"
@@ -544,6 +544,10 @@ msgstr ""
 
 #: inc/customizer/custom-controls/graident-control.php:61
 msgid "Custom Angle Spread"
+msgstr ""
+
+#: inc/square-functions.php:377
+msgid "Custom Fonts"
 msgstr ""
 
 #: welcome/sections/free_vs_pro.php:210
@@ -1913,6 +1917,10 @@ msgstr ""
 #: inc/widgets/widget-contact-info.php:29 inc/widgets/widget-latest-post.php:26
 #: inc/customizer/customizer-panel/settings.php:883
 msgid "Title"
+msgstr ""
+
+#: inc/customizer/customizer-panel/settings.php:1025
+msgid "To add unlimited and any social media,"
 msgstr ""
 
 #: inc/customizer/customizer-panel/settings.php:655

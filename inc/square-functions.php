@@ -374,7 +374,7 @@ function square_add_custom_fonts($fonts) {
     if (class_exists('Hash_Custom_Font_Uploader_Public')) {
         if (!empty(Hash_Custom_Font_Uploader_Public::get_all_fonts_list())) {
             $new_fonts = array(
-                'label' => esc_html__('Custom Fonts', 'totalplus'),
+                'label' => esc_html__('Custom Fonts', 'square'),
                 'fonts' => Hash_Custom_Font_Uploader_Public::get_all_fonts_list()
             );
             array_unshift($fonts, $new_fonts);

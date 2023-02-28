@@ -62,7 +62,7 @@ if (!class_exists('Square_Customizer_Custom_Controls')) {
         }
 
         public function enqueue_customizer_script() {
-            //See customizer-fonts-iucon.php file
+            //See customizer-fonts-icon.php file
             $icons = apply_filters('square_register_icon', array());
 
             if ($icons && is_array($icons)) {

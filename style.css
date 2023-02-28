@@ -1221,6 +1221,7 @@ object {
     list-style: none;
     margin: 0;
     padding-left: 0;
+    font-size: var(--square-menu-size, 15px);
 }
 .sq-main-navigation li {
     float: left;
@@ -1267,7 +1268,7 @@ object {
     font-weight: 400;
     color: #444;
     padding: 8px 20px;
-    font-size: 14px;
+    font-size: 0.96em;
     line-height: 1.5;
 }
 .sq-main-navigation ul ul li {
@@ -1743,18 +1744,19 @@ object {
 ## Superfish Menu
 --------------------------------------------------------------*/
 .sf-arrows .sf-with-ul {
-    padding-right: 2.5em;
+    padding-right: 30px;
 }
 .sf-arrows .sf-with-ul:after {
     content: '';
     position: absolute;
     top: 50%;
-    right: 1em;
+    right: 0;
     margin-top: -3px;
     height: 0;
     width: 0;
     border: 5px solid transparent;
     border-top-color: #FFF; 
+    margin-right: 10px;
 }
 .sq-white .sf-arrows .sf-with-ul:after{
     border-top-color: #333; 

@@ -9,6 +9,7 @@
 jQuery(function ($) {
 
     $('#sq-bx-slider').owlCarousel({
+        rtl: JSON.parse(square_localize.is_rtl),
         autoplay: true,
         items: 1,
         loop: true,
@@ -20,6 +21,7 @@ jQuery(function ($) {
     });
 
     $(".sq_client_logo_slider").owlCarousel({
+        rtl: JSON.parse(square_localize.is_rtl),
         autoplay: true,
         items: 5,
         loop: true,

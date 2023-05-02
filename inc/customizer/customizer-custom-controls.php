@@ -80,7 +80,11 @@ if (!class_exists('Square_Customizer_Custom_Controls')) {
 
             wp_enqueue_style('selectize', SQUARE_CUSTOMIZER_URL . 'custom-controls/assets/css/selectize.css', array(), SQUARE_VERSION);
             wp_enqueue_style('chosen', SQUARE_CUSTOMIZER_URL . 'custom-controls/assets/css/chosen.css', array(), SQUARE_VERSION);
-            wp_enqueue_style('square-customizer-control', SQUARE_CUSTOMIZER_URL . 'custom-controls/assets/css/customizer-controls.css', array('wp-color-picker'), SQUARE_VERSION);
+            if (is_rtl()) {
+                wp_enqueue_style('square-customizer-control', SQUARE_CUSTOMIZER_URL . 'custom-controls/assets/css/customizer-controls.rtl.css', array('wp-color-picker'), SQUARE_VERSION);
+            } else {
+                wp_enqueue_style('square-customizer-control', SQUARE_CUSTOMIZER_URL . 'custom-controls/assets/css/customizer-controls.css', array('wp-color-picker'), SQUARE_VERSION);
+            }
         }
 
     }

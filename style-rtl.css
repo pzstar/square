@@ -1439,7 +1439,7 @@ object {
     display: table-cell;
     width: 100%;
     padding:60px 40px;
-    background: url('images/featured-bg.png') repeat-y right top;
+    background: url('images/featured-bg.png') repeat-y left top;
     position: relative;
 }
 .sq-featured-post .sq-featured-icon{
@@ -2705,10 +2705,20 @@ object {
 }
 
 /*Additional CSS*/
-#sq-home-slider-section .owl-carousel .owl-nav button i.fa-chevron-left:before{
-    content: "\f054";
+#sq-home-slider-section .owl-carousel .owl-nav button.owl-prev {
+    left: 50%;
+    margin-left: -42px;
+    right: auto;
+    margin-right: 0;
 }
 
-#sq-home-slider-section .owl-carousel .owl-nav button i.fa-chevron-right:before{
-    content: "\f053";
+#sq-home-slider-section .owl-carousel .owl-nav button.owl-next {
+    right: 50%;
+    margin-right: -42px;
+    left: auto;
+    margin-left: 0;
+}
+
+.sq-featured-post{
+    background: url('images/featured-bg.png') repeat-y right top;
 }

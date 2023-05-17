@@ -345,7 +345,7 @@
     position: relative;
 }
 
-.ht--selector-labels.ht--full-width label {
+.ht--selector-labels.ht--full-width {
     grid-template-columns: repeat(1, 1fr);
     margin-bottom: 5px;
 }

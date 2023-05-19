@@ -113,3 +113,11 @@ function square_is_upgrade_notice_active() {
     $show_upgrade_notice = get_theme_mod('square_hide_upgrade_notice', false);
     return !$show_upgrade_notice;
 }
+
+function square_check_cfu() {
+    if (class_exists('Hash_Custom_Font_Uploader')) {
+        return false;
+    } else {
+        return true;
+    }
+}

@@ -429,6 +429,7 @@ $wp_customize->add_section(new Square_Upgrade_Section($wp_customize, 'square-hcf
     ),
     'upgrade_text' => esc_html__('Purchase Custom Font Uploader', 'square'),
     'upgrade_url' => 'https://hashthemes.com/checkout?edd_action=add_to_cart&download_id=48193',
+    'active_callback' => 'square_check_cfu'
 )));
 
 $wp_customize->add_setting('square_h_typography_upgrade_text', array(

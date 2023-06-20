@@ -22,7 +22,7 @@ Square is a beautifully crafted WordPress theme with lots of exciting feature to
 
 == Changelog ==
 = 2.0.28 - Jun 20, 2023 =
-* Notice added on Home Page Section panel to the sections states
+* Notice added on Home Page Section panel to the sections active states
 
 = 2.0.27 - Jun 1, 2023 =
 * Customizer CSS fixes

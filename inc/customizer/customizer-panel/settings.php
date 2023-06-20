@@ -512,6 +512,14 @@ $wp_customize->add_panel('square_home_settings_panel', array(
     'priority' => 30
 ));
 
+$wp_customize->add_section(new Square_Upgrade_Section($wp_customize, 'square-frontpage-notice', array(
+    'title' => sprintf(esc_html('Important! Home Page Sections are not enabled. Enable it %1shere%2s.', 'square'), '<a href="javascript:wp.customize.section( \'static_front_page\' ).focus()">', '</a>'),
+    'priority' => -1,
+    'class' => 'ht--single-row',
+    'panel' => 'square_home_settings_panel',
+    'active_callback' => 'square_check_frontpage'
+)));
+
 /* ============SLIDER IMAGES SECTION============ */
 $wp_customize->add_section('square_slider_sec', array(
     'title' => esc_html__('Slider Section', 'square'),

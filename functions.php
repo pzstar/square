@@ -87,6 +87,8 @@ if (!function_exists('square_setup')) :
 
         add_theme_support('custom-units');
 
+        add_theme_support('editor-styles');
+
         /*
          * This theme styles the visual editor to resemble the theme style,
          * specifically font, colors, icons, and column width.

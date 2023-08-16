@@ -6,8 +6,8 @@ Contributors: HashThemes
 Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments
 
 Requires at least: 5.6
-Tested up to: 6.2
-Stable tag: 2.0.30
+Tested up to: 6.3
+Stable tag: 2.0.31
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,6 +21,9 @@ Square is a beautifully crafted WordPress theme with lots of exciting feature to
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+= 2.0.31 - Aug 16, 2023 =
+* Compatiblility test with WordPress v6.3
+
 = 2.0.30 - July 24, 2023 =
 * Support added for editor style
 

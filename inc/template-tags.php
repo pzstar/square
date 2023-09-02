@@ -140,7 +140,7 @@ if (!function_exists('square_social_share')) {
 
         $content = '<div class="square-share-buttons">';
         $content .= '<a target="_blank" href="' . $facebookURL . '" target="_blank"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>';
-        $content .= '<a target="_blank" href="' . $twitterURL . '" target="_blank"><i class="fab fa-twitter" aria-hidden="true"></i></a>';
+        $content .= '<a target="_blank" href="' . $twitterURL . '" target="_blank"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>';
         $content .= '<a target="_blank" href="' . $pinterestURL . '" target="_blank"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>';
         $content .= '<a target="_blank" href="' . $mailURL . '"><i class="far fa-envelope" aria-hidden="true"></i></a>';
         $content .= '</div>';

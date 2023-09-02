@@ -85,7 +85,7 @@
                     echo '<a class="sq-facebook" href="' . esc_url($facebook) . '" target="_blank"><i class="fab fa-facebook-f"></i></a>';
 
                 if ($twitter)
-                    echo '<a class="sq-twitter" href="' . esc_url($twitter) . '" target="_blank"><i class="fab fa-twitter"></i></a>';
+                    echo '<a class="sq-twitter" href="' . esc_url($twitter) . '" target="_blank"><i class="fab fa-x-twitter"></i></a>';
 
                 if ($pinterest)
                     echo '<a class="sq-pinterest" href="' . esc_url($pinterest) . '" target="_blank"><i class="fab fa-pinterest"></i></a>';

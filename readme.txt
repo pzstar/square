@@ -21,6 +21,9 @@ Square is a beautifully crafted WordPress theme with lots of exciting feature to
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+= 2.0.33 - Sep 20, 2023 =
+* Custom Font Uploader Url updated
+
 = 2.0.32 - Sep 02, 2023 =
 * Fontawesome icon updated for Twitter new icons
 

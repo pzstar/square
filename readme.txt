@@ -7,7 +7,7 @@ Tags: translation-ready, custom-background, theme-options, custom-menu, post-for
 
 Requires at least: 5.6
 Tested up to: 6.3
-Stable tag: 2.0.32
+Stable tag: 2.0.34
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,6 +21,9 @@ Square is a beautifully crafted WordPress theme with lots of exciting feature to
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+= 2.0.34 - Nov 06, 2023 =
+* About us gallery bug fixed
+
 = 2.0.33 - Sep 20, 2023 =
 * Custom Font Uploader Url updated
 

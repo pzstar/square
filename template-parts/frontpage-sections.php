@@ -129,11 +129,13 @@ if (!$square_disable_about_sec) {
 
                         foreach ($square_about_image_stack as $square_about_image_stack_single) {
                             $image = wp_get_attachment_image_src($square_about_image_stack_single, 'square-about-thumb');
-                            $image_alt = get_post_meta($square_about_image_stack_single, '_wp_attachment_image_alt', true);
-                            $image_alt_text = $image_alt ? $image_alt : esc_html__('About Us Gallery', 'square');
-                            ?>
-                            <li><img src="<?php echo esc_url($image[0]); ?>" alt="<?php echo esc_html($image_alt_text) ?>"></li>
-                            <?php
+                            if ($image) {
+                                $image_alt = get_post_meta($square_about_image_stack_single, '_wp_attachment_image_alt', true);
+                                $image_alt_text = $image_alt ? $image_alt : esc_html__('About Us Gallery', 'square');
+                                ?>
+                                <li><img src="<?php echo esc_url($image[0]); ?>" alt="<?php echo esc_html($image_alt_text) ?>"></li>
+                                <?php
+                            }
                         }
                         ?>
                     </ul>

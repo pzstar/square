@@ -638,6 +638,11 @@ a:active {
     text-align: center;
 }
 /* Latest Post */
+.sq-latest-posts{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
 .sq-latest-posts li{
     padding: 12px 0 !important;
     font-size: 14px;

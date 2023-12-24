@@ -289,6 +289,7 @@ function square_scripts() {
     wp_enqueue_style('square-style', get_stylesheet_uri(), array(), SQUARE_VERSION);
     wp_style_add_data('square-style', 'rtl', 'replace');
     wp_add_inline_style('square-style', square_dymanic_styles());
+    wp_enqueue_style('wp-block-library');
 
     $fonts_url = square_fonts_url();
     $load_font_locally = get_theme_mod('square_load_google_font_locally', false);
@@ -308,6 +309,12 @@ function square_scripts() {
 }
 
 add_action('wp_enqueue_scripts', 'square_scripts');
+
+function square_wp_block_library() {
+    wp_enqueue_style('wp-block-library');
+}
+
+add_action('wp_enqueue_scripts', 'square_wp_block_library', 1000);
 
 /**
  * Enqueue admin style

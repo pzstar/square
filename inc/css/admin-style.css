@@ -67,6 +67,8 @@
 
 [data-slug="elementor"] .go_pro,
 a[href="admin.php?page=go_elementor_pro"],
-#elementor-notice-bar{
+#elementor-notice-bar,
+#e-notice-bar,
+#elementor-panel-get-pro-elements{
     display: none !important;
 }

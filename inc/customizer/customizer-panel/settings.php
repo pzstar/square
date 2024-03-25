@@ -47,7 +47,7 @@ $square_pro_features = '<ul class="upsell-features">
 	<li>' . esc_html__("Fully RTL(right to left) languages compatible", "square") . '</li>
         <li>' . esc_html__("Remove footer credit text", "square") . '</li>
 	</ul>
-	<a class="ht-implink" href="https://hashthemes.com/wordpress-theme/square-plus/#theme-comparision-tab" target="_blank">' . esc_html__("Comparision - Free Vs Pro", "square") . '</a>';
+	<a class="ht-implink" href="' . admin_url('admin.php?page=square-welcome&section=free_vs_pro') . '" target="_blank">' . esc_html__("Comparision - Free Vs Pro", "square") . '</a>';
 
 
 $wp_customize->add_section(new Square_Upgrade_Section($wp_customize, 'square-pro-section', array(

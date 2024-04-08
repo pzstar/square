@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Square 1.0.0\n"
 "Report-Msgid-Bugs-To: http://hashthemes.com/\n"
-"POT-Creation-Date: 2023-11-22 06:25+0000\n"
+"POT-Creation-Date: 2024-04-08 05:37+0000\n"
 "POT-Revision-Date: Thu Jul 14 2016 22:42:45 GMT+0545 (Nepal Standard Time)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hash Themes <hashthemes@gmail.com>\n"
@@ -44,7 +44,7 @@ msgstr ""
 msgid "%1$s by %2$s"
 msgstr ""
 
-#: welcome/welcome.php:106
+#: welcome/welcome.php:112
 #, php-format
 msgid ""
 "%1$s is now installed and ready to use. You can start either by importing "
@@ -56,7 +56,7 @@ msgstr ""
 msgid "%s Demo"
 msgstr ""
 
-#: welcome/welcome.php:138
+#: welcome/welcome.php:144
 #, php-format
 msgid "%s Settings"
 msgstr ""
@@ -125,6 +125,10 @@ msgstr ""
 
 #: inc/template-tags.php:39
 msgid "1 Comment"
+msgstr ""
+
+#: welcome/sections/free_vs_pro.php:38
+msgid "1 Demo"
 msgstr ""
 
 #: welcome/sections/free_vs_pro.php:35
@@ -237,10 +241,6 @@ msgstr ""
 msgid "29) Unique Header Background for Each Post and Page"
 msgstr ""
 
-#: welcome/sections/free_vs_pro.php:38
-msgid "3 Demos"
-msgstr ""
-
 #: inc/customizer/customizer-panel/settings.php:668
 msgid "3 featured block layouts"
 msgstr ""
@@ -302,6 +302,10 @@ msgstr ""
 msgid "4 icon pack for icon picker (5000+ icons)"
 msgstr ""
 
+#: welcome/sections/free_vs_pro.php:39
+msgid "4 More Demos"
+msgstr ""
+
 #: inc/customizer/customizer-panel/settings.php:22
 msgid "4 more demos that can be imported with one click"
 msgstr ""
@@ -328,10 +332,6 @@ msgstr ""
 
 #: welcome/sections/free_vs_pro.php:399
 msgid "43) Fast and Friendly Support"
-msgstr ""
-
-#: welcome/sections/free_vs_pro.php:39
-msgid "5 More Demos"
 msgstr ""
 
 #: inc/customizer/customizer-panel/settings.php:844
@@ -419,11 +419,11 @@ msgstr ""
 msgid "Activate"
 msgstr ""
 
-#: welcome/welcome.php:271
+#: welcome/welcome.php:277
 msgid "Activate Demo Importer Plugin"
 msgstr ""
 
-#: welcome/welcome.php:170
+#: welcome/welcome.php:176
 msgid "Activating Demo Importer Plugin"
 msgstr ""
 
@@ -490,6 +490,7 @@ msgid "Black"
 msgstr ""
 
 #. Name of the template
+#: templates/page-builder-template.php:2
 msgid "Blank Template(For Page Builders)"
 msgstr ""
 
@@ -618,7 +619,7 @@ msgstr ""
 msgid "Choose title & tagline colors"
 msgstr ""
 
-#: welcome/welcome.php:118
+#: welcome/welcome.php:124
 msgid "Click below to install and active HashThemes Demo Importer Plugin."
 msgstr ""
 
@@ -688,7 +689,7 @@ msgstr ""
 msgid "Configure the gallery width"
 msgstr ""
 
-#: welcome/welcome.php:105
+#: welcome/welcome.php:111
 msgid "Congratulations!"
 msgstr ""
 
@@ -812,7 +813,7 @@ msgstr ""
 msgid "Disable Tab Section "
 msgstr ""
 
-#: welcome/welcome.php:374
+#: welcome/welcome.php:380
 msgid "Dismiss this notice."
 msgstr ""
 
@@ -887,7 +888,7 @@ msgstr ""
 msgid "Enable Read More link "
 msgstr ""
 
-#: welcome/welcome.php:173
+#: welcome/welcome.php:179
 msgid "Error! Reload the page and try again."
 msgstr ""
 
@@ -1065,7 +1066,7 @@ msgstr ""
 msgid "General Settings"
 msgstr ""
 
-#: welcome/welcome.php:126
+#: welcome/welcome.php:132
 msgid "Get Started"
 msgstr ""
 
@@ -1077,11 +1078,11 @@ msgstr ""
 msgid "Go to Appearance > Customize"
 msgstr ""
 
-#: welcome/welcome.php:171 welcome/welcome.php:274
+#: welcome/welcome.php:177 welcome/welcome.php:280
 msgid "Go to Demo Importer Page"
 msgstr ""
 
-#: welcome/welcome.php:128
+#: welcome/welcome.php:134
 msgid "Go to Setting Page"
 msgstr ""
 
@@ -1099,7 +1100,7 @@ msgid "Gradient Preview"
 msgstr ""
 
 #. %1$s is link start tag, %2$s is link end tag.
-#: welcome/welcome.php:331
+#: welcome/welcome.php:337
 #, php-format
 msgid ""
 "Great to see that you have been using Square WordPress theme for some time. "
@@ -1143,7 +1144,7 @@ msgstr ""
 msgid "here"
 msgstr ""
 
-#: welcome/welcome.php:127
+#: welcome/welcome.php:133
 #, php-format
 msgid ""
 "Here you will find all the necessary links and information on how to use %s."
@@ -1164,6 +1165,7 @@ msgid "Highlight Block - 2 styles"
 msgstr ""
 
 #. Name of the template
+#: templates/home-template.php:3
 msgid "Home Page"
 msgstr ""
 
@@ -1191,7 +1193,7 @@ msgstr ""
 msgid "https://hashthemes.com/wordpress-theme/square/"
 msgstr ""
 
-#: welcome/welcome.php:336
+#: welcome/welcome.php:342
 msgid "I have already rated"
 msgstr ""
 
@@ -1222,7 +1224,7 @@ msgstr ""
 msgid "Import"
 msgstr ""
 
-#: welcome/welcome.php:117
+#: welcome/welcome.php:123
 msgid "Import Demo"
 msgstr ""
 
@@ -1234,6 +1236,11 @@ msgstr ""
 msgid ""
 "Import Elementor Templates and Sections with just one click without having "
 "to import the whole website."
+msgstr ""
+
+#: inc/customizer/customizer-panel/settings.php:516
+#, php-format
+msgid "Important! Home Page Sections are not enabled. Enable it %1shere%2s."
 msgstr ""
 
 #: inc/customizer/customizer-panel/settings.php:33
@@ -1252,7 +1259,7 @@ msgstr ""
 msgid "Instagram"
 msgstr ""
 
-#: welcome/welcome.php:278
+#: welcome/welcome.php:284
 msgid "Install Demo Importer Plugin"
 msgstr ""
 
@@ -1264,7 +1271,7 @@ msgstr ""
 msgid "Installed"
 msgstr ""
 
-#: welcome/welcome.php:169
+#: welcome/welcome.php:175
 msgid "Installing Demo Importer Plugin"
 msgstr ""
 
@@ -1551,7 +1558,7 @@ msgid ""
 "more features to the theme."
 msgstr ""
 
-#: welcome/welcome.php:258
+#: welcome/welcome.php:264
 #, php-format
 msgid ""
 "Please leave us a %s rating if you like our theme . A huge thank you from "
@@ -1843,7 +1850,7 @@ msgstr ""
 msgid "Square"
 msgstr ""
 
-#: welcome/welcome.php:110
+#: welcome/welcome.php:116
 msgid "Square Demo"
 msgstr ""
 
@@ -2278,7 +2285,7 @@ msgstr ""
 msgid "Website layout (fullwidth or boxed)"
 msgstr ""
 
-#: welcome/welcome.php:138
+#: welcome/welcome.php:144
 msgid "Welcome"
 msgstr ""
 
@@ -2341,7 +2348,7 @@ msgstr ""
 msgid "Y"
 msgstr ""
 
-#: welcome/welcome.php:335
+#: welcome/welcome.php:341
 msgid "Yes, of course"
 msgstr ""
 

@@ -2357,8 +2357,9 @@ object {
     #sq-content{
         height: auto;
     }
-    .e-con > .e-con-inner{
-        padding-left: 30px !important; 
+    .e-con.e-parent>.e-con-inner{
+        width: 100% !important;
+        padding-left: 30px !important;
         padding-right: 30px !important;
     }
 }

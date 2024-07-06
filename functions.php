@@ -257,9 +257,9 @@ if (!function_exists('square_fonts_url')) :
                     'display' => 'swap',
                         ), 'https://fonts.googleapis.com/css');
             }
-
-            return $fonts_url;
         }
+
+        return $fonts_url;
     }
 
 endif;

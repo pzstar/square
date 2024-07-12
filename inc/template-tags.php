@@ -129,13 +129,18 @@ if (!function_exists('square_social_share')) {
         $post_title = str_replace(' ', '%20', get_the_title());
 
         // Get Post Thumbnail for pinterest
-        $post_thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full');
+        if (has_post_thumbnail($post->ID)) {
+            $post_thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full');
+            $thumb = $post_thumbnail[0];
+        } else {
+            $thumb = '';
+        }
 
         // Construct sharing URL
         $twitterURL = 'https://twitter.com/intent/tweet?text=' . $post_title . '&amp;url=' . $post_url;
         $facebookURL = 'https://www.facebook.com/sharer/sharer.php?u=' . $post_url;
         $googleURL = 'https://plus.google.com/share?url=' . $post_url;
-        $pinterestURL = 'https://pinterest.com/pin/create/button/?url=' . $post_url . '&amp;media=' . $post_thumbnail[0] . '&amp;description=' . $post_title;
+        $pinterestURL = 'https://pinterest.com/pin/create/button/?url=' . $post_url . '&amp;media=' . $thumb . '&amp;description=' . $post_title;
         $mailURL = 'mailto:?Subject=' . $post_title . '&amp;Body=' . $post_url;
 
         $content = '<div class="square-share-buttons">';

@@ -31,7 +31,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="recommended-plugins">
             <div class="plugin-image">
                 <img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/business.jpg'); ?>" alt="<?php echo esc_attr__('Square Plus Demo', 'square'); ?>">
@@ -44,7 +44,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="recommended-plugins">
             <div class="plugin-image">
                 <img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/fitness.jpg'); ?>" alt="<?php echo esc_attr__('Square Plus Demo', 'square'); ?>">
@@ -69,4 +69,3 @@
 
     <a class="upgrade-button" href="https://hashthemes.com/wordpress-theme/square-plus/?utm_source=wordpress&utm_medium=square-footer&utm_campaign=square-upgrade" target="_blank"><?php esc_html_e('Upgrade Now', 'square'); ?></a>
 </div>
-

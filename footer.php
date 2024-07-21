@@ -18,7 +18,7 @@
                         if (is_active_sidebar('square-footer1')):
                             dynamic_sidebar('square-footer1');
                         endif;
-                        ?>	
+                        ?>
                     </div>
 
                     <div class="sq-footer sq-footer2">
@@ -26,7 +26,7 @@
                         if (is_active_sidebar('square-footer2')):
                             dynamic_sidebar('square-footer2');
                         endif;
-                        ?>	
+                        ?>
                     </div>
 
                     <div class="sq-footer sq-footer3">
@@ -34,7 +34,7 @@
                         if (is_active_sidebar('square-footer3')):
                             dynamic_sidebar('square-footer3');
                         endif;
-                        ?>	
+                        ?>
                     </div>
 
                     <div class="sq-footer sq-footer4">
@@ -42,7 +42,7 @@
                         if (is_active_sidebar('square-footer4')):
                             dynamic_sidebar('square-footer4');
                         endif;
-                        ?>	
+                        ?>
                     </div>
                 </div>
             </div>
@@ -66,8 +66,8 @@
                 <span class="sep"> | </span>
                 <?php
                 printf(
-                        /* translators: 1: link 2: Theme name */
-                        esc_html__('%1$s by %2$s', 'square'), '<a target="_blank" href="https://hashthemes.com/wordpress-theme/square/">Square</a>', 'HashThemes'
+                    /* translators: 1: link 2: Theme name */
+                    esc_html__('%1$s by %2$s', 'square'), '<a target="_blank" href="https://hashthemes.com/wordpress-theme/square/">Square</a>', 'HashThemes'
                 );
                 ?>
             </div>
@@ -108,4 +108,5 @@
 <?php wp_footer(); ?>
 
 </body>
+
 </html>

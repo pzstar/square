@@ -2,8 +2,8 @@ function squareDynamicCss(control, style) {
     jQuery('style.' + control).remove();
 
     jQuery('head').append(
-            '<style class="' + control + '">:root{' + style + '}</style>'
-            );
+        '<style class="' + control + '">:root{' + style + '}</style>'
+        );
 }
 
 function squareLightenDarkenColor(hex, lum) {

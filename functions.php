@@ -12,7 +12,7 @@ if (!defined('SQUARE_VERSION')) {
 }
 
 
-if (!function_exists('square_setup')) :
+if (!function_exists('square_setup')):
 
     //Sets up theme defaults and registers support for various WordPress features.
     function square_setup() {
@@ -200,7 +200,7 @@ function square_widgets_init() {
 
 add_action('widgets_init', 'square_widgets_init');
 
-if (!function_exists('square_fonts_url')) :
+if (!function_exists('square_fonts_url')):
 
     /**
      * Register Google fonts for Square.
@@ -246,7 +246,7 @@ if (!function_exists('square_fonts_url')) :
                     'family' => urlencode(implode('|', $fonts)),
                     'subset' => urlencode($subsets),
                     'display' => 'swap',
-                        ), 'https://fonts.googleapis.com/css');
+                ), 'https://fonts.googleapis.com/css');
             }
         }
 
@@ -319,7 +319,7 @@ function square_admin_scripts() {
     wp_enqueue_media();
     wp_enqueue_style('square-admin-style', get_template_directory_uri() . '/inc/css/admin-style.css', array(), SQUARE_VERSION);
     wp_enqueue_script('square-admin-scripts', get_template_directory_uri() . '/inc/js/admin-scripts.js', array('jquery'), SQUARE_VERSION, true);
-    
+
     $fonts_url = square_fonts_url();
 
     // Load Fonts if necessary.

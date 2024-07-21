@@ -60,7 +60,8 @@ if (is_array($square_page_array)) {
                     $args = array('page_id' => $square_featured_page_id);
                     $query = new WP_Query($args);
                     if ($query->have_posts()):
-                        while ($query->have_posts()) : $query->the_post();
+                        while ($query->have_posts()):
+                            $query->the_post();
                             ?>
                             <div class="sq-featured-post <?php echo 'sq-featured-post' . $i; ?>">
                                 <div class="sq-featured-icon"><i class="<?php echo esc_attr($square_featured_page_icon); ?>"></i></div>
@@ -108,7 +109,8 @@ if (!$square_disable_about_sec) {
                 );
                 $query = new WP_Query($args);
                 if ($query->have_posts() && get_theme_mod('square_about_page')):
-                    while ($query->have_posts()) : $query->the_post();
+                    while ($query->have_posts()):
+                        $query->the_post();
                         ?>
                         <h2 class="sq-section-title"><?php the_title(); ?></h2>
                         <div class="sq-content"><?php the_content(); ?></div>
@@ -183,7 +185,8 @@ if (!$square_disable_tab_sec) {
                             );
                             $query = new WP_Query($args);
                             if ($query->have_posts()):
-                                while ($query->have_posts()) : $query->the_post();
+                                while ($query->have_posts()):
+                                    $query->the_post();
                                     ?>
                                     <h2 class="sq-section-title"><?php the_title(); ?></h2>
                                     <div class="sq-content"><?php the_content(); ?></div>

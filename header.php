@@ -7,6 +7,7 @@
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
+
     <head>
         <meta charset="<?php bloginfo('charset'); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -41,7 +42,7 @@
                                 <p class="sq-site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></p>
                             <?php } ?>
                             <p class="sq-site-description"><?php bloginfo('description'); ?></p>
-                        <?php } // End header image check.?>
+                        <?php } // End header image check. ?>
                     </div><!-- .site-branding -->
 
                     <a href="#" class="sq-toggle-nav">

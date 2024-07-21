@@ -12,9 +12,9 @@ class Square_Personal_Info extends WP_Widget {
 
     public function __construct() {
         parent::__construct(
-                'square_personal_info', 'Square - Personal Info', array(
-            'description' => esc_html__('A widget to display Personal Information', 'square')
-                )
+            'square_personal_info', 'Square - Personal Info', array(
+                'description' => esc_html__('A widget to display Personal Information', 'square')
+            )
         );
     }
 

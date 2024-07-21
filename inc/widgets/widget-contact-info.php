@@ -12,9 +12,9 @@ class Square_Contact_Info extends WP_Widget {
 
     public function __construct() {
         parent::__construct(
-                'square_contact_info', 'Square - Contact Info', array(
-            'description' => esc_html__('A widget to display Contact Information', 'square')
-                )
+            'square_contact_info', 'Square - Contact Info', array(
+                'description' => esc_html__('A widget to display Contact Information', 'square')
+            )
         );
     }
 
@@ -107,7 +107,7 @@ class Square_Contact_Info extends WP_Widget {
 
                 <?php if (!empty($time)): ?>
                     <li><i class="far fa-clock"></i><?php echo wp_kses_post(wpautop($time)); ?></li>
-                    <?php endif; ?>
+                <?php endif; ?>
             </ul>
         </div>
         <?php

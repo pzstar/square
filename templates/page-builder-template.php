@@ -10,7 +10,8 @@ get_header();
 <div class="sq-container sq-clearfix">
     <div class="content-area">
 
-        <?php while (have_posts()) : the_post(); ?>
+        <?php while (have_posts()):
+            the_post(); ?>
 
             <?php the_content(); ?>
 

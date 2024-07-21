@@ -1,5 +1,5 @@
 <?php
-if (!class_exists('Square_Welcome')) :
+if (!class_exists('Square_Welcome')):
 
     class Square_Welcome {
 
@@ -209,7 +209,7 @@ if (!class_exists('Square_Welcome')) :
                     return wp_nonce_url(add_query_arg(array(
                         'action' => 'install-plugin',
                         'plugin' => esc_attr($slug)
-                                    ), network_admin_url('update.php')), 'install-plugin_' . esc_attr($slug));
+                    ), network_admin_url('update.php')), 'install-plugin_' . esc_attr($slug));
                     break;
 
                 case 'inactive':
@@ -219,7 +219,7 @@ if (!class_exists('Square_Welcome')) :
                         'plugin_status' => 'all',
                         'paged' => '1',
                         '_wpnonce' => wp_create_nonce('deactivate-plugin_' . esc_attr($slug) . '/' . esc_attr($file_name) . '.php'),
-                            ), network_admin_url('plugins.php'));
+                    ), network_admin_url('plugins.php'));
                     break;
 
                 case 'active':
@@ -229,7 +229,7 @@ if (!class_exists('Square_Welcome')) :
                         'plugin_status' => 'all',
                         'paged' => '1',
                         '_wpnonce' => wp_create_nonce('activate-plugin_' . esc_attr($slug) . '/' . esc_attr($file_name) . '.php'),
-                            ), network_admin_url('plugins.php'));
+                    ), network_admin_url('plugins.php'));
                     break;
             }
         }
@@ -300,7 +300,8 @@ if (!class_exists('Square_Welcome')) :
         public function welcome_init() {
             if (!get_option('square_first_activation')) {
                 update_option('square_first_activation', time());
-            };
+            }
+            ;
 
             if (get_option('square_hide_notice') && !$this->is_dismissed('welcome')) {
                 delete_option('square_hide_notice');
@@ -327,15 +328,21 @@ if (!class_exists('Square_Welcome')) :
                 <?php $this->dismiss_button('review'); ?>
 
                 <div class="square-notice-logo">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 87.16 87.16" fill="#FFFFFF"><g><g><path d="M19.13,27.64a8.54,8.54,0,0,1,8.51-8.51H63.78V4.25A4.27,4.27,0,0,0,59.52,0H4.25A4.26,4.26,0,0,0,0,4.25V59.52a4.27,4.27,0,0,0,4.25,4.26H19.13ZM68,23.38H82.91a4.27,4.27,0,0,1,4.25,4.26V82.91a4.26,4.26,0,0,1-4.25,4.25H27.64a4.27,4.27,0,0,1-4.26-4.25V68H59.52A8.54,8.54,0,0,0,68,59.52ZM23.38,63.78V27.64a4.28,4.28,0,0,1,4.26-4.26H63.78V59.52a4.28,4.28,0,0,1-4.26,4.26Z"/></g></g></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 87.16 87.16" fill="#FFFFFF">
+                        <g>
+                            <g>
+                                <path d="M19.13,27.64a8.54,8.54,0,0,1,8.51-8.51H63.78V4.25A4.27,4.27,0,0,0,59.52,0H4.25A4.26,4.26,0,0,0,0,4.25V59.52a4.27,4.27,0,0,0,4.25,4.26H19.13ZM68,23.38H82.91a4.27,4.27,0,0,1,4.25,4.26V82.91a4.26,4.26,0,0,1-4.25,4.25H27.64a4.27,4.27,0,0,1-4.26-4.25V68H59.52A8.54,8.54,0,0,0,68,59.52ZM23.38,63.78V27.64a4.28,4.28,0,0,1,4.26-4.26H63.78V59.52a4.28,4.28,0,0,1-4.26,4.26Z" />
+                            </g>
+                        </g>
+                    </svg>
                 </div>
 
                 <div class="square-notice-content">
                     <p>
                         <?php
                         printf(
-                                /* translators: %1$s is link start tag, %2$s is link end tag. */
-                                esc_html__('Great to see that you have been using Square WordPress theme for some time. We hope you love it, and we would really appreciate it if you would %1$sgive us a 5 stars rating%2$s and spread your words to the world.', 'square'), '<a target="_blank" href="https://wordpress.org/support/theme/square/reviews/?filter=5#new-post">', '</a>'
+                            /* translators: %1$s is link start tag, %2$s is link end tag. */
+                            esc_html__('Great to see that you have been using Square WordPress theme for some time. We hope you love it, and we would really appreciate it if you would %1$sgive us a 5 stars rating%2$s and spread your words to the world.', 'square'), '<a target="_blank" href="https://wordpress.org/support/theme/square/reviews/?filter=5#new-post">', '</a>'
                         );
                         ?>
                     </p>

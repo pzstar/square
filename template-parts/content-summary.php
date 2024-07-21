@@ -22,7 +22,7 @@
         <header class="entry-header">
             <?php the_title(sprintf('<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h2>'); ?>
 
-            <?php if ('post' === get_post_type()) : ?>
+            <?php if ('post' === get_post_type()): ?>
                 <div class="entry-meta">
                     <?php square_posted_on(); ?>
                 </div><!-- .entry-meta -->
@@ -34,7 +34,7 @@
             $square_blog_format = get_theme_mod('square_blog_format', 'excerpt');
             if ($square_blog_format == 'excerpt') {
                 echo square_word_excerpt(get_the_content(), 160);  // WPCS: XSS OK.
-
+            
                 echo '<div class="entry-readmore"><a href="' . esc_url(get_permalink()) . '">' . esc_html__('Read More', 'square') . '<i class="fas fa-chevron-right"></i></a></div>';
             } else {
                 the_content(__('Continue reading &rarr;', 'square'));

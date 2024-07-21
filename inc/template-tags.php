@@ -24,8 +24,8 @@ if (!function_exists('square_posted_on')) {
         $posted_on = '<a href="' . esc_url(get_permalink()) . '" rel="bookmark">' . $time_string . '</a>';
 
         $byline = sprintf(
-                /* translators: author */
-                esc_html_x('by %s', 'post author', 'square'), '<span class="author vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author()) . '</a></span>'
+            /* translators: author */
+            esc_html_x('by %s', 'post author', 'square'), '<span class="author vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author()) . '</a></span>'
         );
 
         $comment_count = get_comments_number(); // get_comments_number returns only a numeric value
@@ -78,7 +78,7 @@ if (!function_exists('square_entry_footer')) {
  * @return bool
  */
 function square_categorized_blog() {
-    if (false === ( $all_the_cool_cats = get_transient('square_categories') )) {
+    if (false === ($all_the_cool_cats = get_transient('square_categories'))) {
         // Create an array of all the categories that are attached to posts.
         $all_the_cool_cats = get_categories(array(
             'fields' => 'ids',

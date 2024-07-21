@@ -11,8 +11,8 @@ get_header();
         <h1 class="sq-main-title">
             <?php
             printf(
-                    /* translators: Search Query */
-                    esc_html__('Search Results for: %s', 'square'), '<span>' . get_search_query() . '</span>');
+                /* translators: Search Query */
+                esc_html__('Search Results for: %s', 'square'), '<span>' . get_search_query() . '</span>');
             ?>
         </h1>
     </div>
@@ -22,14 +22,15 @@ get_header();
     <section id="primary" class="content-area">
         <main id="main" class="site-main" role="main">
 
-            <?php if (have_posts()) : ?>
+            <?php if (have_posts()): ?>
 
                 <header class="page-header">
 
                 </header><!-- .page-header -->
 
                 <?php /* Start the Loop */ ?>
-                <?php while (have_posts()) : the_post(); ?>
+                <?php while (have_posts()):
+                    the_post(); ?>
 
                     <?php
                     /**
@@ -44,7 +45,7 @@ get_header();
 
                 <?php the_posts_navigation(); ?>
 
-            <?php else : ?>
+            <?php else: ?>
 
                 <?php get_template_part('template-parts/content', 'none'); ?>
 

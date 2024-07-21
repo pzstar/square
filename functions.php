@@ -81,15 +81,6 @@ if (!function_exists('square_setup')) :
         // Add support for Block Styles.
         add_theme_support('wp-block-styles');
 
-        // Add support for full and wide align images.
-        add_theme_support('align-wide');
-
-        add_theme_support('custom-line-height');
-
-        add_theme_support('custom-spacing');
-
-        add_theme_support('custom-units');
-
         /*
          * This theme styles the visual editor to resemble the theme style,
          * specifically font, colors, icons, and column width.
@@ -310,11 +301,16 @@ function square_scripts() {
 
 add_action('wp_enqueue_scripts', 'square_scripts');
 
-function square_wp_block_library() {
-    wp_enqueue_style('wp-block-library');
-}
-
-add_action('wp_enqueue_scripts', 'square_wp_block_library', 1000);
+add_action('wp_print_scripts', function () {
+    if (!is_admin()) {
+        return;
+    }
+    if (function_exists('get_current_screen') && get_current_screen() && get_current_screen()->is_block_editor() && get_current_screen()->base === 'post') {
+        echo '<style id="square-admin-css-vars">';
+        echo square_dymanic_styles();
+        echo '</style>';
+    }
+});
 
 /**
  * Enqueue admin style
@@ -323,6 +319,13 @@ function square_admin_scripts() {
     wp_enqueue_media();
     wp_enqueue_style('square-admin-style', get_template_directory_uri() . '/inc/css/admin-style.css', array(), SQUARE_VERSION);
     wp_enqueue_script('square-admin-scripts', get_template_directory_uri() . '/inc/js/admin-scripts.js', array('jquery'), SQUARE_VERSION, true);
+    
+    $fonts_url = square_fonts_url();
+
+    // Load Fonts if necessary.
+    if ($fonts_url && function_exists('get_current_screen') && get_current_screen() && get_current_screen()->is_block_editor() && get_current_screen()->base === 'post') {
+        wp_enqueue_style('square-fonts', $fonts_url, array(), NULL);
+    }
 }
 
 add_action('admin_enqueue_scripts', 'square_admin_scripts');

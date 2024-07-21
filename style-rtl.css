@@ -4,12 +4,12 @@ Theme URI: https://hashthemes.com/wordpress-theme/square/
 Author: HashThemes
 Author URI: https://hashthemes.com
 Description: Square is a flexible responsive multipurpose theme compatible with all browsers and devices, fully mobile friendly, loaded with lots of features. It is a minimal theme based on WordPress Customizer that allows you to customize with live preview. The theme can be used for business, corporate, digital agency, personal, portfolio, photography, parallax, blogs and magazines. Square is eCommerce (WooCommerce) Compatible, Polylang Compatible, WPML, RTL, Retina Ready, SEO Friendly and Support bbPress and BuddyPress. More over it is a complete theme. For demo https://demo.hashthemes.com/square
-Version: 2.0.46
+Version: 2.0.47
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: square
 Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, e-commerce, photography, portfolio, rtl-language-support
-Tested up to: 6.5
+Tested up to: 6.6
 Requires PHP: 5.6
 This theme, like WordPress, is licensed under the GPL.
 */
@@ -645,8 +645,7 @@ a:active {
 }
 .sq-latest-posts li{
     padding: 12px 0 !important;
-    font-size: 14px;
-    line-height: 1.5;
+    font-size: 1em;
 }
 .sq-latest-posts .sq-lp-title{
     margin-bottom: 0;
@@ -684,8 +683,7 @@ a:active {
     display: inline;
 }
 body:not(.page-template-page-builder-template) .single-entry-content{
-    font-size: 16px;
-    line-height: 1.8;
+    font-size: 1.2em;
 }
 .page-links {
     clear: both;
@@ -742,7 +740,7 @@ body:not(.page-template-page-builder-template) .single-entry-content{
 }
 .entry-meta,
 .entry-footer{
-    font-size: 13px;
+    font-size: 0.8em;
     font-style: italic;
     opacity: 0.8;
 }
@@ -756,7 +754,7 @@ body:not(.page-template-page-builder-template) .single-entry-content{
 .entry-meta span,
 .entry-footer span{
     display: inline-block;
-    margin-left: 10px;
+    margin-left: 20px;
 }
 .entry-meta span > i,
 .entry-footer span > i{
@@ -775,7 +773,7 @@ body:not(.page-template-page-builder-template) .single-entry-content{
 }
 .entry-readmore a i{
     margin-right: 10px;
-    font-size: 13px;
+    font-size: 0.85em;
 }
 .square-share-buttons{
     text-align: center;
@@ -1617,7 +1615,7 @@ object {
 ## Footer
 --------------------------------------------------------------*/
 #sq-colophon{
-    font-size: 14px;
+    font-size: 1em;
     color: #7e8b93;
     background: #2e3336;
 }
@@ -1693,7 +1691,7 @@ object {
 }
 .sq-site-social a{
     padding:0 4px;
-    font-size: 16px;
+    font-size: 1em;
     font-family: Arial;
     transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
@@ -2359,8 +2357,8 @@ object {
     }
     .e-con.e-parent>.e-con-inner{
         width: 100% !important;
-        padding-left: 30px !important;
         padding-right: 30px !important;
+        padding-left: 30px !important;
     }
 }
 @media screen and (max-width: 900px){
@@ -2721,27 +2719,4 @@ object {
 .wp-block-gallery .blocks-gallery-item figcaption,
 .wp-block-image figcaption {
     font-size: 0.9em;
-}
-
-/*Additional CSS*/
-#sq-home-slider-section .owl-carousel .owl-nav button.owl-prev {
-    left: 50%;
-    margin-left: -42px;
-    right: auto;
-    margin-right: 0;
-}
-
-#sq-home-slider-section .owl-carousel .owl-nav button.owl-next {
-    right: 50%;
-    margin-right: -42px;
-    left: auto;
-    margin-left: 0;
-}
-
-.sq-featured-post{
-    background: url('images/featured-bg.png') repeat-y right top;
-}
-
-.entry-readmore a i.fa-chevron-right:before{
-    content: "\f053";
 }

@@ -41,7 +41,7 @@ if (!function_exists('square_excerpt')) {
 
     function square_excerpt($content, $letter_count) {
         $content = strip_shortcodes($content);
-        $content = strip_tags($content);
+        $content = wp_strip_all_tags($content);
         $content = mb_substr($content, 0, $letter_count);
 
         if (strlen($content) == $letter_count) {
@@ -56,7 +56,7 @@ if (!function_exists('square_word_excerpt')) {
 
     function square_word_excerpt($content, $limit) {
         $content = strip_shortcodes($content);
-        $content = strip_tags($content);
+        $content = wp_strip_all_tags($content);
         $content = explode(' ', $content);
         $content = implode(' ', array_slice($content, 0, $limit));
         $content .= "...";

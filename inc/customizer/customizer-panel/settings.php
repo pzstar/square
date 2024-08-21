@@ -20,7 +20,7 @@ $header_bg_choices = array(
 
 $square_pro_features = '<ul class="upsell-features">
 	<li>' . esc_html__("4 more demos that can be imported with one click", "square") . '</li>
-        <li>' . esc_html__("Elementor compatible - Built your Home Page with Customizer or Elementor whichever you like", "square") . '</li>
+    <li>' . esc_html__("Elementor compatible - Built your Home Page with Customizer or Elementor whichever you like", "square") . '</li>
 	<li>' . esc_html__("19 Front Page sections with multiple styles (Highlight, Service, Portfolio, Tab, Team, Testimonial, Pricing, Blog, Counter, Call To Action, Logo Carousel, Contact section with google map)", "square") . '</li>
 	<li>' . esc_html__("Section reorder", "square") . '</li>
 	<li>' . esc_html__("Video background, Image Motion background, Parallax background, Gradient background option for each section", "square") . '</li>
@@ -45,7 +45,7 @@ $square_pro_features = '<ul class="upsell-features">
 	<li>' . esc_html__("WooCommerce compatible", "square") . '</li>
 	<li>' . esc_html__("Fully multilingual and translation ready", "square") . '</li>
 	<li>' . esc_html__("Fully RTL(right to left) languages compatible", "square") . '</li>
-        <li>' . esc_html__("Remove footer credit text", "square") . '</li>
+    <li>' . esc_html__("Remove footer credit text", "square") . '</li>
 	</ul>
 	<a class="ht-implink" href="' . admin_url('admin.php?page=square-welcome&section=free_vs_pro') . '" target="_blank">' . esc_html__("Comparision - Free Vs Pro", "square") . '</a>';
 

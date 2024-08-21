@@ -4,7 +4,6 @@ if (!function_exists('square_widget_list')) {
 
     function square_widget_list() {
         global $wp_registered_sidebars;
-        $menu_choice = array();
         $widget_list['none'] = esc_html__('-- Choose Widget --', 'square');
         if ($wp_registered_sidebars) {
             foreach ($wp_registered_sidebars as $wp_registered_sidebar) {

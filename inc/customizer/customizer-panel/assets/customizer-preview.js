@@ -3,7 +3,7 @@ function squareDynamicCss(control, style) {
 
     jQuery('head').append(
         '<style class="' + control + '">:root{' + style + '}</style>'
-        );
+    );
 }
 
 function squareLightenDarkenColor(hex, lum) {

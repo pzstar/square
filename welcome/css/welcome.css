@@ -509,6 +509,10 @@ body.toplevel_page_square-welcome #wpfooter a {
     text-decoration: none;
 }
 
+.square-notice-star {
+    color: #ffa534;
+}
+
 @media screen and (max-width:782px) {
 
     .welcome-wrap {

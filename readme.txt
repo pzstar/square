@@ -3,13 +3,12 @@ Square WordPress Theme, Copyright HashThemes 2025
 Square is distributed under the terms of the GNU GPL (http://www.gnu.org/licenses/gpl-2.0.html)
 
 Contributors: hashthemes
-Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments
-
-Requires at least: 5.6
+Requires at least: 6.3
 Tested up to: 6.7
-Stable tag: 2.0.55
+Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Stable tag: 2.0.55
 
 == Description ==
 Square is a beautifully crafted WordPress theme with lots of exciting feature to cherish. Make your website in no time with the use of powerful customizer panel available in the Square Theme. Never the less, it is a good theme you will ever find.

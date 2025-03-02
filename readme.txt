@@ -20,6 +20,9 @@ Square is a beautifully crafted WordPress theme with lots of exciting feature to
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+= 2.0.56 - Mar 2, 2025 =
+* Missing text translations added
+
 = 2.0.55 - Jan 29, 2025 =
 * Christmas & New year Discount banner removed on welcome page
 

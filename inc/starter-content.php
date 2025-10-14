@@ -106,7 +106,7 @@ if (!class_exists('Square_Starter_Content')):
                 'posts' => array(
                     'about' => array(
                         'post_type' => 'page',
-                        'post_title' => _x('About Us', 'Theme starter content', 'square'),
+                        'post_title' => esc_html_x('About Us', 'Theme starter content', 'square'),
                         'post_content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste.<br/>Urna nec tincidunt praesent semper feugiat nibh sed. Non arcu risus quis varius quam quisque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames. Quisque id diam vel quam elementum pulvinar etiam non. In cursus turpis massa tincidunt dui ut. Ultricies tristique nulla aliquet enim tortor at auctor. Elementum nibh tellus molestie nunc non blandit massa. Tristique senectus et netus et. '
                     ),
                     'financial-solution' => array(
@@ -163,11 +163,11 @@ if (!class_exists('Square_Starter_Content')):
                 // Create the custom image attachments used as post thumbnails for pages.
                 'attachments' => array(
                     'slider' => array(
-                        'post_title' => _x('Slider', 'Theme starter content', 'square'),
+                        'post_title' => esc_html_x('Slider', 'Theme starter content', 'square'),
                         'file' => 'images/bg.jpg',
                     ),
                     'square-logo' => array(
-                        'post_title' => _x('Square Logo', 'Theme starter content', 'square'),
+                        'post_title' => esc_html_x('Square Logo', 'Theme starter content', 'square'),
                         'file' => 'images/logo.png',
                     )
                 ),
@@ -181,6 +181,7 @@ if (!class_exists('Square_Starter_Content')):
                 // Set the front page section theme mods to the IDs of the core-registered pages.
                 'theme_mods' => array(
                     'custom_logo' => '{{square-logo}}',
+                    'header_text' => false,
                     'square_enable_frontpage' => true,
                     'square_template_color' => '#00bcd4',
                     'square_about_page' => '{{about}}',
@@ -195,17 +196,17 @@ if (!class_exists('Square_Starter_Content')):
                     'square_tab_page3' => '{{our-team}}',
                     'square_tab_page4' => '{{faqs}}',
                     'square_tab_page5' => '{{request-quote}}',
-                    'square_tab_title1' => _x('Our Mission', 'Theme starter content'),
-                    'square_tab_title2' => _x('Our Services', 'Theme starter content'),
-                    'square_tab_title3' => _x('Team', 'Theme starter content'),
-                    'square_tab_title4' => _x('FAQ\'s', 'Theme starter content'),
-                    'square_tab_title5' => _x('Request Quote', 'Theme starter content'),
+                    'square_tab_title1' => esc_html_x('Our Mission', 'Theme starter content'),
+                    'square_tab_title2' => esc_html_x('Our Services', 'Theme starter content'),
+                    'square_tab_title3' => esc_html_x('Team', 'Theme starter content'),
+                    'square_tab_title4' => esc_html_x('FAQ\'s', 'Theme starter content'),
+                    'square_tab_title5' => esc_html_x('Request Quote', 'Theme starter content'),
                     'square_tab_icon1' => 'fa fa-bullseye',
                     'square_tab_icon2' => 'fa fa-trophy',
                     'square_tab_icon3' => 'fa fa-black-tie',
                     'square_tab_icon4' => 'fa fa-book',
                     'square_tab_icon5' => 'fa fa-exclamation-circle',
-                    'square_logo_title' => _x('Our Clients', 'Theme starter content')
+                    'square_logo_title' => esc_html_x('Our Clients', 'Theme starter content')
                 ),
                 'nav_menus' => array(
                     'primary' => array(

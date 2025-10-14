@@ -4,7 +4,7 @@ Square is distributed under the terms of the GNU GPL (http://www.gnu.org/license
 
 Contributors: hashthemes
 Requires at least: 6.3
-Tested up to: 6.7
+Tested up to: 6.8
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -20,6 +20,9 @@ Square is a beautifully crafted WordPress theme with lots of exciting feature to
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+= 2.0.62 - Oct 15, 2025 =
+* Starter content - Added
+
 = 2.0.61 - Aug 20, 2025 =
 * Typo fixes in welcome page and customizer
 

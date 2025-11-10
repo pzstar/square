@@ -8,7 +8,7 @@ Tested up to: 6.8
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Stable tag: 2.0.61
+Stable tag: 2.0.63
 
 == Description ==
 Square is a beautifully crafted WordPress theme with lots of exciting feature to cherish. Make your website in no time with the use of powerful customizer panel available in the Square Theme. Never the less, it is a good theme you will ever find.
@@ -20,6 +20,9 @@ Square is a beautifully crafted WordPress theme with lots of exciting feature to
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+= 2.0.63 - Nov 10, 2025 =
+* Starter Content Notice bug - Fixed
+
 = 2.0.62 - Oct 15, 2025 =
 * Starter content - Added
 

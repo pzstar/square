@@ -1,11 +1,5 @@
 /* global ajaxurl */
-(function (wp, $) {
-    'use strict';
-
-    if (!wp) {
-        return;
-    }
-
+jQuery(function ($) {
     $(function () {
         // Dismiss notice
         $(document).on('click', '.square-notice-nux .notice-dismiss', function () {
@@ -20,4 +14,4 @@
             });
         });
     });
-})(window.wp, jQuery);
+});

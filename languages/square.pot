@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Square 1.0.0\n"
 "Report-Msgid-Bugs-To: http://hashthemes.com/\n"
-"POT-Creation-Date: 2025-11-20 11:53+0000\n"
+"POT-Creation-Date: 2025-11-20 12:01+0000\n"
 "POT-Revision-Date: Thu Jul 14 2016 22:42:45 GMT+0545 (Nepal Standard Time)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hash Themes <hashthemes@gmail.com>\n"
@@ -2153,6 +2153,31 @@ msgctxt "Theme starter content"
 msgid "About Us"
 msgstr ""
 
+#: inc/starter-content.php:202
+msgctxt "Theme starter content"
+msgid "FAQ's"
+msgstr ""
+
+#: inc/starter-content.php:209
+msgctxt "Theme starter content"
+msgid "Our Clients"
+msgstr ""
+
+#: inc/starter-content.php:199
+msgctxt "Theme starter content"
+msgid "Our Mission"
+msgstr ""
+
+#: inc/starter-content.php:200
+msgctxt "Theme starter content"
+msgid "Our Services"
+msgstr ""
+
+#: inc/starter-content.php:203
+msgctxt "Theme starter content"
+msgid "Request Quote"
+msgstr ""
+
 #: inc/starter-content.php:166
 msgctxt "Theme starter content"
 msgid "Slider"
@@ -2161,6 +2186,11 @@ msgstr ""
 #: inc/starter-content.php:170
 msgctxt "Theme starter content"
 msgid "Square Logo"
+msgstr ""
+
+#: inc/starter-content.php:201
+msgctxt "Theme starter content"
+msgid "Team"
 msgstr ""
 
 #: welcome/sections/footer.php:5

@@ -196,17 +196,17 @@ if (!class_exists('Square_Starter_Content')):
                     'square_tab_page3' => '{{our-team}}',
                     'square_tab_page4' => '{{faqs}}',
                     'square_tab_page5' => '{{request-quote}}',
-                    'square_tab_title1' => esc_html_x('Our Mission', 'Theme starter content'),
-                    'square_tab_title2' => esc_html_x('Our Services', 'Theme starter content'),
-                    'square_tab_title3' => esc_html_x('Team', 'Theme starter content'),
-                    'square_tab_title4' => esc_html_x('FAQ\'s', 'Theme starter content'),
-                    'square_tab_title5' => esc_html_x('Request Quote', 'Theme starter content'),
+                    'square_tab_title1' => esc_html_x('Our Mission', 'Theme starter content', 'square'),
+                    'square_tab_title2' => esc_html_x('Our Services', 'Theme starter content', 'square'),
+                    'square_tab_title3' => esc_html_x('Team', 'Theme starter content', 'square'),
+                    'square_tab_title4' => esc_html_x('FAQ\'s', 'Theme starter content', 'square'),
+                    'square_tab_title5' => esc_html_x('Request Quote', 'Theme starter content', 'square'),
                     'square_tab_icon1' => 'fa fa-bullseye',
                     'square_tab_icon2' => 'fa fa-trophy',
                     'square_tab_icon3' => 'fa fa-black-tie',
                     'square_tab_icon4' => 'fa fa-book',
                     'square_tab_icon5' => 'fa fa-exclamation-circle',
-                    'square_logo_title' => esc_html_x('Our Clients', 'Theme starter content')
+                    'square_logo_title' => esc_html_x('Our Clients', 'Theme starter content', 'square')
                 ),
                 'nav_menus' => array(
                     'primary' => array(

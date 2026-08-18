@@ -41,7 +41,7 @@
     <tr>
         <td>
             <span><?php echo esc_html_x('2) GDPR Compliance & Cookies Consent', 'Free vs Pro Content', 'square'); ?> - <a href="https://hashthemes.com/articles/configuring-gdpr-settings/" target="_blank"><?php echo esc_html_x('Detail', 'Free vs Pro Content', 'square'); ?></a></span>
-            <p><?php echo esc_html_x('The Premium version is fully GDPR compliance. Means no data is collected if you use the theme alone. Also the premium version has option to add GDPR Compliance & Cookies Consent text with buttons.', 'Free vs Pro Content', 'square'); ?></p>
+            <p><?php echo esc_html_x('The Premium version is fully GDPR compliant. Means no data is collected if you use the theme alone. Also the premium version has option to add GDPR Compliance & Cookies Consent text with buttons.', 'Free vs Pro Content', 'square'); ?></p>
         </td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="No"></td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/yes.png'); ?>" alt="Yes"></td>
@@ -215,7 +215,7 @@
     <tr>
         <td>
             <span><?php echo esc_html_x('22) Custom Widgets', 'Free vs Pro Content', 'square'); ?></span>
-            <p><?php echo esc_html_x('With a custom widget and Site origin page builder, you can play to create various website layouts.', 'Free vs Pro Content', 'square'); ?></p>
+            <p><?php echo esc_html_x('With a custom widget and SiteOrigin Page Builder, you can play to create various website layouts.', 'Free vs Pro Content', 'square'); ?></p>
         </td>
         <td>3 Widgets</td>
         <td>14 Widgets</td>
@@ -349,15 +349,15 @@
     <tr>
         <td>
             <span><?php echo esc_html_x('37) RTL Ready', 'Free vs Pro Content', 'square'); ?></span>
-            <p><?php echo esc_html_x('The Premium Version is fully compatible with RTL (Right to left) languages like Arabic', 'Free vs Pro Content', 'square'); ?></p>
+            <p><?php echo esc_html_x('Both the free and premium versions are fully compatible with RTL (Right to left) languages like Arabic.', 'Free vs Pro Content', 'square'); ?></p>
         </td>
-        <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/yes.png'); ?>" alt="No"></td>
+        <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/yes.png'); ?>" alt="Yes"></td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/yes.png'); ?>" alt="Yes"></td>
     </tr>
     <tr>
         <td>
             <span><?php echo esc_html_x('38) Multilingual Ready', 'Free vs Pro Content', 'square'); ?></span>
-            <p><?php echo esc_html_x('The Premium Version is fully compatible with WPML and Poylang. Create the website in multiple languages.', 'Free vs Pro Content', 'square'); ?></p>
+            <p><?php echo esc_html_x('The Premium Version is fully compatible with WPML and Polylang. Create the website in multiple languages.', 'Free vs Pro Content', 'square'); ?></p>
         </td>
         <td><?php echo esc_html_x('Partially', 'Free vs Pro Content', 'square'); ?></td>
         <td><?php echo esc_html_x('Fully', 'Free vs Pro Content', 'square'); ?></td>

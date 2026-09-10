@@ -37,6 +37,86 @@ function square_body_classes($classes) {
 
 add_filter('body_class', 'square_body_classes');
 
+if (!function_exists('square_get_active_campaign')) {
+
+    /*
+     *  The seasonal sale currently running, or false.
+     *
+     *  Windows are month-day so they repeat every year without anyone having to
+     *  edit a date. Filterable so a campaign can be added or the dates moved
+     *  without touching the theme.
+     */
+
+    function square_get_active_campaign() {
+        $campaigns = apply_filters('square_upgrade_campaigns', array(
+            array(
+                'id' => 'blackfriday',
+                'image' => 'blackfriday.jpg',
+                'start' => '11-20',
+                'end' => '12-02',
+                'title' => esc_html__('Black Friday - our biggest discount of the year', 'square'),
+                'button' => esc_html__('Get Square Plus - $65', 'square')
+            ),
+            array(
+                'id' => 'newyear',
+                'image' => 'christmas-sale.jpg',
+                'start' => '12-15',
+                'end' => '01-05',
+                'title' => esc_html__('Christmas & New Year Sale', 'square'),
+                'button' => esc_html__('Get Square Plus - $65', 'square')
+            )
+        ));
+
+        $today = current_time('m-d');
+
+        foreach ($campaigns as $campaign) {
+            if (empty($campaign['start']) || empty($campaign['end'])) {
+                continue;
+            }
+
+            // A window whose end sorts before its start crosses into the new year.
+            if ($campaign['end'] < $campaign['start']) {
+                $running = ($today >= $campaign['start'] || $today <= $campaign['end']);
+            } else {
+                $running = ($today >= $campaign['start'] && $today <= $campaign['end']);
+            }
+
+            if ($running) {
+                return $campaign;
+            }
+        }
+
+        return false;
+    }
+
+}
+
+if (!function_exists('square_upgrade_url')) {
+
+    /*
+     *  Upgrade link with campaign tracking.
+     *
+     *  $placement is passed through as utm_content so each prompt can be told
+     *  apart in analytics - without it every link reports as one undifferentiated
+     *  source and there is no way to tell which prompt actually earns the upgrade.
+     */
+
+    function square_upgrade_url($placement = '', $medium = 'square-link') {
+        $args = array(
+            'utm_source' => 'wordpress',
+            'utm_medium' => $medium,
+            'utm_campaign' => 'square-upgrade'
+        );
+
+        if ('' !== $placement) {
+            $args['utm_content'] = $placement;
+        }
+
+        return add_query_arg($args, 'https://hashthemes.com/wordpress-theme/square-plus/');
+    }
+
+}
+
 if (!function_exists('square_excerpt')) {
 
     function square_excerpt($content, $letter_count) {

@@ -103,7 +103,7 @@ if (!function_exists('square_upgrade_url')) {
 
     function square_upgrade_url($placement = '', $medium = 'square-link') {
         $args = array(
-            'utm_source' => 'wordpress',
+            'utm_source' => 'WordPress',
             'utm_medium' => $medium,
             'utm_campaign' => 'square-upgrade'
         );
@@ -128,6 +128,49 @@ if (!function_exists('square_excerpt')) {
             $content .= "...";
         }
         return $content;
+    }
+
+}
+
+if (!function_exists('square_setup_section_post')) {
+
+    // Makes a post the current post for a home section; pair with wp_reset_postdata().
+    // get_post() rather than WP_Query, so posts held only in the object cache (starter content in the WordPress.org theme preview) are found too.
+    // Visibility follows WP_Query's single post rules, so users who can edit still see drafts, and the Customizer shows unpublished (auto-draft) starter content.
+    function square_setup_section_post($post_id) {
+        $section_post = $post_id ? get_post(absint($post_id)) : null;
+        $status = $section_post ? get_post_status_object(get_post_status($section_post)) : null;
+
+        if (!$status) {
+            return false;
+        } elseif ($status->public) {
+            $visible = true;
+        } elseif (!is_user_logged_in()) {
+            $visible = false;
+        } elseif ($status->protected) {
+            $visible = current_user_can('edit_post', $section_post->ID);
+        } elseif ($status->private) {
+            $visible = current_user_can('read_post', $section_post->ID);
+        } else {
+            $visible = false;
+        }
+
+        if (!$visible) {
+            return false;
+        }
+
+        $GLOBALS['post'] = $section_post;
+        setup_postdata($section_post);
+        return true;
+    }
+
+}
+
+if (!function_exists('square_attachment_ids')) {
+
+    // Gallery settings save a comma separated string; the WordPress.org theme preview passes its starter content as an array.
+    function square_attachment_ids($value) {
+        return is_array($value) ? $value : explode(',', $value);
     }
 
 }

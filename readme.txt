@@ -4,7 +4,7 @@ Square is distributed under the terms of the GNU GPL (http://www.gnu.org/license
 
 Contributors: hashthemes
 Requires at least: 6.3
-Tested up to: 6.9
+Tested up to: 7.1
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html

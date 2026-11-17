@@ -37,7 +37,7 @@ add_filter('body_class', 'square_body_classes');
 
 if (!function_exists('square_get_active_campaign')) {
 
-    /* The seasonal sale currently running, or false. */
+    /* The seasonal sale currently running, or false. Month-day windows, so they repeat yearly. */
 
     function square_get_active_campaign() {
         $campaigns = apply_filters('square_upgrade_campaigns', array(
@@ -122,7 +122,8 @@ if (!function_exists('square_excerpt')) {
 
 if (!function_exists('square_setup_section_post')) {
 
-    // Makes a post the current post for a home section.
+    // Makes a post the current post for a home section; pair with wp_reset_postdata().
+    // get_post() also finds starter content held only in the object cache (WordPress.org preview).
     function square_setup_section_post($post_id) {
         $section_post = $post_id ? get_post(absint($post_id)) : null;
         $status = $section_post ? get_post_status_object(get_post_status($section_post)) : null;
@@ -154,7 +155,7 @@ if (!function_exists('square_setup_section_post')) {
 
 if (!function_exists('square_attachment_ids')) {
 
-    // Gallery settings save a comma separated string.
+    // Gallery settings save a comma separated string; the WordPress.org preview passes an array.
     function square_attachment_ids($value) {
         return is_array($value) ? $value : explode(',', $value);
     }

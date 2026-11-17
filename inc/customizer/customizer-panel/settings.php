@@ -51,6 +51,7 @@ $square_pro_features = '<ul class="upsell-features">
 
 
 // Seasonal campaigns swap the banner copy automatically - see square_get_active_campaign().
+// During a sale the card drops the list price, which would contradict the checkout discount.
 $square_campaign = square_get_active_campaign();
 
 $wp_customize->add_section(new Square_Pro_Banner_Section($wp_customize, 'square-pro-section', array(
@@ -936,7 +937,7 @@ $wp_customize->add_section(new Square_Upgrade_Section($wp_customize, 'square-upg
     'title' => esc_html__('More Sections on Premium', 'square'),
     'panel' => 'square_home_settings_panel',
     'priority' => 1000,
-    // The Pro-only sections now have a row each.
+    // The Pro-only sections have a row each, so this box only lists what Pro adds to every section.
     'options' => array(
         esc_html__('- Drag and drop to reorder every section', 'square'),
         esc_html__('- Every section above gains more layouts and customization options', 'square'),
@@ -951,7 +952,7 @@ $wp_customize->add_section(new Square_Upgrade_Section($wp_customize, 'square-upg
     'active_callback' => 'square_is_upgrade_notice_active'
 )));
 
-/* Home page sections that exist only in Square Plus. */
+/* Home page sections that exist only in Square Plus, with Square Plus's titles and order. */
 
 $square_pro_home_sections = array(
     'highlight' => array(esc_html__('Highlight Section', 'square'), 161),

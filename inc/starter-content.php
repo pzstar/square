@@ -103,8 +103,6 @@ if (!class_exists('Square_Starter_Content')):
          */
         public function starter_content() {
             // Define and register starter content to showcase the theme on new sites.
-            // The WordPress.org theme preview (wp-themes.com) renders this too, so every {{key}} must exist and keys must be unique across posts and attachments.
-            // Keys are prefixed, as the preview reuses a real page whose slug matches a key (such as "about") instead of the starter content.
             $starter_content = array(
                 'posts' => array(
                     'square-about' => array(
@@ -174,7 +172,7 @@ if (!class_exists('Square_Starter_Content')):
                     'blog',
                 ),
 
-                // Images bundled with the theme. Titles must be unique, as the Customizer import matches list settings to them.
+                // Images bundled with the theme.
                 'attachments' => array(
                     'square-logo' => array(
                         'post_title' => _x('Square Logo', 'Theme starter content', 'square'),
@@ -299,10 +297,7 @@ if (!class_exists('Square_Starter_Content')):
         }
 
         /**
-         * Fills in the gallery settings (About image stack, client logos) when the Customizer imports starter content.
-         *
-         * Core resolves a theme mod only when it holds a single {{symbol}}, and skips the setting otherwise.
-         * Here each symbol is matched to the attachment core created for it, which core names after its title.
+         * Fills in the gallery settings (About image stack, client logos).
          */
         public function resolve_list_theme_mods() {
             global $wp_customize, $pagenow;

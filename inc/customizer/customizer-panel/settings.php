@@ -69,6 +69,7 @@ $wp_customize->add_section(new Square_Pro_Banner_Section($wp_customize, 'square-
     'upgrade_url' => square_upgrade_url($square_campaign ? 'banner-' . $square_campaign['id'] : 'banner', 'square-customizer-button'),
     'note' => esc_html__('7-day money-back guarantee', 'square'),
     'is_sale' => (bool) $square_campaign,
+    'active_callback' => 'square_is_upgrade_notice_active'
 )));
 
 $wp_customize->add_section(new Square_Upgrade_Section($wp_customize, 'square-doc-section', array(
@@ -1087,6 +1088,7 @@ $wp_customize->add_setting('square_hide_upgrade_notice', array(
 
 $wp_customize->add_control(new Square_Toggle_Control($wp_customize, 'square_hide_upgrade_notice', array(
     'section' => 'square_pro_feature_section',
+    'priority' => 20,
     'label' => esc_html__('Hide all Upgrade Notices from Customizer', 'square'),
     'description' => esc_html__('If you don\'t want to upgrade to premium version then you can turn off all the upgrade notices. However you can turn it on anytime if you make mind to upgrade to premium version.', 'square')
 )));
@@ -1098,6 +1100,7 @@ $wp_customize->add_setting('square_pro_features', array(
 $wp_customize->add_control(new Square_Upgrade_Info_Control($wp_customize, 'square_pro_features', array(
     'settings' => 'square_pro_features',
     'section' => 'square_pro_feature_section',
+    'priority' => 10,
     'description' => $square_pro_features,
     'active_callback' => 'square_is_upgrade_notice_active'
 )));
